@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function CenterGages.CenterGages_C.Key Binding
+struct UCenterGages_C_Key_Binding_Params
+{
+};
 
 // Function CenterGages.CenterGages_C.EventUpdateStamina
 struct UCenterGages_C_EventUpdateStamina_Params
@@ -50,6 +55,18 @@ struct UCenterGages_C_EventInputSourceChanged_Params
 
 // Function CenterGages.CenterGages_C.Construct
 struct UCenterGages_C_Construct_Params
+{
+};
+
+// Function CenterGages.CenterGages_C.EventInputRebindSucceeded
+struct UCenterGages_C_EventInputRebindSucceeded_Params
+{
+	struct FName*                                      ActionToRebind;                                           // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	struct FText*                                      NewKeyName;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+
+// Function CenterGages.CenterGages_C.EventInputResetToDefault
+struct UCenterGages_C_EventInputResetToDefault_Params
 {
 };
 

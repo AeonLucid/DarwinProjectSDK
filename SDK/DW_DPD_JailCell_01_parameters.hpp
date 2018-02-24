@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,6 +16,11 @@ namespace SDK
 
 // Function DPD_JailCell_01.DPD_JailCell_01_C.ReceiveBeginPlay
 struct ADPD_JailCell_01_C_ReceiveBeginPlay_Params
+{
+};
+
+// Function DPD_JailCell_01.DPD_JailCell_01_C.SetTitleCam
+struct ADPD_JailCell_01_C_SetTitleCam_Params
 {
 };
 

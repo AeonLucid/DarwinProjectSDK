@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,16 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function MuteAllButton.MuteAllButton_C.MakeBlue
+struct UMuteAllButton_C_MakeBlue_Params
+{
+};
+
+// Function MuteAllButton.MuteAllButton_C.MakeRed
+struct UMuteAllButton_C_MakeRed_Params
+{
+};
 
 // Function MuteAllButton.MuteAllButton_C.SetMute
 struct UMuteAllButton_C_SetMute_Params

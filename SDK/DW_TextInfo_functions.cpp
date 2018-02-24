@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -33,28 +33,6 @@ struct FSlateColor UTextInfo_C::Get_TextBlock_38_ColorAndOpacity_1()
 }
 
 
-// Function TextInfo.TextInfo_C.EventUpdateNumberOfWood
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int*                           numberOfWood                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool*                          bIncrement                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UTextInfo_C::EventUpdateNumberOfWood(int* numberOfWood, bool* bIncrement)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TextInfo.TextInfo_C.EventUpdateNumberOfWood");
-
-	UTextInfo_C_EventUpdateNumberOfWood_Params params;
-	params.numberOfWood = numberOfWood;
-	params.bIncrement = bIncrement;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function TextInfo.TextInfo_C.Initialize
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -83,6 +61,28 @@ void UTextInfo_C::EventGameStartsNow()
 	static auto fn = UObject::FindObject<UFunction>("Function TextInfo.TextInfo_C.EventGameStartsNow");
 
 	UTextInfo_C_EventGameStartsNow_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function TextInfo.TextInfo_C.EventUpdateNumberOfWood
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int*                           numberOfWood                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bIncrement                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UTextInfo_C::EventUpdateNumberOfWood(int* numberOfWood, bool* bIncrement)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TextInfo.TextInfo_C.EventUpdateNumberOfWood");
+
+	UTextInfo_C_EventUpdateNumberOfWood_Params params;
+	params.numberOfWood = numberOfWood;
+	params.bIncrement = bIncrement;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,104 +12,18 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function PassivePowers.PassivePowers_C.EventUpdateArmorLevel
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int*                           Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UPassivePowers_C::EventUpdateArmorLevel(int* Level)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateArmorLevel");
-
-	UPassivePowers_C_EventUpdateArmorLevel_Params params;
-	params.Level = Level;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PassivePowers.PassivePowers_C.EventUpdateCoatLevel
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// EDarwinItemTypeEnum*           coatType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UPassivePowers_C::EventUpdateCoatLevel(EDarwinItemTypeEnum* coatType, int* Level)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateCoatLevel");
-
-	UPassivePowers_C_EventUpdateCoatLevel_Params params;
-	params.coatType = coatType;
-	params.Level = Level;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PassivePowers.PassivePowers_C.EventUpdateBootLevel
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// EDarwinItemTypeEnum*           bootType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UPassivePowers_C::EventUpdateBootLevel(EDarwinItemTypeEnum* bootType, int* Level)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateBootLevel");
-
-	UPassivePowers_C_EventUpdateBootLevel_Params params;
-	params.bootType = bootType;
-	params.Level = Level;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PassivePowers.PassivePowers_C.EventUpdateWeaponLevel
+// Function PassivePowers.PassivePowers_C.EventUpdateWeaponType
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // EDarwinItemTypeEnum*           weaponType                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UPassivePowers_C::EventUpdateWeaponLevel(EDarwinItemTypeEnum* weaponType, int* Level)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateWeaponLevel");
-
-	UPassivePowers_C_EventUpdateWeaponLevel_Params params;
-	params.weaponType = weaponType;
-	params.Level = Level;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PassivePowers.PassivePowers_C.EventUpdateCoatType
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// EDarwinItemTypeEnum*           coatType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           MaxLevel                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPassivePowers_C::EventUpdateCoatType(EDarwinItemTypeEnum* coatType, int* MaxLevel)
+void UPassivePowers_C::EventUpdateWeaponType(EDarwinItemTypeEnum* weaponType, int* MaxLevel)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateCoatType");
+	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateWeaponType");
 
-	UPassivePowers_C_EventUpdateCoatType_Params params;
-	params.coatType = coatType;
+	UPassivePowers_C_EventUpdateWeaponType_Params params;
+	params.weaponType = weaponType;
 	params.MaxLevel = MaxLevel;
 
 	auto flags = fn->FunctionFlags;
@@ -142,19 +56,105 @@ void UPassivePowers_C::EventUpdateBootType(EDarwinItemTypeEnum* bootType, int* M
 }
 
 
-// Function PassivePowers.PassivePowers_C.EventUpdateWeaponType
+// Function PassivePowers.PassivePowers_C.EventUpdateCoatType
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// EDarwinItemTypeEnum*           coatType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           MaxLevel                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UPassivePowers_C::EventUpdateCoatType(EDarwinItemTypeEnum* coatType, int* MaxLevel)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateCoatType");
+
+	UPassivePowers_C_EventUpdateCoatType_Params params;
+	params.coatType = coatType;
+	params.MaxLevel = MaxLevel;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PassivePowers.PassivePowers_C.EventUpdateWeaponLevel
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // EDarwinItemTypeEnum*           weaponType                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           MaxLevel                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPassivePowers_C::EventUpdateWeaponType(EDarwinItemTypeEnum* weaponType, int* MaxLevel)
+void UPassivePowers_C::EventUpdateWeaponLevel(EDarwinItemTypeEnum* weaponType, int* Level)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateWeaponType");
+	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateWeaponLevel");
 
-	UPassivePowers_C_EventUpdateWeaponType_Params params;
+	UPassivePowers_C_EventUpdateWeaponLevel_Params params;
 	params.weaponType = weaponType;
-	params.MaxLevel = MaxLevel;
+	params.Level = Level;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PassivePowers.PassivePowers_C.EventUpdateBootLevel
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// EDarwinItemTypeEnum*           bootType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UPassivePowers_C::EventUpdateBootLevel(EDarwinItemTypeEnum* bootType, int* Level)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateBootLevel");
+
+	UPassivePowers_C_EventUpdateBootLevel_Params params;
+	params.bootType = bootType;
+	params.Level = Level;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PassivePowers.PassivePowers_C.EventUpdateCoatLevel
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// EDarwinItemTypeEnum*           coatType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UPassivePowers_C::EventUpdateCoatLevel(EDarwinItemTypeEnum* coatType, int* Level)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateCoatLevel");
+
+	UPassivePowers_C_EventUpdateCoatLevel_Params params;
+	params.coatType = coatType;
+	params.Level = Level;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PassivePowers.PassivePowers_C.EventUpdateArmorLevel
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int*                           Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UPassivePowers_C::EventUpdateArmorLevel(int* Level)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PassivePowers.PassivePowers_C.EventUpdateArmorLevel");
+
+	UPassivePowers_C_EventUpdateArmorLevel_Params params;
+	params.Level = Level;
 
 	auto flags = fn->FunctionFlags;
 

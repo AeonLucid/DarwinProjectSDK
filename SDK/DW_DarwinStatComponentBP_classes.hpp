@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass DarwinStatComponentBP.DarwinStatComponentBP_C
-// 0x0000 (0x0388 - 0x0388)
+// 0x0000 (0x0378 - 0x0378)
 class UDarwinStatComponentBP_C : public UDarwinStatComponent
 {
 public:

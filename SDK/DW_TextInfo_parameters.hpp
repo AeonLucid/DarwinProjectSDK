@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,13 +20,6 @@ struct UTextInfo_C_Get_TextBlock_38_ColorAndOpacity_1_Params
 	struct FSlateColor                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
-// Function TextInfo.TextInfo_C.EventUpdateNumberOfWood
-struct UTextInfo_C_EventUpdateNumberOfWood_Params
-{
-	int*                                               numberOfWood;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool*                                              bIncrement;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function TextInfo.TextInfo_C.Initialize
 struct UTextInfo_C_Initialize_Params
 {
@@ -36,6 +29,13 @@ struct UTextInfo_C_Initialize_Params
 // Function TextInfo.TextInfo_C.EventGameStartsNow
 struct UTextInfo_C_EventGameStartsNow_Params
 {
+};
+
+// Function TextInfo.TextInfo_C.EventUpdateNumberOfWood
+struct UTextInfo_C_EventUpdateNumberOfWood_Params
+{
+	int*                                               numberOfWood;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              bIncrement;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TextInfo.TextInfo_C.EventUpdateNumberOfElectronic

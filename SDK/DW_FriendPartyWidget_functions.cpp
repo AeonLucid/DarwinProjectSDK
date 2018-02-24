@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -50,9 +50,9 @@ void UFriendPartyWidget_C::HideFriendInfos()
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FText                   friendName                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UTexture2D*              friendAvatar                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture*                friendAvatar                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UFriendPartyWidget_C::SetFriendInfos(const struct FText& friendName, class UTexture2D* friendAvatar)
+void UFriendPartyWidget_C::SetFriendInfos(const struct FText& friendName, class UTexture* friendAvatar)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function FriendPartyWidget.FriendPartyWidget_C.SetFriendInfos");
 
@@ -71,9 +71,9 @@ void UFriendPartyWidget_C::SetFriendInfos(const struct FText& friendName, class 
 // Function FriendPartyWidget.FriendPartyWidget_C.EventUpdateLocalAvatarTexture
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UTexture2D**             outLocalAvatarTexture          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture**               outLocalAvatarTexture          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UFriendPartyWidget_C::EventUpdateLocalAvatarTexture(class UTexture2D** outLocalAvatarTexture)
+void UFriendPartyWidget_C::EventUpdateLocalAvatarTexture(class UTexture** outLocalAvatarTexture)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function FriendPartyWidget.FriendPartyWidget_C.EventUpdateLocalAvatarTexture");
 
@@ -92,9 +92,9 @@ void UFriendPartyWidget_C::EventUpdateLocalAvatarTexture(class UTexture2D** outL
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
 // struct FText*                  friendName                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UTexture2D**             friendAvatar                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture**               friendAvatar                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UFriendPartyWidget_C::EventFriendPartyJoined(struct FText* friendName, class UTexture2D** friendAvatar)
+void UFriendPartyWidget_C::EventFriendPartyJoined(struct FText* friendName, class UTexture** friendAvatar)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function FriendPartyWidget.FriendPartyWidget_C.EventFriendPartyJoined");
 

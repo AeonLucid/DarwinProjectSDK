@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function LeaderboardLine.LeaderboardLine_C.ShowXboxProfile
+struct ULeaderboardLine_C_ShowXboxProfile_Params
+{
+};
 
 }
 

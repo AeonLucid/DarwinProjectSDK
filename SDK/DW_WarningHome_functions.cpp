@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -189,6 +189,60 @@ void UWarningHome_C::BndEvt__NextPage_K2Node_ComponentBoundEvent_0_OnButtonClick
 	static auto fn = UObject::FindObject<UFunction>("Function WarningHome.WarningHome_C.BndEvt__NextPage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
 
 	UWarningHome_C_BndEvt__NextPage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function WarningHome.WarningHome_C.EventMenuDPadRight
+// (Event, Public, BlueprintEvent)
+
+void UWarningHome_C::EventMenuDPadRight()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function WarningHome.WarningHome_C.EventMenuDPadRight");
+
+	UWarningHome_C_EventMenuDPadRight_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function WarningHome.WarningHome_C.EventMenuDPadLeft
+// (Event, Public, BlueprintEvent)
+
+void UWarningHome_C::EventMenuDPadLeft()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function WarningHome.WarningHome_C.EventMenuDPadLeft");
+
+	UWarningHome_C_EventMenuDPadLeft_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function WarningHome.WarningHome_C.Init
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UHomeMenu_C*             ParentWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UWarningHome_C::Init(class UHomeMenu_C* ParentWidget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function WarningHome.WarningHome_C.Init");
+
+	UWarningHome_C_Init_Params params;
+	params.ParentWidget = ParentWidget;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,6 +27,8 @@ struct UDarwinMainCharacterWidgetBP_C_EventCannotCraftInLobby_Params
 // Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventCannotUseItemInLobby
 struct UDarwinMainCharacterWidgetBP_C_EventCannotUseItemInLobby_Params
 {
+	int*                                               Index;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinItemTypeEnum*                               Type;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventCannotSendAllyFlagInLobby
@@ -34,8 +36,13 @@ struct UDarwinMainCharacterWidgetBP_C_EventCannotSendAllyFlagInLobby_Params
 {
 };
 
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.ShowMainWidget
-struct UDarwinMainCharacterWidgetBP_C_ShowMainWidget_Params
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirEnd
+struct UDarwinMainCharacterWidgetBP_C_EventInAirEnd_Params
+{
+};
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirStart
+struct UDarwinMainCharacterWidgetBP_C_EventInAirStart_Params
 {
 };
 
@@ -47,6 +54,8 @@ struct UDarwinMainCharacterWidgetBP_C_Next_on_End_Game_Params
 // Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInventoryActionFail
 struct UDarwinMainCharacterWidgetBP_C_EventInventoryActionFail_Params
 {
+	int*                                               Index;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinItemTypeEnum*                               ItemType;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventHitBigTree
@@ -56,11 +65,6 @@ struct UDarwinMainCharacterWidgetBP_C_EventHitBigTree_Params
 
 // Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventHitAlly
 struct UDarwinMainCharacterWidgetBP_C_EventHitAlly_Params
-{
-};
-
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventSuddenDeathStartsNow
-struct UDarwinMainCharacterWidgetBP_C_EventSuddenDeathStartsNow_Params
 {
 };
 
@@ -97,18 +101,13 @@ struct UDarwinMainCharacterWidgetBP_C_Tick_Params
 	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.HideMainWidget
-struct UDarwinMainCharacterWidgetBP_C_HideMainWidget_Params
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventGameStartsNow
+struct UDarwinMainCharacterWidgetBP_C_EventGameStartsNow_Params
 {
 };
 
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirEnd
-struct UDarwinMainCharacterWidgetBP_C_EventInAirEnd_Params
-{
-};
-
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirStart
-struct UDarwinMainCharacterWidgetBP_C_EventInAirStart_Params
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.ShowMainWidget
+struct UDarwinMainCharacterWidgetBP_C_ShowMainWidget_Params
 {
 };
 
@@ -119,27 +118,17 @@ struct UDarwinMainCharacterWidgetBP_C_EventIsDead_Params
 	bool*                                              firstDeath;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.HideMainWidget
+struct UDarwinMainCharacterWidgetBP_C_HideMainWidget_Params
+{
+};
+
 // Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventPlayerIsWinner
 struct UDarwinMainCharacterWidgetBP_C_EventPlayerIsWinner_Params
 {
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool*                                              bBloodPactActive;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int*                                               allyID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimEnd
-struct UDarwinMainCharacterWidgetBP_C_EventTeleportAimEnd_Params
-{
-};
-
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimStart
-struct UDarwinMainCharacterWidgetBP_C_EventTeleportAimStart_Params
-{
-};
-
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventGameStartsNow
-struct UDarwinMainCharacterWidgetBP_C_EventGameStartsNow_Params
-{
 };
 
 // Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventDeathNotification
@@ -150,6 +139,35 @@ struct UDarwinMainCharacterWidgetBP_C_EventDeathNotification_Params
 	int*                                               attackerUniqueID;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int*                                               victimUniqueID;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool*                                              bFirstBlood;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimEnd
+struct UDarwinMainCharacterWidgetBP_C_EventTeleportAimEnd_Params
+{
+};
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.Destruct
+struct UDarwinMainCharacterWidgetBP_C_Destruct_Params
+{
+};
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventDamageNotification
+struct UDarwinMainCharacterWidgetBP_C_EventDamageNotification_Params
+{
+	EDarwinDamageTypeEnum*                             Type;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             Damage;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               attackerUniqueID;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               victimUniqueID;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimStart
+struct UDarwinMainCharacterWidgetBP_C_EventTeleportAimStart_Params
+{
+};
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventPrivateMatchNeedsMorePlayers
+struct UDarwinMainCharacterWidgetBP_C_EventPrivateMatchNeedsMorePlayers_Params
+{
 };
 
 // Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.ExecuteUbergraph_DarwinMainCharacterWidgetBP

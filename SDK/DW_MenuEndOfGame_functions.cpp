@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,43 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function MenuEndOfGame.MenuEndOfGame_C.UpdateInputMode
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UMenuEndOfGame_C::UpdateInputMode()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MenuEndOfGame.MenuEndOfGame_C.UpdateInputMode");
+
+	UMenuEndOfGame_C_UpdateInputMode_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MenuEndOfGame.MenuEndOfGame_C.SetMenuVisibility
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ESlateVisibility               InVisibility                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UMenuEndOfGame_C::SetMenuVisibility(ESlateVisibility InVisibility)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MenuEndOfGame.MenuEndOfGame_C.SetMenuVisibility");
+
+	UMenuEndOfGame_C_SetMenuVisibility_Params params;
+	params.InVisibility = InVisibility;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function MenuEndOfGame.MenuEndOfGame_C.GetStatName
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
@@ -134,16 +171,16 @@ void UMenuEndOfGame_C::Construct()
 // Function MenuEndOfGame.MenuEndOfGame_C.EventPlayerIsWinner
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool*                          bBloodPactActive               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           allyID                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UMenuEndOfGame_C::EventPlayerIsWinner(int* PlayerId, bool* bBloodPactActive, int* allyID)
+void UMenuEndOfGame_C::EventPlayerIsWinner(int* playerID, bool* bBloodPactActive, int* allyID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MenuEndOfGame.MenuEndOfGame_C.EventPlayerIsWinner");
 
 	UMenuEndOfGame_C_EventPlayerIsWinner_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.bBloodPactActive = bBloodPactActive;
 	params.allyID = allyID;
 
@@ -163,6 +200,60 @@ void UMenuEndOfGame_C::EventMenuClick()
 	static auto fn = UObject::FindObject<UFunction>("Function MenuEndOfGame.MenuEndOfGame_C.EventMenuClick");
 
 	UMenuEndOfGame_C_EventMenuClick_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MenuEndOfGame.MenuEndOfGame_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UMenuEndOfGame_C::Destruct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MenuEndOfGame.MenuEndOfGame_C.Destruct");
+
+	UMenuEndOfGame_C_Destruct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MenuEndOfGame.MenuEndOfGame_C.EventMenuBack
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bIsEscape                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UMenuEndOfGame_C::EventMenuBack(bool* bIsEscape)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MenuEndOfGame.MenuEndOfGame_C.EventMenuBack");
+
+	UMenuEndOfGame_C_EventMenuBack_Params params;
+	params.bIsEscape = bIsEscape;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MenuEndOfGame.MenuEndOfGame_C.EventInputSourceChanged
+// (Event, Public, BlueprintEvent)
+
+void UMenuEndOfGame_C::EventInputSourceChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MenuEndOfGame.MenuEndOfGame_C.EventInputSourceChanged");
+
+	UMenuEndOfGame_C_EventInputSourceChanged_Params params;
 
 	auto flags = fn->FunctionFlags;
 

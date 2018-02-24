@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -35,13 +35,13 @@ struct UDarwinPlayerMinimapWidgetBP_C_Get_DetectionNorth_ColorAndOpacity_1_Param
 // Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.EventShowDirectorJoined
 struct UDarwinPlayerMinimapWidgetBP_C_EventShowDirectorJoined_Params
 {
-	struct FString*                                    showDirectorName;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FString*                                    ShowDirectorName;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 };
 
 // Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.EventShowDirectorLeft
 struct UDarwinPlayerMinimapWidgetBP_C_EventShowDirectorLeft_Params
 {
-	struct FString*                                    showDirectorName;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FString*                                    ShowDirectorName;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 };
 
 // Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.EventGameHasStarted
@@ -72,10 +72,54 @@ struct UDarwinPlayerMinimapWidgetBP_C_EventUpdateGameAboutToStart_Params
 	bool*                                              aboutToStart;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.EventUpdateGameTime
+struct UDarwinPlayerMinimapWidgetBP_C_EventUpdateGameTime_Params
+{
+	struct FString*                                    gameTimeStr;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+};
+
+// Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.EventSuddenDeathStartsNow
+struct UDarwinPlayerMinimapWidgetBP_C_EventSuddenDeathStartsNow_Params
+{
+};
+
+// Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.EventUpdateNumberOfTwitchSpectators
+struct UDarwinPlayerMinimapWidgetBP_C_EventUpdateNumberOfTwitchSpectators_Params
+{
+	int*                                               Number;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.EventUpdateGameAboutToStartTimer
 struct UDarwinPlayerMinimapWidgetBP_C_EventUpdateGameAboutToStartTimer_Params
 {
 	float*                                             Time;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.EventStartFollowedByShowDirector
+struct UDarwinPlayerMinimapWidgetBP_C_EventStartFollowedByShowDirector_Params
+{
+};
+
+// Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.EventEndFollowedByShowDirector
+struct UDarwinPlayerMinimapWidgetBP_C_EventEndFollowedByShowDirector_Params
+{
+};
+
+// Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.EventUpdateArmorLevel
+struct UDarwinPlayerMinimapWidgetBP_C_EventUpdateArmorLevel_Params
+{
+	int*                                               Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.EventUpdateShowDirectorIsLoading
+struct UDarwinPlayerMinimapWidgetBP_C_EventUpdateShowDirectorIsLoading_Params
+{
+	bool*                                              Value;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.Construct
+struct UDarwinPlayerMinimapWidgetBP_C_Construct_Params
+{
 };
 
 // Function DarwinPlayerMinimapWidgetBP.DarwinPlayerMinimapWidgetBP_C.ExecuteUbergraph_DarwinPlayerMinimapWidgetBP

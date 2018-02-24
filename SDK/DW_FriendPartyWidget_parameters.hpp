@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -28,20 +28,20 @@ struct UFriendPartyWidget_C_HideFriendInfos_Params
 struct UFriendPartyWidget_C_SetFriendInfos_Params
 {
 	struct FText                                       friendName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UTexture2D*                                  friendAvatar;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture*                                    friendAvatar;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FriendPartyWidget.FriendPartyWidget_C.EventUpdateLocalAvatarTexture
 struct UFriendPartyWidget_C_EventUpdateLocalAvatarTexture_Params
 {
-	class UTexture2D**                                 outLocalAvatarTexture;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture**                                   outLocalAvatarTexture;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FriendPartyWidget.FriendPartyWidget_C.EventFriendPartyJoined
 struct UFriendPartyWidget_C_EventFriendPartyJoined_Params
 {
 	struct FText*                                      friendName;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UTexture2D**                                 friendAvatar;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture**                                   friendAvatar;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FriendPartyWidget.FriendPartyWidget_C.EventFriendPartyLeft

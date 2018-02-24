@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,15 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function LootAndHarvestProgress.LootAndHarvestProgress_C.EventUpdateLootActionProgress
+struct ULootAndHarvestProgress_C_EventUpdateLootActionProgress_Params
+{
+	bool*                                              isLooting;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinItemTypeEnum*                               Type;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FString*                                    playerName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	float*                                             progress;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function LootAndHarvestProgress.LootAndHarvestProgress_C.EventLootActionEnd
 struct ULootAndHarvestProgress_C_EventLootActionEnd_Params
@@ -32,23 +41,6 @@ struct ULootAndHarvestProgress_C_EventLootActionCancel_Params
 // Function LootAndHarvestProgress.LootAndHarvestProgress_C.Construct
 struct ULootAndHarvestProgress_C_Construct_Params
 {
-};
-
-// Function LootAndHarvestProgress.LootAndHarvestProgress_C.EventFirstBlood
-struct ULootAndHarvestProgress_C_EventFirstBlood_Params
-{
-	int*                                               attackerID;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int*                                               victimID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EDarwinDamageTypeEnum*                             dmgType;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function LootAndHarvestProgress.LootAndHarvestProgress_C.EventUpdateLootActionProgress
-struct ULootAndHarvestProgress_C_EventUpdateLootActionProgress_Params
-{
-	bool*                                              isLooting;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EDarwinItemTypeEnum*                               Type;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FString*                                    playerName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-	float*                                             progress;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LootAndHarvestProgress.LootAndHarvestProgress_C.EventNewLoot

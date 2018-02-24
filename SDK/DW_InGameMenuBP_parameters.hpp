@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,22 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function InGameMenuBP.InGameMenuBP_C.RefreshPromptsSetup
+struct UInGameMenuBP_C_RefreshPromptsSetup_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.UpdateExitMenuNavButtons
+struct UInGameMenuBP_C_UpdateExitMenuNavButtons_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.UnhoverButton
+struct UInGameMenuBP_C_UnhoverButton_Params
+{
+	TEnumAsByte<EInGameMenu_Tiles>                     Tile;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function InGameMenuBP.InGameMenuBP_C.IsMenuVisible
 struct UInGameMenuBP_C_IsMenuVisible_Params
@@ -248,20 +264,11 @@ struct UInGameMenuBP_C_EventMenuClick_Params
 // Function InGameMenuBP.InGameMenuBP_C.EventMenuBack
 struct UInGameMenuBP_C_EventMenuBack_Params
 {
+	bool*                                              bIsEscape;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InGameMenuBP.InGameMenuBP_C.Construct
 struct UInGameMenuBP_C_Construct_Params
-{
-};
-
-// Function InGameMenuBP.InGameMenuBP_C.BndEvt__ButtonNo_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-struct UInGameMenuBP_C_BndEvt__ButtonNo_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
-// Function InGameMenuBP.InGameMenuBP_C.BndEvt__ButtonYes_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
-struct UInGameMenuBP_C_BndEvt__ButtonYes_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature_Params
 {
 };
 
@@ -282,6 +289,113 @@ struct UInGameMenuBP_C_EventInputSourceChanged_Params
 
 // Function InGameMenuBP.InGameMenuBP_C.Destruct
 struct UInGameMenuBP_C_Destruct_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.EventMenuRight
+struct UInGameMenuBP_C_EventMenuRight_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.EventMenuLeft
+struct UInGameMenuBP_C_EventMenuLeft_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.EventIsPrivateMatchOwner
+struct UInGameMenuBP_C_EventIsPrivateMatchOwner_Params
+{
+	struct FString*                                    password;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature
+struct UInGameMenuBP_C_BndEvt__Button_YES_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_161_OnButtonClickedEvent__DelegateSignature
+struct UInGameMenuBP_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_161_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.Show Gamepad Stuff
+struct UInGameMenuBP_C_Show_Gamepad_Stuff_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.Hide Gamepad Stuff
+struct UInGameMenuBP_C_Hide_Gamepad_Stuff_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__CopyPassButton_K2Node_ComponentBoundEvent_454_OnButtonClickedEvent__DelegateSignature
+struct UInGameMenuBP_C_BndEvt__CopyPassButton_K2Node_ComponentBoundEvent_454_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__ShowButton_K2Node_ComponentBoundEvent_546_OnButtonClickedEvent__DelegateSignature
+struct UInGameMenuBP_C_BndEvt__ShowButton_K2Node_ComponentBoundEvent_546_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.OpenMenuForPassword
+struct UInGameMenuBP_C_OpenMenuForPassword_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.test
+struct UInGameMenuBP_C_test_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.EventGameStartsNow
+struct UInGameMenuBP_C_EventGameStartsNow_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.ToggleInGameMenu
+struct UInGameMenuBP_C_ToggleInGameMenu_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.EventMenuYPressed
+struct UInGameMenuBP_C_EventMenuYPressed_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.ToggleShowPassword
+struct UInGameMenuBP_C_ToggleShowPassword_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.EventToggleMuteAll
+struct UInGameMenuBP_C_EventToggleMuteAll_Params
+{
+	bool*                                              active;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.EventGameHasStarted
+struct UInGameMenuBP_C_EventGameHasStarted_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_468_OnButtonHoverEvent__DelegateSignature
+struct UInGameMenuBP_C_BndEvt__Button_YES_K2Node_ComponentBoundEvent_468_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_478_OnButtonHoverEvent__DelegateSignature
+struct UInGameMenuBP_C_BndEvt__Button_YES_K2Node_ComponentBoundEvent_478_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_528_OnButtonHoverEvent__DelegateSignature
+struct UInGameMenuBP_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_528_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
+struct UInGameMenuBP_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature_Params
 {
 };
 

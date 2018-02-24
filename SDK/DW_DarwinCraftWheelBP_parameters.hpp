@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,25 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.InventoryFail
+struct UDarwinCraftWheelBP_C_InventoryFail_Params
+{
+	int                                                InventoryIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinItemTypeEnum                                ItemType;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.ShowTextInfoByIndex
+struct UDarwinCraftWheelBP_C_ShowTextInfoByIndex_Params
+{
+	int                                                InputPin;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.SetCraftingIndex
+struct UDarwinCraftWheelBP_C_SetCraftingIndex_Params
+{
+	int                                                craftingIndex;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.HideTextInfo
 struct UDarwinCraftWheelBP_C_HideTextInfo_Params
@@ -114,6 +133,17 @@ struct UDarwinCraftWheelBP_C_Tick_Params
 {
 	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
 	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.EventCraftingCanceled
+struct UDarwinCraftWheelBP_C_EventCraftingCanceled_Params
+{
+};
+
+// Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.EventQueuedCraftingStart
+struct UDarwinCraftWheelBP_C_EventQueuedCraftingStart_Params
+{
+	EDarwinItemTypeEnum*                               Type;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.ExecuteUbergraph_DarwinCraftWheelBP

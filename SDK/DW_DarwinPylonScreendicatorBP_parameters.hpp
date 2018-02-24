@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -59,7 +59,7 @@ struct UDarwinPylonScreendicatorBP_C_EventLeaveScreen_Params
 struct UDarwinPylonScreendicatorBP_C_EventPylonHarvestStart_Params
 {
 	struct FString*                                    harvesterName;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DarwinPylonScreendicatorBP.DarwinPylonScreendicatorBP_C.EventPylonHarvestEnd

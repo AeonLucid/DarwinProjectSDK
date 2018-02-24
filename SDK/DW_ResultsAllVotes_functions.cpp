@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -61,16 +61,16 @@ void UResultsAllVotes_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 // Parameters:
 // bool*                          bVoteForPlayers                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           TotalVoteCount                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<class UDarwinVoteResultForUMG*>* VoteResults                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UDarwinVoteResultForUMG*>* voteResults                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UResultsAllVotes_C::EventVoteResultsReceived(bool* bVoteForPlayers, int* TotalVoteCount, TArray<class UDarwinVoteResultForUMG*>* VoteResults)
+void UResultsAllVotes_C::EventVoteResultsReceived(bool* bVoteForPlayers, int* TotalVoteCount, TArray<class UDarwinVoteResultForUMG*>* voteResults)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ResultsAllVotes.ResultsAllVotes_C.EventVoteResultsReceived");
 
 	UResultsAllVotes_C_EventVoteResultsReceived_Params params;
 	params.bVoteForPlayers = bVoteForPlayers;
 	params.TotalVoteCount = TotalVoteCount;
-	params.VoteResults = VoteResults;
+	params.voteResults = voteResults;
 
 	auto flags = fn->FunctionFlags;
 

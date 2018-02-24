@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,71 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.Key Binding
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UDarwinCraftWheelCustomization_C::Key_Binding()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.Key Binding");
+
+	UDarwinCraftWheelCustomization_C_Key_Binding_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.IsCraftWheelHoverActive
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinCraftWheelCustomization_C::IsCraftWheelHoverActive()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.IsCraftWheelHoverActive");
+
+	UDarwinCraftWheelCustomization_C_IsCraftWheelHoverActive_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.FindWidgetByItemType
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EDarwinItemTypeEnum            ItemType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Column                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// int                            Row                            (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinCraftWheelCustomization_C::FindWidgetByItemType(EDarwinItemTypeEnum ItemType, int* Column, int* Row)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.FindWidgetByItemType");
+
+	UDarwinCraftWheelCustomization_C_FindWidgetByItemType_Params params;
+	params.ItemType = ItemType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Column != nullptr)
+		*Column = params.Column;
+	if (Row != nullptr)
+		*Row = params.Row;
+}
+
 
 // Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.SetIsEnabledAllWheelElements
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -56,17 +121,17 @@ void UDarwinCraftWheelCustomization_C::SetIsSelectingItem(bool ShouldSelectItem)
 }
 
 
-// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumRow
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumRowIndex
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int                            ColumnIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int                            Max                            (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinCraftWheelCustomization_C::GetMaximumRow(int ColumnIndex, int* Max)
+void UDarwinCraftWheelCustomization_C::GetMaximumRowIndex(int ColumnIndex, int* Max)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumRow");
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumRowIndex");
 
-	UDarwinCraftWheelCustomization_C_GetMaximumRow_Params params;
+	UDarwinCraftWheelCustomization_C_GetMaximumRowIndex_Params params;
 	params.ColumnIndex = ColumnIndex;
 
 	auto flags = fn->FunctionFlags;
@@ -80,17 +145,17 @@ void UDarwinCraftWheelCustomization_C::GetMaximumRow(int ColumnIndex, int* Max)
 }
 
 
-// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumColumn
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumColumnIndex
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int                            RowIndex                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int                            Max                            (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinCraftWheelCustomization_C::GetMaximumColumn(int RowIndex, int* Max)
+void UDarwinCraftWheelCustomization_C::GetMaximumColumnIndex(int RowIndex, int* Max)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumColumn");
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumColumnIndex");
 
-	UDarwinCraftWheelCustomization_C_GetMaximumColumn_Params params;
+	UDarwinCraftWheelCustomization_C_GetMaximumColumnIndex_Params params;
 	params.RowIndex = RowIndex;
 
 	auto flags = fn->FunctionFlags;
@@ -813,12 +878,15 @@ void UDarwinCraftWheelCustomization_C::EventMenuClick()
 
 // Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.EventMenuBack
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bIsEscape                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinCraftWheelCustomization_C::EventMenuBack()
+void UDarwinCraftWheelCustomization_C::EventMenuBack(bool* bIsEscape)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.EventMenuBack");
 
 	UDarwinCraftWheelCustomization_C_EventMenuBack_Params params;
+	params.bIsEscape = bIsEscape;
 
 	auto flags = fn->FunctionFlags;
 
@@ -955,6 +1023,79 @@ void UDarwinCraftWheelCustomization_C::ShowTuto()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.ShowTuto");
 
 	UDarwinCraftWheelCustomization_C_ShowTuto_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.BackOutOfMenu
+// (BlueprintCallable, BlueprintEvent)
+
+void UDarwinCraftWheelCustomization_C::BackOutOfMenu()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.BackOutOfMenu");
+
+	UDarwinCraftWheelCustomization_C_BackOutOfMenu_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.Hide hud Gamepad
+// (BlueprintCallable, BlueprintEvent)
+
+void UDarwinCraftWheelCustomization_C::Hide_hud_Gamepad()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.Hide hud Gamepad");
+
+	UDarwinCraftWheelCustomization_C_Hide_hud_Gamepad_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.EventInputRebindSucceeded
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FName*                  ActionToRebind                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FText*                  NewKeyName                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UDarwinCraftWheelCustomization_C::EventInputRebindSucceeded(struct FName* ActionToRebind, struct FText* NewKeyName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.EventInputRebindSucceeded");
+
+	UDarwinCraftWheelCustomization_C_EventInputRebindSucceeded_Params params;
+	params.ActionToRebind = ActionToRebind;
+	params.NewKeyName = NewKeyName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.EventInputResetToDefault
+// (Event, Public, BlueprintEvent)
+
+void UDarwinCraftWheelCustomization_C::EventInputResetToDefault()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.EventInputResetToDefault");
+
+	UDarwinCraftWheelCustomization_C_EventInputResetToDefault_Params params;
 
 	auto flags = fn->FunctionFlags;
 

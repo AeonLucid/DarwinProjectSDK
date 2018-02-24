@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,6 +27,10 @@ public:
 	}
 
 
+	void STATIC_GetDamgeTypeForText(EDarwinDamageTypeEnum DamageType, class UObject* __WorldContext, struct FText* OutText);
+	void STATIC_GetZoneForText(const struct FString& Zone_Text, class UObject* __WorldContext, struct FText* Out_Text);
+	void STATIC_IsZoneAvailableForAction(class UDarwinUserWidget* SelfRef, EDarwinItemTypeEnum ActionType, const struct FString& zoneName, class UObject* __WorldContext, bool* Available);
+	void STATIC_MenuInputModeChangedForCursor(class UObject* WorldContext, class UObject* __WorldContext, bool* IsUsingKeyboard);
 	void STATIC_ResetSoundToMenuSetting(class UObject* __WorldContext);
 	void STATIC_PlaySpawnSound(class UObject* __WorldContext);
 	void STATIC_SetFontMaterial(class UTextBlock* Text, class UMaterialInstanceConstant* Material, class UObject* __WorldContext);

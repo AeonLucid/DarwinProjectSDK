@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,20 +12,42 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
+// Function PlayerStatusBarBP.PlayerStatusBarBP_C.GetCurrentPlayerIndex
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Index                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UPlayerStatusBarBP_C::GetCurrentPlayerIndex(int* Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBarBP.PlayerStatusBarBP_C.GetCurrentPlayerIndex");
+
+	UPlayerStatusBarBP_C_GetCurrentPlayerIndex_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Index != nullptr)
+		*Index = params.Index;
+}
+
+
 // Function PlayerStatusBarBP.PlayerStatusBarBP_C.EventPlayerJoinedGame
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // struct FString*                playerName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FString*                playerName12                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 
-void UPlayerStatusBarBP_C::EventPlayerJoinedGame(struct FString* playerName, int* PlayerId, struct FString* playerName12)
+void UPlayerStatusBarBP_C::EventPlayerJoinedGame(struct FString* playerName, int* playerID, struct FString* playerName12)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBarBP.PlayerStatusBarBP_C.EventPlayerJoinedGame");
 
 	UPlayerStatusBarBP_C_EventPlayerJoinedGame_Params params;
 	params.playerName = playerName;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.playerName12 = playerName12;
 
 	auto flags = fn->FunctionFlags;
@@ -39,14 +61,14 @@ void UPlayerStatusBarBP_C::EventPlayerJoinedGame(struct FString* playerName, int
 // Function PlayerStatusBarBP.PlayerStatusBarBP_C.EventEnterCamStateCharacter
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBarBP_C::EventEnterCamStateCharacter(int* PlayerId)
+void UPlayerStatusBarBP_C::EventEnterCamStateCharacter(int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBarBP.PlayerStatusBarBP_C.EventEnterCamStateCharacter");
 
 	UPlayerStatusBarBP_C_EventEnterCamStateCharacter_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -59,14 +81,14 @@ void UPlayerStatusBarBP_C::EventEnterCamStateCharacter(int* PlayerId)
 // Function PlayerStatusBarBP.PlayerStatusBarBP_C.EventLeaveCamStateCharacter
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBarBP_C::EventLeaveCamStateCharacter(int* PlayerId)
+void UPlayerStatusBarBP_C::EventLeaveCamStateCharacter(int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBarBP.PlayerStatusBarBP_C.EventLeaveCamStateCharacter");
 
 	UPlayerStatusBarBP_C_EventLeaveCamStateCharacter_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -100,12 +122,15 @@ void UPlayerStatusBarBP_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime
 
 // Function PlayerStatusBarBP.PlayerStatusBarBP_C.OpenChoosePlayerInterface
 // (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FText                   InstructionText                (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UPlayerStatusBarBP_C::OpenChoosePlayerInterface()
+void UPlayerStatusBarBP_C::OpenChoosePlayerInterface(const struct FText& InstructionText)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBarBP.PlayerStatusBarBP_C.OpenChoosePlayerInterface");
 
 	UPlayerStatusBarBP_C_OpenChoosePlayerInterface_Params params;
+	params.InstructionText = InstructionText;
 
 	auto flags = fn->FunctionFlags;
 
@@ -135,14 +160,14 @@ void UPlayerStatusBarBP_C::CloseChoosePlayerInterface()
 // Function PlayerStatusBarBP.PlayerStatusBarBP_C.EventShowDirectorLeft
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FString*                showDirectorName               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FString*                ShowDirectorName               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 
-void UPlayerStatusBarBP_C::EventShowDirectorLeft(struct FString* showDirectorName)
+void UPlayerStatusBarBP_C::EventShowDirectorLeft(struct FString* ShowDirectorName)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBarBP.PlayerStatusBarBP_C.EventShowDirectorLeft");
 
 	UPlayerStatusBarBP_C_EventShowDirectorLeft_Params params;
-	params.showDirectorName = showDirectorName;
+	params.ShowDirectorName = ShowDirectorName;
 
 	auto flags = fn->FunctionFlags;
 
@@ -155,14 +180,14 @@ void UPlayerStatusBarBP_C::EventShowDirectorLeft(struct FString* showDirectorNam
 // Function PlayerStatusBarBP.PlayerStatusBarBP_C.EventShowDirectorJoined
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FString*                showDirectorName               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FString*                ShowDirectorName               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 
-void UPlayerStatusBarBP_C::EventShowDirectorJoined(struct FString* showDirectorName)
+void UPlayerStatusBarBP_C::EventShowDirectorJoined(struct FString* ShowDirectorName)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBarBP.PlayerStatusBarBP_C.EventShowDirectorJoined");
 
 	UPlayerStatusBarBP_C_EventShowDirectorJoined_Params params;
-	params.showDirectorName = showDirectorName;
+	params.ShowDirectorName = ShowDirectorName;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -103,6 +103,23 @@ void UOneZoneAnswer_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 	UOneZoneAnswer_C_Tick_Params params;
 	params.MyGeometry = MyGeometry;
 	params.InDeltaTime = InDeltaTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OneZoneAnswer.OneZoneAnswer_C.ResetToZero
+// (BlueprintCallable, BlueprintEvent)
+
+void UOneZoneAnswer_C::ResetToZero()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OneZoneAnswer.OneZoneAnswer_C.ResetToZero");
+
+	UOneZoneAnswer_C_ResetToZero_Params params;
 
 	auto flags = fn->FunctionFlags;
 

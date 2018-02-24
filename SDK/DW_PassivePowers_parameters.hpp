@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,37 +14,10 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function PassivePowers.PassivePowers_C.EventUpdateArmorLevel
-struct UPassivePowers_C_EventUpdateArmorLevel_Params
-{
-	int*                                               Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PassivePowers.PassivePowers_C.EventUpdateCoatLevel
-struct UPassivePowers_C_EventUpdateCoatLevel_Params
-{
-	EDarwinItemTypeEnum*                               coatType;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int*                                               Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PassivePowers.PassivePowers_C.EventUpdateBootLevel
-struct UPassivePowers_C_EventUpdateBootLevel_Params
-{
-	EDarwinItemTypeEnum*                               bootType;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int*                                               Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PassivePowers.PassivePowers_C.EventUpdateWeaponLevel
-struct UPassivePowers_C_EventUpdateWeaponLevel_Params
+// Function PassivePowers.PassivePowers_C.EventUpdateWeaponType
+struct UPassivePowers_C_EventUpdateWeaponType_Params
 {
 	EDarwinItemTypeEnum*                               weaponType;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int*                                               Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PassivePowers.PassivePowers_C.EventUpdateCoatType
-struct UPassivePowers_C_EventUpdateCoatType_Params
-{
-	EDarwinItemTypeEnum*                               coatType;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int*                                               MaxLevel;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -55,11 +28,38 @@ struct UPassivePowers_C_EventUpdateBootType_Params
 	int*                                               MaxLevel;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function PassivePowers.PassivePowers_C.EventUpdateWeaponType
-struct UPassivePowers_C_EventUpdateWeaponType_Params
+// Function PassivePowers.PassivePowers_C.EventUpdateCoatType
+struct UPassivePowers_C_EventUpdateCoatType_Params
+{
+	EDarwinItemTypeEnum*                               coatType;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               MaxLevel;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PassivePowers.PassivePowers_C.EventUpdateWeaponLevel
+struct UPassivePowers_C_EventUpdateWeaponLevel_Params
 {
 	EDarwinItemTypeEnum*                               weaponType;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int*                                               MaxLevel;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PassivePowers.PassivePowers_C.EventUpdateBootLevel
+struct UPassivePowers_C_EventUpdateBootLevel_Params
+{
+	EDarwinItemTypeEnum*                               bootType;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PassivePowers.PassivePowers_C.EventUpdateCoatLevel
+struct UPassivePowers_C_EventUpdateCoatLevel_Params
+{
+	EDarwinItemTypeEnum*                               coatType;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PassivePowers.PassivePowers_C.EventUpdateArmorLevel
+struct UPassivePowers_C_EventUpdateArmorLevel_Params
+{
+	int*                                               Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PassivePowers.PassivePowers_C.Construct

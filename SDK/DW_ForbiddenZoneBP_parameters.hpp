@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -46,6 +46,11 @@ struct UForbiddenZoneBP_C_EventUpdateNuclearZone_Params
 {
 	struct FString*                                    zoneName;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 	int*                                               timeLeft;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ForbiddenZoneBP.ForbiddenZoneBP_C.EventSuddenDeathStartsNow
+struct UForbiddenZoneBP_C_EventSuddenDeathStartsNow_Params
+{
 };
 
 // Function ForbiddenZoneBP.ForbiddenZoneBP_C.ExecuteUbergraph_ForbiddenZoneBP

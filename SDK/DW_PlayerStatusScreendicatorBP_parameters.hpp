@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,17 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function PlayerStatusScreendicatorBP.PlayerStatusScreendicatorBP_C.EventUpdateScreendication
+struct UPlayerStatusScreendicatorBP_C_EventUpdateScreendication_Params
+{
+	float*                                             Angle;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             arrowScale;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             Distance;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             Opacity;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              onScreen;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              behindCam;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function PlayerStatusScreendicatorBP.PlayerStatusScreendicatorBP_C.EventSetCharacterUniqueID
 struct UPlayerStatusScreendicatorBP_C_EventSetCharacterUniqueID_Params
@@ -54,17 +65,6 @@ struct UPlayerStatusScreendicatorBP_C_EventEnterCamStateCharacter_Params
 // Function PlayerStatusScreendicatorBP.PlayerStatusScreendicatorBP_C.EventLeaveCamStateCharacter
 struct UPlayerStatusScreendicatorBP_C_EventLeaveCamStateCharacter_Params
 {
-};
-
-// Function PlayerStatusScreendicatorBP.PlayerStatusScreendicatorBP_C.EventUpdateScreendication
-struct UPlayerStatusScreendicatorBP_C_EventUpdateScreendication_Params
-{
-	float*                                             Angle;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float*                                             arrowScale;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float*                                             Distance;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float*                                             Opacity;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool*                                              onScreen;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool*                                              behindCam;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PlayerStatusScreendicatorBP.PlayerStatusScreendicatorBP_C.ExecuteUbergraph_PlayerStatusScreendicatorBP

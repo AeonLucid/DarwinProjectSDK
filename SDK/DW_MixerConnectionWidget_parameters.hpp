@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,8 +21,8 @@ struct UMixerConnectionWidget_C_UpdateConnectionStatus_Params
 	struct FString                                     username;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 };
 
-// Function MixerConnectionWidget.MixerConnectionWidget_C.BndEvt__MixerConnectionButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-struct UMixerConnectionWidget_C_BndEvt__MixerConnectionButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params
+// Function MixerConnectionWidget.MixerConnectionWidget_C.EventInputSourceChanged
+struct UMixerConnectionWidget_C_EventInputSourceChanged_Params
 {
 };
 
@@ -33,9 +33,21 @@ struct UMixerConnectionWidget_C_EventMixerConnectionStateChanged_Params
 	struct FString*                                    username;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 };
 
+// Function MixerConnectionWidget.MixerConnectionWidget_C.BndEvt__MixerConnectionButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+struct UMixerConnectionWidget_C_BndEvt__MixerConnectionButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
 // Function MixerConnectionWidget.MixerConnectionWidget_C.Construct
 struct UMixerConnectionWidget_C_Construct_Params
 {
+};
+
+// Function MixerConnectionWidget.MixerConnectionWidget_C.EventTwitchLoginStateChanged
+struct UMixerConnectionWidget_C_EventTwitchLoginStateChanged_Params
+{
+	EDarwinTwitchLoginState*                           State;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FString*                                    DisplayName;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 };
 
 // Function MixerConnectionWidget.MixerConnectionWidget_C.ExecuteUbergraph_MixerConnectionWidget

@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -46,6 +46,11 @@ struct AManHuntGoldLootBP_C_EventActivateOpenParticles_Params
 struct AManHuntGoldLootBP_C_EventUpdateOpenRays_Params
 {
 	float*                                             Intensity;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ManHuntGoldLootBP.ManHuntGoldLootBP_C.EventSetLootableShape
+struct AManHuntGoldLootBP_C_EventSetLootableShape_Params
+{
 };
 
 // Function ManHuntGoldLootBP.ManHuntGoldLootBP_C.ExecuteUbergraph_ManHuntGoldLootBP

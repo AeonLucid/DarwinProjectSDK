@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,6 +66,22 @@ struct UWarningHome_C_BndEvt__Button_GoToURL_K2Node_ComponentBoundEvent_12_OnBut
 // Function WarningHome.WarningHome_C.BndEvt__NextPage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 struct UWarningHome_C_BndEvt__NextPage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params
 {
+};
+
+// Function WarningHome.WarningHome_C.EventMenuDPadRight
+struct UWarningHome_C_EventMenuDPadRight_Params
+{
+};
+
+// Function WarningHome.WarningHome_C.EventMenuDPadLeft
+struct UWarningHome_C_EventMenuDPadLeft_Params
+{
+};
+
+// Function WarningHome.WarningHome_C.Init
+struct UWarningHome_C_Init_Params
+{
+	class UHomeMenu_C*                                 ParentWidget;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function WarningHome.WarningHome_C.ExecuteUbergraph_WarningHome

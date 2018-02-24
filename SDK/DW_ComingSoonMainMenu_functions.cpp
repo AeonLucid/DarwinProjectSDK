@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -85,12 +85,15 @@ void UComingSoonMainMenu_C::Init_Parent_In_Coming_Soon(class UMainMenu_C* Main_M
 
 // Function ComingSoonMainMenu.ComingSoonMainMenu_C.EventMenuBack
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bIsEscape                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UComingSoonMainMenu_C::EventMenuBack()
+void UComingSoonMainMenu_C::EventMenuBack(bool* bIsEscape)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ComingSoonMainMenu.ComingSoonMainMenu_C.EventMenuBack");
 
 	UComingSoonMainMenu_C_EventMenuBack_Params params;
+	params.bIsEscape = bIsEscape;
 
 	auto flags = fn->FunctionFlags;
 

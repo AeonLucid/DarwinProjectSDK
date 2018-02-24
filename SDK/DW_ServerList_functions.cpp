@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -51,17 +51,17 @@ void UServerList_C::UpdateGamepadFocus()
 // Parameters:
 // struct FBlueprintSessionResult Session                        (BlueprintVisible, BlueprintReadOnly, Parm)
 // bool                           GameStarted                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FString                 showDirectorName               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FString                 ShowDirectorName               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 // int                            NumPlayers                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UServerList_C::ShowRoleSelection(const struct FBlueprintSessionResult& Session, bool GameStarted, const struct FString& showDirectorName, int NumPlayers)
+void UServerList_C::ShowRoleSelection(const struct FBlueprintSessionResult& Session, bool GameStarted, const struct FString& ShowDirectorName, int NumPlayers)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ServerList.ServerList_C.ShowRoleSelection");
 
 	UServerList_C_ShowRoleSelection_Params params;
 	params.Session = Session;
 	params.GameStarted = GameStarted;
-	params.showDirectorName = showDirectorName;
+	params.ShowDirectorName = ShowDirectorName;
 	params.NumPlayers = NumPlayers;
 
 	auto flags = fn->FunctionFlags;
@@ -320,12 +320,15 @@ void UServerList_C::EventInputSourceChanged()
 
 // Function ServerList.ServerList_C.EventMenuBack
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bIsEscape                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UServerList_C::EventMenuBack()
+void UServerList_C::EventMenuBack(bool* bIsEscape)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ServerList.ServerList_C.EventMenuBack");
 
 	UServerList_C_EventMenuBack_Params params;
+	params.bIsEscape = bIsEscape;
 
 	auto flags = fn->FunctionFlags;
 

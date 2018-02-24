@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,11 +14,6 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function MyStats.MyStats_C.BndEvt__Button_Next_K2Node_ComponentBoundEvent_265_OnButtonClickedEvent__DelegateSignature
-struct UMyStats_C_BndEvt__Button_Next_K2Node_ComponentBoundEvent_265_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
 // Function MyStats.MyStats_C.Init My stats
 struct UMyStats_C_Init_My_stats_Params
 {
@@ -26,6 +21,11 @@ struct UMyStats_C_Init_My_stats_Params
 
 // Function MyStats.MyStats_C.BndEvt__Button_Prev_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 struct UMyStats_C_BndEvt__Button_Prev_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function MyStats.MyStats_C.BndEvt__Button_Next_K2Node_ComponentBoundEvent_265_OnButtonClickedEvent__DelegateSignature
+struct UMyStats_C_BndEvt__Button_Next_K2Node_ComponentBoundEvent_265_OnButtonClickedEvent__DelegateSignature_Params
 {
 };
 
@@ -47,7 +47,7 @@ struct UMyStats_C_BndEvt__Button_MainMenu_K2Node_ComponentBoundEvent_205_OnButto
 // Function MyStats.MyStats_C.EventPlayerIsWinner
 struct UMyStats_C_EventPlayerIsWinner_Params
 {
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool*                                              bBloodPactActive;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int*                                               allyID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
@@ -69,6 +69,52 @@ struct UMyStats_C_EventInputSourceChanged_Params
 
 // Function MyStats.MyStats_C.EventEndMatchDataReceived
 struct UMyStats_C_EventEndMatchDataReceived_Params
+{
+};
+
+// Function MyStats.MyStats_C.EventMenuClick
+struct UMyStats_C_EventMenuClick_Params
+{
+};
+
+// Function MyStats.MyStats_C.Destruct
+struct UMyStats_C_Destruct_Params
+{
+};
+
+// Function MyStats.MyStats_C.EventMenuBack
+struct UMyStats_C_EventMenuBack_Params
+{
+	bool*                                              bIsEscape;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function MyStats.MyStats_C.EventMenuLeftPagePressed
+struct UMyStats_C_EventMenuLeftPagePressed_Params
+{
+};
+
+// Function MyStats.MyStats_C.OnPreviousAction
+struct UMyStats_C_OnPreviousAction_Params
+{
+};
+
+// Function MyStats.MyStats_C.OnNextAction
+struct UMyStats_C_OnNextAction_Params
+{
+};
+
+// Function MyStats.MyStats_C.EventMenuLeftTriggerPressed
+struct UMyStats_C_EventMenuLeftTriggerPressed_Params
+{
+};
+
+// Function MyStats.MyStats_C.EventMenuRightPagePressed
+struct UMyStats_C_EventMenuRightPagePressed_Params
+{
+};
+
+// Function MyStats.MyStats_C.EventMenuRightTriggerPressed
+struct UMyStats_C_EventMenuRightTriggerPressed_Params
 {
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,11 +14,32 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function MyCareer.MyCareer_C.ClearLeaderBoard
+struct UMyCareer_C_ClearLeaderBoard_Params
+{
+	int                                                Array_Index;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function MyCareer.MyCareer_C.FillLocalPlayerRank
+struct UMyCareer_C_FillLocalPlayerRank_Params
+{
+	struct FString                                     Player_Name;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	float                                              Primary_Value;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Secondary_Value;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Rank;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function MyCareer.MyCareer_C.SetChooseComboBoxOpen
+struct UMyCareer_C_SetChooseComboBoxOpen_Params
+{
+	bool                                               bIsOpen;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function MyCareer.MyCareer_C.GetLeaderboard
 struct UMyCareer_C_GetLeaderboard_Params
 {
 	int                                                StartRank;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FString                                     LeaderboardType;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	int                                                LeaderboardTypeInt;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MyCareer.MyCareer_C.FillLeaderboard
@@ -30,27 +51,11 @@ struct UMyCareer_C_FillLeaderboard_Params
 	float                                              Primary_Value;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	float                                              Secondary_Value;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int                                                Rank;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                OnlineId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MyCareer.MyCareer_C.Init
 struct UMyCareer_C_Init_Params
-{
-};
-
-// Function MyCareer.MyCareer_C.BndEvt__ChooseSortingforranking_K2Node_ComponentBoundEvent_15_OnSelectionChangedEvent__DelegateSignature
-struct UMyCareer_C_BndEvt__ChooseSortingforranking_K2Node_ComponentBoundEvent_15_OnSelectionChangedEvent__DelegateSignature_Params
-{
-	struct FString                                     SelectedItem;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-	TEnumAsByte<ESelectInfo>                           SelectionType;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function MyCareer.MyCareer_C.BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature
-struct UMyCareer_C_BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
-// Function MyCareer.MyCareer_C.BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature
-struct UMyCareer_C_BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature_Params
 {
 };
 
@@ -135,16 +140,7 @@ struct UMyCareer_C_EventInputSourceChanged_Params
 // Function MyCareer.MyCareer_C.EventMenuBack
 struct UMyCareer_C_EventMenuBack_Params
 {
-};
-
-// Function MyCareer.MyCareer_C.EventMenuDown
-struct UMyCareer_C_EventMenuDown_Params
-{
-};
-
-// Function MyCareer.MyCareer_C.EventMenuUp
-struct UMyCareer_C_EventMenuUp_Params
-{
+	bool*                                              bIsEscape;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MyCareer.MyCareer_C.OnClickMyRank
@@ -167,16 +163,6 @@ struct UMyCareer_C_OnClickFirstPage_Params
 {
 };
 
-// Function MyCareer.MyCareer_C.EventMenuLeftPagePressed
-struct UMyCareer_C_EventMenuLeftPagePressed_Params
-{
-};
-
-// Function MyCareer.MyCareer_C.EventMenuRightPagePressed
-struct UMyCareer_C_EventMenuRightPagePressed_Params
-{
-};
-
 // Function MyCareer.MyCareer_C.EventMenuXPressed
 struct UMyCareer_C_EventMenuXPressed_Params
 {
@@ -192,23 +178,6 @@ struct UMyCareer_C_OnClickLastPage_Params
 {
 };
 
-// Function MyCareer.MyCareer_C.EventMenuLeftTriggerPressed
-struct UMyCareer_C_EventMenuLeftTriggerPressed_Params
-{
-};
-
-// Function MyCareer.MyCareer_C.EventMenuRightTriggerPressed
-struct UMyCareer_C_EventMenuRightTriggerPressed_Params
-{
-};
-
-// Function MyCareer.MyCareer_C.EventPlayerProfileStatsReceived
-struct UMyCareer_C_EventPlayerProfileStatsReceived_Params
-{
-	struct FDarwinCareerStats*                         stats;                                                    // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FDarwinProfile*                             Profile;                                                  // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-
 // Function MyCareer.MyCareer_C.EventLeaderboardReceived
 struct UMyCareer_C_EventLeaderboardReceived_Params
 {
@@ -218,6 +187,93 @@ struct UMyCareer_C_EventLeaderboardReceived_Params
 // Function MyCareer.MyCareer_C.FillCareerStats
 struct UMyCareer_C_FillCareerStats_Params
 {
+};
+
+// Function MyCareer.MyCareer_C.PostInit
+struct UMyCareer_C_PostInit_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.Tick
+struct UMyCareer_C_Tick_Params
+{
+	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function MyCareer.MyCareer_C.ShowInmateStats
+struct UMyCareer_C_ShowInmateStats_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.ShowSDStats
+struct UMyCareer_C_ShowSDStats_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.ShowAchievementStats
+struct UMyCareer_C_ShowAchievementStats_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.EventMenuRightPagePressed
+struct UMyCareer_C_EventMenuRightPagePressed_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.EventMenuLeftPagePressed
+struct UMyCareer_C_EventMenuLeftPagePressed_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature
+struct UMyCareer_C_BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature
+struct UMyCareer_C_BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.EventMenuClick
+struct UMyCareer_C_EventMenuClick_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.EventMenuDPadLeft
+struct UMyCareer_C_EventMenuDPadLeft_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.EventMenuRightTriggerPressed
+struct UMyCareer_C_EventMenuRightTriggerPressed_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.EventMenuLeftTriggerPressed
+struct UMyCareer_C_EventMenuLeftTriggerPressed_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.EventMenuDPadRight
+struct UMyCareer_C_EventMenuDPadRight_Params
+{
+};
+
+// Function MyCareer.MyCareer_C.EventPlayerProfileReceived
+struct UMyCareer_C_EventPlayerProfileReceived_Params
+{
+	struct FDarwinPlayerStats*                         stats;                                                    // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FDarwinProfile*                             Profile;                                                  // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+
+// Function MyCareer.MyCareer_C.BndEvt__ChooseSortingText_K2Node_ComponentBoundEvent_44_OnSelectionChangedEvent__DelegateSignature
+struct UMyCareer_C_BndEvt__ChooseSortingText_K2Node_ComponentBoundEvent_44_OnSelectionChangedEvent__DelegateSignature_Params
+{
+	struct FText                                       SelectedItem;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
+	int                                                SelectedIndex;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESelectInfo>                           SelectionType;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MyCareer.MyCareer_C.ExecuteUbergraph_MyCareer

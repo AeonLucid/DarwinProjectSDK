@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.Key Binding
+struct UDarwinShootingWidgetBP_C_Key_Binding_Params
+{
+};
 
 // Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.EventAimCharge
 struct UDarwinShootingWidgetBP_C_EventAimCharge_Params
@@ -120,6 +125,23 @@ struct UDarwinShootingWidgetBP_C_EventAimStart_Params
 
 // Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.RemoveTutoNoArrows
 struct UDarwinShootingWidgetBP_C_RemoveTutoNoArrows_Params
+{
+};
+
+// Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.Construct
+struct UDarwinShootingWidgetBP_C_Construct_Params
+{
+};
+
+// Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.EventInputRebindSucceeded
+struct UDarwinShootingWidgetBP_C_EventInputRebindSucceeded_Params
+{
+	struct FName*                                      ActionToRebind;                                           // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	struct FText*                                      NewKeyName;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+
+// Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.EventInputResetToDefault
+struct UDarwinShootingWidgetBP_C_EventInputResetToDefault_Params
 {
 };
 

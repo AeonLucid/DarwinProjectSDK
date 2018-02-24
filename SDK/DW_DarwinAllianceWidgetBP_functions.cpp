@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -36,15 +36,15 @@ void UDarwinAllianceWidgetBP_C::EventAllianceStart(int* allyID)
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float*                         healthNormalized               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinAllianceWidgetBP_C::EventUpdatePlayerHealth(float* healthNormalized, int* PlayerId)
+void UDarwinAllianceWidgetBP_C::EventUpdatePlayerHealth(float* healthNormalized, int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinAllianceWidgetBP.DarwinAllianceWidgetBP_C.EventUpdatePlayerHealth");
 
 	UDarwinAllianceWidgetBP_C_EventUpdatePlayerHealth_Params params;
 	params.healthNormalized = healthNormalized;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -58,15 +58,15 @@ void UDarwinAllianceWidgetBP_C::EventUpdatePlayerHealth(float* healthNormalized,
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float*                         coldFactorNormalized           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinAllianceWidgetBP_C::EventUpdatePlayerColdFactor(float* coldFactorNormalized, int* PlayerId)
+void UDarwinAllianceWidgetBP_C::EventUpdatePlayerColdFactor(float* coldFactorNormalized, int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinAllianceWidgetBP.DarwinAllianceWidgetBP_C.EventUpdatePlayerColdFactor");
 
 	UDarwinAllianceWidgetBP_C_EventUpdatePlayerColdFactor_Params params;
 	params.coldFactorNormalized = coldFactorNormalized;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -101,15 +101,15 @@ void UDarwinAllianceWidgetBP_C::EventPlayerAllianceBroken(int* firstPlayerID, in
 // Function DarwinAllianceWidgetBP.DarwinAllianceWidgetBP_C.EventPlayerCraftedPower
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // EDarwinItemTypeEnum*           powerType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinAllianceWidgetBP_C::EventPlayerCraftedPower(int* PlayerId, EDarwinItemTypeEnum* powerType)
+void UDarwinAllianceWidgetBP_C::EventPlayerCraftedPower(int* playerID, EDarwinItemTypeEnum* powerType)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinAllianceWidgetBP.DarwinAllianceWidgetBP_C.EventPlayerCraftedPower");
 
 	UDarwinAllianceWidgetBP_C_EventPlayerCraftedPower_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.powerType = powerType;
 
 	auto flags = fn->FunctionFlags;
@@ -217,16 +217,16 @@ void UDarwinAllianceWidgetBP_C::EventDamageNotification(EDarwinDamageTypeEnum* T
 // Function DarwinAllianceWidgetBP.DarwinAllianceWidgetBP_C.EventPlayerIsDead
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           PodiumRank                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool*                          firstDeath                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinAllianceWidgetBP_C::EventPlayerIsDead(int* PlayerId, int* PodiumRank, bool* firstDeath)
+void UDarwinAllianceWidgetBP_C::EventPlayerIsDead(int* playerID, int* PodiumRank, bool* firstDeath)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinAllianceWidgetBP.DarwinAllianceWidgetBP_C.EventPlayerIsDead");
 
 	UDarwinAllianceWidgetBP_C_EventPlayerIsDead_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.PodiumRank = PodiumRank;
 	params.firstDeath = firstDeath;
 

@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -116,6 +116,23 @@ void ADecoyLootBP_C::EventUpdateOpenRays(float* Intensity)
 
 	ADecoyLootBP_C_EventUpdateOpenRays_Params params;
 	params.Intensity = Intensity;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DecoyLootBP.DecoyLootBP_C.EventSetLootableShape
+// (Event, Public, BlueprintEvent)
+
+void ADecoyLootBP_C::EventSetLootableShape()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DecoyLootBP.DecoyLootBP_C.EventSetLootableShape");
+
+	ADecoyLootBP_C_EventSetLootableShape_Params params;
 
 	auto flags = fn->FunctionFlags;
 

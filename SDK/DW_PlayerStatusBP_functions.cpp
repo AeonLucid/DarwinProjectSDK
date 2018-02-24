@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -55,15 +55,13 @@ void UPlayerStatusBP_C::UpdatePodiumRank(int PodiumRank)
 // Function PlayerStatusBP.PlayerStatusBP_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FString                 playerName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 // int                            DarwinUniqueID                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBP_C::Initialize(const struct FString& playerName, int DarwinUniqueID)
+void UPlayerStatusBP_C::Initialize(int DarwinUniqueID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.Initialize");
 
 	UPlayerStatusBP_C_Initialize_Params params;
-	params.playerName = playerName;
 	params.DarwinUniqueID = DarwinUniqueID;
 
 	auto flags = fn->FunctionFlags;
@@ -74,48 +72,19 @@ void UPlayerStatusBP_C::Initialize(const struct FString& playerName, int DarwinU
 }
 
 
-// Function PlayerStatusBP.PlayerStatusBP_C.EventOnMouseHidden
+// Function PlayerStatusBP.PlayerStatusBP_C.EventUpdatePlayerIndex
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBP_C::EventOnMouseHidden()
+void UPlayerStatusBP_C::EventUpdatePlayerIndex(int* playerID, int* playerIndex)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventOnMouseHidden");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventUpdatePlayerIndex");
 
-	UPlayerStatusBP_C_EventOnMouseHidden_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_73_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UPlayerStatusBP_C::BndEvt__Button_0_K2Node_ComponentBoundEvent_73_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_73_OnButtonClickedEvent__DelegateSignature");
-
-	UPlayerStatusBP_C_BndEvt__Button_0_K2Node_ComponentBoundEvent_73_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_110_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UPlayerStatusBP_C::BndEvt__Button_0_K2Node_ComponentBoundEvent_110_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_110_OnButtonHoverEvent__DelegateSignature");
-
-	UPlayerStatusBP_C_BndEvt__Button_0_K2Node_ComponentBoundEvent_110_OnButtonHoverEvent__DelegateSignature_Params params;
+	UPlayerStatusBP_C_EventUpdatePlayerIndex_Params params;
+	params.playerID = playerID;
+	params.playerIndex = playerIndex;
 
 	auto flags = fn->FunctionFlags;
 
@@ -142,39 +111,17 @@ void UPlayerStatusBP_C::BndEvt__Button_0_K2Node_ComponentBoundEvent_125_OnButton
 }
 
 
-// Function PlayerStatusBP.PlayerStatusBP_C.EventUpdatePlayerIndex
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           playerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UPlayerStatusBP_C::EventUpdatePlayerIndex(int* PlayerId, int* playerIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventUpdatePlayerIndex");
-
-	UPlayerStatusBP_C_EventUpdatePlayerIndex_Params params;
-	params.PlayerId = PlayerId;
-	params.playerIndex = playerIndex;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function PlayerStatusBP.PlayerStatusBP_C.EventEnterCamStateCharacter
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBP_C::EventEnterCamStateCharacter(int* PlayerId)
+void UPlayerStatusBP_C::EventEnterCamStateCharacter(int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventEnterCamStateCharacter");
 
 	UPlayerStatusBP_C_EventEnterCamStateCharacter_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -221,14 +168,31 @@ void UPlayerStatusBP_C::MouseOverOFF()
 // Function PlayerStatusBP.PlayerStatusBP_C.EventLeaveCamStateCharacter
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBP_C::EventLeaveCamStateCharacter(int* PlayerId)
+void UPlayerStatusBP_C::EventLeaveCamStateCharacter(int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventLeaveCamStateCharacter");
 
 	UPlayerStatusBP_C_EventLeaveCamStateCharacter_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_110_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UPlayerStatusBP_C::BndEvt__Button_0_K2Node_ComponentBoundEvent_110_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_110_OnButtonHoverEvent__DelegateSignature");
+
+	UPlayerStatusBP_C_BndEvt__Button_0_K2Node_ComponentBoundEvent_110_OnButtonHoverEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -241,18 +205,89 @@ void UPlayerStatusBP_C::EventLeaveCamStateCharacter(int* PlayerId)
 // Function PlayerStatusBP.PlayerStatusBP_C.EventPlayerIsDead
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           PodiumRank                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool*                          firstDeath                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBP_C::EventPlayerIsDead(int* PlayerId, int* PodiumRank, bool* firstDeath)
+void UPlayerStatusBP_C::EventPlayerIsDead(int* playerID, int* PodiumRank, bool* firstDeath)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventPlayerIsDead");
 
 	UPlayerStatusBP_C_EventPlayerIsDead_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.PodiumRank = PodiumRank;
 	params.firstDeath = firstDeath;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerStatusBP.PlayerStatusBP_C.EventPlayerLeftGame
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UPlayerStatusBP_C::EventPlayerLeftGame(int* playerID)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventPlayerLeftGame");
+
+	UPlayerStatusBP_C_EventPlayerLeftGame_Params params;
+	params.playerID = playerID;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_73_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UPlayerStatusBP_C::BndEvt__Button_0_K2Node_ComponentBoundEvent_73_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_73_OnButtonClickedEvent__DelegateSignature");
+
+	UPlayerStatusBP_C_BndEvt__Button_0_K2Node_ComponentBoundEvent_73_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UPlayerStatusBP_C::BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature");
+
+	UPlayerStatusBP_C_BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UPlayerStatusBP_C::BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature");
+
+	UPlayerStatusBP_C_BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -266,15 +301,15 @@ void UPlayerStatusBP_C::EventPlayerIsDead(int* PlayerId, int* PodiumRank, bool* 
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float*                         healthNormalized               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBP_C::EventUpdatePlayerHealth(float* healthNormalized, int* PlayerId)
+void UPlayerStatusBP_C::EventUpdatePlayerHealth(float* healthNormalized, int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventUpdatePlayerHealth");
 
 	UPlayerStatusBP_C_EventUpdatePlayerHealth_Params params;
 	params.healthNormalized = healthNormalized;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -288,32 +323,15 @@ void UPlayerStatusBP_C::EventUpdatePlayerHealth(float* healthNormalized, int* Pl
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float*                         coldFactorNormalized           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBP_C::EventUpdatePlayerColdFactor(float* coldFactorNormalized, int* PlayerId)
+void UPlayerStatusBP_C::EventUpdatePlayerColdFactor(float* coldFactorNormalized, int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventUpdatePlayerColdFactor");
 
 	UPlayerStatusBP_C_EventUpdatePlayerColdFactor_Params params;
 	params.coldFactorNormalized = coldFactorNormalized;
-	params.PlayerId = PlayerId;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UPlayerStatusBP_C::BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature");
-
-	UPlayerStatusBP_C_BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature_Params params;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -367,6 +385,23 @@ void UPlayerStatusBP_C::EventPlayerAllianceFormed(int* firstPlayerID, int* secon
 }
 
 
+// Function PlayerStatusBP.PlayerStatusBP_C.EventOnMouseHidden
+// (Event, Public, BlueprintEvent)
+
+void UPlayerStatusBP_C::EventOnMouseHidden()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventOnMouseHidden");
+
+	UPlayerStatusBP_C_EventOnMouseHidden_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PlayerStatusBP.PlayerStatusBP_C.EventPlayerAllianceBroken
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -380,43 +415,6 @@ void UPlayerStatusBP_C::EventPlayerAllianceBroken(int* firstPlayerID, int* secon
 	UPlayerStatusBP_C_EventPlayerAllianceBroken_Params params;
 	params.firstPlayerID = firstPlayerID;
 	params.secondPlayerID = secondPlayerID;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerStatusBP.PlayerStatusBP_C.EventPlayerLeftGame
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UPlayerStatusBP_C::EventPlayerLeftGame(int* PlayerId)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventPlayerLeftGame");
-
-	UPlayerStatusBP_C_EventPlayerLeftGame_Params params;
-	params.PlayerId = PlayerId;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UPlayerStatusBP_C::BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature");
-
-	UPlayerStatusBP_C_BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -446,15 +444,15 @@ void UPlayerStatusBP_C::Construct()
 // Function PlayerStatusBP.PlayerStatusBP_C.EventUpdatePodiumRank
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           PodiumRank                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBP_C::EventUpdatePodiumRank(int* PlayerId, int* PodiumRank)
+void UPlayerStatusBP_C::EventUpdatePodiumRank(int* playerID, int* PodiumRank)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventUpdatePodiumRank");
 
 	UPlayerStatusBP_C_EventUpdatePodiumRank_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.PodiumRank = PodiumRank;
 
 	auto flags = fn->FunctionFlags;
@@ -469,15 +467,15 @@ void UPlayerStatusBP_C::EventUpdatePodiumRank(int* PlayerId, int* PodiumRank)
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // struct FDarwinColorGradient*   payerGradient                  (BlueprintVisible, BlueprintReadOnly, Parm)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBP_C::EventUpdatePlayerGradient(struct FDarwinColorGradient* payerGradient, int* PlayerId)
+void UPlayerStatusBP_C::EventUpdatePlayerGradient(struct FDarwinColorGradient* payerGradient, int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventUpdatePlayerGradient");
 
 	UPlayerStatusBP_C_EventUpdatePlayerGradient_Params params;
 	params.payerGradient = payerGradient;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -492,14 +490,16 @@ void UPlayerStatusBP_C::EventUpdatePlayerGradient(struct FDarwinColorGradient* p
 // Parameters:
 // int*                           targetCharacterID              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           killerCharacterID              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          isDead                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerStatusBP_C::EventManHuntEnd(int* targetCharacterID, int* killerCharacterID)
+void UPlayerStatusBP_C::EventManHuntEnd(int* targetCharacterID, int* killerCharacterID, bool* isDead)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventManHuntEnd");
 
 	UPlayerStatusBP_C_EventManHuntEnd_Params params;
 	params.targetCharacterID = targetCharacterID;
 	params.killerCharacterID = killerCharacterID;
+	params.isDead = isDead;
 
 	auto flags = fn->FunctionFlags;
 
@@ -522,23 +522,6 @@ void UPlayerStatusBP_C::EventManHuntStart(int* targetCharacterID, struct FVector
 	UPlayerStatusBP_C_EventManHuntStart_Params params;
 	params.targetCharacterID = targetCharacterID;
 	params.Loc = Loc;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UPlayerStatusBP_C::BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature");
-
-	UPlayerStatusBP_C_BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -579,6 +562,23 @@ void UPlayerStatusBP_C::SDPowerSelected(bool FromWorld)
 
 	UPlayerStatusBP_C_SDPowerSelected_Params params;
 	params.FromWorld = FromWorld;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UPlayerStatusBP_C::BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature");
+
+	UPlayerStatusBP_C_BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -692,6 +692,62 @@ void UPlayerStatusBP_C::EventPlayerSpeakEnd(int* UniqueId)
 
 	UPlayerStatusBP_C_EventPlayerSpeakEnd_Params params;
 	params.UniqueId = UniqueId;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerStatusBP.PlayerStatusBP_C.EventInputSourceChanged
+// (Event, Public, BlueprintEvent)
+
+void UPlayerStatusBP_C::EventInputSourceChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventInputSourceChanged");
+
+	UPlayerStatusBP_C_EventInputSourceChanged_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerStatusBP.PlayerStatusBP_C.InputSourceInit
+// (BlueprintCallable, BlueprintEvent)
+
+void UPlayerStatusBP_C::InputSourceInit()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.InputSourceInit");
+
+	UPlayerStatusBP_C_InputSourceInit_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerStatusBP.PlayerStatusBP_C.EventUpdateManHuntInfo
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString*                Time                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// int*                           targetCharacterID              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UPlayerStatusBP_C::EventUpdateManHuntInfo(struct FString* Time, int* targetCharacterID)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerStatusBP.PlayerStatusBP_C.EventUpdateManHuntInfo");
+
+	UPlayerStatusBP_C_EventUpdateManHuntInfo_Params params;
+	params.Time = Time;
+	params.targetCharacterID = targetCharacterID;
 
 	auto flags = fn->FunctionFlags;
 

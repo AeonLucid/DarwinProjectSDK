@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -38,7 +38,7 @@ public:
 	struct FScriptDelegate                             bIsEnabledDelegate;                                       // 0x0030(0x0010) (ZeroConstructor, InstancedReference)
 	struct FText                                       ToolTipText;                                              // 0x0040(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
 	struct FScriptDelegate                             ToolTipTextDelegate;                                      // 0x0058(0x0010) (ZeroConstructor, InstancedReference)
-	class UWidget*                                     ToolTipWidget;                                            // 0x0068(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UWidget*                                     ToolTIpWidget;                                            // 0x0068(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData)
 	struct FScriptDelegate                             ToolTipWidgetDelegate;                                    // 0x0070(0x0010) (ZeroConstructor, InstancedReference)
 	struct FScriptDelegate                             VisibilityDelegate;                                       // 0x0080(0x0010) (ZeroConstructor, InstancedReference)
 	struct FWidgetTransform                            RenderTransform;                                          // 0x0090(0x001C) (Edit, BlueprintVisible, BlueprintReadOnly)
@@ -765,6 +765,7 @@ public:
 
 
 	void SetSelectedOption(const struct FString& Option);
+	bool SetOpen(bool bOpen, bool bFocusOnMenu);
 	bool RemoveOption(const struct FString& Option);
 	void RefreshOptions();
 	void OnSelectionChangedEvent__DelegateSignature(const struct FString& SelectedItem, TEnumAsByte<ESelectInfo> SelectionType);
@@ -778,6 +779,108 @@ public:
 	void ClearSelection();
 	void ClearOptions();
 	void AddOption(const struct FString& Option);
+};
+
+
+// Class UMG.DarwinComboBoxText
+// 0x0AA8 (0x0BA0 - 0x00F8)
+class UDarwinComboBoxText : public UWidget
+{
+public:
+	TArray<struct FText>                               DefaultOptions;                                           // 0x00F8(0x0010) (Edit, ZeroConstructor)
+	int                                                SelectedOption;                                           // 0x0108(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x010C(0x0004) MISSED OFFSET
+	struct FComboBoxStyle                              WidgetStyle;                                              // 0x0110(0x0378) (Edit, BlueprintVisible)
+	struct FTableRowStyle                              ItemStyle;                                                // 0x0488(0x05F8) (Edit, BlueprintVisible)
+	struct FMargin                                     ContentPadding;                                           // 0x0A80(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	float                                              MaxListHeight;                                            // 0x0A90(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               HasDownArrow;                                             // 0x0A94(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               EnableGamepadNavigationMode;                              // 0x0A95(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x2];                                       // 0x0A96(0x0002) MISSED OFFSET
+	struct FSlateFontInfo                              Font;                                                     // 0x0A98(0x0058) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FSlateColor                                 ForegroundColor;                                          // 0x0AF0(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
+	bool                                               bIsFocusable;                                             // 0x0B18(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x7];                                       // 0x0B19(0x0007) MISSED OFFSET
+	struct FScriptDelegate                             OnGenerateWidgetEvent;                                    // 0x0B20(0x0010) (Edit, ZeroConstructor, InstancedReference)
+	struct FScriptMulticastDelegate                    OnSelectionChanged;                                       // 0x0B30(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	struct FScriptMulticastDelegate                    OnOpening;                                                // 0x0B40(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	struct FScriptMulticastDelegate                    OnClosing;                                                // 0x0B50(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	unsigned char                                      UnknownData03[0x40];                                      // 0x0B60(0x0040) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class UMG.DarwinComboBoxText");
+		return ptr;
+	}
+
+
+	void SetSelectedOptionIndex(int Option);
+	void SetSelectedOption(const struct FText& Option);
+	bool SetOpen(bool bOpen, bool bFocusOnMenu);
+	bool RemoveOption(const struct FText& Option);
+	void RefreshOptions();
+	void OnSelectionChangedEvent__DelegateSignature(const struct FText& SelectedItem, int SelectedIndex, TEnumAsByte<ESelectInfo> SelectionType);
+	void OnOpeningEvent__DelegateSignature();
+	void OnClosingEvent__DelegateSignature();
+	bool IsOpen();
+	int GetSelectedOptionIndex();
+	struct FText GetSelectedOption();
+	int GetOptionCount();
+	struct FText GetOptionAtIndex(int Index);
+	int FindOptionIndex(const struct FText& Option);
+	void ClearSelection();
+	void ClearOptions();
+	void AddOption(const struct FText& Option);
+};
+
+
+// Class UMG.RichTextBlockDecorator
+// 0x0008 (0x0030 - 0x0028)
+class URichTextBlockDecorator : public UObject
+{
+public:
+	bool                                               bReveal;                                                  // 0x0028(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0029(0x0003) MISSED OFFSET
+	int                                                RevealedIndex;                                            // 0x002C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class UMG.RichTextBlockDecorator");
+		return ptr;
+	}
+
+};
+
+
+// Class UMG.DarwinRichTextBlockDecorator
+// 0x0010 (0x0040 - 0x0030)
+class UDarwinRichTextBlockDecorator : public URichTextBlockDecorator
+{
+public:
+	TArray<struct FDarwinTextBlockDecoratorType>       Materials;                                                // 0x0030(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class UMG.DarwinRichTextBlockDecorator");
+		return ptr;
+	}
+
+};
+
+
+// Class UMG.DarwinImageTextBlockDecorator
+// 0x0050 (0x0080 - 0x0030)
+class UDarwinImageTextBlockDecorator : public URichTextBlockDecorator
+{
+public:
+	TMap<struct FName, struct FSlateBrush>             Brushes;                                                  // 0x0030(0x0050) (Edit, BlueprintVisible, ZeroConstructor)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class UMG.DarwinImageTextBlockDecorator");
+		return ptr;
+	}
+
 };
 
 
@@ -1592,11 +1695,11 @@ public:
 class URichTextBlock : public UTextLayoutWidget
 {
 public:
-	struct FText                                       Text;                                                     // 0x0120(0x0018) (Edit)
+	struct FText                                       Text;                                                     // 0x0120(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
 	struct FScriptDelegate                             TextDelegate;                                             // 0x0138(0x0010) (ZeroConstructor, InstancedReference)
 	struct FSlateFontInfo                              Font;                                                     // 0x0148(0x0058) (Edit, BlueprintVisible, BlueprintReadOnly)
 	struct FLinearColor                                Color;                                                    // 0x01A0(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	TArray<class URichTextBlockDecorator*>             Decorators;                                               // 0x01B0(0x0010) (Edit, ExportObject, ZeroConstructor)
+	TArray<class UClass*>                              Decorators;                                               // 0x01B0(0x0010) (Edit, ZeroConstructor)
 	unsigned char                                      UnknownData00[0x1D8];                                     // 0x01C0(0x01D8) MISSED OFFSET
 
 	static UClass* StaticClass()
@@ -1605,24 +1708,8 @@ public:
 		return ptr;
 	}
 
-};
 
-
-// Class UMG.RichTextBlockDecorator
-// 0x0008 (0x0030 - 0x0028)
-class URichTextBlockDecorator : public UObject
-{
-public:
-	bool                                               bReveal;                                                  // 0x0028(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0029(0x0003) MISSED OFFSET
-	int                                                RevealedIndex;                                            // 0x002C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class UMG.RichTextBlockDecorator");
-		return ptr;
-	}
-
+	void SetText(const struct FText& Text);
 };
 
 
@@ -1976,7 +2063,7 @@ public:
 	}
 
 
-	void SetValue(float InValue);
+	void SetValue(float InValue, bool bTriggerValueChangedEvent);
 	void SetStepSize(float InValue);
 	void SetSliderHandleColor(const struct FLinearColor& InValue);
 	void SetSliderBarColor(const struct FLinearColor& InValue);
@@ -2383,7 +2470,7 @@ public:
 	TArray<struct FDelegateRuntimeBinding>             Bindings;                                                 // 0x02E8(0x0010) (ZeroConstructor)
 	TArray<class UWidgetAnimation*>                    Animations;                                               // 0x02F8(0x0010) (ExportObject, ZeroConstructor)
 	TArray<struct FName>                               NamedSlots;                                               // 0x0308(0x0010) (ZeroConstructor)
-	unsigned char                                      UnknownData01[0x28];                                      // 0x0318(0x0028) UNKNOWN PROPERTY: SoftObjectProperty UMG.WidgetBlueprintGeneratedClass.TemplateAsset
+	TSoftObjectPtr<class UUserWidget>                  TemplateAsset;                                            // 0x0318(0x0028) (ExportObject, InstancedReference)
 	class UUserWidget*                                 Template;                                                 // 0x0340(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()

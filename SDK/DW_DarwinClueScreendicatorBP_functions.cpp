@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,26 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventSetDarwinPlayerName
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// struct FString*                playerName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-
-void UDarwinClueScreendicatorBP_C::EventSetDarwinPlayerName(struct FString* playerName)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventSetDarwinPlayerName");
-
-	UDarwinClueScreendicatorBP_C_EventSetDarwinPlayerName_Params params;
-	params.playerName = playerName;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventEnterScreen
 // (Event, Public, BlueprintEvent)
@@ -70,13 +50,15 @@ void UDarwinClueScreendicatorBP_C::EventLeaveScreen()
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // int*                           timeLeft                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         outNormalized                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinClueScreendicatorBP_C::EventUpdateClueTime(int* timeLeft)
+void UDarwinClueScreendicatorBP_C::EventUpdateClueTime(int* timeLeft, float* outNormalized)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventUpdateClueTime");
 
 	UDarwinClueScreendicatorBP_C_EventUpdateClueTime_Params params;
 	params.timeLeft = timeLeft;
+	params.outNormalized = outNormalized;
 
 	auto flags = fn->FunctionFlags;
 
@@ -90,16 +72,16 @@ void UDarwinClueScreendicatorBP_C::EventUpdateClueTime(int* timeLeft)
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float*                         Stamina                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float*                         health                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         Health                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // float*                         Cold                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinClueScreendicatorBP_C::EventUpdatePlayerStatus(float* Stamina, float* health, float* Cold)
+void UDarwinClueScreendicatorBP_C::EventUpdatePlayerStatus(float* Stamina, float* Health, float* Cold)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventUpdatePlayerStatus");
 
 	UDarwinClueScreendicatorBP_C_EventUpdatePlayerStatus_Params params;
 	params.Stamina = Stamina;
-	params.health = health;
+	params.Health = Health;
 	params.Cold = Cold;
 
 	auto flags = fn->FunctionFlags;
@@ -144,6 +126,43 @@ void UDarwinClueScreendicatorBP_C::EventLeaveCenter()
 }
 
 
+// Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventClueNinjaVanish
+// (Event, Public, BlueprintEvent)
+
+void UDarwinClueScreendicatorBP_C::EventClueNinjaVanish()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventClueNinjaVanish");
+
+	UDarwinClueScreendicatorBP_C_EventClueNinjaVanish_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventSetCharacterUniqueID
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int*                           UniqueId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinClueScreendicatorBP_C::EventSetCharacterUniqueID(int* UniqueId)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventSetCharacterUniqueID");
+
+	UDarwinClueScreendicatorBP_C_EventSetCharacterUniqueID_Params params;
+	params.UniqueId = UniqueId;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventUpdateScreendication
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -174,14 +193,17 @@ void UDarwinClueScreendicatorBP_C::EventUpdateScreendication(float* Angle, float
 }
 
 
-// Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventClueNinjaVanish
+// Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventSetDarwinPlayerName
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString*                playerName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 
-void UDarwinClueScreendicatorBP_C::EventClueNinjaVanish()
+void UDarwinClueScreendicatorBP_C::EventSetDarwinPlayerName(struct FString* playerName)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventClueNinjaVanish");
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventSetDarwinPlayerName");
 
-	UDarwinClueScreendicatorBP_C_EventClueNinjaVanish_Params params;
+	UDarwinClueScreendicatorBP_C_EventSetDarwinPlayerName_Params params;
+	params.playerName = playerName;
 
 	auto flags = fn->FunctionFlags;
 

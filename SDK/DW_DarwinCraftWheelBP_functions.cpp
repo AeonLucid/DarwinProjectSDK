@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,68 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.InventoryFail
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            InventoryIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinItemTypeEnum            ItemType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinCraftWheelBP_C::InventoryFail(int InventoryIndex, EDarwinItemTypeEnum ItemType)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.InventoryFail");
+
+	UDarwinCraftWheelBP_C_InventoryFail_Params params;
+	params.InventoryIndex = InventoryIndex;
+	params.ItemType = ItemType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.ShowTextInfoByIndex
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            InputPin                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinCraftWheelBP_C::ShowTextInfoByIndex(int InputPin)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.ShowTextInfoByIndex");
+
+	UDarwinCraftWheelBP_C_ShowTextInfoByIndex_Params params;
+	params.InputPin = InputPin;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.SetCraftingIndex
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            craftingIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinCraftWheelBP_C::SetCraftingIndex(int craftingIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.SetCraftingIndex");
+
+	UDarwinCraftWheelBP_C_SetCraftingIndex_Params params;
+	params.craftingIndex = craftingIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.HideTextInfo
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -341,6 +403,43 @@ void UDarwinCraftWheelBP_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTim
 	UDarwinCraftWheelBP_C_Tick_Params params;
 	params.MyGeometry = MyGeometry;
 	params.InDeltaTime = InDeltaTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.EventCraftingCanceled
+// (Event, Public, BlueprintEvent)
+
+void UDarwinCraftWheelBP_C::EventCraftingCanceled()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.EventCraftingCanceled");
+
+	UDarwinCraftWheelBP_C_EventCraftingCanceled_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.EventQueuedCraftingStart
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// EDarwinItemTypeEnum*           Type                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinCraftWheelBP_C::EventQueuedCraftingStart(EDarwinItemTypeEnum* Type)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCraftWheelBP.DarwinCraftWheelBP_C.EventQueuedCraftingStart");
+
+	UDarwinCraftWheelBP_C_EventQueuedCraftingStart_Params params;
+	params.Type = Type;
 
 	auto flags = fn->FunctionFlags;
 

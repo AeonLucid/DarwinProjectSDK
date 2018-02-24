@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,16 +15,16 @@ namespace SDK
 // Function MenuEndRankThumbBloodPact.MenuEndRankThumbBloodPact_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int                            allyID                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int                            Rank                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UMenuEndRankThumbBloodPact_C::Initialize(int PlayerId, int allyID, int Rank)
+void UMenuEndRankThumbBloodPact_C::Initialize(int playerID, int allyID, int Rank)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MenuEndRankThumbBloodPact.MenuEndRankThumbBloodPact_C.Initialize");
 
 	UMenuEndRankThumbBloodPact_C_Initialize_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.allyID = allyID;
 	params.Rank = Rank;
 

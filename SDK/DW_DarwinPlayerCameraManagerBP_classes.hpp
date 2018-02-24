@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass DarwinPlayerCameraManagerBP.DarwinPlayerCameraManagerBP_C
-// 0x0000 (0x2610 - 0x2610)
+// 0x0000 (0x2630 - 0x2630)
 class ADarwinPlayerCameraManagerBP_C : public ADarwinPlayerCameraManager
 {
 public:

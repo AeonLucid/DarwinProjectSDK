@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,43 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function MyNameAndLevel.MyNameAndLevel_C.SetSwitchProfileVisibility
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           visible                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UMyNameAndLevel_C::SetSwitchProfileVisibility(bool visible)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyNameAndLevel.MyNameAndLevel_C.SetSwitchProfileVisibility");
+
+	UMyNameAndLevel_C_SetSwitchProfileVisibility_Params params;
+	params.visible = visible;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyNameAndLevel.MyNameAndLevel_C.UpdatePlayerName
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UMyNameAndLevel_C::UpdatePlayerName()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyNameAndLevel.MyNameAndLevel_C.UpdatePlayerName");
+
+	UMyNameAndLevel_C_UpdatePlayerName_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function MyNameAndLevel.MyNameAndLevel_C.UpdatePartyLeaderUI
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -32,9 +69,9 @@ void UMyNameAndLevel_C::UpdatePartyLeaderUI()
 // Function MyNameAndLevel.MyNameAndLevel_C.EventUpdateLocalAvatarTexture
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UTexture2D**             outLocalAvatarTexture          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture**               outLocalAvatarTexture          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UMyNameAndLevel_C::EventUpdateLocalAvatarTexture(class UTexture2D** outLocalAvatarTexture)
+void UMyNameAndLevel_C::EventUpdateLocalAvatarTexture(class UTexture** outLocalAvatarTexture)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MyNameAndLevel.MyNameAndLevel_C.EventUpdateLocalAvatarTexture");
 
@@ -69,16 +106,16 @@ void UMyNameAndLevel_C::Construct()
 // Function MyNameAndLevel.MyNameAndLevel_C.EventUpdateAvatarTexture
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UTexture2D**             avatar                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture**               avatar                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UMyNameAndLevel_C::EventUpdateAvatarTexture(class UTexture2D** avatar, int* PlayerId)
+void UMyNameAndLevel_C::EventUpdateAvatarTexture(class UTexture** avatar, int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MyNameAndLevel.MyNameAndLevel_C.EventUpdateAvatarTexture");
 
 	UMyNameAndLevel_C_EventUpdateAvatarTexture_Params params;
 	params.avatar = avatar;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -92,9 +129,9 @@ void UMyNameAndLevel_C::EventUpdateAvatarTexture(class UTexture2D** avatar, int*
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
 // struct FText*                  friendName                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UTexture2D**             friendAvatar                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture**               friendAvatar                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UMyNameAndLevel_C::EventFriendPartyJoined(struct FText* friendName, class UTexture2D** friendAvatar)
+void UMyNameAndLevel_C::EventFriendPartyJoined(struct FText* friendName, class UTexture** friendAvatar)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MyNameAndLevel.MyNameAndLevel_C.EventFriendPartyJoined");
 
@@ -127,17 +164,17 @@ void UMyNameAndLevel_C::EventFriendPartyLeft()
 }
 
 
-// Function MyNameAndLevel.MyNameAndLevel_C.EventPlayerProfileStatsReceived
+// Function MyNameAndLevel.MyNameAndLevel_C.EventPlayerProfileReceived
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FDarwinCareerStats*     stats                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FDarwinPlayerStats*     stats                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // struct FDarwinProfile*         Profile                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void UMyNameAndLevel_C::EventPlayerProfileStatsReceived(struct FDarwinCareerStats* stats, struct FDarwinProfile* Profile)
+void UMyNameAndLevel_C::EventPlayerProfileReceived(struct FDarwinPlayerStats* stats, struct FDarwinProfile* Profile)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MyNameAndLevel.MyNameAndLevel_C.EventPlayerProfileStatsReceived");
+	static auto fn = UObject::FindObject<UFunction>("Function MyNameAndLevel.MyNameAndLevel_C.EventPlayerProfileReceived");
 
-	UMyNameAndLevel_C_EventPlayerProfileStatsReceived_Params params;
+	UMyNameAndLevel_C_EventPlayerProfileReceived_Params params;
 	params.stats = stats;
 	params.Profile = Profile;
 

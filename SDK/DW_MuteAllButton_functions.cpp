@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,40 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function MuteAllButton.MuteAllButton_C.MakeBlue
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UMuteAllButton_C::MakeBlue()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MuteAllButton.MuteAllButton_C.MakeBlue");
+
+	UMuteAllButton_C_MakeBlue_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MuteAllButton.MuteAllButton_C.MakeRed
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UMuteAllButton_C::MakeRed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MuteAllButton.MuteAllButton_C.MakeRed");
+
+	UMuteAllButton_C_MakeRed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function MuteAllButton.MuteAllButton_C.SetMute
 // (Public, BlueprintCallable, BlueprintEvent)

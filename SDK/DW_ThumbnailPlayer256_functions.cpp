@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,14 +15,14 @@ namespace SDK
 // Function ThumbnailPlayer256.ThumbnailPlayer256_C.SetColor
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UThumbnailPlayer256_C::SetColor(int PlayerId)
+void UThumbnailPlayer256_C::SetColor(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ThumbnailPlayer256.ThumbnailPlayer256_C.SetColor");
 
 	UThumbnailPlayer256_C_SetColor_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -35,14 +35,14 @@ void UThumbnailPlayer256_C::SetColor(int PlayerId)
 // Function ThumbnailPlayer256.ThumbnailPlayer256_C.SetColorToOriginal
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UThumbnailPlayer256_C::SetColorToOriginal(int PlayerId)
+void UThumbnailPlayer256_C::SetColorToOriginal(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ThumbnailPlayer256.ThumbnailPlayer256_C.SetColorToOriginal");
 
 	UThumbnailPlayer256_C_SetColorToOriginal_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -55,14 +55,14 @@ void UThumbnailPlayer256_C::SetColorToOriginal(int PlayerId)
 // Function ThumbnailPlayer256.ThumbnailPlayer256_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UThumbnailPlayer256_C::Initialize(int PlayerId)
+void UThumbnailPlayer256_C::Initialize(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ThumbnailPlayer256.ThumbnailPlayer256_C.Initialize");
 
 	UThumbnailPlayer256_C_Initialize_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -75,16 +75,16 @@ void UThumbnailPlayer256_C::Initialize(int PlayerId)
 // Function ThumbnailPlayer256.ThumbnailPlayer256_C.EventUpdateAvatarTexture
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UTexture2D**             avatar                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture**               avatar                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UThumbnailPlayer256_C::EventUpdateAvatarTexture(class UTexture2D** avatar, int* PlayerId)
+void UThumbnailPlayer256_C::EventUpdateAvatarTexture(class UTexture** avatar, int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ThumbnailPlayer256.ThumbnailPlayer256_C.EventUpdateAvatarTexture");
 
 	UThumbnailPlayer256_C_EventUpdateAvatarTexture_Params params;
 	params.avatar = avatar;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 

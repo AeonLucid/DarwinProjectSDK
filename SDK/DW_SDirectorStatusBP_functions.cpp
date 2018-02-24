@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -51,14 +51,14 @@ void USDirectorStatusBP_C::Initialize(const struct FString& SD_Name, bool Is_Beh
 }
 
 
-// Function SDirectorStatusBP.SDirectorStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature
+// Function SDirectorStatusBP.SDirectorStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature
 // (BlueprintEvent)
 
-void USDirectorStatusBP_C::BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature()
+void USDirectorStatusBP_C::BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function SDirectorStatusBP.SDirectorStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>("Function SDirectorStatusBP.SDirectorStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature");
 
-	USDirectorStatusBP_C_BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature_Params params;
+	USDirectorStatusBP_C_BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -76,6 +76,23 @@ void USDirectorStatusBP_C::BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_0
 	static auto fn = UObject::FindObject<UFunction>("Function SDirectorStatusBP.SDirectorStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature");
 
 	USDirectorStatusBP_C_BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SDirectorStatusBP.SDirectorStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void USDirectorStatusBP_C::BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SDirectorStatusBP.SDirectorStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature");
+
+	USDirectorStatusBP_C_BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -153,34 +170,17 @@ void USDirectorStatusBP_C::BndEvt__Button_0_K2Node_ComponentBoundEvent_125_OnBut
 }
 
 
-// Function SDirectorStatusBP.SDirectorStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void USDirectorStatusBP_C::BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SDirectorStatusBP.SDirectorStatusBP_C.BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature");
-
-	USDirectorStatusBP_C_BndEvt__Button_Thumbnail_K2Node_ComponentBoundEvent_88_OnButtonHoverEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function SDirectorStatusBP.SDirectorStatusBP_C.EventEnterCamStateCharacter
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void USDirectorStatusBP_C::EventEnterCamStateCharacter(int* PlayerId)
+void USDirectorStatusBP_C::EventEnterCamStateCharacter(int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function SDirectorStatusBP.SDirectorStatusBP_C.EventEnterCamStateCharacter");
 
 	USDirectorStatusBP_C_EventEnterCamStateCharacter_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -227,14 +227,14 @@ void USDirectorStatusBP_C::MouseOverOFF()
 // Function SDirectorStatusBP.SDirectorStatusBP_C.EventLeaveCamStateCharacter
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void USDirectorStatusBP_C::EventLeaveCamStateCharacter(int* PlayerId)
+void USDirectorStatusBP_C::EventLeaveCamStateCharacter(int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function SDirectorStatusBP.SDirectorStatusBP_C.EventLeaveCamStateCharacter");
 
 	USDirectorStatusBP_C_EventLeaveCamStateCharacter_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -274,6 +274,80 @@ void USDirectorStatusBP_C::EventInputRebindSucceeded(struct FName* ActionToRebin
 	USDirectorStatusBP_C_EventInputRebindSucceeded_Params params;
 	params.ActionToRebind = ActionToRebind;
 	params.NewKeyName = NewKeyName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SDirectorStatusBP.SDirectorStatusBP_C.EventPlayerSpeakStart
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int*                           UniqueId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void USDirectorStatusBP_C::EventPlayerSpeakStart(int* UniqueId)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SDirectorStatusBP.SDirectorStatusBP_C.EventPlayerSpeakStart");
+
+	USDirectorStatusBP_C_EventPlayerSpeakStart_Params params;
+	params.UniqueId = UniqueId;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SDirectorStatusBP.SDirectorStatusBP_C.EventPlayerSpeakEnd
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int*                           UniqueId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void USDirectorStatusBP_C::EventPlayerSpeakEnd(int* UniqueId)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SDirectorStatusBP.SDirectorStatusBP_C.EventPlayerSpeakEnd");
+
+	USDirectorStatusBP_C_EventPlayerSpeakEnd_Params params;
+	params.UniqueId = UniqueId;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SDirectorStatusBP.SDirectorStatusBP_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void USDirectorStatusBP_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SDirectorStatusBP.SDirectorStatusBP_C.Construct");
+
+	USDirectorStatusBP_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SDirectorStatusBP.SDirectorStatusBP_C.EventInputSourceChanged
+// (Event, Public, BlueprintEvent)
+
+void USDirectorStatusBP_C::EventInputSourceChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SDirectorStatusBP.SDirectorStatusBP_C.EventInputSourceChanged");
+
+	USDirectorStatusBP_C_EventInputSourceChanged_Params params;
 
 	auto flags = fn->FunctionFlags;
 

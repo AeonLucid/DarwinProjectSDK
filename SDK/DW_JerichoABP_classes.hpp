@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -310,8 +310,8 @@ public:
 	float                                              LeftRightBlendBuffer;                                     // 0xA600(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              FidgetStrength;                                           // 0xA604(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              WantedFidgetStrength;                                     // 0xA608(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               shouldBeInAir;                                            // 0xA60C(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               ShouldBypassIdle;                                         // 0xA60D(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               ShouldBeInAir;                                            // 0xA60C(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               shouldBypassIdle;                                         // 0xA60D(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x2];                                       // 0xA60E(0x0002) MISSED OFFSET
 	float                                              AirZBlendBuffer;                                          // 0xA610(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               FromAxeSwing;                                             // 0xA614(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
@@ -327,16 +327,16 @@ public:
 
 
 	void MakeLeftRightBinary(float InLeftRight, float* OutLeftRight);
-	void SetShouldBypassIdle(bool ShouldBypassIdle, bool* Out);
+	void SetShouldBypassIdle(bool shouldBypassIdle, bool* Out);
 	void ShouldAxeInteruptGotoAir(bool* ShouldGotoAir);
-	void Should180L_tr_idle(bool* Should180L);
+	void Should180L_tr_idle(bool* should180L);
 	void Should180R_tr_idle(bool* Should180R);
-	void SetShouldBeInAir(bool shouldBeInAir, bool* Out);
+	void SetShouldBeInAir(bool ShouldBeInAir, bool* Out);
 	void PrintFloat(float In, bool* Out);
 	void IsVelocityZero(bool* ZeroVel);
 	void ShouldGotoGroundFromLanding(bool* GotoGround);
 	void IsGoingBackward(bool* GoingBackward);
-	void Should180L(bool* Should180L);
+	void should180L(bool* should180L);
 	void Should180R(bool* Should180R);
 	void ControlIsCenter(bool* GoingNowhere);
 	void IsGoingForward(bool* GoingForward);

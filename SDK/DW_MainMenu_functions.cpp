@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -335,23 +335,6 @@ void UMainMenu_C::OnClickedServerList()
 }
 
 
-// Function MainMenu.MainMenu_C.BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UMainMenu_C::BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MainMenu.MainMenu_C.BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature");
-
-	UMainMenu_C_BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function MainMenu.MainMenu_C.OnClickRole
 // (BlueprintCallable, BlueprintEvent)
 
@@ -386,8 +369,130 @@ void UMainMenu_C::OnClickBackChooseRole()
 }
 
 
+// Function MainMenu.MainMenu_C.JoinPrivateMatch
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FString                 PrivateCode                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+
+void UMainMenu_C::JoinPrivateMatch(const struct FString& PrivateCode)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MainMenu.MainMenu_C.JoinPrivateMatch");
+
+	UMainMenu_C_JoinPrivateMatch_Params params;
+	params.PrivateCode = PrivateCode;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MainMenu.MainMenu_C.CreatePrivateMatch
+// (BlueprintCallable, BlueprintEvent)
+
+void UMainMenu_C::CreatePrivateMatch()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MainMenu.MainMenu_C.CreatePrivateMatch");
+
+	UMainMenu_C_CreatePrivateMatch_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MainMenu.MainMenu_C.EventUpdatePlayerName
+// (Event, Public, BlueprintEvent)
+
+void UMainMenu_C::EventUpdatePlayerName()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MainMenu.MainMenu_C.EventUpdatePlayerName");
+
+	UMainMenu_C_EventUpdatePlayerName_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MainMenu.MainMenu_C.BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UMainMenu_C::BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MainMenu.MainMenu_C.BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature");
+
+	UMainMenu_C_BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MainMenu.MainMenu_C.EventShowStartScreen
+// (Event, Public, BlueprintEvent)
+
+void UMainMenu_C::EventShowStartScreen()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MainMenu.MainMenu_C.EventShowStartScreen");
+
+	UMainMenu_C_EventShowStartScreen_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MainMenu.MainMenu_C.OnClickedPrivateMatch
+// (BlueprintCallable, BlueprintEvent)
+
+void UMainMenu_C::OnClickedPrivateMatch()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MainMenu.MainMenu_C.OnClickedPrivateMatch");
+
+	UMainMenu_C_OnClickedPrivateMatch_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MainMenu.MainMenu_C.OnClickedBackPrivateMatch
+// (BlueprintCallable, BlueprintEvent)
+
+void UMainMenu_C::OnClickedBackPrivateMatch()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MainMenu.MainMenu_C.OnClickedBackPrivateMatch");
+
+	UMainMenu_C_OnClickedBackPrivateMatch_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function MainMenu.MainMenu_C.ExecuteUbergraph_MainMenu
-// (HasDefaults)
+// ()
 // Parameters:
 // int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 

@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -74,6 +74,23 @@ void ADarwinCharacterBP_C::EventUpdateStormParticles()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinCharacterBP.DarwinCharacterBP_C.EventUpdateStormParticles");
 
 	ADarwinCharacterBP_C_EventUpdateStormParticles_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinCharacterBP.DarwinCharacterBP_C.EventManHuntActivate
+// (Event, Public, BlueprintEvent)
+
+void ADarwinCharacterBP_C::EventManHuntActivate()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCharacterBP.DarwinCharacterBP_C.EventManHuntActivate");
+
+	ADarwinCharacterBP_C_EventManHuntActivate_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -159,23 +176,6 @@ void ADarwinCharacterBP_C::EventSpawnDeadDecal()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinCharacterBP.DarwinCharacterBP_C.EventSpawnDeadDecal");
 
 	ADarwinCharacterBP_C_EventSpawnDeadDecal_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinCharacterBP.DarwinCharacterBP_C.EventManHuntActivate
-// (Event, Public, BlueprintEvent)
-
-void ADarwinCharacterBP_C::EventManHuntActivate()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinCharacterBP.DarwinCharacterBP_C.EventManHuntActivate");
-
-	ADarwinCharacterBP_C_EventManHuntActivate_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -618,8 +618,9 @@ void ADarwinCharacterBP_C::EventTurnOffArrowFire()
 // EDarwinDamageTypeEnum*         DamageType                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           numberLeftAlive                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool*                          bSuicide                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bIsLocalDeath                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void ADarwinCharacterBP_C::EventKilled(EDarwinDamageTypeEnum* DamageType, int* numberLeftAlive, bool* bSuicide)
+void ADarwinCharacterBP_C::EventKilled(EDarwinDamageTypeEnum* DamageType, int* numberLeftAlive, bool* bSuicide, bool* bIsLocalDeath)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinCharacterBP.DarwinCharacterBP_C.EventKilled");
 
@@ -627,6 +628,7 @@ void ADarwinCharacterBP_C::EventKilled(EDarwinDamageTypeEnum* DamageType, int* n
 	params.DamageType = DamageType;
 	params.numberLeftAlive = numberLeftAlive;
 	params.bSuicide = bSuicide;
+	params.bIsLocalDeath = bIsLocalDeath;
 
 	auto flags = fn->FunctionFlags;
 
@@ -786,6 +788,23 @@ void ADarwinCharacterBP_C::EventBloodPactDeadHeartbeat()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinCharacterBP.DarwinCharacterBP_C.EventBloodPactDeadHeartbeat");
 
 	ADarwinCharacterBP_C_EventBloodPactDeadHeartbeat_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinCharacterBP.DarwinCharacterBP_C.EventBurnt
+// (Event, Public, BlueprintEvent)
+
+void ADarwinCharacterBP_C::EventBurnt()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinCharacterBP.DarwinCharacterBP_C.EventBurnt");
+
+	ADarwinCharacterBP_C_EventBurnt_Params params;
 
 	auto flags = fn->FunctionFlags;
 

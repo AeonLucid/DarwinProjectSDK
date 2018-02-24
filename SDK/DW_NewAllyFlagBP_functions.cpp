@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,9 +32,9 @@ void ANewAllyFlagBP_C::UserConstructionScript()
 // Function NewAllyFlagBP.NewAllyFlagBP_C.EventInitializeAvatarTexture
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UTexture2D**             AvatarTexture                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture**               AvatarTexture                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void ANewAllyFlagBP_C::EventInitializeAvatarTexture(class UTexture2D** AvatarTexture)
+void ANewAllyFlagBP_C::EventInitializeAvatarTexture(class UTexture** AvatarTexture)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function NewAllyFlagBP.NewAllyFlagBP_C.EventInitializeAvatarTexture");
 

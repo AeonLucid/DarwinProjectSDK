@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,16 +16,6 @@ namespace SDK
 
 // Function DarwinGameStateBP.DarwinGameStateBP_C.UserConstructionScript
 struct ADarwinGameStateBP_C_UserConstructionScript_Params
-{
-};
-
-// Function DarwinGameStateBP.DarwinGameStateBP_C.EventCheer
-struct ADarwinGameStateBP_C_EventCheer_Params
-{
-};
-
-// Function DarwinGameStateBP.DarwinGameStateBP_C.EventBoo
-struct ADarwinGameStateBP_C_EventBoo_Params
 {
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -33,7 +33,7 @@ public:
 
 
 	void UserConstructionScript();
-	void EventInitializeAvatarTexture(class UTexture2D** AvatarTexture);
+	void EventInitializeAvatarTexture(class UTexture** AvatarTexture);
 	void EventAllyFlagDestroyed(struct FVector* Loc);
 	void ExecuteUbergraph_NewAllyFlagBP(int EntryPoint);
 };

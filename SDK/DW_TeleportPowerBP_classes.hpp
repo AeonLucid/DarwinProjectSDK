@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass TeleportPowerBP.TeleportPowerBP_C
-// 0x0008 (0x0238 - 0x0230)
+// 0x0008 (0x0240 - 0x0238)
 class UTeleportPowerBP_C : public UDarwinTeleportPower
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0230(0x0008) (Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0238(0x0008) (Transient, DuplicateTransient)
 
 	static UClass* StaticClass()
 	{

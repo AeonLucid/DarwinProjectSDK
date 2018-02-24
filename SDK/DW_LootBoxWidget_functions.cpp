@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -1501,12 +1501,15 @@ void ULootBoxWidget_C::MenuBackPressed()
 
 // Function LootBoxWidget.LootBoxWidget_C.EventMenuBack
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bIsEscape                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void ULootBoxWidget_C::EventMenuBack()
+void ULootBoxWidget_C::EventMenuBack(bool* bIsEscape)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function LootBoxWidget.LootBoxWidget_C.EventMenuBack");
 
 	ULootBoxWidget_C_EventMenuBack_Params params;
+	params.bIsEscape = bIsEscape;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1516,17 +1519,17 @@ void ULootBoxWidget_C::EventMenuBack()
 }
 
 
-// Function LootBoxWidget.LootBoxWidget_C.EventPlayerProfileStatsReceived
+// Function LootBoxWidget.LootBoxWidget_C.EventPlayerProfileReceived
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FDarwinCareerStats*     stats                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FDarwinPlayerStats*     stats                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // struct FDarwinProfile*         Profile                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void ULootBoxWidget_C::EventPlayerProfileStatsReceived(struct FDarwinCareerStats* stats, struct FDarwinProfile* Profile)
+void ULootBoxWidget_C::EventPlayerProfileReceived(struct FDarwinPlayerStats* stats, struct FDarwinProfile* Profile)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function LootBoxWidget.LootBoxWidget_C.EventPlayerProfileStatsReceived");
+	static auto fn = UObject::FindObject<UFunction>("Function LootBoxWidget.LootBoxWidget_C.EventPlayerProfileReceived");
 
-	ULootBoxWidget_C_EventPlayerProfileStatsReceived_Params params;
+	ULootBoxWidget_C_EventPlayerProfileReceived_Params params;
 	params.stats = stats;
 	params.Profile = Profile;
 

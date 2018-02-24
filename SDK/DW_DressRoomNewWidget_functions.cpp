@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,20 +12,107 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
+// Function DressRoomNewWidget.DressRoomNewWidget_C.IsHeadCam
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDressRoomNewWidget_C::IsHeadCam()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.IsHeadCam");
+
+	UDressRoomNewWidget_C_IsHeadCam_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function DressRoomNewWidget.DressRoomNewWidget_C.ChangeSection
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            ChangeDirection                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UDressRoomNewWidget_C::ChangeSection(int ChangeDirection)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.ChangeSection");
+
+	UDressRoomNewWidget_C_ChangeSection_Params params;
+	params.ChangeDirection = ChangeDirection;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DressRoomNewWidget.DressRoomNewWidget_C.SetSelectedItem
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Row                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Column                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UDressRoomNewWidget_C::SetSelectedItem(int Row, int Column)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.SetSelectedItem");
+
+	UDressRoomNewWidget_C_SetSelectedItem_Params params;
+	params.Row = Row;
+	params.Column = Column;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DressRoomNewWidget.DressRoomNewWidget_C.GetNumberOfCategories
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int                            NumberOfCategories             (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UDressRoomNewWidget_C::GetNumberOfCategories(int* NumberOfCategories)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.GetNumberOfCategories");
+
+	UDressRoomNewWidget_C_GetNumberOfCategories_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (NumberOfCategories != nullptr)
+		*NumberOfCategories = params.NumberOfCategories;
+}
+
+
 // Function DressRoomNewWidget.DressRoomNewWidget_C.IsItemVisible
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                           MaterialVisibility             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           MaterialVisibilityForDeveloppers (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           MaterialVisibilityForEnforcers (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           IsVisible                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UDressRoomNewWidget_C::IsItemVisible(bool MaterialVisibility, bool MaterialVisibilityForDeveloppers, bool* IsVisible)
+void UDressRoomNewWidget_C::IsItemVisible(bool MaterialVisibility, bool MaterialVisibilityForDeveloppers, bool MaterialVisibilityForEnforcers, bool* IsVisible)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.IsItemVisible");
 
 	UDressRoomNewWidget_C_IsItemVisible_Params params;
 	params.MaterialVisibility = MaterialVisibility;
 	params.MaterialVisibilityForDeveloppers = MaterialVisibilityForDeveloppers;
+	params.MaterialVisibilityForEnforcers = MaterialVisibilityForEnforcers;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1471,6 +1558,23 @@ void UDressRoomNewWidget_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTim
 }
 
 
+// Function DressRoomNewWidget.DressRoomNewWidget_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UDressRoomNewWidget_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.Construct");
+
+	UDressRoomNewWidget_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function DressRoomNewWidget.DressRoomNewWidget_C.Are you sure ?
 // (BlueprintCallable, BlueprintEvent)
 
@@ -1564,23 +1668,6 @@ void UDressRoomNewWidget_C::BndEvt__Button_NO_K2Node_ComponentBoundEvent_345_OnB
 	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_345_OnButtonClickedEvent__DelegateSignature");
 
 	UDressRoomNewWidget_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_345_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DressRoomNewWidget.DressRoomNewWidget_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UDressRoomNewWidget_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.Construct");
-
-	UDressRoomNewWidget_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -2462,12 +2549,15 @@ void UDressRoomNewWidget_C::EventMenuClick()
 
 // Function DressRoomNewWidget.DressRoomNewWidget_C.EventMenuBack
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bIsEscape                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDressRoomNewWidget_C::EventMenuBack()
+void UDressRoomNewWidget_C::EventMenuBack(bool* bIsEscape)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.EventMenuBack");
 
 	UDressRoomNewWidget_C_EventMenuBack_Params params;
+	params.bIsEscape = bIsEscape;
 
 	auto flags = fn->FunctionFlags;
 
@@ -2511,17 +2601,34 @@ void UDressRoomNewWidget_C::EventInGameMenuAction()
 }
 
 
-// Function DressRoomNewWidget.DressRoomNewWidget_C.EventPlayerProfileStatsReceived
+// Function DressRoomNewWidget.DressRoomNewWidget_C.RefreshCraftableStatus
+// (BlueprintCallable, BlueprintEvent)
+
+void UDressRoomNewWidget_C::RefreshCraftableStatus()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.RefreshCraftableStatus");
+
+	UDressRoomNewWidget_C_RefreshCraftableStatus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DressRoomNewWidget.DressRoomNewWidget_C.EventPlayerProfileReceived
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FDarwinCareerStats*     stats                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FDarwinPlayerStats*     stats                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // struct FDarwinProfile*         Profile                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void UDressRoomNewWidget_C::EventPlayerProfileStatsReceived(struct FDarwinCareerStats* stats, struct FDarwinProfile* Profile)
+void UDressRoomNewWidget_C::EventPlayerProfileReceived(struct FDarwinPlayerStats* stats, struct FDarwinProfile* Profile)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.EventPlayerProfileStatsReceived");
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewWidget.DressRoomNewWidget_C.EventPlayerProfileReceived");
 
-	UDressRoomNewWidget_C_EventPlayerProfileStatsReceived_Params params;
+	UDressRoomNewWidget_C_EventPlayerProfileReceived_Params params;
 	params.stats = stats;
 	params.Profile = Profile;
 

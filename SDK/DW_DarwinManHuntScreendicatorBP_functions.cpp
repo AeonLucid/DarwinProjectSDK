@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,26 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.EventSetDarwinPlayerName
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// struct FString*                playerName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-
-void UDarwinManHuntScreendicatorBP_C::EventSetDarwinPlayerName(struct FString* playerName)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.EventSetDarwinPlayerName");
-
-	UDarwinManHuntScreendicatorBP_C_EventSetDarwinPlayerName_Params params;
-	params.playerName = playerName;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.EventEnterScreen
 // (Event, Public, BlueprintEvent)
@@ -70,16 +50,16 @@ void UDarwinManHuntScreendicatorBP_C::EventLeaveScreen()
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float*                         Stamina                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float*                         health                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         Health                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // float*                         Cold                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinManHuntScreendicatorBP_C::EventUpdatePlayerStatus(float* Stamina, float* health, float* Cold)
+void UDarwinManHuntScreendicatorBP_C::EventUpdatePlayerStatus(float* Stamina, float* Health, float* Cold)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.EventUpdatePlayerStatus");
 
 	UDarwinManHuntScreendicatorBP_C_EventUpdatePlayerStatus_Params params;
 	params.Stamina = Stamina;
-	params.health = health;
+	params.Health = Health;
 	params.Cold = Cold;
 
 	auto flags = fn->FunctionFlags;
@@ -124,6 +104,26 @@ void UDarwinManHuntScreendicatorBP_C::EventLeaveCenter()
 }
 
 
+// Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.EventSetDarwinPlayerName
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString*                playerName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+
+void UDarwinManHuntScreendicatorBP_C::EventSetDarwinPlayerName(struct FString* playerName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.EventSetDarwinPlayerName");
+
+	UDarwinManHuntScreendicatorBP_C_EventSetDarwinPlayerName_Params params;
+	params.playerName = playerName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.EventUpdateScreendication
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -145,6 +145,23 @@ void UDarwinManHuntScreendicatorBP_C::EventUpdateScreendication(float* Angle, fl
 	params.Opacity = Opacity;
 	params.onScreen = onScreen;
 	params.behindCam = behindCam;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UDarwinManHuntScreendicatorBP_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.Construct");
+
+	UDarwinManHuntScreendicatorBP_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

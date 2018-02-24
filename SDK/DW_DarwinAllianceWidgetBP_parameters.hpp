@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -24,14 +24,14 @@ struct UDarwinAllianceWidgetBP_C_EventAllianceStart_Params
 struct UDarwinAllianceWidgetBP_C_EventUpdatePlayerHealth_Params
 {
 	float*                                             healthNormalized;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DarwinAllianceWidgetBP.DarwinAllianceWidgetBP_C.EventUpdatePlayerColdFactor
 struct UDarwinAllianceWidgetBP_C_EventUpdatePlayerColdFactor_Params
 {
 	float*                                             coldFactorNormalized;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DarwinAllianceWidgetBP.DarwinAllianceWidgetBP_C.EventPlayerAllianceBroken
@@ -44,7 +44,7 @@ struct UDarwinAllianceWidgetBP_C_EventPlayerAllianceBroken_Params
 // Function DarwinAllianceWidgetBP.DarwinAllianceWidgetBP_C.EventPlayerCraftedPower
 struct UDarwinAllianceWidgetBP_C_EventPlayerCraftedPower_Params
 {
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	EDarwinItemTypeEnum*                               powerType;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -82,7 +82,7 @@ struct UDarwinAllianceWidgetBP_C_EventDamageNotification_Params
 // Function DarwinAllianceWidgetBP.DarwinAllianceWidgetBP_C.EventPlayerIsDead
 struct UDarwinAllianceWidgetBP_C_EventPlayerIsDead_Params
 {
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int*                                               PodiumRank;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool*                                              firstDeath;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };

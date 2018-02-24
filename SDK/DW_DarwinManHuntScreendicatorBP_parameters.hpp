@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.EventSetDarwinPlayerName
-struct UDarwinManHuntScreendicatorBP_C_EventSetDarwinPlayerName_Params
-{
-	struct FString*                                    playerName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-};
 
 // Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.EventEnterScreen
 struct UDarwinManHuntScreendicatorBP_C_EventEnterScreen_Params
@@ -34,7 +28,7 @@ struct UDarwinManHuntScreendicatorBP_C_EventLeaveScreen_Params
 struct UDarwinManHuntScreendicatorBP_C_EventUpdatePlayerStatus_Params
 {
 	float*                                             Stamina;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float*                                             health;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             Health;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	float*                                             Cold;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -48,6 +42,12 @@ struct UDarwinManHuntScreendicatorBP_C_EventLeaveCenter_Params
 {
 };
 
+// Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.EventSetDarwinPlayerName
+struct UDarwinManHuntScreendicatorBP_C_EventSetDarwinPlayerName_Params
+{
+	struct FString*                                    playerName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+};
+
 // Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.EventUpdateScreendication
 struct UDarwinManHuntScreendicatorBP_C_EventUpdateScreendication_Params
 {
@@ -57,6 +57,11 @@ struct UDarwinManHuntScreendicatorBP_C_EventUpdateScreendication_Params
 	float*                                             Opacity;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool*                                              onScreen;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool*                                              behindCam;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.Construct
+struct UDarwinManHuntScreendicatorBP_C_Construct_Params
+{
 };
 
 // Function DarwinManHuntScreendicatorBP.DarwinManHuntScreendicatorBP_C.ExecuteUbergraph_DarwinManHuntScreendicatorBP

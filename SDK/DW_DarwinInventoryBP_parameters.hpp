@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -110,15 +110,10 @@ struct UDarwinInventoryBP_C_Tick_Params
 	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryUse
-struct UDarwinInventoryBP_C_EventGamepadInventoryUse_Params
-{
-};
-
 // Function DarwinInventoryBP.DarwinInventoryBP_C.EventPlayerCraftedPower
 struct UDarwinInventoryBP_C_EventPlayerCraftedPower_Params
 {
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	EDarwinItemTypeEnum*                               powerType;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -127,6 +122,11 @@ struct UDarwinInventoryBP_C_EventUpdateNumberOfElectronic_Params
 {
 	int*                                               numberOfElectronic;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool*                                              bIncrement;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryUse
+struct UDarwinInventoryBP_C_EventGamepadInventoryUse_Params
+{
 };
 
 // Function DarwinInventoryBP.DarwinInventoryBP_C.ManageGamepad
@@ -155,6 +155,11 @@ struct UDarwinInventoryBP_C_EventGamepadInventoryPressed_Params
 {
 };
 
+// Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryReleased
+struct UDarwinInventoryBP_C_EventGamepadInventoryReleased_Params
+{
+};
+
 // Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryMoveRight
 struct UDarwinInventoryBP_C_EventGamepadInventoryMoveRight_Params
 {
@@ -162,11 +167,6 @@ struct UDarwinInventoryBP_C_EventGamepadInventoryMoveRight_Params
 
 // Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryMoveLeft
 struct UDarwinInventoryBP_C_EventGamepadInventoryMoveLeft_Params
-{
-};
-
-// Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryReleased
-struct UDarwinInventoryBP_C_EventGamepadInventoryReleased_Params
 {
 };
 
@@ -180,6 +180,13 @@ struct UDarwinInventoryBP_C_EventInputRebindSucceeded_Params
 // Function DarwinInventoryBP.DarwinInventoryBP_C.EventInputResetToDefault
 struct UDarwinInventoryBP_C_EventInputResetToDefault_Params
 {
+};
+
+// Function DarwinInventoryBP.DarwinInventoryBP_C.EventManHuntStart
+struct UDarwinInventoryBP_C_EventManHuntStart_Params
+{
+	int*                                               targetCharacterID;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector2D*                                  Loc;                                                      // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
 };
 
 // Function DarwinInventoryBP.DarwinInventoryBP_C.ExecuteUbergraph_DarwinInventoryBP

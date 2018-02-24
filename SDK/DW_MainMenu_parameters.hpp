@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -109,11 +109,6 @@ struct UMainMenu_C_OnClickedServerList_Params
 {
 };
 
-// Function MainMenu.MainMenu_C.BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature
-struct UMainMenu_C_BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
 // Function MainMenu.MainMenu_C.OnClickRole
 struct UMainMenu_C_OnClickRole_Params
 {
@@ -121,6 +116,42 @@ struct UMainMenu_C_OnClickRole_Params
 
 // Function MainMenu.MainMenu_C.OnClickBackChooseRole
 struct UMainMenu_C_OnClickBackChooseRole_Params
+{
+};
+
+// Function MainMenu.MainMenu_C.JoinPrivateMatch
+struct UMainMenu_C_JoinPrivateMatch_Params
+{
+	struct FString                                     PrivateCode;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+};
+
+// Function MainMenu.MainMenu_C.CreatePrivateMatch
+struct UMainMenu_C_CreatePrivateMatch_Params
+{
+};
+
+// Function MainMenu.MainMenu_C.EventUpdatePlayerName
+struct UMainMenu_C_EventUpdatePlayerName_Params
+{
+};
+
+// Function MainMenu.MainMenu_C.BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature
+struct UMainMenu_C_BndEvt__DoorButton_K2Node_ComponentBoundEvent_35_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function MainMenu.MainMenu_C.EventShowStartScreen
+struct UMainMenu_C_EventShowStartScreen_Params
+{
+};
+
+// Function MainMenu.MainMenu_C.OnClickedPrivateMatch
+struct UMainMenu_C_OnClickedPrivateMatch_Params
+{
+};
+
+// Function MainMenu.MainMenu_C.OnClickedBackPrivateMatch
+struct UMainMenu_C_OnClickedBackPrivateMatch_Params
 {
 };
 

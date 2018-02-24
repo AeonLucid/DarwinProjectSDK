@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass DarwinPassiveBonusComponentBP.DarwinPassiveBonusComponentBP_C
-// 0x0008 (0x01D8 - 0x01D0)
+// 0x0008 (0x01E0 - 0x01D8)
 class UDarwinPassiveBonusComponentBP_C : public UDarwinPassiveBonusComponent
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x01D0(0x0008) (Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x01D8(0x0008) (Transient, DuplicateTransient)
 
 	static UClass* StaticClass()
 	{

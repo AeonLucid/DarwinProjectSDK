@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,26 +17,26 @@ namespace SDK
 // Function ThumbnailPlayer256.ThumbnailPlayer256_C.SetColor
 struct UThumbnailPlayer256_C_SetColor_Params
 {
-	int                                                PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ThumbnailPlayer256.ThumbnailPlayer256_C.SetColorToOriginal
 struct UThumbnailPlayer256_C_SetColorToOriginal_Params
 {
-	int                                                PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ThumbnailPlayer256.ThumbnailPlayer256_C.Initialize
 struct UThumbnailPlayer256_C_Initialize_Params
 {
-	int                                                PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ThumbnailPlayer256.ThumbnailPlayer256_C.EventUpdateAvatarTexture
 struct UThumbnailPlayer256_C_EventUpdateAvatarTexture_Params
 {
-	class UTexture2D**                                 avatar;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture**                                   avatar;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ThumbnailPlayer256.ThumbnailPlayer256_C.SetNetAvatar

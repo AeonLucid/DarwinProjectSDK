@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,13 +19,13 @@ namespace SDK
 // struct FString                 ServerName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 // struct FString                 version                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 // struct FString                 MapName                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-// struct FString                 showDirectorName               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FString                 ShowDirectorName               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 // TArray<struct FDarwinPlayerInfo> PlayerInfo                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 // bool                           GameStarted                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FString                 NumSpectators                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 // class UServerList_C*           ServerList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UServerBoxWidgetNew_C::Init(const struct FBlueprintSessionResult& Session, const struct FString& ServerName, const struct FString& version, const struct FString& MapName, const struct FString& showDirectorName, bool GameStarted, const struct FString& NumSpectators, class UServerList_C* ServerList, TArray<struct FDarwinPlayerInfo>* PlayerInfo)
+void UServerBoxWidgetNew_C::Init(const struct FBlueprintSessionResult& Session, const struct FString& ServerName, const struct FString& version, const struct FString& MapName, const struct FString& ShowDirectorName, bool GameStarted, const struct FString& NumSpectators, class UServerList_C* ServerList, TArray<struct FDarwinPlayerInfo>* PlayerInfo)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ServerBoxWidgetNew.ServerBoxWidgetNew_C.Init");
 
@@ -34,7 +34,7 @@ void UServerBoxWidgetNew_C::Init(const struct FBlueprintSessionResult& Session, 
 	params.ServerName = ServerName;
 	params.version = version;
 	params.MapName = MapName;
-	params.showDirectorName = showDirectorName;
+	params.ShowDirectorName = ShowDirectorName;
 	params.GameStarted = GameStarted;
 	params.NumSpectators = NumSpectators;
 	params.ServerList = ServerList;

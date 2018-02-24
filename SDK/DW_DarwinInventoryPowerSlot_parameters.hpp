@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,14 +23,6 @@ struct UDarwinInventoryPowerSlot_C_SetSlotTypeAndIcon_Params
 // Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.ActivatePower
 struct UDarwinInventoryPowerSlot_C_ActivatePower_Params
 {
-};
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventInventorySlotChanged
-struct UDarwinInventoryPowerSlot_C_EventInventorySlotChanged_Params
-{
-	int*                                               Index;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EDarwinItemTypeEnum*                               Type;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int*                                               Number;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventUpdateTeleportCooldown
@@ -57,42 +49,6 @@ struct UDarwinInventoryPowerSlot_C_EventTeleportAimStart_Params
 
 // Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventTeleportAimEnd
 struct UDarwinInventoryPowerSlot_C_EventTeleportAimEnd_Params
-{
-};
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
-struct UDarwinInventoryPowerSlot_C_BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature_Params
-{
-};
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature
-struct UDarwinInventoryPowerSlot_C_BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature_Params
-{
-};
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventOnMouseHidden
-struct UDarwinInventoryPowerSlot_C_EventOnMouseHidden_Params
-{
-};
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
-struct UDarwinInventoryPowerSlot_C_BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventRequestRemapInventoryItem
-struct UDarwinInventoryPowerSlot_C_EventRequestRemapInventoryItem_Params
-{
-	int*                                               Index;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.GamepadHover
-struct UDarwinInventoryPowerSlot_C_GamepadHover_Params
-{
-};
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.GamepadUnHovered
-struct UDarwinInventoryPowerSlot_C_GamepadUnHovered_Params
 {
 };
 
@@ -156,6 +112,14 @@ struct UDarwinInventoryPowerSlot_C_EventPowerAlmostReady_Params
 // Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventTeleportAlmostReady
 struct UDarwinInventoryPowerSlot_C_EventTeleportAlmostReady_Params
 {
+};
+
+// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventInventorySlotChanged
+struct UDarwinInventoryPowerSlot_C_EventInventorySlotChanged_Params
+{
+	int*                                               Index;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinItemTypeEnum*                               Type;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               Number;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.ExecuteUbergraph_DarwinInventoryPowerSlot

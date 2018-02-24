@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,14 +15,14 @@ namespace SDK
 // Function ThumbnailPlayerSD.ThumbnailPlayerSD_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UThumbnailPlayerSD_C::Initialize(int PlayerId)
+void UThumbnailPlayerSD_C::Initialize(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ThumbnailPlayerSD.ThumbnailPlayerSD_C.Initialize");
 
 	UThumbnailPlayerSD_C_Initialize_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -35,16 +35,16 @@ void UThumbnailPlayerSD_C::Initialize(int PlayerId)
 // Function ThumbnailPlayerSD.ThumbnailPlayerSD_C.EventPlayerIsDead
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           PodiumRank                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool*                          firstDeath                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UThumbnailPlayerSD_C::EventPlayerIsDead(int* PlayerId, int* PodiumRank, bool* firstDeath)
+void UThumbnailPlayerSD_C::EventPlayerIsDead(int* playerID, int* PodiumRank, bool* firstDeath)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ThumbnailPlayerSD.ThumbnailPlayerSD_C.EventPlayerIsDead");
 
 	UThumbnailPlayerSD_C_EventPlayerIsDead_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.PodiumRank = PodiumRank;
 	params.firstDeath = firstDeath;
 
@@ -59,16 +59,16 @@ void UThumbnailPlayerSD_C::EventPlayerIsDead(int* PlayerId, int* PodiumRank, boo
 // Function ThumbnailPlayerSD.ThumbnailPlayerSD_C.EventUpdateAvatarTexture
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UTexture2D**             avatar                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture**               avatar                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UThumbnailPlayerSD_C::EventUpdateAvatarTexture(class UTexture2D** avatar, int* PlayerId)
+void UThumbnailPlayerSD_C::EventUpdateAvatarTexture(class UTexture** avatar, int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ThumbnailPlayerSD.ThumbnailPlayerSD_C.EventUpdateAvatarTexture");
 
 	UThumbnailPlayerSD_C_EventUpdateAvatarTexture_Params params;
 	params.avatar = avatar;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -82,15 +82,15 @@ void UThumbnailPlayerSD_C::EventUpdateAvatarTexture(class UTexture2D** avatar, i
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // struct FDarwinColorGradient*   payerGradient                  (BlueprintVisible, BlueprintReadOnly, Parm)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UThumbnailPlayerSD_C::EventUpdatePlayerGradient(struct FDarwinColorGradient* payerGradient, int* PlayerId)
+void UThumbnailPlayerSD_C::EventUpdatePlayerGradient(struct FDarwinColorGradient* payerGradient, int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ThumbnailPlayerSD.ThumbnailPlayerSD_C.EventUpdatePlayerGradient");
 
 	UThumbnailPlayerSD_C_EventUpdatePlayerGradient_Params params;
 	params.payerGradient = payerGradient;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 

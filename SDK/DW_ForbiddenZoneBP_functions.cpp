@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -115,6 +115,23 @@ void UForbiddenZoneBP_C::EventUpdateNuclearZone(struct FString* zoneName, int* t
 	UForbiddenZoneBP_C_EventUpdateNuclearZone_Params params;
 	params.zoneName = zoneName;
 	params.timeLeft = timeLeft;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ForbiddenZoneBP.ForbiddenZoneBP_C.EventSuddenDeathStartsNow
+// (Event, Public, BlueprintEvent)
+
+void UForbiddenZoneBP_C::EventSuddenDeathStartsNow()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ForbiddenZoneBP.ForbiddenZoneBP_C.EventSuddenDeathStartsNow");
+
+	UForbiddenZoneBP_C_EventSuddenDeathStartsNow_Params params;
 
 	auto flags = fn->FunctionFlags;
 

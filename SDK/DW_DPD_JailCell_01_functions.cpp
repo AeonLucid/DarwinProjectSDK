@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,6 +20,23 @@ void ADPD_JailCell_01_C::ReceiveBeginPlay()
 	static auto fn = UObject::FindObject<UFunction>("Function DPD_JailCell_01.DPD_JailCell_01_C.ReceiveBeginPlay");
 
 	ADPD_JailCell_01_C_ReceiveBeginPlay_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DPD_JailCell_01.DPD_JailCell_01_C.SetTitleCam
+// (BlueprintCallable, BlueprintEvent)
+
+void ADPD_JailCell_01_C::SetTitleCam()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DPD_JailCell_01.DPD_JailCell_01_C.SetTitleCam");
+
+	ADPD_JailCell_01_C_SetTitleCam_Params params;
 
 	auto flags = fn->FunctionFlags;
 

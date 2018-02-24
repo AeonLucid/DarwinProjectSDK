@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function HomeMenu.HomeMenu_C.IsHomeMenuActive
+struct UHomeMenu_C_IsHomeMenuActive_Params
+{
+	bool                                               IsActive;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function HomeMenu.HomeMenu_C.OnDevCommunicationReceived
 struct UHomeMenu_C_OnDevCommunicationReceived_Params
@@ -40,6 +46,8 @@ struct UHomeMenu_C_SelectButton_Params
 struct UHomeMenu_C_ChangeButtonFocus_Params
 {
 	TEnumAsByte<EHomeMenu_Tiles>                       NewButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EHomeMenu_Tiles>                       LastButton;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               UnfocusLastButton;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function HomeMenu.HomeMenu_C.UpdateNavigationRequest
@@ -70,6 +78,21 @@ struct UHomeMenu_C_Update_number_of_lootbox_Params
 {
 };
 
+// Function HomeMenu.HomeMenu_C.Construct
+struct UHomeMenu_C_Construct_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature
+struct UHomeMenu_C_BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
+struct UHomeMenu_C_BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
 // Function HomeMenu.HomeMenu_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_138_OnButtonClickedEvent__DelegateSignature
 struct UHomeMenu_C_BndEvt__Button_0_K2Node_ComponentBoundEvent_138_OnButtonClickedEvent__DelegateSignature_Params
 {
@@ -87,18 +110,8 @@ struct UHomeMenu_C_BndEvt__CareerButton_K2Node_ComponentBoundEvent_0_OnButtonCli
 {
 };
 
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
-struct UHomeMenu_C_BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
 // Function HomeMenu.HomeMenu_C.BndEvt__ReportBugBtn_K2Node_ComponentBoundEvent_270_OnButtonClickedEvent__DelegateSignature
 struct UHomeMenu_C_BndEvt__ReportBugBtn_K2Node_ComponentBoundEvent_270_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature
-struct UHomeMenu_C_BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature_Params
 {
 };
 
@@ -119,16 +132,6 @@ struct UHomeMenu_C_BndEvt__Button_Craftwheel_K2Node_ComponentBoundEvent_274_OnBu
 
 // Function HomeMenu.HomeMenu_C.DebugReportBug
 struct UHomeMenu_C_DebugReportBug_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.DebugGiveFeedback
-struct UHomeMenu_C_DebugGiveFeedback_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_39_OnButtonClickedEvent__DelegateSignature
-struct UHomeMenu_C_BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_39_OnButtonClickedEvent__DelegateSignature_Params
 {
 };
 
@@ -182,16 +185,6 @@ struct UHomeMenu_C_BndEvt__LootBoxBtn_K2Node_ComponentBoundEvent_5_OnButtonHover
 {
 };
 
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature
-struct UHomeMenu_C_BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature
-struct UHomeMenu_C_BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature_Params
-{
-};
-
 // Function HomeMenu.HomeMenu_C.BndEvt__Quit_Btn_K2Node_ComponentBoundEvent_8_OnButtonHoverEvent__DelegateSignature
 struct UHomeMenu_C_BndEvt__Quit_Btn_K2Node_ComponentBoundEvent_8_OnButtonHoverEvent__DelegateSignature_Params
 {
@@ -234,11 +227,6 @@ struct UHomeMenu_C_EventInventoryUpdated_Params
 {
 };
 
-// Function HomeMenu.HomeMenu_C.Construct
-struct UHomeMenu_C_Construct_Params
-{
-};
-
 // Function HomeMenu.HomeMenu_C.BndEvt__OptionsBtn_K2Node_ComponentBoundEvent_2803_OnButtonHoverEvent__DelegateSignature
 struct UHomeMenu_C_BndEvt__OptionsBtn_K2Node_ComponentBoundEvent_2803_OnButtonHoverEvent__DelegateSignature_Params
 {
@@ -262,11 +250,6 @@ struct UHomeMenu_C_Init_Parent_in_Home_Menu_Params
 
 // Function HomeMenu.HomeMenu_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_71_OnButtonClickedEvent__DelegateSignature
 struct UHomeMenu_C_BndEvt__Button_0_K2Node_ComponentBoundEvent_71_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature
-struct UHomeMenu_C_BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature_Params
 {
 };
 
@@ -340,16 +323,6 @@ struct UHomeMenu_C_OnUnhoveredLootBoxBtn_Params
 {
 };
 
-// Function HomeMenu.HomeMenu_C.OnHoveredStandaloneBtn
-struct UHomeMenu_C_OnHoveredStandaloneBtn_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.OnUnhoveredStandaloneBtn
-struct UHomeMenu_C_OnUnhoveredStandaloneBtn_Params
-{
-};
-
 // Function HomeMenu.HomeMenu_C.OnHoveredOptionsBtn
 struct UHomeMenu_C_OnHoveredOptionsBtn_Params
 {
@@ -380,11 +353,6 @@ struct UHomeMenu_C_OnClickOptionsBtn_Params
 {
 };
 
-// Function HomeMenu.HomeMenu_C.OnClickStandaloneBtn
-struct UHomeMenu_C_OnClickStandaloneBtn_Params
-{
-};
-
 // Function HomeMenu.HomeMenu_C.OnClicklLootBoxBtn
 struct UHomeMenu_C_OnClicklLootBoxBtn_Params
 {
@@ -410,61 +378,6 @@ struct UHomeMenu_C_OnClickPlayBtn_Params
 {
 };
 
-// Function HomeMenu.HomeMenu_C.OnClickFlibutstierBtn
-struct UHomeMenu_C_OnClickFlibutstierBtn_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.OnHoveredFlibutstierBtn
-struct UHomeMenu_C_OnHoveredFlibutstierBtn_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.OnUnhoveredFlibustierBtn
-struct UHomeMenu_C_OnUnhoveredFlibustierBtn_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.OnHoveredAmazonBtn
-struct UHomeMenu_C_OnHoveredAmazonBtn_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.OnUnhoveredAmazonBtn
-struct UHomeMenu_C_OnUnhoveredAmazonBtn_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.OnClickAmazonBtn
-struct UHomeMenu_C_OnClickAmazonBtn_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_4993_OnButtonClickedEvent__DelegateSignature
-struct UHomeMenu_C_BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_4993_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5197_OnButtonHoverEvent__DelegateSignature
-struct UHomeMenu_C_BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5197_OnButtonHoverEvent__DelegateSignature_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5245_OnButtonHoverEvent__DelegateSignature
-struct UHomeMenu_C_BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5245_OnButtonHoverEvent__DelegateSignature_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5373_OnButtonHoverEvent__DelegateSignature
-struct UHomeMenu_C_BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5373_OnButtonHoverEvent__DelegateSignature_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5383_OnButtonHoverEvent__DelegateSignature
-struct UHomeMenu_C_BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5383_OnButtonHoverEvent__DelegateSignature_Params
-{
-};
-
 // Function HomeMenu.HomeMenu_C.EventMenuClick
 struct UHomeMenu_C_EventMenuClick_Params
 {
@@ -483,6 +396,7 @@ struct UHomeMenu_C_MenuBackPressed_Params
 // Function HomeMenu.HomeMenu_C.EventMenuBack
 struct UHomeMenu_C_EventMenuBack_Params
 {
+	bool*                                              bIsEscape;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function HomeMenu.HomeMenu_C.BndEvt__Button_ServerList_K2Node_ComponentBoundEvent_454_OnButtonClickedEvent__DelegateSignature
@@ -537,11 +451,6 @@ struct UHomeMenu_C_BndEvt__RedditBtn_K2Node_ComponentBoundEvent_2665_OnButtonCli
 
 // Function HomeMenu.HomeMenu_C.BndEvt__DiscrodBtn_K2Node_ComponentBoundEvent_2682_OnButtonClickedEvent__DelegateSignature
 struct UHomeMenu_C_BndEvt__DiscrodBtn_K2Node_ComponentBoundEvent_2682_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
-// Function HomeMenu.HomeMenu_C.JoinAmazonServer
-struct UHomeMenu_C_JoinAmazonServer_Params
 {
 };
 
@@ -605,11 +514,89 @@ struct UHomeMenu_C_BndEvt__Button_Career_K2Node_ComponentBoundEvent_3690_OnButto
 {
 };
 
-// Function HomeMenu.HomeMenu_C.EventPlayerProfileStatsReceived
-struct UHomeMenu_C_EventPlayerProfileStatsReceived_Params
+// Function HomeMenu.HomeMenu_C.WelcomeMenuClosed
+struct UHomeMenu_C_WelcomeMenuClosed_Params
 {
-	struct FDarwinCareerStats*                         stats;                                                    // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FDarwinProfile*                             Profile;                                                  // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+
+// Function HomeMenu.HomeMenu_C.OnConfirmExitAction
+struct UHomeMenu_C_OnConfirmExitAction_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.OnExitCancelledAction
+struct UHomeMenu_C_OnExitCancelledAction_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.EventPlayerProfileReceived_2
+struct UHomeMenu_C_EventPlayerProfileReceived_2_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.Show Gamepad Stuff
+struct UHomeMenu_C_Show_Gamepad_Stuff_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.Hide Gamepad Stuff
+struct UHomeMenu_C_Hide_Gamepad_Stuff_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.EventMenuYPressed
+struct UHomeMenu_C_EventMenuYPressed_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.OnHoveredPrivateMatch
+struct UHomeMenu_C_OnHoveredPrivateMatch_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.OnUnhoveredPrivateMatch
+struct UHomeMenu_C_OnUnhoveredPrivateMatch_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.OnClicPrivateMatch
+struct UHomeMenu_C_OnClicPrivateMatch_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_520_OnButtonClickedEvent__DelegateSignature
+struct UHomeMenu_C_BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_520_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_688_OnButtonHoverEvent__DelegateSignature
+struct UHomeMenu_C_BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_688_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_788_OnButtonHoverEvent__DelegateSignature
+struct UHomeMenu_C_BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_788_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_22_OnButtonHoverEvent__DelegateSignature
+struct UHomeMenu_C_BndEvt__Button_YES_K2Node_ComponentBoundEvent_22_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_32_OnButtonHoverEvent__DelegateSignature
+struct UHomeMenu_C_BndEvt__Button_YES_K2Node_ComponentBoundEvent_32_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_89_OnButtonHoverEvent__DelegateSignature
+struct UHomeMenu_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_89_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function HomeMenu.HomeMenu_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_149_OnButtonHoverEvent__DelegateSignature
+struct UHomeMenu_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_149_OnButtonHoverEvent__DelegateSignature_Params
+{
 };
 
 // Function HomeMenu.HomeMenu_C.ExecuteUbergraph_HomeMenu

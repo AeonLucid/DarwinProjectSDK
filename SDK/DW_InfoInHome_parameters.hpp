@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -65,6 +65,42 @@ struct UInfoInHome_C_BndEvt__PreviousPage_K2Node_ComponentBoundEvent_1_OnButtonC
 
 // Function InfoInHome.InfoInHome_C.BndEvt__NextPage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 struct UInfoInHome_C_BndEvt__NextPage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function InfoInHome.InfoInHome_C.EventMenuRightPagePressed
+struct UInfoInHome_C_EventMenuRightPagePressed_Params
+{
+};
+
+// Function InfoInHome.InfoInHome_C.EventMenuRightTriggerPressed
+struct UInfoInHome_C_EventMenuRightTriggerPressed_Params
+{
+};
+
+// Function InfoInHome.InfoInHome_C.EventMenuLeftPagePressed
+struct UInfoInHome_C_EventMenuLeftPagePressed_Params
+{
+};
+
+// Function InfoInHome.InfoInHome_C.EventMenuLeftTriggerPressed
+struct UInfoInHome_C_EventMenuLeftTriggerPressed_Params
+{
+};
+
+// Function InfoInHome.InfoInHome_C.Init
+struct UInfoInHome_C_Init_Params
+{
+	class UHomeMenu_C*                                 ParentWidget;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function InfoInHome.InfoInHome_C.Construct
+struct UInfoInHome_C_Construct_Params
+{
+};
+
+// Function InfoInHome.InfoInHome_C.EventInputSourceChanged
+struct UInfoInHome_C_EventInputSourceChanged_Params
 {
 };
 

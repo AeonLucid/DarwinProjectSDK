@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function DeathNotification.DeathNotification_C.IsVoteUnderway
+struct UDeathNotification_C_IsVoteUnderway_Params
+{
+	bool                                               VoteUnderway;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function DeathNotification.DeathNotification_C.EventDeathNotification
 struct UDeathNotification_C_EventDeathNotification_Params
@@ -27,7 +33,7 @@ struct UDeathNotification_C_EventDeathNotification_Params
 // Function DeathNotification.DeathNotification_C.EventPlayerIsWinner
 struct UDeathNotification_C_EventPlayerIsWinner_Params
 {
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool*                                              bBloodPactActive;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int*                                               allyID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };

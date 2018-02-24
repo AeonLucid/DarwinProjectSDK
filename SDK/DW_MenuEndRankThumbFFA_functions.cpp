@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,14 +15,14 @@ namespace SDK
 // Function MenuEndRankThumbFFA.MenuEndRankThumbFFA_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UMenuEndRankThumbFFA_C::Initialize(int PlayerId)
+void UMenuEndRankThumbFFA_C::Initialize(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MenuEndRankThumbFFA.MenuEndRankThumbFFA_C.Initialize");
 
 	UMenuEndRankThumbFFA_C_Initialize_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 

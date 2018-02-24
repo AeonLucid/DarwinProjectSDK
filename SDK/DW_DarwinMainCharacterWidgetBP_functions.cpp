@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -48,12 +48,17 @@ void UDarwinMainCharacterWidgetBP_C::EventCannotCraftInLobby()
 
 // Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventCannotUseItemInLobby
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// int*                           Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinItemTypeEnum*           Type                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinMainCharacterWidgetBP_C::EventCannotUseItemInLobby()
+void UDarwinMainCharacterWidgetBP_C::EventCannotUseItemInLobby(int* Index, EDarwinItemTypeEnum* Type)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventCannotUseItemInLobby");
 
 	UDarwinMainCharacterWidgetBP_C_EventCannotUseItemInLobby_Params params;
+	params.Index = Index;
+	params.Type = Type;
 
 	auto flags = fn->FunctionFlags;
 
@@ -80,14 +85,31 @@ void UDarwinMainCharacterWidgetBP_C::EventCannotSendAllyFlagInLobby()
 }
 
 
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.ShowMainWidget
-// (BlueprintCallable, BlueprintEvent)
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirEnd
+// (Event, Public, BlueprintEvent)
 
-void UDarwinMainCharacterWidgetBP_C::ShowMainWidget()
+void UDarwinMainCharacterWidgetBP_C::EventInAirEnd()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.ShowMainWidget");
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirEnd");
 
-	UDarwinMainCharacterWidgetBP_C_ShowMainWidget_Params params;
+	UDarwinMainCharacterWidgetBP_C_EventInAirEnd_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirStart
+// (Event, Public, BlueprintEvent)
+
+void UDarwinMainCharacterWidgetBP_C::EventInAirStart()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirStart");
+
+	UDarwinMainCharacterWidgetBP_C_EventInAirStart_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -116,12 +138,17 @@ void UDarwinMainCharacterWidgetBP_C::Next_on_End_Game()
 
 // Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInventoryActionFail
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// int*                           Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinItemTypeEnum*           ItemType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinMainCharacterWidgetBP_C::EventInventoryActionFail()
+void UDarwinMainCharacterWidgetBP_C::EventInventoryActionFail(int* Index, EDarwinItemTypeEnum* ItemType)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInventoryActionFail");
 
 	UDarwinMainCharacterWidgetBP_C_EventInventoryActionFail_Params params;
+	params.Index = Index;
+	params.ItemType = ItemType;
 
 	auto flags = fn->FunctionFlags;
 
@@ -156,23 +183,6 @@ void UDarwinMainCharacterWidgetBP_C::EventHitAlly()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventHitAlly");
 
 	UDarwinMainCharacterWidgetBP_C_EventHitAlly_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventSuddenDeathStartsNow
-// (Event, Public, BlueprintEvent)
-
-void UDarwinMainCharacterWidgetBP_C::EventSuddenDeathStartsNow()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventSuddenDeathStartsNow");
-
-	UDarwinMainCharacterWidgetBP_C_EventSuddenDeathStartsNow_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -287,48 +297,31 @@ void UDarwinMainCharacterWidgetBP_C::Tick(struct FGeometry* MyGeometry, float* I
 }
 
 
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.HideMainWidget
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventGameStartsNow
+// (Event, Public, BlueprintEvent)
+
+void UDarwinMainCharacterWidgetBP_C::EventGameStartsNow()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventGameStartsNow");
+
+	UDarwinMainCharacterWidgetBP_C_EventGameStartsNow_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.ShowMainWidget
 // (BlueprintCallable, BlueprintEvent)
 
-void UDarwinMainCharacterWidgetBP_C::HideMainWidget()
+void UDarwinMainCharacterWidgetBP_C::ShowMainWidget()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.HideMainWidget");
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.ShowMainWidget");
 
-	UDarwinMainCharacterWidgetBP_C_HideMainWidget_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirEnd
-// (Event, Public, BlueprintEvent)
-
-void UDarwinMainCharacterWidgetBP_C::EventInAirEnd()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirEnd");
-
-	UDarwinMainCharacterWidgetBP_C_EventInAirEnd_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirStart
-// (Event, Public, BlueprintEvent)
-
-void UDarwinMainCharacterWidgetBP_C::EventInAirStart()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventInAirStart");
-
-	UDarwinMainCharacterWidgetBP_C_EventInAirStart_Params params;
+	UDarwinMainCharacterWidgetBP_C_ShowMainWidget_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -360,72 +353,38 @@ void UDarwinMainCharacterWidgetBP_C::EventIsDead(int* PodiumRank, bool* firstDea
 }
 
 
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.HideMainWidget
+// (BlueprintCallable, BlueprintEvent)
+
+void UDarwinMainCharacterWidgetBP_C::HideMainWidget()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.HideMainWidget");
+
+	UDarwinMainCharacterWidgetBP_C_HideMainWidget_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventPlayerIsWinner
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool*                          bBloodPactActive               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           allyID                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinMainCharacterWidgetBP_C::EventPlayerIsWinner(int* PlayerId, bool* bBloodPactActive, int* allyID)
+void UDarwinMainCharacterWidgetBP_C::EventPlayerIsWinner(int* playerID, bool* bBloodPactActive, int* allyID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventPlayerIsWinner");
 
 	UDarwinMainCharacterWidgetBP_C_EventPlayerIsWinner_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.bBloodPactActive = bBloodPactActive;
 	params.allyID = allyID;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimEnd
-// (Event, Public, BlueprintEvent)
-
-void UDarwinMainCharacterWidgetBP_C::EventTeleportAimEnd()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimEnd");
-
-	UDarwinMainCharacterWidgetBP_C_EventTeleportAimEnd_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimStart
-// (Event, Public, BlueprintEvent)
-
-void UDarwinMainCharacterWidgetBP_C::EventTeleportAimStart()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimStart");
-
-	UDarwinMainCharacterWidgetBP_C_EventTeleportAimStart_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventGameStartsNow
-// (Event, Public, BlueprintEvent)
-
-void UDarwinMainCharacterWidgetBP_C::EventGameStartsNow()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventGameStartsNow");
-
-	UDarwinMainCharacterWidgetBP_C_EventGameStartsNow_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -454,6 +413,100 @@ void UDarwinMainCharacterWidgetBP_C::EventDeathNotification(EDarwinDamageTypeEnu
 	params.attackerUniqueID = attackerUniqueID;
 	params.victimUniqueID = victimUniqueID;
 	params.bFirstBlood = bFirstBlood;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimEnd
+// (Event, Public, BlueprintEvent)
+
+void UDarwinMainCharacterWidgetBP_C::EventTeleportAimEnd()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimEnd");
+
+	UDarwinMainCharacterWidgetBP_C_EventTeleportAimEnd_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UDarwinMainCharacterWidgetBP_C::Destruct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.Destruct");
+
+	UDarwinMainCharacterWidgetBP_C_Destruct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventDamageNotification
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// EDarwinDamageTypeEnum*         Type                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         Damage                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           attackerUniqueID               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           victimUniqueID                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinMainCharacterWidgetBP_C::EventDamageNotification(EDarwinDamageTypeEnum* Type, float* Damage, int* attackerUniqueID, int* victimUniqueID)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventDamageNotification");
+
+	UDarwinMainCharacterWidgetBP_C_EventDamageNotification_Params params;
+	params.Type = Type;
+	params.Damage = Damage;
+	params.attackerUniqueID = attackerUniqueID;
+	params.victimUniqueID = victimUniqueID;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimStart
+// (Event, Public, BlueprintEvent)
+
+void UDarwinMainCharacterWidgetBP_C::EventTeleportAimStart()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventTeleportAimStart");
+
+	UDarwinMainCharacterWidgetBP_C_EventTeleportAimStart_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventPrivateMatchNeedsMorePlayers
+// (Event, Public, BlueprintEvent)
+
+void UDarwinMainCharacterWidgetBP_C::EventPrivateMatchNeedsMorePlayers()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinMainCharacterWidgetBP.DarwinMainCharacterWidgetBP_C.EventPrivateMatchNeedsMorePlayers");
+
+	UDarwinMainCharacterWidgetBP_C_EventPrivateMatchNeedsMorePlayers_Params params;
 
 	auto flags = fn->FunctionFlags;
 

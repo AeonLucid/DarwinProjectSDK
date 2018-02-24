@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -116,6 +116,23 @@ void AManHuntGoldLootBP_C::EventUpdateOpenRays(float* Intensity)
 
 	AManHuntGoldLootBP_C_EventUpdateOpenRays_Params params;
 	params.Intensity = Intensity;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ManHuntGoldLootBP.ManHuntGoldLootBP_C.EventSetLootableShape
+// (Event, Public, BlueprintEvent)
+
+void AManHuntGoldLootBP_C::EventSetLootableShape()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ManHuntGoldLootBP.ManHuntGoldLootBP_C.EventSetLootableShape");
+
+	AManHuntGoldLootBP_C_EventSetLootableShape_Params params;
 
 	auto flags = fn->FunctionFlags;
 

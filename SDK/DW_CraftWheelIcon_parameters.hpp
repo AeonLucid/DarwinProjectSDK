@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,14 +14,10 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function CraftWheelIcon.CraftWheelIcon_C.EventHover
-struct UCraftWheelIcon_C_EventHover_Params
+// Function CraftWheelIcon.CraftWheelIcon_C.SetIsInCrafting
+struct UCraftWheelIcon_C_SetIsInCrafting_Params
 {
-};
-
-// Function CraftWheelIcon.CraftWheelIcon_C.EventUnHover
-struct UCraftWheelIcon_C_EventUnHover_Params
-{
+	bool                                               bIsInCrafting;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function CraftWheelIcon.CraftWheelIcon_C.EventUpdateCraftableItemIcons
@@ -55,16 +51,6 @@ struct UCraftWheelIcon_C_EventGameHasStarted_Params
 {
 };
 
-// Function CraftWheelIcon.CraftWheelIcon_C.SetWillBeReplaced
-struct UCraftWheelIcon_C_SetWillBeReplaced_Params
-{
-};
-
-// Function CraftWheelIcon.CraftWheelIcon_C.SetOriginalIcon
-struct UCraftWheelIcon_C_SetOriginalIcon_Params
-{
-};
-
 // Function CraftWheelIcon.CraftWheelIcon_C.WasSwaped
 struct UCraftWheelIcon_C_WasSwaped_Params
 {
@@ -82,6 +68,26 @@ struct UCraftWheelIcon_C_MyTick_Params
 
 // Function CraftWheelIcon.CraftWheelIcon_C.Construct
 struct UCraftWheelIcon_C_Construct_Params
+{
+};
+
+// Function CraftWheelIcon.CraftWheelIcon_C.SetOriginalIcon
+struct UCraftWheelIcon_C_SetOriginalIcon_Params
+{
+};
+
+// Function CraftWheelIcon.CraftWheelIcon_C.SetWillBeReplaced
+struct UCraftWheelIcon_C_SetWillBeReplaced_Params
+{
+};
+
+// Function CraftWheelIcon.CraftWheelIcon_C.EventHover
+struct UCraftWheelIcon_C_EventHover_Params
+{
+};
+
+// Function CraftWheelIcon.CraftWheelIcon_C.EventUnHover
+struct UCraftWheelIcon_C_EventUnHover_Params
 {
 };
 

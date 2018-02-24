@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,191 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.ShowOnlyThisScrollbox
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UWidget*                 ScrollBox                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UOptionsMenuwidget_C::ShowOnlyThisScrollbox(class UWidget* ScrollBox)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.ShowOnlyThisScrollbox");
+
+	UOptionsMenuwidget_C_ShowOnlyThisScrollbox_Params params;
+	params.ScrollBox = ScrollBox;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.RefreshCategoryGamepadFocus
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuwidget_C::RefreshCategoryGamepadFocus()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.RefreshCategoryGamepadFocus");
+
+	UOptionsMenuwidget_C_RefreshCategoryGamepadFocus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.SetOptionMenuGamepadActive
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bActive                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UOptionsMenuwidget_C::SetOptionMenuGamepadActive(bool bActive)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.SetOptionMenuGamepadActive");
+
+	UOptionsMenuwidget_C_SetOptionMenuGamepadActive_Params params;
+	params.bActive = bActive;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.PageNavigation
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            side                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UOptionsMenuwidget_C::PageNavigation(int side)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.PageNavigation");
+
+	UOptionsMenuwidget_C_PageNavigation_Params params;
+	params.side = side;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.InputStyleChangedCallback
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           IsGamepad                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UOptionsMenuwidget_C::InputStyleChangedCallback(bool IsGamepad)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.InputStyleChangedCallback");
+
+	UOptionsMenuwidget_C_InputStyleChangedCallback_Params params;
+	params.IsGamepad = IsGamepad;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.MakeInteractiveWidgetList
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuwidget_C::MakeInteractiveWidgetList()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.MakeInteractiveWidgetList");
+
+	UOptionsMenuwidget_C_MakeInteractiveWidgetList_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.StickInputValue
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                          DeltaTime                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class USlider*                 Slider                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Speed                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Exp                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           SomethingChanged               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UOptionsMenuwidget_C::StickInputValue(float DeltaTime, class USlider* Slider, float Speed, float Exp, bool* SomethingChanged)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.StickInputValue");
+
+	UOptionsMenuwidget_C_StickInputValue_Params params;
+	params.DeltaTime = DeltaTime;
+	params.Slider = Slider;
+	params.Speed = Speed;
+	params.Exp = Exp;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (SomethingChanged != nullptr)
+		*SomethingChanged = params.SomethingChanged;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.GetInteractiveWidgetList
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UPanelWidget*            Panel                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UWidget*>         InteractiveWidgets             (Parm, OutParm, ZeroConstructor)
+
+void UOptionsMenuwidget_C::GetInteractiveWidgetList(class UPanelWidget* Panel, TArray<class UWidget*>* InteractiveWidgets)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.GetInteractiveWidgetList");
+
+	UOptionsMenuwidget_C_GetInteractiveWidgetList_Params params;
+	params.Panel = Panel;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (InteractiveWidgets != nullptr)
+		*InteractiveWidgets = params.InteractiveWidgets;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.SetupVisibilityByPlatform
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuwidget_C::SetupVisibilityByPlatform()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.SetupVisibilityByPlatform");
+
+	UOptionsMenuwidget_C_SetupVisibilityByPlatform_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OptionsMenuwidget.OptionsMenuwidget_C.SaveVideoSetting_VSync
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -430,13 +615,14 @@ void UOptionsMenuwidget_C::ResetOptionsState()
 
 
 // Function OptionsMenuwidget.OptionsMenuwidget_C.UpdateWidgetFocusState
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UWidget*                 LineWidget                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // class UWidget*                 SelectionWidget                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           FocusForced                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bFocus                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenuwidget_C::UpdateWidgetFocusState(class UWidget* LineWidget, class UWidget* SelectionWidget, bool FocusForced)
+void UOptionsMenuwidget_C::UpdateWidgetFocusState(class UWidget* LineWidget, class UWidget* SelectionWidget, bool FocusForced, bool* bFocus)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.UpdateWidgetFocusState");
 
@@ -450,6 +636,9 @@ void UOptionsMenuwidget_C::UpdateWidgetFocusState(class UWidget* LineWidget, cla
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+
+	if (bFocus != nullptr)
+		*bFocus = params.bFocus;
 }
 
 
@@ -1097,12 +1286,15 @@ void UOptionsMenuwidget_C::BndEvt__Slider_DeadZone_K2Node_ComponentBoundEvent_34
 
 // Function OptionsMenuwidget.OptionsMenuwidget_C.EventMenuBack
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bIsEscape                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenuwidget_C::EventMenuBack()
+void UOptionsMenuwidget_C::EventMenuBack(bool* bIsEscape)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.EventMenuBack");
 
 	UOptionsMenuwidget_C_EventMenuBack_Params params;
+	params.bIsEscape = bIsEscape;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1426,23 +1618,6 @@ void UOptionsMenuwidget_C::BndEvt__ComboBoxString_Windowed_K2Node_ComponentBound
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxString_Windowed_K2Node_ComponentBoundEvent_4053_OnOpeningEvent__DelegateSignature");
 
 	UOptionsMenuwidget_C_BndEvt__ComboBoxString_Windowed_K2Node_ComponentBoundEvent_4053_OnOpeningEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_4147_OnOpeningEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UOptionsMenuwidget_C::BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_4147_OnOpeningEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_4147_OnOpeningEvent__DelegateSignature");
-
-	UOptionsMenuwidget_C_BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_4147_OnOpeningEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -2659,28 +2834,6 @@ void UOptionsMenuwidget_C::BndEvt__Button_Sound_K2Node_ComponentBoundEvent_7_OnB
 }
 
 
-// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_10_OnSelectionChangedEvent__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// struct FString                 SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-// TEnumAsByte<ESelectInfo>       SelectionType                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenuwidget_C::BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_10_OnSelectionChangedEvent__DelegateSignature(const struct FString& SelectedItem, TEnumAsByte<ESelectInfo> SelectionType)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_10_OnSelectionChangedEvent__DelegateSignature");
-
-	UOptionsMenuwidget_C_BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_10_OnSelectionChangedEvent__DelegateSignature_Params params;
-	params.SelectedItem = SelectedItem;
-	params.SelectionType = SelectionType;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ClueLookatCamButton_K2Node_ComponentBoundEvent_835_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
 
@@ -2777,6 +2930,501 @@ void UOptionsMenuwidget_C::BndEvt__Slider_VoiceChat_K2Node_ComponentBoundEvent_9
 
 	UOptionsMenuwidget_C_BndEvt__Slider_VoiceChat_K2Node_ComponentBoundEvent_990_OnFloatValueChangedEvent__DelegateSignature_Params params;
 	params.Value = Value;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.OnGammaSettingFocus
+// (BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuwidget_C::OnGammaSettingFocus()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.OnGammaSettingFocus");
+
+	UOptionsMenuwidget_C_OnGammaSettingFocus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.GammaChanged
+// (BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuwidget_C::GammaChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.GammaChanged");
+
+	UOptionsMenuwidget_C_GammaChanged_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.OpenOptionMenuGamepad
+// (BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuwidget_C::OpenOptionMenuGamepad()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.OpenOptionMenuGamepad");
+
+	UOptionsMenuwidget_C_OpenOptionMenuGamepad_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_13_OnOpeningEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UOptionsMenuwidget_C::BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_13_OnOpeningEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_13_OnOpeningEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_13_OnOpeningEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UOptionsMenuwidget_C::BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.OnClickGameplay
+// (BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuwidget_C::OnClickGameplay()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.OnClickGameplay");
+
+	UOptionsMenuwidget_C_OnClickGameplay_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.OnClickGamepadOptions
+// (BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuwidget_C::OnClickGamepadOptions()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.OnClickGamepadOptions");
+
+	UOptionsMenuwidget_C_OnClickGamepadOptions_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_4350_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UOptionsMenuwidget_C::BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_4350_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_4350_OnButtonClickedEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_4350_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5473_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UOptionsMenuwidget_C::BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5473_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5473_OnButtonHoverEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5473_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5595_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UOptionsMenuwidget_C::BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5595_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5595_OnButtonHoverEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5595_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_5947_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UOptionsMenuwidget_C::BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_5947_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_5947_OnButtonHoverEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_5947_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.OnGammaSettingUnfocus
+// (BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuwidget_C::OnGammaSettingUnfocus()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.OnGammaSettingUnfocus");
+
+	UOptionsMenuwidget_C_OnGammaSettingUnfocus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1515_OnOpeningEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UOptionsMenuwidget_C::BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1515_OnOpeningEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1515_OnOpeningEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1515_OnOpeningEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_814_OnSelectionChangedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// struct FText                   SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// int                            SelectedIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<ESelectInfo>       SelectionType                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UOptionsMenuwidget_C::BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_814_OnSelectionChangedEvent__DelegateSignature(const struct FText& SelectedItem, int SelectedIndex, TEnumAsByte<ESelectInfo> SelectionType)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_814_OnSelectionChangedEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_814_OnSelectionChangedEvent__DelegateSignature_Params params;
+	params.SelectedItem = SelectedItem;
+	params.SelectedIndex = SelectedIndex;
+	params.SelectionType = SelectionType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1508_OnSelectionChangedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// struct FText                   SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// int                            SelectedIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<ESelectInfo>       SelectionType                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UOptionsMenuwidget_C::BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1508_OnSelectionChangedEvent__DelegateSignature(const struct FText& SelectedItem, int SelectedIndex, TEnumAsByte<ESelectInfo> SelectionType)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1508_OnSelectionChangedEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1508_OnSelectionChangedEvent__DelegateSignature_Params params;
+	params.SelectedItem = SelectedItem;
+	params.SelectedIndex = SelectedIndex;
+	params.SelectionType = SelectionType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.Show Gamepad Stuff
+// (BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuwidget_C::Show_Gamepad_Stuff()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.Show Gamepad Stuff");
+
+	UOptionsMenuwidget_C_Show_Gamepad_Stuff_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.Hide Gamepad Stuff
+// (BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuwidget_C::Hide_Gamepad_Stuff()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.Hide Gamepad Stuff");
+
+	UOptionsMenuwidget_C_Hide_Gamepad_Stuff_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.EventNewVivoxAudioInputDevices
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString*                audioDevName                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+
+void UOptionsMenuwidget_C::EventNewVivoxAudioInputDevices(struct FString* audioDevName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.EventNewVivoxAudioInputDevices");
+
+	UOptionsMenuwidget_C_EventNewVivoxAudioInputDevices_Params params;
+	params.audioDevName = audioDevName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.EventNewVivoxAudioOutputDevices
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString*                audioDevName                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+
+void UOptionsMenuwidget_C::EventNewVivoxAudioOutputDevices(struct FString* audioDevName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.EventNewVivoxAudioOutputDevices");
+
+	UOptionsMenuwidget_C_EventNewVivoxAudioOutputDevices_Params params;
+	params.audioDevName = audioDevName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.EventUpdateActiveVivoxAudioInputDevice
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString*                audioDevName                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+
+void UOptionsMenuwidget_C::EventUpdateActiveVivoxAudioInputDevice(struct FString* audioDevName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.EventUpdateActiveVivoxAudioInputDevice");
+
+	UOptionsMenuwidget_C_EventUpdateActiveVivoxAudioInputDevice_Params params;
+	params.audioDevName = audioDevName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.EventUpdateActiveVivoxAudioOuputDevice
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString*                audioDevName                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+
+void UOptionsMenuwidget_C::EventUpdateActiveVivoxAudioOuputDevice(struct FString* audioDevName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.EventUpdateActiveVivoxAudioOuputDevice");
+
+	UOptionsMenuwidget_C_EventUpdateActiveVivoxAudioOuputDevice_Params params;
+	params.audioDevName = audioDevName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_238_OnSelectionChangedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// struct FString                 SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// TEnumAsByte<ESelectInfo>       SelectionType                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UOptionsMenuwidget_C::BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_238_OnSelectionChangedEvent__DelegateSignature(const struct FString& SelectedItem, TEnumAsByte<ESelectInfo> SelectionType)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_238_OnSelectionChangedEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_238_OnSelectionChangedEvent__DelegateSignature_Params params;
+	params.SelectedItem = SelectedItem;
+	params.SelectionType = SelectionType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_478_OnSelectionChangedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// struct FString                 SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// TEnumAsByte<ESelectInfo>       SelectionType                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UOptionsMenuwidget_C::BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_478_OnSelectionChangedEvent__DelegateSignature(const struct FString& SelectedItem, TEnumAsByte<ESelectInfo> SelectionType)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_478_OnSelectionChangedEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_478_OnSelectionChangedEvent__DelegateSignature_Params params;
+	params.SelectedItem = SelectedItem;
+	params.SelectionType = SelectionType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1556_OnOpeningEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UOptionsMenuwidget_C::BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1556_OnOpeningEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1556_OnOpeningEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1556_OnOpeningEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1911_OnClosingEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UOptionsMenuwidget_C::BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1911_OnClosingEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1911_OnClosingEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1911_OnClosingEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_2_OnOpeningEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UOptionsMenuwidget_C::BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_2_OnOpeningEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_2_OnOpeningEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_2_OnOpeningEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_11_OnClosingEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UOptionsMenuwidget_C::BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_11_OnClosingEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_11_OnClosingEvent__DelegateSignature");
+
+	UOptionsMenuwidget_C_BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_11_OnClosingEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

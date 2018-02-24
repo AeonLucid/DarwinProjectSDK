@@ -1,14 +1,14 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "DW_Basic.hpp"
-#include "DW_ClothingSystemRuntimeInterface_classes.hpp"
 #include "DW_CoreUObject_classes.hpp"
+#include "DW_ClothingSystemRuntimeInterface_classes.hpp"
 
 namespace SDK
 {

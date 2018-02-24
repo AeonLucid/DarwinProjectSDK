@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function ChooseRegionLine.ChooseRegionLine_C.SetHighlighted
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           highlighted                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UChooseRegionLine_C::SetHighlighted(bool highlighted)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ChooseRegionLine.ChooseRegionLine_C.SetHighlighted");
+
+	UChooseRegionLine_C_SetHighlighted_Params params;
+	params.highlighted = highlighted;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function ChooseRegionLine.ChooseRegionLine_C.Initialize
 // (BlueprintCallable, BlueprintEvent)
@@ -84,6 +104,23 @@ void UChooseRegionLine_C::BndEvt__Button_Region_K2Node_ComponentBoundEvent_0_OnB
 	static auto fn = UObject::FindObject<UFunction>("Function ChooseRegionLine.ChooseRegionLine_C.BndEvt__Button_Region_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
 
 	UChooseRegionLine_C_BndEvt__Button_Region_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ChooseRegionLine.ChooseRegionLine_C.OnSelectionAction
+// (BlueprintCallable, BlueprintEvent)
+
+void UChooseRegionLine_C::OnSelectionAction()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ChooseRegionLine.ChooseRegionLine_C.OnSelectionAction");
+
+	UChooseRegionLine_C_OnSelectionAction_Params params;
 
 	auto flags = fn->FunctionFlags;
 

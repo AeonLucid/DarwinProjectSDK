@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,17 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function MenuEndOfGame.MenuEndOfGame_C.UpdateInputMode
+struct UMenuEndOfGame_C_UpdateInputMode_Params
+{
+};
+
+// Function MenuEndOfGame.MenuEndOfGame_C.SetMenuVisibility
+struct UMenuEndOfGame_C_SetMenuVisibility_Params
+{
+	ESlateVisibility                                   InVisibility;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function MenuEndOfGame.MenuEndOfGame_C.GetStatName
 struct UMenuEndOfGame_C_GetStatName_Params
@@ -52,13 +63,29 @@ struct UMenuEndOfGame_C_Construct_Params
 // Function MenuEndOfGame.MenuEndOfGame_C.EventPlayerIsWinner
 struct UMenuEndOfGame_C_EventPlayerIsWinner_Params
 {
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool*                                              bBloodPactActive;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int*                                               allyID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MenuEndOfGame.MenuEndOfGame_C.EventMenuClick
 struct UMenuEndOfGame_C_EventMenuClick_Params
+{
+};
+
+// Function MenuEndOfGame.MenuEndOfGame_C.Destruct
+struct UMenuEndOfGame_C_Destruct_Params
+{
+};
+
+// Function MenuEndOfGame.MenuEndOfGame_C.EventMenuBack
+struct UMenuEndOfGame_C_EventMenuBack_Params
+{
+	bool*                                              bIsEscape;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function MenuEndOfGame.MenuEndOfGame_C.EventInputSourceChanged
+struct UMenuEndOfGame_C_EventInputSourceChanged_Params
 {
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -1331,6 +1331,14 @@ struct UComboBoxString_SetSelectedOption_Params
 	struct FString                                     Option;                                                   // (Parm, ZeroConstructor)
 };
 
+// Function UMG.ComboBoxString.SetOpen
+struct UComboBoxString_SetOpen_Params
+{
+	bool                                               bOpen;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bFocusOnMenu;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function UMG.ComboBoxString.RemoveOption
 struct UComboBoxString_RemoveOption_Params
 {
@@ -1406,6 +1414,110 @@ struct UComboBoxString_ClearOptions_Params
 struct UComboBoxString_AddOption_Params
 {
 	struct FString                                     Option;                                                   // (Parm, ZeroConstructor)
+};
+
+// Function UMG.DarwinComboBoxText.SetSelectedOptionIndex
+struct UDarwinComboBoxText_SetSelectedOptionIndex_Params
+{
+	int                                                Option;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function UMG.DarwinComboBoxText.SetSelectedOption
+struct UDarwinComboBoxText_SetSelectedOption_Params
+{
+	struct FText                                       Option;                                                   // (Parm)
+};
+
+// Function UMG.DarwinComboBoxText.SetOpen
+struct UDarwinComboBoxText_SetOpen_Params
+{
+	bool                                               bOpen;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bFocusOnMenu;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.DarwinComboBoxText.RemoveOption
+struct UDarwinComboBoxText_RemoveOption_Params
+{
+	struct FText                                       Option;                                                   // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.DarwinComboBoxText.RefreshOptions
+struct UDarwinComboBoxText_RefreshOptions_Params
+{
+};
+
+// DelegateFunction UMG.DarwinComboBoxText.OnSelectionChangedEvent__DelegateSignature
+struct UDarwinComboBoxText_OnSelectionChangedEvent__DelegateSignature_Params
+{
+	struct FText                                       SelectedItem;                                             // (Parm)
+	int                                                SelectedIndex;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESelectInfo>                           SelectionType;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// DelegateFunction UMG.DarwinComboBoxText.OnOpeningEvent__DelegateSignature
+struct UDarwinComboBoxText_OnOpeningEvent__DelegateSignature_Params
+{
+};
+
+// DelegateFunction UMG.DarwinComboBoxText.OnClosingEvent__DelegateSignature
+struct UDarwinComboBoxText_OnClosingEvent__DelegateSignature_Params
+{
+};
+
+// Function UMG.DarwinComboBoxText.IsOpen
+struct UDarwinComboBoxText_IsOpen_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.DarwinComboBoxText.GetSelectedOptionIndex
+struct UDarwinComboBoxText_GetSelectedOptionIndex_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.DarwinComboBoxText.GetSelectedOption
+struct UDarwinComboBoxText_GetSelectedOption_Params
+{
+	struct FText                                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function UMG.DarwinComboBoxText.GetOptionCount
+struct UDarwinComboBoxText_GetOptionCount_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.DarwinComboBoxText.GetOptionAtIndex
+struct UDarwinComboBoxText_GetOptionAtIndex_Params
+{
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function UMG.DarwinComboBoxText.FindOptionIndex
+struct UDarwinComboBoxText_FindOptionIndex_Params
+{
+	struct FText                                       Option;                                                   // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.DarwinComboBoxText.ClearSelection
+struct UDarwinComboBoxText_ClearSelection_Params
+{
+};
+
+// Function UMG.DarwinComboBoxText.ClearOptions
+struct UDarwinComboBoxText_ClearOptions_Params
+{
+};
+
+// Function UMG.DarwinComboBoxText.AddOption
+struct UDarwinComboBoxText_AddOption_Params
+{
+	struct FText                                       Option;                                                   // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function UMG.DragDropOperation.Drop
@@ -1940,6 +2052,12 @@ struct URetainerBox_GetEffectMaterial_Params
 	class UMaterialInstanceDynamic*                    ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function UMG.RichTextBlock.SetText
+struct URichTextBlock_SetText_Params
+{
+	struct FText                                       Text;                                                     // (ConstParm, Parm, OutParm, ReferenceParm)
+};
+
 // Function UMG.SafeZone.SetSidesToPad
 struct USafeZone_SetSidesToPad_Params
 {
@@ -2259,6 +2377,7 @@ struct USlateBlueprintLibrary_AbsoluteToLocal_Params
 struct USlider_SetValue_Params
 {
 	float                                              InValue;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bTriggerValueChangedEvent;                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function UMG.Slider.SetStepSize

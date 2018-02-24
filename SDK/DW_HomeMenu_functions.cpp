@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function HomeMenu.HomeMenu_C.IsHomeMenuActive
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           IsActive                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UHomeMenu_C::IsHomeMenuActive(bool* IsActive)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.IsHomeMenuActive");
+
+	UHomeMenu_C_IsHomeMenuActive_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (IsActive != nullptr)
+		*IsActive = params.IsActive;
+}
+
 
 // Function HomeMenu.HomeMenu_C.OnDevCommunicationReceived
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -92,13 +114,17 @@ void UHomeMenu_C::SelectButton(TEnumAsByte<EHomeMenu_Tiles> SelectedButton)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // TEnumAsByte<EHomeMenu_Tiles>   NewButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EHomeMenu_Tiles>   LastButton                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           UnfocusLastButton              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UHomeMenu_C::ChangeButtonFocus(TEnumAsByte<EHomeMenu_Tiles> NewButton)
+void UHomeMenu_C::ChangeButtonFocus(TEnumAsByte<EHomeMenu_Tiles> NewButton, TEnumAsByte<EHomeMenu_Tiles> LastButton, bool UnfocusLastButton)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.ChangeButtonFocus");
 
 	UHomeMenu_C_ChangeButtonFocus_Params params;
 	params.NewButton = NewButton;
+	params.LastButton = LastButton;
+	params.UnfocusLastButton = UnfocusLastButton;
 
 	auto flags = fn->FunctionFlags;
 
@@ -203,6 +229,57 @@ void UHomeMenu_C::Update_number_of_lootbox()
 }
 
 
+// Function HomeMenu.HomeMenu_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UHomeMenu_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.Construct");
+
+	UHomeMenu_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UHomeMenu_C::BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature");
+
+	UHomeMenu_C_BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UHomeMenu_C::BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature");
+
+	UHomeMenu_C_BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function HomeMenu.HomeMenu_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_138_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
 
@@ -259,23 +336,6 @@ void UHomeMenu_C::BndEvt__CareerButton_K2Node_ComponentBoundEvent_0_OnButtonClic
 }
 
 
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UHomeMenu_C::BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature");
-
-	UHomeMenu_C_BndEvt__Button_Quit_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HomeMenu.HomeMenu_C.BndEvt__ReportBugBtn_K2Node_ComponentBoundEvent_270_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
 
@@ -284,23 +344,6 @@ void UHomeMenu_C::BndEvt__ReportBugBtn_K2Node_ComponentBoundEvent_270_OnButtonCl
 	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__ReportBugBtn_K2Node_ComponentBoundEvent_270_OnButtonClickedEvent__DelegateSignature");
 
 	UHomeMenu_C_BndEvt__ReportBugBtn_K2Node_ComponentBoundEvent_270_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UHomeMenu_C::BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature");
-
-	UHomeMenu_C_BndEvt__ConnectRemoteButton_K2Node_ComponentBoundEvent_201_OnButtonClickedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -369,40 +412,6 @@ void UHomeMenu_C::DebugReportBug()
 	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.DebugReportBug");
 
 	UHomeMenu_C_DebugReportBug_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.DebugGiveFeedback
-// (Event, Public, BlueprintEvent)
-
-void UHomeMenu_C::DebugGiveFeedback()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.DebugGiveFeedback");
-
-	UHomeMenu_C_DebugGiveFeedback_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_39_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UHomeMenu_C::BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_39_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_39_OnButtonClickedEvent__DelegateSignature");
-
-	UHomeMenu_C_BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_39_OnButtonClickedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -582,40 +591,6 @@ void UHomeMenu_C::BndEvt__LootBoxBtn_K2Node_ComponentBoundEvent_5_OnButtonHoverE
 }
 
 
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UHomeMenu_C::BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature");
-
-	UHomeMenu_C_BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UHomeMenu_C::BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature");
-
-	UHomeMenu_C_BndEvt__Button_Standalone_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HomeMenu.HomeMenu_C.BndEvt__Quit_Btn_K2Node_ComponentBoundEvent_8_OnButtonHoverEvent__DelegateSignature
 // (BlueprintEvent)
 
@@ -743,23 +718,6 @@ void UHomeMenu_C::EventInventoryUpdated()
 }
 
 
-// Function HomeMenu.HomeMenu_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UHomeMenu_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.Construct");
-
-	UHomeMenu_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HomeMenu.HomeMenu_C.BndEvt__OptionsBtn_K2Node_ComponentBoundEvent_2803_OnButtonHoverEvent__DelegateSignature
 // (BlueprintEvent)
 
@@ -839,23 +797,6 @@ void UHomeMenu_C::BndEvt__Button_0_K2Node_ComponentBoundEvent_71_OnButtonClicked
 	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_0_K2Node_ComponentBoundEvent_71_OnButtonClickedEvent__DelegateSignature");
 
 	UHomeMenu_C_BndEvt__Button_0_K2Node_ComponentBoundEvent_71_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UHomeMenu_C::BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature");
-
-	UHomeMenu_C_BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1103,40 +1044,6 @@ void UHomeMenu_C::OnUnhoveredLootBoxBtn()
 }
 
 
-// Function HomeMenu.HomeMenu_C.OnHoveredStandaloneBtn
-// (BlueprintCallable, BlueprintEvent)
-
-void UHomeMenu_C::OnHoveredStandaloneBtn()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnHoveredStandaloneBtn");
-
-	UHomeMenu_C_OnHoveredStandaloneBtn_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.OnUnhoveredStandaloneBtn
-// (BlueprintCallable, BlueprintEvent)
-
-void UHomeMenu_C::OnUnhoveredStandaloneBtn()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnUnhoveredStandaloneBtn");
-
-	UHomeMenu_C_OnUnhoveredStandaloneBtn_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HomeMenu.HomeMenu_C.OnHoveredOptionsBtn
 // (BlueprintCallable, BlueprintEvent)
 
@@ -1239,23 +1146,6 @@ void UHomeMenu_C::OnClickOptionsBtn()
 }
 
 
-// Function HomeMenu.HomeMenu_C.OnClickStandaloneBtn
-// (BlueprintCallable, BlueprintEvent)
-
-void UHomeMenu_C::OnClickStandaloneBtn()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnClickStandaloneBtn");
-
-	UHomeMenu_C_OnClickStandaloneBtn_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HomeMenu.HomeMenu_C.OnClicklLootBoxBtn
 // (BlueprintCallable, BlueprintEvent)
 
@@ -1341,193 +1231,6 @@ void UHomeMenu_C::OnClickPlayBtn()
 }
 
 
-// Function HomeMenu.HomeMenu_C.OnClickFlibutstierBtn
-// (BlueprintCallable, BlueprintEvent)
-
-void UHomeMenu_C::OnClickFlibutstierBtn()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnClickFlibutstierBtn");
-
-	UHomeMenu_C_OnClickFlibutstierBtn_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.OnHoveredFlibutstierBtn
-// (BlueprintCallable, BlueprintEvent)
-
-void UHomeMenu_C::OnHoveredFlibutstierBtn()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnHoveredFlibutstierBtn");
-
-	UHomeMenu_C_OnHoveredFlibutstierBtn_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.OnUnhoveredFlibustierBtn
-// (BlueprintCallable, BlueprintEvent)
-
-void UHomeMenu_C::OnUnhoveredFlibustierBtn()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnUnhoveredFlibustierBtn");
-
-	UHomeMenu_C_OnUnhoveredFlibustierBtn_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.OnHoveredAmazonBtn
-// (BlueprintCallable, BlueprintEvent)
-
-void UHomeMenu_C::OnHoveredAmazonBtn()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnHoveredAmazonBtn");
-
-	UHomeMenu_C_OnHoveredAmazonBtn_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.OnUnhoveredAmazonBtn
-// (BlueprintCallable, BlueprintEvent)
-
-void UHomeMenu_C::OnUnhoveredAmazonBtn()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnUnhoveredAmazonBtn");
-
-	UHomeMenu_C_OnUnhoveredAmazonBtn_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.OnClickAmazonBtn
-// (BlueprintCallable, BlueprintEvent)
-
-void UHomeMenu_C::OnClickAmazonBtn()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnClickAmazonBtn");
-
-	UHomeMenu_C_OnClickAmazonBtn_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_4993_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UHomeMenu_C::BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_4993_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_4993_OnButtonClickedEvent__DelegateSignature");
-
-	UHomeMenu_C_BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_4993_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5197_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UHomeMenu_C::BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5197_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5197_OnButtonHoverEvent__DelegateSignature");
-
-	UHomeMenu_C_BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5197_OnButtonHoverEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5245_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UHomeMenu_C::BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5245_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5245_OnButtonHoverEvent__DelegateSignature");
-
-	UHomeMenu_C_BndEvt__Button_Amazon_K2Node_ComponentBoundEvent_5245_OnButtonHoverEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5373_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UHomeMenu_C::BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5373_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5373_OnButtonHoverEvent__DelegateSignature");
-
-	UHomeMenu_C_BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5373_OnButtonHoverEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5383_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UHomeMenu_C::BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5383_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5383_OnButtonHoverEvent__DelegateSignature");
-
-	UHomeMenu_C_BndEvt__Button_Flibustier_K2Node_ComponentBoundEvent_5383_OnButtonHoverEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HomeMenu.HomeMenu_C.EventMenuClick
 // (Event, Public, BlueprintEvent)
 
@@ -1581,12 +1284,15 @@ void UHomeMenu_C::MenuBackPressed()
 
 // Function HomeMenu.HomeMenu_C.EventMenuBack
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bIsEscape                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UHomeMenu_C::EventMenuBack()
+void UHomeMenu_C::EventMenuBack(bool* bIsEscape)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.EventMenuBack");
 
 	UHomeMenu_C_EventMenuBack_Params params;
+	params.bIsEscape = bIsEscape;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1774,23 +1480,6 @@ void UHomeMenu_C::BndEvt__DiscrodBtn_K2Node_ComponentBoundEvent_2682_OnButtonCli
 	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__DiscrodBtn_K2Node_ComponentBoundEvent_2682_OnButtonClickedEvent__DelegateSignature");
 
 	UHomeMenu_C_BndEvt__DiscrodBtn_K2Node_ComponentBoundEvent_2682_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HomeMenu.HomeMenu_C.JoinAmazonServer
-// (BlueprintCallable, BlueprintEvent)
-
-void UHomeMenu_C::JoinAmazonServer()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.JoinAmazonServer");
-
-	UHomeMenu_C_JoinAmazonServer_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -2004,19 +1693,286 @@ void UHomeMenu_C::BndEvt__Button_Career_K2Node_ComponentBoundEvent_3690_OnButton
 }
 
 
-// Function HomeMenu.HomeMenu_C.EventPlayerProfileStatsReceived
-// (Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FDarwinCareerStats*     stats                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FDarwinProfile*         Profile                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// Function HomeMenu.HomeMenu_C.WelcomeMenuClosed
+// (BlueprintCallable, BlueprintEvent)
 
-void UHomeMenu_C::EventPlayerProfileStatsReceived(struct FDarwinCareerStats* stats, struct FDarwinProfile* Profile)
+void UHomeMenu_C::WelcomeMenuClosed()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.EventPlayerProfileStatsReceived");
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.WelcomeMenuClosed");
 
-	UHomeMenu_C_EventPlayerProfileStatsReceived_Params params;
-	params.stats = stats;
-	params.Profile = Profile;
+	UHomeMenu_C_WelcomeMenuClosed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.OnConfirmExitAction
+// (BlueprintCallable, BlueprintEvent)
+
+void UHomeMenu_C::OnConfirmExitAction()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnConfirmExitAction");
+
+	UHomeMenu_C_OnConfirmExitAction_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.OnExitCancelledAction
+// (BlueprintCallable, BlueprintEvent)
+
+void UHomeMenu_C::OnExitCancelledAction()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnExitCancelledAction");
+
+	UHomeMenu_C_OnExitCancelledAction_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.EventPlayerProfileReceived_2
+// (BlueprintCallable, BlueprintEvent)
+
+void UHomeMenu_C::EventPlayerProfileReceived_2()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.EventPlayerProfileReceived_2");
+
+	UHomeMenu_C_EventPlayerProfileReceived_2_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.Show Gamepad Stuff
+// (BlueprintCallable, BlueprintEvent)
+
+void UHomeMenu_C::Show_Gamepad_Stuff()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.Show Gamepad Stuff");
+
+	UHomeMenu_C_Show_Gamepad_Stuff_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.Hide Gamepad Stuff
+// (BlueprintCallable, BlueprintEvent)
+
+void UHomeMenu_C::Hide_Gamepad_Stuff()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.Hide Gamepad Stuff");
+
+	UHomeMenu_C_Hide_Gamepad_Stuff_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.EventMenuYPressed
+// (Event, Public, BlueprintEvent)
+
+void UHomeMenu_C::EventMenuYPressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.EventMenuYPressed");
+
+	UHomeMenu_C_EventMenuYPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.OnHoveredPrivateMatch
+// (BlueprintCallable, BlueprintEvent)
+
+void UHomeMenu_C::OnHoveredPrivateMatch()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnHoveredPrivateMatch");
+
+	UHomeMenu_C_OnHoveredPrivateMatch_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.OnUnhoveredPrivateMatch
+// (BlueprintCallable, BlueprintEvent)
+
+void UHomeMenu_C::OnUnhoveredPrivateMatch()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnUnhoveredPrivateMatch");
+
+	UHomeMenu_C_OnUnhoveredPrivateMatch_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.OnClicPrivateMatch
+// (BlueprintCallable, BlueprintEvent)
+
+void UHomeMenu_C::OnClicPrivateMatch()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.OnClicPrivateMatch");
+
+	UHomeMenu_C_OnClicPrivateMatch_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_520_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UHomeMenu_C::BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_520_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_520_OnButtonClickedEvent__DelegateSignature");
+
+	UHomeMenu_C_BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_520_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_688_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UHomeMenu_C::BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_688_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_688_OnButtonHoverEvent__DelegateSignature");
+
+	UHomeMenu_C_BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_688_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_788_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UHomeMenu_C::BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_788_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_788_OnButtonHoverEvent__DelegateSignature");
+
+	UHomeMenu_C_BndEvt__PrivateMatchBtn_K2Node_ComponentBoundEvent_788_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_22_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UHomeMenu_C::BndEvt__Button_YES_K2Node_ComponentBoundEvent_22_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_22_OnButtonHoverEvent__DelegateSignature");
+
+	UHomeMenu_C_BndEvt__Button_YES_K2Node_ComponentBoundEvent_22_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_32_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UHomeMenu_C::BndEvt__Button_YES_K2Node_ComponentBoundEvent_32_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_32_OnButtonHoverEvent__DelegateSignature");
+
+	UHomeMenu_C_BndEvt__Button_YES_K2Node_ComponentBoundEvent_32_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_89_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UHomeMenu_C::BndEvt__Button_NO_K2Node_ComponentBoundEvent_89_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_89_OnButtonHoverEvent__DelegateSignature");
+
+	UHomeMenu_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_89_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HomeMenu.HomeMenu_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_149_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UHomeMenu_C::BndEvt__Button_NO_K2Node_ComponentBoundEvent_149_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HomeMenu.HomeMenu_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_149_OnButtonHoverEvent__DelegateSignature");
+
+	UHomeMenu_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_149_OnButtonHoverEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

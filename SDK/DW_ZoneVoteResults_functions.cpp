@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -40,15 +40,15 @@ void UZoneVoteResults_C::GetZoneAnwser(EDarwinZone Zone, class UOneZoneAnswer_C*
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int                            TotalVoteCount                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<class UDarwinVoteResultForUMG*> VoteResults                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UDarwinVoteResultForUMG*> voteResults                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UZoneVoteResults_C::Initialize(int TotalVoteCount, TArray<class UDarwinVoteResultForUMG*> VoteResults)
+void UZoneVoteResults_C::Initialize(int TotalVoteCount, TArray<class UDarwinVoteResultForUMG*> voteResults)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ZoneVoteResults.ZoneVoteResults_C.Initialize");
 
 	UZoneVoteResults_C_Initialize_Params params;
 	params.TotalVoteCount = TotalVoteCount;
-	params.VoteResults = VoteResults;
+	params.voteResults = voteResults;
 
 	auto flags = fn->FunctionFlags;
 

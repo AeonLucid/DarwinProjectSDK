@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -211,7 +211,7 @@ enum class EPixelFormat : uint8_t
 	PF_XGXR8                       = 59,
 	PF_R8G8B8A8_UINT               = 60,
 	PF_R8G8B8A8_SNORM              = 61,
-//	PF_MAX                         = 62
+	PF_MAX                         = 62
 };
 
 

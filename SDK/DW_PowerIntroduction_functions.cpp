@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -39,14 +39,16 @@ void UPowerIntroduction_C::EventManHuntStart(int* targetCharacterID, struct FVec
 // Parameters:
 // int*                           targetCharacterID              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           killerCharacterID              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          isDead                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPowerIntroduction_C::EventManHuntEnd(int* targetCharacterID, int* killerCharacterID)
+void UPowerIntroduction_C::EventManHuntEnd(int* targetCharacterID, int* killerCharacterID, bool* isDead)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PowerIntroduction.PowerIntroduction_C.EventManHuntEnd");
 
 	UPowerIntroduction_C_EventManHuntEnd_Params params;
 	params.targetCharacterID = targetCharacterID;
 	params.killerCharacterID = killerCharacterID;
+	params.isDead = isDead;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function DeathNotification.DeathNotification_C.IsVoteUnderway
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           VoteUnderway                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UDeathNotification_C::IsVoteUnderway(bool* VoteUnderway)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DeathNotification.DeathNotification_C.IsVoteUnderway");
+
+	UDeathNotification_C_IsVoteUnderway_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (VoteUnderway != nullptr)
+		*VoteUnderway = params.VoteUnderway;
+}
+
 
 // Function DeathNotification.DeathNotification_C.EventDeathNotification
 // (Event, Public, BlueprintEvent)
@@ -43,16 +65,16 @@ void UDeathNotification_C::EventDeathNotification(EDarwinDamageTypeEnum* Type, i
 // Function DeathNotification.DeathNotification_C.EventPlayerIsWinner
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool*                          bBloodPactActive               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           allyID                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDeathNotification_C::EventPlayerIsWinner(int* PlayerId, bool* bBloodPactActive, int* allyID)
+void UDeathNotification_C::EventPlayerIsWinner(int* playerID, bool* bBloodPactActive, int* allyID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DeathNotification.DeathNotification_C.EventPlayerIsWinner");
 
 	UDeathNotification_C_EventPlayerIsWinner_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.bBloodPactActive = bBloodPactActive;
 	params.allyID = allyID;
 

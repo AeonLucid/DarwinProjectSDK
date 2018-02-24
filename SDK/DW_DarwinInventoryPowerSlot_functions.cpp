@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -40,30 +40,6 @@ void UDarwinInventoryPowerSlot_C::ActivatePower()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.ActivatePower");
 
 	UDarwinInventoryPowerSlot_C_ActivatePower_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventInventorySlotChanged
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int*                           Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EDarwinItemTypeEnum*           Type                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           Number                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UDarwinInventoryPowerSlot_C::EventInventorySlotChanged(int* Index, EDarwinItemTypeEnum* Type, int* Number)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventInventorySlotChanged");
-
-	UDarwinInventoryPowerSlot_C_EventInventorySlotChanged_Params params;
-	params.Index = Index;
-	params.Type = Type;
-	params.Number = Number;
 
 	auto flags = fn->FunctionFlags;
 
@@ -154,128 +130,6 @@ void UDarwinInventoryPowerSlot_C::EventTeleportAimEnd()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventTeleportAimEnd");
 
 	UDarwinInventoryPowerSlot_C_EventTeleportAimEnd_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UDarwinInventoryPowerSlot_C::BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature");
-
-	UDarwinInventoryPowerSlot_C_BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UDarwinInventoryPowerSlot_C::BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature");
-
-	UDarwinInventoryPowerSlot_C_BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventOnMouseHidden
-// (Event, Public, BlueprintEvent)
-
-void UDarwinInventoryPowerSlot_C::EventOnMouseHidden()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventOnMouseHidden");
-
-	UDarwinInventoryPowerSlot_C_EventOnMouseHidden_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UDarwinInventoryPowerSlot_C::BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature");
-
-	UDarwinInventoryPowerSlot_C_BndEvt__ButtonInvSlot_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventRequestRemapInventoryItem
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int*                           Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UDarwinInventoryPowerSlot_C::EventRequestRemapInventoryItem(int* Index)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventRequestRemapInventoryItem");
-
-	UDarwinInventoryPowerSlot_C_EventRequestRemapInventoryItem_Params params;
-	params.Index = Index;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.GamepadHover
-// (BlueprintCallable, BlueprintEvent)
-
-void UDarwinInventoryPowerSlot_C::GamepadHover()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.GamepadHover");
-
-	UDarwinInventoryPowerSlot_C_GamepadHover_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.GamepadUnHovered
-// (BlueprintCallable, BlueprintEvent)
-
-void UDarwinInventoryPowerSlot_C::GamepadUnHovered()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.GamepadUnHovered");
-
-	UDarwinInventoryPowerSlot_C_GamepadUnHovered_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -478,6 +332,30 @@ void UDarwinInventoryPowerSlot_C::EventTeleportAlmostReady()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventTeleportAlmostReady");
 
 	UDarwinInventoryPowerSlot_C_EventTeleportAlmostReady_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventInventorySlotChanged
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int*                           Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinItemTypeEnum*           Type                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           Number                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinInventoryPowerSlot_C::EventInventorySlotChanged(int* Index, EDarwinItemTypeEnum* Type, int* Number)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryPowerSlot.DarwinInventoryPowerSlot_C.EventInventorySlotChanged");
+
+	UDarwinInventoryPowerSlot_C_EventInventorySlotChanged_Params params;
+	params.Index = Index;
+	params.Type = Type;
+	params.Number = Number;
 
 	auto flags = fn->FunctionFlags;
 

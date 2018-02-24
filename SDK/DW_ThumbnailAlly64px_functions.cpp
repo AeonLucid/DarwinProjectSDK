@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,14 +15,14 @@ namespace SDK
 // Function ThumbnailAlly64px.ThumbnailAlly64px_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UThumbnailAlly64px_C::Initialize(int PlayerId)
+void UThumbnailAlly64px_C::Initialize(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ThumbnailAlly64px.ThumbnailAlly64px_C.Initialize");
 
 	UThumbnailAlly64px_C_Initialize_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -35,16 +35,16 @@ void UThumbnailAlly64px_C::Initialize(int PlayerId)
 // Function ThumbnailAlly64px.ThumbnailAlly64px_C.EventPlayerIsDead
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           PodiumRank                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool*                          firstDeath                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UThumbnailAlly64px_C::EventPlayerIsDead(int* PlayerId, int* PodiumRank, bool* firstDeath)
+void UThumbnailAlly64px_C::EventPlayerIsDead(int* playerID, int* PodiumRank, bool* firstDeath)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ThumbnailAlly64px.ThumbnailAlly64px_C.EventPlayerIsDead");
 
 	UThumbnailAlly64px_C_EventPlayerIsDead_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.PodiumRank = PodiumRank;
 	params.firstDeath = firstDeath;
 
@@ -59,16 +59,16 @@ void UThumbnailAlly64px_C::EventPlayerIsDead(int* PlayerId, int* PodiumRank, boo
 // Function ThumbnailAlly64px.ThumbnailAlly64px_C.EventUpdateAvatarTexture
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UTexture2D**             avatar                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture**               avatar                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UThumbnailAlly64px_C::EventUpdateAvatarTexture(class UTexture2D** avatar, int* PlayerId)
+void UThumbnailAlly64px_C::EventUpdateAvatarTexture(class UTexture** avatar, int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ThumbnailAlly64px.ThumbnailAlly64px_C.EventUpdateAvatarTexture");
 
 	UThumbnailAlly64px_C_EventUpdateAvatarTexture_Params params;
 	params.avatar = avatar;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -189,6 +189,128 @@ void UInfoInHome_C::BndEvt__NextPage_K2Node_ComponentBoundEvent_0_OnButtonClicke
 	static auto fn = UObject::FindObject<UFunction>("Function InfoInHome.InfoInHome_C.BndEvt__NextPage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
 
 	UInfoInHome_C_BndEvt__NextPage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InfoInHome.InfoInHome_C.EventMenuRightPagePressed
+// (Event, Public, BlueprintEvent)
+
+void UInfoInHome_C::EventMenuRightPagePressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InfoInHome.InfoInHome_C.EventMenuRightPagePressed");
+
+	UInfoInHome_C_EventMenuRightPagePressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InfoInHome.InfoInHome_C.EventMenuRightTriggerPressed
+// (Event, Public, BlueprintEvent)
+
+void UInfoInHome_C::EventMenuRightTriggerPressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InfoInHome.InfoInHome_C.EventMenuRightTriggerPressed");
+
+	UInfoInHome_C_EventMenuRightTriggerPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InfoInHome.InfoInHome_C.EventMenuLeftPagePressed
+// (Event, Public, BlueprintEvent)
+
+void UInfoInHome_C::EventMenuLeftPagePressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InfoInHome.InfoInHome_C.EventMenuLeftPagePressed");
+
+	UInfoInHome_C_EventMenuLeftPagePressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InfoInHome.InfoInHome_C.EventMenuLeftTriggerPressed
+// (Event, Public, BlueprintEvent)
+
+void UInfoInHome_C::EventMenuLeftTriggerPressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InfoInHome.InfoInHome_C.EventMenuLeftTriggerPressed");
+
+	UInfoInHome_C_EventMenuLeftTriggerPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InfoInHome.InfoInHome_C.Init
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UHomeMenu_C*             ParentWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UInfoInHome_C::Init(class UHomeMenu_C* ParentWidget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InfoInHome.InfoInHome_C.Init");
+
+	UInfoInHome_C_Init_Params params;
+	params.ParentWidget = ParentWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InfoInHome.InfoInHome_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UInfoInHome_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InfoInHome.InfoInHome_C.Construct");
+
+	UInfoInHome_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InfoInHome.InfoInHome_C.EventInputSourceChanged
+// (Event, Public, BlueprintEvent)
+
+void UInfoInHome_C::EventInputSourceChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InfoInHome.InfoInHome_C.EventInputSourceChanged");
+
+	UInfoInHome_C_EventInputSourceChanged_Params params;
 
 	auto flags = fn->FunctionFlags;
 

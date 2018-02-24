@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -228,7 +228,7 @@ struct ADarwinAllyFlag_NetMulticastAllyFlagDestroy_Params
 // Function Darwin.DarwinAllyFlag.EventInitializeAvatarTexture
 struct ADarwinAllyFlag_EventInitializeAvatarTexture_Params
 {
-	class UTexture2D*                                  AvatarTexture;                                            // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture*                                    AvatarTexture;                                            // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinAllyFlag.EventAllyFlagDestroyed
@@ -511,10 +511,11 @@ struct ADarwinDronePawn_ServerSetRotaCam_Params
 	bool                                               bValue;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Darwin.DarwinDronePawn.ServerSetNetId
-struct ADarwinDronePawn_ServerSetNetId_Params
+// Function Darwin.DarwinDronePawn.ServerSetNetIdAndOnlineId
+struct ADarwinDronePawn_ServerSetNetIdAndOnlineId_Params
 {
 	struct FString                                     inNetId;                                                  // (Parm, ZeroConstructor)
+	int                                                inOnlineId;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinDronePawn.ServerSetCamStateFollowCharacter
@@ -596,10 +597,22 @@ struct ADarwinDronePawn_GetIsInLobby_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function Darwin.DarwinDronePawn.GetIsInCamStateManhunt
+struct ADarwinDronePawn_GetIsInCamStateManhunt_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Darwin.DarwinDronePawn.GetIsInCamStateCharacter
 struct ADarwinDronePawn_GetIsInCamStateCharacter_Params
 {
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinDronePawn.GetActiveFollowedCharacter
+struct ADarwinDronePawn_GetActiveFollowedCharacter_Params
+{
+	class ADarwinCharacter*                            ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinDronePawn.ExecuteSDPower
@@ -655,6 +668,11 @@ struct ADarwinDronePawn_EventEnterForbiddenZone_Params
 	class ADarwinDronePawn*                            drone;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Darwin.DarwinDronePawn.DisableShowDirectorPowers
+struct ADarwinDronePawn_DisableShowDirectorPowers_Params
+{
+};
+
 // Function Darwin.DarwinBeholder.OnRepBeholderName
 struct ADarwinBeholder_OnRepBeholderName_Params
 {
@@ -702,6 +720,12 @@ struct UDarwinUserWidget_SpawnDummyCharacter_Params
 	class ADarwinCharacter*                            ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function Darwin.DarwinUserWidget.ShowXboxPlayerProfile
+struct UDarwinUserWidget_ShowXboxPlayerProfile_Params
+{
+	struct FString                                     playerID;                                                 // (Parm, ZeroConstructor)
+};
+
 // Function Darwin.DarwinUserWidget.ShouldShowTutorial
 struct UDarwinUserWidget_ShouldShowTutorial_Params
 {
@@ -717,7 +741,7 @@ struct UDarwinUserWidget_SetMouseVisible_Params
 // Function Darwin.DarwinUserWidget.SetMouseInvisible
 struct UDarwinUserWidget_SetMouseInvisible_Params
 {
-	bool                                               setInputModeUIOnly;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               setInputModeGameOnly;                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.ScaleToMiniMapWidget
@@ -727,6 +751,14 @@ struct UDarwinUserWidget_ScaleToMiniMapWidget_Params
 	float                                              xScale;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              yScale;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FVector2D                                   ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinUserWidget.ReportPlayer
+struct UDarwinUserWidget_ReportPlayer_Params
+{
+	int                                                reporterID;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinPlayerReportTypeEnum                        Type;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.ProjectTheFuckingWorldLocToScreenProperly
@@ -757,6 +789,12 @@ struct UDarwinUserWidget_IsZoneAllowedForClosing_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function Darwin.DarwinUserWidget.IsSDBlackListed
+struct UDarwinUserWidget_IsSDBlackListed_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Darwin.DarwinUserWidget.IsOwnerShowDirector
 struct UDarwinUserWidget_IsOwnerShowDirector_Params
 {
@@ -772,7 +810,7 @@ struct UDarwinUserWidget_IsOwnerCharacter_Params
 // Function Darwin.DarwinUserWidget.IsOwnerBloodPactedTo
 struct UDarwinUserWidget_IsOwnerBloodPactedTo_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -785,7 +823,13 @@ struct UDarwinUserWidget_IsOwnerBeholder_Params
 // Function Darwin.DarwinUserWidget.IsInCamStateForPlayer
 struct UDarwinUserWidget_IsInCamStateForPlayer_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinUserWidget.IsEnforcer
+struct UDarwinUserWidget_IsEnforcer_Params
+{
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -817,7 +861,7 @@ struct UDarwinUserWidget_GetTotalMatchesForLeaderboard_Params
 // Function Darwin.DarwinUserWidget.GetTimeSurvived
 struct UDarwinUserWidget_GetTimeSurvived_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
@@ -837,7 +881,7 @@ struct UDarwinUserWidget_GetPylon_Params
 // Function Darwin.DarwinUserWidget.GetPodiumRank
 struct UDarwinUserWidget_GetPodiumRank_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -852,6 +896,12 @@ struct UDarwinUserWidget_GetPlayerSuitIndex_Params
 {
 	int                                                UniqueId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinUserWidget.GetPlayerStats
+struct UDarwinUserWidget_GetPlayerStats_Params
+{
+	struct FDarwinPlayerStats                          ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Darwin.DarwinUserWidget.GetPlayerProfile
@@ -906,7 +956,7 @@ struct UDarwinUserWidget_GetPlayerHeadLoc_Params
 // Function Darwin.DarwinUserWidget.GetPlayerCraftedPower
 struct UDarwinUserWidget_GetPlayerCraftedPower_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	EDarwinItemTypeEnum                                powerType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
@@ -914,21 +964,21 @@ struct UDarwinUserWidget_GetPlayerCraftedPower_Params
 // Function Darwin.DarwinUserWidget.GetPlayerColorGradientFromID
 struct UDarwinUserWidget_GetPlayerColorGradientFromID_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FDarwinColorGradient                        ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Darwin.DarwinUserWidget.GetPlayerColorFromID
 struct UDarwinUserWidget_GetPlayerColorFromID_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FLinearColor                                ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetNumWoodHarvest
 struct UDarwinUserWidget_GetNumWoodHarvest_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -941,63 +991,63 @@ struct UDarwinUserWidget_GetNumUnopenedLootBox_Params
 // Function Darwin.DarwinUserWidget.GetNumTrapsLanded
 struct UDarwinUserWidget_GetNumTrapsLanded_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetNumRessourcesHarvested
 struct UDarwinUserWidget_GetNumRessourcesHarvested_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetNumPowersCrafted
 struct UDarwinUserWidget_GetNumPowersCrafted_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetNumLooted
 struct UDarwinUserWidget_GetNumLooted_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetNumLeatherHarvest
 struct UDarwinUserWidget_GetNumLeatherHarvest_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetNumKills
 struct UDarwinUserWidget_GetNumKills_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetNumItemsCrafted
 struct UDarwinUserWidget_GetNumItemsCrafted_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetNumElectronicHarvest
 struct UDarwinUserWidget_GetNumElectronicHarvest_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetNumCluesAcquired
 struct UDarwinUserWidget_GetNumCluesAcquired_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -1016,21 +1066,21 @@ struct UDarwinUserWidget_GetNumberOfGamesPlayed_Params
 // Function Darwin.DarwinUserWidget.GetNumArrowsShot
 struct UDarwinUserWidget_GetNumArrowsShot_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetNumArrowsHitObject
 struct UDarwinUserWidget_GetNumArrowsHitObject_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetNumArrowsHit
 struct UDarwinUserWidget_GetNumArrowsHit_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -1049,8 +1099,8 @@ struct UDarwinUserWidget_GetNextLevelXp_Params
 // Function Darwin.DarwinUserWidget.GetNetAvatarFromID
 struct UDarwinUserWidget_GetNetAvatarFromID_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	class UTexture2D*                                  ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture*                                    ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetMyRole
@@ -1063,6 +1113,18 @@ struct UDarwinUserWidget_GetMyRole_Params
 struct UDarwinUserWidget_GetMoney_Params
 {
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinUserWidget.GetLocalUniqueID
+struct UDarwinUserWidget_GetLocalUniqueID_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinUserWidget.GetLocalPlayerName
+struct UDarwinUserWidget_GetLocalPlayerName_Params
+{
+	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
 // Function Darwin.DarwinUserWidget.GetLevel
@@ -1100,8 +1162,22 @@ struct UDarwinUserWidget_GetKilledIDs_Params
 	TArray<int>                                        killedArray;                                              // (Parm, OutParm, ZeroConstructor)
 };
 
+// Function Darwin.DarwinUserWidget.GetItemLootInfo
+struct UDarwinUserWidget_GetItemLootInfo_Params
+{
+	struct FString                                     UniqueId;                                                 // (Parm, ZeroConstructor)
+	bool                                               bIsValid;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	struct FItemLoot                                   outItemLoot;                                              // (Parm, OutParm)
+};
+
 // Function Darwin.DarwinUserWidget.GetIsUsingGamepad
 struct UDarwinUserWidget_GetIsUsingGamepad_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinUserWidget.GetIsPrivateMatch
+struct UDarwinUserWidget_GetIsPrivateMatch_Params
 {
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
@@ -1137,7 +1213,7 @@ struct UDarwinUserWidget_GetIsOwnedByPlayer_Params
 // Function Darwin.DarwinUserWidget.GetHasCraftedCraftWheelIndex
 struct UDarwinUserWidget_GetHasCraftedCraftWheelIndex_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                cwIndex;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
@@ -1151,55 +1227,49 @@ struct UDarwinUserWidget_GetELO_Params
 // Function Darwin.DarwinUserWidget.GetDistanceTravelled
 struct UDarwinUserWidget_GetDistanceTravelled_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetDamageTaken
 struct UDarwinUserWidget_GetDamageTaken_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetDamageDone
 struct UDarwinUserWidget_GetDamageDone_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetCraftableItems
 struct UDarwinUserWidget_GetCraftableItems_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	TArray<EDarwinItemTypeEnum>                        ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
 // Function Darwin.DarwinUserWidget.GetClueTime
 struct UDarwinUserWidget_GetClueTime_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetCharacterFromID
 struct UDarwinUserWidget_GetCharacterFromID_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	class ADarwinCharacter*                            ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Darwin.DarwinUserWidget.GetCareerStats
-struct UDarwinUserWidget_GetCareerStats_Params
-{
-	struct FDarwinCareerStats                          ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Darwin.DarwinUserWidget.GetBloodPactPodiumRank
 struct UDarwinUserWidget_GetBloodPactPodiumRank_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -1212,21 +1282,21 @@ struct UDarwinUserWidget_GetBloodPactPodiumIDs_Params
 // Function Darwin.DarwinUserWidget.GetBloodPactDeadTimerNormalized
 struct UDarwinUserWidget_GetBloodPactDeadTimerNormalized_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetBloodPactDeadTimer
 struct UDarwinUserWidget_GetBloodPactDeadTimer_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.GetBloodPactDead
 struct UDarwinUserWidget_GetBloodPactDead_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -1250,6 +1320,12 @@ struct UDarwinUserWidget_EventZoneNowForbidden_Params
 	struct FString                                     zoneName;                                                 // (Parm, ZeroConstructor)
 };
 
+// Function Darwin.DarwinUserWidget.EventVivoxPlayerNotConnected
+struct UDarwinUserWidget_EventVivoxPlayerNotConnected_Params
+{
+	int                                                UniqueId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Darwin.DarwinUserWidget.EventUpdateSuddenDeathProgress
 struct UDarwinUserWidget_EventUpdateSuddenDeathProgress_Params
 {
@@ -1262,10 +1338,22 @@ struct UDarwinUserWidget_EventUpdateSuddenDeath_Params
 	struct FString                                     gameTimeStr;                                              // (Parm, ZeroConstructor)
 };
 
+// Function Darwin.DarwinUserWidget.EventUpdateShowDirectorIsLoading
+struct UDarwinUserWidget_EventUpdateShowDirectorIsLoading_Params
+{
+	bool                                               Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Darwin.DarwinUserWidget.EventUpdatePrivateMatchTimer
+struct UDarwinUserWidget_EventUpdatePrivateMatchTimer_Params
+{
+	struct FString                                     timeUntilRestart;                                         // (Parm, ZeroConstructor)
+};
+
 // Function Darwin.DarwinUserWidget.EventUpdatePodiumRank
 struct UDarwinUserWidget_EventUpdatePodiumRank_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                PodiumRank;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -1274,27 +1362,27 @@ struct UDarwinUserWidget_EventUpdatePlayerZoneName_Params
 {
 	struct FString                                     zoneName;                                                 // (Parm, ZeroConstructor)
 	bool                                               bForbiddenZone;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventUpdatePlayerYaw
 struct UDarwinUserWidget_EventUpdatePlayerYaw_Params
 {
 	float                                              Yaw;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventUpdatePlayerStamina
 struct UDarwinUserWidget_EventUpdatePlayerStamina_Params
 {
 	float                                              staminaNormalized;                                        // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventUpdatePlayerIndex
 struct UDarwinUserWidget_EventUpdatePlayerIndex_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                playerIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -1302,34 +1390,40 @@ struct UDarwinUserWidget_EventUpdatePlayerIndex_Params
 struct UDarwinUserWidget_EventUpdatePlayerHealth_Params
 {
 	float                                              healthNormalized;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventUpdatePlayerGradient
 struct UDarwinUserWidget_EventUpdatePlayerGradient_Params
 {
 	struct FDarwinColorGradient                        payerGradient;                                            // (Parm)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventUpdatePlayerColor
 struct UDarwinUserWidget_EventUpdatePlayerColor_Params
 {
 	struct FLinearColor                                playerColor;                                              // (Parm, IsPlainOldData)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventUpdatePlayerColdFactor
 struct UDarwinUserWidget_EventUpdatePlayerColdFactor_Params
 {
 	float                                              coldFactorNormalized;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventUpdatePing
 struct UDarwinUserWidget_EventUpdatePing_Params
 {
 	int                                                ping;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Darwin.DarwinUserWidget.EventUpdateNumberOfTwitchSpectators
+struct UDarwinUserWidget_EventUpdateNumberOfTwitchSpectators_Params
+{
+	int                                                Number;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventUpdateNumberOfPlayersLeftAlive
@@ -1363,7 +1457,7 @@ struct UDarwinUserWidget_EventUpdateManHuntInfo_Params
 // Function Darwin.DarwinUserWidget.EventUpdateLocalAvatarTexture
 struct UDarwinUserWidget_EventUpdateLocalAvatarTexture_Params
 {
-	class UTexture2D*                                  outLocalAvatarTexture;                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture*                                    outLocalAvatarTexture;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventUpdateGameTime
@@ -1394,14 +1488,14 @@ struct UDarwinUserWidget_EventUpdateGameAboutToStart_Params
 struct UDarwinUserWidget_EventUpdateCharacterLocationByID_Params
 {
 	struct FVector2D                                   Loc;                                                      // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventUpdateAvatarTexture
 struct UDarwinUserWidget_EventUpdateAvatarTexture_Params
 {
-	class UTexture2D*                                  avatar;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture*                                    avatar;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventToggleSpeak
@@ -1443,13 +1537,13 @@ struct UDarwinUserWidget_EventSoonToBeForbiddenZone_Params
 // Function Darwin.DarwinUserWidget.EventShowDirectorLeft
 struct UDarwinUserWidget_EventShowDirectorLeft_Params
 {
-	struct FString                                     showDirectorName;                                         // (Parm, ZeroConstructor)
+	struct FString                                     ShowDirectorName;                                         // (Parm, ZeroConstructor)
 };
 
 // Function Darwin.DarwinUserWidget.EventShowDirectorJoined
 struct UDarwinUserWidget_EventShowDirectorJoined_Params
 {
-	struct FString                                     showDirectorName;                                         // (Parm, ZeroConstructor)
+	struct FString                                     ShowDirectorName;                                         // (Parm, ZeroConstructor)
 };
 
 // Function Darwin.DarwinUserWidget.EventShiftKeyReleased
@@ -1476,6 +1570,12 @@ struct UDarwinUserWidget_EventSDSlomoEnded_Params
 struct UDarwinUserWidget_EventRotaCam_Params
 {
 	bool                                               bValue;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Darwin.DarwinUserWidget.EventQueuedCraftingStart
+struct UDarwinUserWidget_EventQueuedCraftingStart_Params
+{
+	EDarwinItemTypeEnum                                Type;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventPylonWillReactivate
@@ -1518,6 +1618,16 @@ struct UDarwinUserWidget_EventPylonCreated_Params
 	struct FVector                                     worldLoc;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 };
 
+// Function Darwin.DarwinUserWidget.EventPrivateMatchStarted
+struct UDarwinUserWidget_EventPrivateMatchStarted_Params
+{
+};
+
+// Function Darwin.DarwinUserWidget.EventPrivateMatchNeedsMorePlayers
+struct UDarwinUserWidget_EventPrivateMatchNeedsMorePlayers_Params
+{
+};
+
 // Function Darwin.DarwinUserWidget.EventPlayerSpeakStart
 struct UDarwinUserWidget_EventPlayerSpeakStart_Params
 {
@@ -1534,34 +1644,34 @@ struct UDarwinUserWidget_EventPlayerSpeakEnd_Params
 struct UDarwinUserWidget_EventPlayerReceivedDamage_Params
 {
 	int                                                Damage;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Darwin.DarwinUserWidget.EventPlayerProfileStatsReceived
-struct UDarwinUserWidget_EventPlayerProfileStatsReceived_Params
+// Function Darwin.DarwinUserWidget.EventPlayerProfileReceived
+struct UDarwinUserWidget_EventPlayerProfileReceived_Params
 {
-	struct FDarwinCareerStats                          stats;                                                    // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FDarwinPlayerStats                          stats;                                                    // (ConstParm, Parm, OutParm, ReferenceParm)
 	struct FDarwinProfile                              Profile;                                                  // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function Darwin.DarwinUserWidget.EventPlayerLeftGame
 struct UDarwinUserWidget_EventPlayerLeftGame_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventPlayerJoinedGame
 struct UDarwinUserWidget_EventPlayerJoinedGame_Params
 {
 	struct FString                                     playerName;                                               // (Parm, ZeroConstructor)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FString                                     playerName12;                                             // (Parm, ZeroConstructor)
 };
 
 // Function Darwin.DarwinUserWidget.EventPlayerIsWinner
 struct UDarwinUserWidget_EventPlayerIsWinner_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bBloodPactActive;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                allyID;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
@@ -1569,13 +1679,13 @@ struct UDarwinUserWidget_EventPlayerIsWinner_Params
 // Function Darwin.DarwinUserWidget.EventPlayerIsLooted
 struct UDarwinUserWidget_EventPlayerIsLooted_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventPlayerIsDead
 struct UDarwinUserWidget_EventPlayerIsDead_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                PodiumRank;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               firstDeath;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
@@ -1583,7 +1693,7 @@ struct UDarwinUserWidget_EventPlayerIsDead_Params
 // Function Darwin.DarwinUserWidget.EventPlayerCraftedPower
 struct UDarwinUserWidget_EventPlayerCraftedPower_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	EDarwinItemTypeEnum                                powerType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -1722,6 +1832,16 @@ struct UDarwinUserWidget_EventMenuUp_Params
 {
 };
 
+// Function Darwin.DarwinUserWidget.EventMenuSpecialRightPressed
+struct UDarwinUserWidget_EventMenuSpecialRightPressed_Params
+{
+};
+
+// Function Darwin.DarwinUserWidget.EventMenuSpecialLeftPressed
+struct UDarwinUserWidget_EventMenuSpecialLeftPressed_Params
+{
+};
+
 // Function Darwin.DarwinUserWidget.EventMenuRightTriggerPressed
 struct UDarwinUserWidget_EventMenuRightTriggerPressed_Params
 {
@@ -1762,6 +1882,26 @@ struct UDarwinUserWidget_EventMenuLeft_Params
 {
 };
 
+// Function Darwin.DarwinUserWidget.EventMenuDPadUp
+struct UDarwinUserWidget_EventMenuDPadUp_Params
+{
+};
+
+// Function Darwin.DarwinUserWidget.EventMenuDPadRight
+struct UDarwinUserWidget_EventMenuDPadRight_Params
+{
+};
+
+// Function Darwin.DarwinUserWidget.EventMenuDPadLeft
+struct UDarwinUserWidget_EventMenuDPadLeft_Params
+{
+};
+
+// Function Darwin.DarwinUserWidget.EventMenuDPadDown
+struct UDarwinUserWidget_EventMenuDPadDown_Params
+{
+};
+
 // Function Darwin.DarwinUserWidget.EventMenuDownReleased
 struct UDarwinUserWidget_EventMenuDownReleased_Params
 {
@@ -1780,6 +1920,7 @@ struct UDarwinUserWidget_EventMenuClick_Params
 // Function Darwin.DarwinUserWidget.EventMenuBack
 struct UDarwinUserWidget_EventMenuBack_Params
 {
+	bool                                               bIsEscape;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventManHuntStart
@@ -1794,12 +1935,13 @@ struct UDarwinUserWidget_EventManHuntEnd_Params
 {
 	int                                                targetCharacterID;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                killerCharacterID;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               isDead;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventLeaveCamStateCharacter
 struct UDarwinUserWidget_EventLeaveCamStateCharacter_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventLeaderboardReceived
@@ -1812,6 +1954,12 @@ struct UDarwinUserWidget_EventLeaderboardReceived_Params
 struct UDarwinUserWidget_EventItemBought_Params
 {
 	struct FString                                     itemUniqueId;                                             // (Parm, ZeroConstructor)
+};
+
+// Function Darwin.DarwinUserWidget.EventIsPrivateMatchOwner
+struct UDarwinUserWidget_EventIsPrivateMatchOwner_Params
+{
+	struct FString                                     password;                                                 // (Parm, ZeroConstructor)
 };
 
 // Function Darwin.DarwinUserWidget.EventInventoryUpdated
@@ -1888,7 +2036,7 @@ struct UDarwinUserWidget_EventFriendPartyLeft_Params
 struct UDarwinUserWidget_EventFriendPartyJoined_Params
 {
 	struct FText                                       friendName;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	class UTexture2D*                                  friendAvatar;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture*                                    friendAvatar;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventForbiddenZoneActivated
@@ -1910,7 +2058,7 @@ struct UDarwinUserWidget_EventFirstBlood_Params
 // Function Darwin.DarwinUserWidget.EventEnterCamStateCharacter
 struct UDarwinUserWidget_EventEnterCamStateCharacter_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventEndMatchDataReceived
@@ -1991,6 +2139,8 @@ struct UDarwinUserWidget_EventChangeCamera_Params
 // Function Darwin.DarwinUserWidget.EventCannotUseItemInLobby
 struct UDarwinUserWidget_EventCannotUseItemInLobby_Params
 {
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinItemTypeEnum                                Type;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.EventCannotSendAllyFlag
@@ -2032,12 +2182,25 @@ struct UDarwinUserWidget_EventArmorBreakNotification_Params
 struct UDarwinUserWidget_EventAddMessageFromSpectator_Params
 {
 	struct FString                                     Message;                                                  // (Parm, ZeroConstructor)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.DarwinRemove
 struct UDarwinUserWidget_DarwinRemove_Params
 {
+};
+
+// Function Darwin.DarwinUserWidget.DarwinCopyToClipboard
+struct UDarwinUserWidget_DarwinCopyToClipboard_Params
+{
+	struct FString                                     stringToCopy;                                             // (Parm, ZeroConstructor)
+};
+
+// Function Darwin.DarwinUserWidget.CanPylonBeActivatedPylon
+struct UDarwinUserWidget_CanPylonBeActivatedPylon_Params
+{
+	class ADarwinPylon*                                pylon;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinUserWidget.CanPylonBeActivated
@@ -2095,6 +2258,11 @@ struct UDarwinBeholderWidget_EventSetBeholderName_Params
 
 // Function Darwin.DarwinBeholderWidget.EventBloodPactReconBeholder
 struct UDarwinBeholderWidget_EventBloodPactReconBeholder_Params
+{
+};
+
+// Function Darwin.DarwinBeholderWidget.EventBeholderLocalSpeakLocked
+struct UDarwinBeholderWidget_EventBeholderLocalSpeakLocked_Params
 {
 };
 
@@ -2194,9 +2362,21 @@ struct UDarwinCharacterPower_EventLocalPowerActivate_Params
 	class ADarwinCharacter*                            Character;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Darwin.DarwinCamouflagePower.NetMulticastOnBreakCamouflage
+struct UDarwinCamouflagePower_NetMulticastOnBreakCamouflage_Params
+{
+};
+
 // Function Darwin.DarwinCampFire.NetMulticastFireEnded
 struct ADarwinCampFire_NetMulticastFireEnded_Params
 {
+};
+
+// Function Darwin.DarwinCampFire.EventUpdateLights
+struct ADarwinCampFire_EventUpdateLights_Params
+{
+	float                                              red_intensity;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              blue_intensity;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinCampFire.EventFireEnded
@@ -2338,10 +2518,11 @@ struct ADarwinCharacter_ServerSetShouldUseStrafe_Params
 	bool                                               inShouldUseStrafe;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Darwin.DarwinCharacter.ServerSetNetId
-struct ADarwinCharacter_ServerSetNetId_Params
+// Function Darwin.DarwinCharacter.ServerSetNetIdAndOnlineId
+struct ADarwinCharacter_ServerSetNetIdAndOnlineId_Params
 {
 	struct FString                                     inNetId;                                                  // (Parm, ZeroConstructor)
+	int                                                inOnlineId;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinCharacter.ServerSetIsHighlightedByClue
@@ -2411,6 +2592,12 @@ struct ADarwinCharacter_ServerExecuteSDPower_Params
 	int                                                targetIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Darwin.DarwinCharacter.ServerEmoteAction
+struct ADarwinCharacter_ServerEmoteAction_Params
+{
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Darwin.DarwinCharacter.ServerDebugGotoToNextGameStart
 struct ADarwinCharacter_ServerDebugGotoToNextGameStart_Params
 {
@@ -2419,6 +2606,12 @@ struct ADarwinCharacter_ServerDebugGotoToNextGameStart_Params
 // Function Darwin.DarwinCharacter.ServerDeactivateFootprintHighlights
 struct ADarwinCharacter_ServerDeactivateFootprintHighlights_Params
 {
+};
+
+// Function Darwin.DarwinCharacter.ServerCastSDRating
+struct ADarwinCharacter_ServerCastSDRating_Params
+{
+	int                                                rating;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinCharacter.ServerCallRandomDeliveryDrone
@@ -2750,6 +2943,8 @@ struct ADarwinCharacter_NetMulticastManHunOutro_Params
 struct ADarwinCharacter_NetMulticastKill_Params
 {
 	class ADarwinCharacter*                            killerChar;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	class ADarwinCharacter*                            tagChar;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class ADarwinCharacter*                            snowBallChar;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 	EDarwinDamageTypeEnum                              DamageType;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bFirstBlood;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
@@ -2774,7 +2969,14 @@ struct ADarwinCharacter_NetMulticastExecuteSDPower_Params
 // Function Darwin.DarwinCharacter.NetMulticastEndManHunt
 struct ADarwinCharacter_NetMulticastEndManHunt_Params
 {
-	int                                                KillerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                killerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               isDead;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Darwin.DarwinCharacter.NetMulticastEmoteAction
+struct ADarwinCharacter_NetMulticastEmoteAction_Params
+{
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinCharacter.NetMulticastDebugServerLocation
@@ -2785,6 +2987,11 @@ struct ADarwinCharacter_NetMulticastDebugServerLocation_Params
 
 // Function Darwin.DarwinCharacter.NetMulticastDeactivateFootprintHighlights
 struct ADarwinCharacter_NetMulticastDeactivateFootprintHighlights_Params
+{
+};
+
+// Function Darwin.DarwinCharacter.NetMulticastBurnt
+struct ADarwinCharacter_NetMulticastBurnt_Params
 {
 };
 
@@ -3254,6 +3461,7 @@ struct ADarwinCharacter_EventKilled_Params
 	EDarwinDamageTypeEnum                              DamageType;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                numberLeftAlive;                                          // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bSuicide;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bIsLocalDeath;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinCharacter.EventHitByAxe
@@ -3313,6 +3521,11 @@ struct ADarwinCharacter_EventCallDeliveryDrone_Params
 {
 	EDarwinDeliveryType                                delivery_type;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              delivery_duration;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Darwin.DarwinCharacter.EventBurnt
+struct ADarwinCharacter_EventBurnt_Params
+{
 };
 
 // Function Darwin.DarwinCharacter.EventBloodPactRevive
@@ -3527,7 +3740,7 @@ struct UDarwinCharacterWidget_EventUpdateRealStamina_Params
 // Function Darwin.DarwinCharacterWidget.EventUpdateRealHealth
 struct UDarwinCharacterWidget_EventUpdateRealHealth_Params
 {
-	int                                                health;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Health;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                healthMax;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -3997,6 +4210,8 @@ struct UDarwinCharacterWidget_EventInventorySlotChanged_Params
 // Function Darwin.DarwinCharacterWidget.EventInventoryActionFail
 struct UDarwinCharacterWidget_EventInventoryActionFail_Params
 {
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinItemTypeEnum                                ItemType;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinCharacterWidget.EventInAirStart
@@ -4252,7 +4467,14 @@ struct UDarwinCharacterWidget_DarwinPlayerAction_Params
 struct UDarwinCharacterWidget_CraftItem_Params
 {
 	EDarwinItemTypeEnum                                enum_type;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               outCraftQueued;                                           // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinCharacterWidget.CastSDRating
+struct UDarwinCharacterWidget_CastSDRating_Params
+{
+	int                                                rating;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinCharacterWidget.CanCraftItem
@@ -4260,6 +4482,12 @@ struct UDarwinCharacterWidget_CanCraftItem_Params
 {
 	EDarwinItemTypeEnum                                enum_type;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 	ECraftStatusEnum                                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinCharacterWidget.CanCastSDRating
+struct UDarwinCharacterWidget_CanCastSDRating_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinCharacterDebugWidget.EventUpdateRunBlendValues
@@ -4900,9 +5128,20 @@ struct ADarwinController_ToggleNormalCameraDistance_Params
 {
 };
 
+// Function Darwin.DarwinController.ToggleInputModeDebug
+struct ADarwinController_ToggleInputModeDebug_Params
+{
+};
+
 // Function Darwin.DarwinController.ToggleCamStateFarPlayer
 struct ADarwinController_ToggleCamStateFarPlayer_Params
 {
+};
+
+// Function Darwin.DarwinController.TestCastSDRating
+struct ADarwinController_TestCastSDRating_Params
+{
+	int                                                Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinController.StopMatchmaking
@@ -4912,6 +5151,11 @@ struct ADarwinController_StopMatchmaking_Params
 
 // Function Darwin.DarwinController.StopEnvironmentTime
 struct ADarwinController_StopEnvironmentTime_Params
+{
+};
+
+// Function Darwin.DarwinController.StartVoteDebug
+struct ADarwinController_StartVoteDebug_Params
 {
 };
 
@@ -4933,6 +5177,8 @@ struct ADarwinController_StartMatchmaking_Params
 	EDarwinGameMode                                    GameMode;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	EDarwinRoleEnum                                    PlayerRole;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FString                                     friendPlayerId;                                           // (Parm, ZeroConstructor)
+	bool                                               RequestPrivateServer;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FString                                     PrivateServerPassword;                                    // (Parm, ZeroConstructor)
 };
 
 // Function Darwin.DarwinController.StartGame
@@ -4948,6 +5194,7 @@ struct ADarwinController_StartEnvironmentTime_Params
 // Function Darwin.DarwinController.SpawnTestCharacter
 struct ADarwinController_SpawnTestCharacter_Params
 {
+	int                                                numberToSpawn;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinController.ShowPingAndVersion
@@ -5032,6 +5279,12 @@ struct ADarwinController_ServerXtroMode_Params
 {
 };
 
+// Function Darwin.DarwinController.ServerXboxSessionCreated
+struct ADarwinController_ServerXboxSessionCreated_Params
+{
+	struct FString                                     SessionId;                                                // (Parm, ZeroConstructor)
+};
+
 // Function Darwin.DarwinController.ServerTurnAIOff
 struct ADarwinController_ServerTurnAIOff_Params
 {
@@ -5059,34 +5312,15 @@ struct ADarwinController_ServerSetWeaponLevel_Params
 	int                                                Number;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Darwin.DarwinController.ServerSetSpeakEnabled
-struct ADarwinController_ServerSetSpeakEnabled_Params
-{
-	bool                                               Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function Darwin.DarwinController.ServerSetShortFootPrintLifeSpan
 struct ADarwinController_ServerSetShortFootPrintLifeSpan_Params
 {
-};
-
-// Function Darwin.DarwinController.ServerSetPlayerMuteStatus
-struct ADarwinController_ServerSetPlayerMuteStatus_Params
-{
-	int                                                talkerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinController.ServerSetNumberOfPylonsOnGameStart
 struct ADarwinController_ServerSetNumberOfPylonsOnGameStart_Params
 {
 	int                                                N;                                                        // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Darwin.DarwinController.ServerSetMuteAllEnabled
-struct ADarwinController_ServerSetMuteAllEnabled_Params
-{
-	bool                                               Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinController.ServerSetDeerNumber
@@ -5112,6 +5346,19 @@ struct ADarwinController_ServerRestartMap_Params
 {
 };
 
+// Function Darwin.DarwinController.ServerReportPlayer
+struct ADarwinController_ServerReportPlayer_Params
+{
+	int                                                reporterID;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinPlayerReportTypeEnum                        Type;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Darwin.DarwinController.ServerPrivateMatchStartGame
+struct ADarwinController_ServerPrivateMatchStartGame_Params
+{
+};
+
 // Function Darwin.DarwinController.ServerKrute
 struct ADarwinController_ServerKrute_Params
 {
@@ -5126,7 +5373,7 @@ struct ADarwinController_ServerKillPlayer_Params
 // Function Darwin.DarwinController.ServerKickPlayer
 struct ADarwinController_ServerKickPlayer_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinController.ServerInitiateNuclearBlast
@@ -5159,7 +5406,7 @@ struct ADarwinController_ServerHardRestart_Params
 // Function Darwin.DarwinController.ServerGotoShowDirector
 struct ADarwinController_ServerGotoShowDirector_Params
 {
-	struct FString                                     showDirectorName;                                         // (Parm, ZeroConstructor)
+	struct FString                                     ShowDirectorName;                                         // (Parm, ZeroConstructor)
 };
 
 // Function Darwin.DarwinController.ServerGotoPurgatory
@@ -5245,11 +5492,6 @@ struct ADarwinController_ServerDarwinCluesOn_Params
 	bool                                               Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Darwin.DarwinController.ServerConnectToWebSocket
-struct ADarwinController_ServerConnectToWebSocket_Params
-{
-};
-
 // Function Darwin.DarwinController.ServerCloseZone
 struct ADarwinController_ServerCloseZone_Params
 {
@@ -5273,6 +5515,11 @@ struct ADarwinController_ServerAIToggleJump_Params
 
 // Function Darwin.DarwinController.ServerAIToggleForcefield
 struct ADarwinController_ServerAIToggleForcefield_Params
+{
+};
+
+// Function Darwin.DarwinController.ServerAIToggleCraftWheel
+struct ADarwinController_ServerAIToggleCraftWheel_Params
 {
 };
 
@@ -5307,20 +5554,15 @@ struct ADarwinController_RestartMap_Params
 {
 };
 
-// Function Darwin.DarwinController.ResetPlayerProgression
-struct ADarwinController_ResetPlayerProgression_Params
-{
-};
-
-// Function Darwin.DarwinController.ResetAllPlayersELO
-struct ADarwinController_ResetAllPlayersELO_Params
+// Function Darwin.DarwinController.QuickShowDirectorTest
+struct ADarwinController_QuickShowDirectorTest_Params
 {
 };
 
 // Function Darwin.DarwinController.OverrideMyCareerIdentity
 struct ADarwinController_OverrideMyCareerIdentity_Params
 {
-	struct FString                                     PlayerId;                                                 // (Parm, ZeroConstructor)
+	int                                                playerOnlineId;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinController.NetMulticastHardRestart
@@ -5363,6 +5605,12 @@ struct ADarwinController_IsSuperUser_Params
 
 // Function Darwin.DarwinController.IsOfficialShowDirector
 struct ADarwinController_IsOfficialShowDirector_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinController.IsEnforcer
+struct ADarwinController_IsEnforcer_Params
 {
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
@@ -5416,7 +5664,7 @@ struct ADarwinController_HardRestart_Params
 // Function Darwin.DarwinController.GotoShowDirector
 struct ADarwinController_GotoShowDirector_Params
 {
-	struct FString                                     showDirectorName;                                         // (Parm, ZeroConstructor)
+	struct FString                                     ShowDirectorName;                                         // (Parm, ZeroConstructor)
 };
 
 // Function Darwin.DarwinController.GotoPurgatory
@@ -5492,6 +5740,20 @@ struct ADarwinController_ForceSuddenDeath_Params
 	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Darwin.DarwinController.EventVideoAnnouncement
+struct ADarwinController_EventVideoAnnouncement_Params
+{
+	struct FString                                     URL;                                                      // (Parm, ZeroConstructor)
+	struct FString                                     tilte;                                                    // (Parm, ZeroConstructor)
+	struct FString                                     Body;                                                     // (Parm, ZeroConstructor)
+	float                                              LengthSeconds;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Darwin.DarwinController.EventStopVideoAnnouncement
+struct ADarwinController_EventStopVideoAnnouncement_Params
+{
+};
+
 // Function Darwin.DarwinController.DrawActivePlayers
 struct ADarwinController_DrawActivePlayers_Params
 {
@@ -5560,6 +5822,14 @@ struct ADarwinController_DarwinServerCommand_Params
 	struct FString                                     Command;                                                  // (Parm, ZeroConstructor)
 };
 
+// Function Darwin.DarwinController.DarwinForceFeedback
+struct ADarwinController_DarwinForceFeedback_Params
+{
+	int                                                Level;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Duration;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	EForceFeedbackSide                                 side;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Darwin.DarwinController.DarwinFootstepsOn
 struct ADarwinController_DarwinFootstepsOn_Params
 {
@@ -5570,11 +5840,6 @@ struct ADarwinController_DarwinFootstepsOn_Params
 struct ADarwinController_DarwinCluesOn_Params
 {
 	bool                                               Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Darwin.DarwinController.ConnectToWebsocket
-struct ADarwinController_ConnectToWebsocket_Params
-{
 };
 
 // Function Darwin.DarwinController.CloseZone
@@ -5588,10 +5853,10 @@ struct ADarwinController_CloseRandomZone_Params
 {
 };
 
-// Function Darwin.DarwinController.ClientUnmutePlayer
-struct ADarwinController_ClientUnmutePlayer_Params
+// Function Darwin.DarwinController.ClientWasKicked
+struct ADarwinController_ClientWasKicked_Params
 {
-	struct FUniqueNetIdRepl                            PlayerId;                                                 // (Parm)
+	struct FText                                       KickReason;                                               // (ConstParm, Parm, ReferenceParm)
 };
 
 // Function Darwin.DarwinController.ClientStopGameCountdown
@@ -5632,10 +5897,10 @@ struct ADarwinController_ClientSetCameraManager_Params
 	class UClass*                                      NewCameraManagerClass;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Darwin.DarwinController.ClientMutePlayer
-struct ADarwinController_ClientMutePlayer_Params
+// Function Darwin.DarwinController.ClientReturnToMainMenu
+struct ADarwinController_ClientReturnToMainMenu_Params
 {
-	struct FUniqueNetIdRepl                            PlayerId;                                                 // (Parm)
+	struct FString                                     ReturnReason;                                             // (Parm, ZeroConstructor)
 };
 
 // Function Darwin.DarwinController.ClientMessageFromSpectator
@@ -5645,9 +5910,21 @@ struct ADarwinController_ClientMessageFromSpectator_Params
 	class ADarwinCharacter*                            FocusCharacter;                                           // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Darwin.DarwinController.ClientJoinXboxSession
+struct ADarwinController_ClientJoinXboxSession_Params
+{
+	struct FString                                     SessionId;                                                // (Parm, ZeroConstructor)
+};
+
 // Function Darwin.DarwinController.ClientEndOnlineGame
 struct ADarwinController_ClientEndOnlineGame_Params
 {
+};
+
+// Function Darwin.DarwinController.ClientCreateArbiterSession
+struct ADarwinController_ClientCreateArbiterSession_Params
+{
+	TArray<struct FString>                             playerIds;                                                // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 };
 
 // Function Darwin.DarwinController.ClearMyCareerIdentityOverride
@@ -5682,6 +5959,11 @@ struct ADarwinController_AIToggleJump_Params
 
 // Function Darwin.DarwinController.AIToggleForcefield
 struct ADarwinController_AIToggleForcefield_Params
+{
+};
+
+// Function Darwin.DarwinController.AIToggleCraftWheel
+struct ADarwinController_AIToggleCraftWheel_Params
 {
 };
 
@@ -5731,6 +6013,12 @@ struct ADarwinControllerSubActor_OwnerIsCharacter_Params
 
 // Function Darwin.DarwinControllerSubActor.OwnerIsBeholder
 struct ADarwinControllerSubActor_OwnerIsBeholder_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinCraftingComponent.ShouldQueueCraft
+struct UDarwinCraftingComponent_ShouldQueueCraft_Params
 {
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
@@ -5789,6 +6077,11 @@ struct UDarwinCraftingComponent_NetMulticastSetSimulatedMouseLocation_Params
 
 // Function Darwin.DarwinCraftingComponent.NetMulticastOpenCraftWheel
 struct UDarwinCraftingComponent_NetMulticastOpenCraftWheel_Params
+{
+};
+
+// Function Darwin.DarwinCraftingComponent.NetMulticastCraftingObjectToFalse
+struct UDarwinCraftingComponent_NetMulticastCraftingObjectToFalse_Params
 {
 };
 
@@ -5884,6 +6177,8 @@ struct UDarwinCraftingComponent_EventLocalCraftingEnd_Params
 struct UDarwinCraftingComponent_CraftObject_Params
 {
 	EDarwinItemTypeEnum                                enum_type;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               outCraftQueued;                                           // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinDamageType.IsWeapon
@@ -5971,7 +6266,7 @@ struct UDarwinDataSingletonLibrary_GetDarwinItemLeatherCost_Params
 struct UDarwinDataSingletonLibrary_GetDarwinItemInfoMap_Params
 {
 	EDarwinItemTypeEnum                                DarwinItemType;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	TMap<struct FString, struct FString>               ReturnValue;                                              // (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm)
+	TArray<struct FDarwinInfoMapping>                  ReturnValue;                                              // (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm)
 };
 
 // Function Darwin.DarwinDataSingletonLibrary.GetDarwinItemImageMiniMat
@@ -6217,6 +6512,32 @@ struct UDarwinDevCommunicationManager_HasMessage_Params
 {
 	int                                                MessageId;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinDevCommunicationManager.GetTitle
+struct UDarwinDevCommunicationManager_GetTitle_Params
+{
+	int                                                MessageId;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
+};
+
+// Function Darwin.DarwinDevCommunicationManager.GetServersAreClosedMessageTitle
+struct UDarwinDevCommunicationManager_GetServersAreClosedMessageTitle_Params
+{
+	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
+};
+
+// Function Darwin.DarwinDevCommunicationManager.GetServersAreClosedMessageBody
+struct UDarwinDevCommunicationManager_GetServersAreClosedMessageBody_Params
+{
+	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
+};
+
+// Function Darwin.DarwinDevCommunicationManager.GetBody
+struct UDarwinDevCommunicationManager_GetBody_Params
+{
+	int                                                MessageId;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
 // Function Darwin.DarwinEnvironmentManager.UpdateDayPeriod
@@ -6647,6 +6968,14 @@ struct UDarwinFootprintComponent_ServerDeactivateHighlights_Params
 {
 };
 
+// Function Darwin.DarwinFootprintComponent.ServerAddDeepSnowFootprint
+struct UDarwinFootprintComponent_ServerAddDeepSnowFootprint_Params
+{
+	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
+	bool                                               bAllowLocal;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      HitActor;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Darwin.DarwinFootprintComponent.NetMulticastSnowHit
 struct UDarwinFootprintComponent_NetMulticastSnowHit_Params
 {
@@ -6664,6 +6993,14 @@ struct UDarwinFootprintComponent_NetMulticastFootStepSound_Params
 // Function Darwin.DarwinFootprintComponent.NetMulticastDeactivateHighlights
 struct UDarwinFootprintComponent_NetMulticastDeactivateHighlights_Params
 {
+};
+
+// Function Darwin.DarwinFootprintComponent.NetMulticastAddDeepSnowFootprint
+struct UDarwinFootprintComponent_NetMulticastAddDeepSnowFootprint_Params
+{
+	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
+	bool                                               bAllowLocal;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      HitActor;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinFootprintComponent.EventSimulatedFootStepSound
@@ -6715,9 +7052,25 @@ struct UDarwinGameInstance_TravelToURL_Params
 	EDarwinRoleEnum                                    Role;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Darwin.DarwinGameInstance.StopNotificationPolling
+struct UDarwinGameInstance_StopNotificationPolling_Params
+{
+};
+
+// Function Darwin.DarwinGameInstance.StartNotificationPolling
+struct UDarwinGameInstance_StartNotificationPolling_Params
+{
+};
+
 // Function Darwin.DarwinGameInstance.ShowLoadingScreen
 struct UDarwinGameInstance_ShowLoadingScreen_Params
 {
+};
+
+// Function Darwin.DarwinGameInstance.ShouldOpenStartScreen
+struct UDarwinGameInstance_ShouldOpenStartScreen_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinGameInstance.SearchGame
@@ -6736,15 +7089,15 @@ struct UDarwinGameInstance_ResetSaveGame_Params
 {
 };
 
+// Function Darwin.DarwinGameInstance.OnEnterMainMenu
+struct UDarwinGameInstance_OnEnterMainMenu_Params
+{
+};
+
 // Function Darwin.DarwinGameInstance.LoadGame
 struct UDarwinGameInstance_LoadGame_Params
 {
 	bool                                               apply;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Darwin.DarwinGameInstance.LeaveVivoxGameChannel
-struct UDarwinGameInstance_LeaveVivoxGameChannel_Params
-{
 };
 
 // Function Darwin.DarwinGameInstance.JoinSession
@@ -6757,6 +7110,14 @@ struct UDarwinGameInstance_JoinSession_Params
 // Function Darwin.DarwinGameInstance.GotoMainMenu
 struct UDarwinGameInstance_GotoMainMenu_Params
 {
+};
+
+// Function Darwin.DarwinGameInstance.DisplayMessageBoxDebug
+struct UDarwinGameInstance_DisplayMessageBoxDebug_Params
+{
+	struct FString                                     Title;                                                    // (Parm, ZeroConstructor)
+	struct FString                                     Body;                                                     // (Parm, ZeroConstructor)
+	struct FString                                     debug;                                                    // (Parm, ZeroConstructor)
 };
 
 // Function Darwin.DarwinGameInstance.CancelSearchGame
@@ -6804,6 +7165,12 @@ struct UDarwinGameplayStatics_LoadFileToString_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function Darwin.DarwinGameplayStatics.IsXbox
+struct UDarwinGameplayStatics_IsXbox_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Darwin.DarwinGameplayStatics.IsShipping
 struct UDarwinGameplayStatics_IsShipping_Params
 {
@@ -6826,6 +7193,18 @@ struct UDarwinGameplayStatics_IsE3_Params
 struct UDarwinGameplayStatics_IsConsole_Params
 {
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinGameplayStatics.IgnoreAllSettings
+struct UDarwinGameplayStatics_IgnoreAllSettings_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinGameplayStatics.GetPlayerTargetedPowersMinRating
+struct UDarwinGameplayStatics_GetPlayerTargetedPowersMinRating_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinGameplayStatics.GetLANIP
@@ -6920,9 +7299,9 @@ struct ADarwinGameState_NetMulticastInitiateBloodPactMode_Params
 // Function Darwin.DarwinGameState.NetMulticastEndGameStatsReady
 struct ADarwinGameState_NetMulticastEndGameStatsReady_Params
 {
-	struct FString                                     PlayerId;                                                 // (Parm, ZeroConstructor)
+	int                                                OnlineId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FDarwinProfile                              playerPofile;                                             // (ConstParm, Parm, ReferenceParm)
-	struct FDarwinCareerStats                          NewCareerStats;                                           // (ConstParm, Parm, ReferenceParm)
+	struct FDarwinPlayerStats                          NewPlayerStats;                                           // (ConstParm, Parm, ReferenceParm)
 	struct FDarwinLastMatchProgression                 ProgressionUpdated;                                       // (ConstParm, Parm, ReferenceParm)
 };
 
@@ -6944,18 +7323,8 @@ struct ADarwinGameState_NetMulticastComputeBloodPactRankOnDeath_Params
 	class ADarwinCharacter*                            deadCharacter;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Darwin.DarwinGameState.NetMulticastCheer
-struct ADarwinGameState_NetMulticastCheer_Params
-{
-};
-
 // Function Darwin.DarwinGameState.NetMulticastBroacastGameCountdownStartedEvent
 struct ADarwinGameState_NetMulticastBroacastGameCountdownStartedEvent_Params
-{
-};
-
-// Function Darwin.DarwinGameState.NetMulticastBoo
-struct ADarwinGameState_NetMulticastBoo_Params
 {
 };
 
@@ -7097,16 +7466,6 @@ struct ADarwinGameState_EventGameStarted_Params
 
 // Function Darwin.DarwinGameState.EventGameCountdownStarted
 struct ADarwinGameState_EventGameCountdownStarted_Params
-{
-};
-
-// Function Darwin.DarwinGameState.EventCheer
-struct ADarwinGameState_EventCheer_Params
-{
-};
-
-// Function Darwin.DarwinGameState.EventBoo
-struct ADarwinGameState_EventBoo_Params
 {
 };
 
@@ -8067,6 +8426,11 @@ struct ADarwinLoot_EventUpdateOpenRays_Params
 	float                                              Intensity;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Darwin.DarwinLoot.EventSetLootableShape
+struct ADarwinLoot_EventSetLootableShape_Params
+{
+};
+
 // Function Darwin.DarwinLoot.EventLootReset
 struct ADarwinLoot_EventLootReset_Params
 {
@@ -8089,6 +8453,11 @@ struct ADarwinMagWall_NetMulticastSetDarwinCharacterOwner_Params
 	class ADarwinCharacter*                            Character;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Darwin.DarwinMainMenuWidget.TwitchLoginCancelled
+struct UDarwinMainMenuWidget_TwitchLoginCancelled_Params
+{
+};
+
 // Function Darwin.DarwinMainMenuWidget.StopMatchmaking
 struct UDarwinMainMenuWidget_StopMatchmaking_Params
 {
@@ -8099,6 +8468,20 @@ struct UDarwinMainMenuWidget_StartMatchmaking_Params
 {
 	EDarwinGameMode                                    GameMode;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	EDarwinRoleEnum                                    PlayerRole;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               RequestPrivateServer;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FString                                     PrivateServerPassword;                                    // (Parm, ZeroConstructor)
+};
+
+// Function Darwin.DarwinMainMenuWidget.SetVivoxAudioOutputDevice
+struct UDarwinMainMenuWidget_SetVivoxAudioOutputDevice_Params
+{
+	struct FString                                     audioDevName;                                             // (Parm, ZeroConstructor)
+};
+
+// Function Darwin.DarwinMainMenuWidget.SetVivoxAudioInputDevice
+struct UDarwinMainMenuWidget_SetVivoxAudioInputDevice_Params
+{
+	struct FString                                     audioDevName;                                             // (Parm, ZeroConstructor)
 };
 
 // Function Darwin.DarwinMainMenuWidget.SetChosenRegion
@@ -8107,9 +8490,36 @@ struct UDarwinMainMenuWidget_SetChosenRegion_Params
 	struct FString                                     RegionName;                                               // (Parm, ZeroConstructor)
 };
 
+// Function Darwin.DarwinMainMenuWidget.RetryAuthentication
+struct UDarwinMainMenuWidget_RetryAuthentication_Params
+{
+};
+
 // Function Darwin.DarwinMainMenuWidget.MixerConnectionCancelled
 struct UDarwinMainMenuWidget_MixerConnectionCancelled_Params
 {
+};
+
+// Function Darwin.DarwinMainMenuWidget.LogoutFromTwitch
+struct UDarwinMainMenuWidget_LogoutFromTwitch_Params
+{
+};
+
+// Function Darwin.DarwinMainMenuWidget.LogoutFromMixer
+struct UDarwinMainMenuWidget_LogoutFromMixer_Params
+{
+};
+
+// Function Darwin.DarwinMainMenuWidget.LoginToTwitch
+struct UDarwinMainMenuWidget_LoginToTwitch_Params
+{
+};
+
+// Function Darwin.DarwinMainMenuWidget.GetRegionPing
+struct UDarwinMainMenuWidget_GetRegionPing_Params
+{
+	struct FString                                     RegionName;                                               // (Parm, ZeroConstructor)
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinMainMenuWidget.GetAutoRegion
@@ -8125,10 +8535,39 @@ struct UDarwinMainMenuWidget_EventUpdateRegionPing_Params
 	int                                                ping;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Darwin.DarwinMainMenuWidget.EventUpdatePlayerName
+struct UDarwinMainMenuWidget_EventUpdatePlayerName_Params
+{
+};
+
 // Function Darwin.DarwinMainMenuWidget.EventUpdateChosenRegion
 struct UDarwinMainMenuWidget_EventUpdateChosenRegion_Params
 {
 	struct FString                                     RegionName;                                               // (Parm, ZeroConstructor)
+};
+
+// Function Darwin.DarwinMainMenuWidget.EventUpdateActiveVivoxAudioOuputDevice
+struct UDarwinMainMenuWidget_EventUpdateActiveVivoxAudioOuputDevice_Params
+{
+	struct FString                                     audioDevName;                                             // (Parm, ZeroConstructor)
+};
+
+// Function Darwin.DarwinMainMenuWidget.EventUpdateActiveVivoxAudioInputDevice
+struct UDarwinMainMenuWidget_EventUpdateActiveVivoxAudioInputDevice_Params
+{
+	struct FString                                     audioDevName;                                             // (Parm, ZeroConstructor)
+};
+
+// Function Darwin.DarwinMainMenuWidget.EventTwitchLoginStateChanged
+struct UDarwinMainMenuWidget_EventTwitchLoginStateChanged_Params
+{
+	EDarwinTwitchLoginState                            State;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FString                                     DisplayName;                                              // (Parm, ZeroConstructor)
+};
+
+// Function Darwin.DarwinMainMenuWidget.EventShowStartScreen
+struct UDarwinMainMenuWidget_EventShowStartScreen_Params
+{
 };
 
 // Function Darwin.DarwinMainMenuWidget.EventSetServerVersion
@@ -8161,9 +8600,26 @@ struct UDarwinMainMenuWidget_EventRemoveRegion_Params
 	struct FString                                     RegionName;                                               // (Parm, ZeroConstructor)
 };
 
+// Function Darwin.DarwinMainMenuWidget.EventOpenTwitchLoginBrowser
+struct UDarwinMainMenuWidget_EventOpenTwitchLoginBrowser_Params
+{
+};
+
 // Function Darwin.DarwinMainMenuWidget.EventOpenMixerConnectionBrowser
 struct UDarwinMainMenuWidget_EventOpenMixerConnectionBrowser_Params
 {
+};
+
+// Function Darwin.DarwinMainMenuWidget.EventNewVivoxAudioOutputDevices
+struct UDarwinMainMenuWidget_EventNewVivoxAudioOutputDevices_Params
+{
+	struct FString                                     audioDevName;                                             // (Parm, ZeroConstructor)
+};
+
+// Function Darwin.DarwinMainMenuWidget.EventNewVivoxAudioInputDevices
+struct UDarwinMainMenuWidget_EventNewVivoxAudioInputDevices_Params
+{
+	struct FString                                     audioDevName;                                             // (Parm, ZeroConstructor)
 };
 
 // Function Darwin.DarwinMainMenuWidget.EventMixerConnectionStateChanged
@@ -8195,11 +8651,6 @@ struct UDarwinMainMenuWidget_EventMatchmakingServersFull_Params
 struct UDarwinMainMenuWidget_EventMatchmakingCompleted_Params
 {
 	struct FDarwinMatchmakingInfo                      matchmakingInfo;                                          // (ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// Function Darwin.DarwinMainMenuWidget.EventMatchmakingCanceled
-struct UDarwinMainMenuWidget_EventMatchmakingCanceled_Params
-{
 };
 
 // Function Darwin.DarwinMainMenuWidget.EventMapLoaded
@@ -8236,6 +8687,11 @@ struct UDarwinMainMenuWidget_EventInputRebindCanceled_Params
 struct UDarwinMainMenuWidget_EventInputBindingCleared_Params
 {
 	TArray<struct FName>                               ActionName;                                               // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+};
+
+// Function Darwin.DarwinMainMenuWidget.EventAuthenticationFailed
+struct UDarwinMainMenuWidget_EventAuthenticationFailed_Params
+{
 };
 
 // Function Darwin.DarwinMainMenuWidget.EventAddRegion
@@ -8419,6 +8875,19 @@ struct UDarwinMatchmakingManager_GetGameMode_Params
 	EDarwinGameMode                                    ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function Darwin.DarwinMessageBoxWidget.OnMessageBoxAnswered
+struct UDarwinMessageBoxWidget_OnMessageBoxAnswered_Params
+{
+	int                                                MessageBoxId;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinMessageBoxResponse                          Response;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Darwin.DarwinMessageBoxWidget.DisplayMessageBox
+struct UDarwinMessageBoxWidget_DisplayMessageBox_Params
+{
+	struct FDarwinMessageBox                           Message;                                                  // (ConstParm, Parm, OutParm, ReferenceParm)
+};
+
 // Function Darwin.DarwinMiniDrone.ServerSetWantedDroneTransform
 struct ADarwinMiniDrone_ServerSetWantedDroneTransform_Params
 {
@@ -8435,6 +8904,11 @@ struct ADarwinMiniDrone_EventUpdateMiniDroneCamouflage_Params
 
 // Function Darwin.DarwinMiniDrone.EventInitializeMiniDroneMaterials
 struct ADarwinMiniDrone_EventInitializeMiniDroneMaterials_Params
+{
+};
+
+// Function Darwin.DarwinMixerConnectionBrowserWidget.StartLoginFlow
+struct UDarwinMixerConnectionBrowserWidget_StartLoginFlow_Params
 {
 };
 
@@ -8670,9 +9144,21 @@ struct UDarwinPowerPog_EventActivatePog_Params
 {
 };
 
+// Function Darwin.DarwinPowerPog.CanUsePowersFromRating
+struct UDarwinPowerPog_CanUsePowersFromRating_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Darwin.DarwinPredatorPower.EventPredatorPulse
 struct UDarwinPredatorPower_EventPredatorPulse_Params
 {
+};
+
+// Function Darwin.DarwinProfileManager.GetTwitchExtensionUrl
+struct UDarwinProfileManager_GetTwitchExtensionUrl_Params
+{
+	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
 // Function Darwin.DarwinProjectile.NetMulticastThrow
@@ -8863,6 +9349,12 @@ struct ADarwinProjectile_EventEmitHitFX_Params
 struct ADarwinPurgatoryPawn_SetDressRoomMode_Params
 {
 	bool                                               enable;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Darwin.DarwinPurgatoryPawn.IsUsingGamepadCraftWheel
+struct ADarwinPurgatoryPawn_IsUsingGamepadCraftWheel_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinRessource.UpdateBeingHarvested
@@ -9189,8 +9681,18 @@ struct UDarwinSaveGame_UpdateBGCustomization_Params
 	int                                                face_paint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Darwin.DarwinSaveGame.ResetKeyboardInputBinding
+struct UDarwinSaveGame_ResetKeyboardInputBinding_Params
+{
+};
+
 // Function Darwin.DarwinSaveGame.ResetGraphicSettingsToDefault
 struct UDarwinSaveGame_ResetGraphicSettingsToDefault_Params
+{
+};
+
+// Function Darwin.DarwinSaveGame.ResetGameplaySettingsToDefault
+struct UDarwinSaveGame_ResetGameplaySettingsToDefault_Params
 {
 };
 
@@ -9201,11 +9703,6 @@ struct UDarwinSaveGame_ResetGamepadSettingsToDefault_Params
 
 // Function Darwin.DarwinSaveGame.ResetGamepadInputBinding
 struct UDarwinSaveGame_ResetGamepadInputBinding_Params
-{
-};
-
-// Function Darwin.DarwinSaveGame.ResetControllerSettingsToDefault
-struct UDarwinSaveGame_ResetControllerSettingsToDefault_Params
 {
 };
 
@@ -9223,7 +9720,7 @@ struct UDarwinSaveGame_Copy_Params
 // Function Darwin.DarwinScreendicatorWidget.IsOwnerBloodPactedTo
 struct UDarwinScreendicatorWidget_IsOwnerBloodPactedTo_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -9267,7 +9764,7 @@ struct UDarwinScreendicatorWidget_HarvestedFirstTree_Params
 // Function Darwin.DarwinScreendicatorWidget.GetPlayerColorGradientFromID
 struct UDarwinScreendicatorWidget_GetPlayerColorGradientFromID_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FDarwinColorGradient                        ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -9280,13 +9777,14 @@ struct UDarwinScreendicatorWidget_GetNumberOfGamesPlayed_Params
 // Function Darwin.DarwinScreendicatorWidget.GetNetAvatarFromID
 struct UDarwinScreendicatorWidget_GetNetAvatarFromID_Params
 {
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	class UTexture2D*                                  ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture*                                    ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinScreendicatorWidget.GetManHuntTimeLeft
 struct UDarwinScreendicatorWidget_GetManHuntTimeLeft_Params
 {
+	float                                              outNormalized;                                            // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -9341,7 +9839,7 @@ struct UDarwinScreendicatorWidget_EventUpdatePoopTime_Params
 struct UDarwinScreendicatorWidget_EventUpdatePlayerStatus_Params
 {
 	float                                              Stamina;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              health;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Health;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              Cold;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -9349,6 +9847,7 @@ struct UDarwinScreendicatorWidget_EventUpdatePlayerStatus_Params
 struct UDarwinScreendicatorWidget_EventUpdateClueTime_Params
 {
 	int                                                timeLeft;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              outNormalized;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinScreendicatorWidget.EventSetDarwinPlayerName
@@ -9373,7 +9872,7 @@ struct UDarwinScreendicatorWidget_EventSetCharacterUniqueID_Params
 struct UDarwinScreendicatorWidget_EventPylonHarvestStart_Params
 {
 	struct FString                                     harvesterName;                                            // (Parm, ZeroConstructor)
-	int                                                PlayerId;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                playerID;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinScreendicatorWidget.EventPylonHarvestEnd
@@ -9578,16 +10077,15 @@ struct UDarwinShootingComponent_AddProjectile_Params
 	int                                                N;                                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Darwin.DarwinShowDirector.TriggerVote
-struct ADarwinShowDirector_TriggerVote_Params
+// Function Darwin.DarwinShowDirector.SpectatorRatingTest
+struct ADarwinShowDirector_SpectatorRatingTest_Params
 {
-	bool                                               bOn;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Darwin.DarwinShowDirector.ServerTriggerVote
-struct ADarwinShowDirector_ServerTriggerVote_Params
+// Function Darwin.DarwinShowDirector.ServerSetNumberOfTwitchSpectators
+struct ADarwinShowDirector_ServerSetNumberOfTwitchSpectators_Params
 {
-	bool                                               bOn;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinShowDirector.OnRepShowDirectorName
@@ -9670,11 +10168,76 @@ struct UDarwinShowDirectorWidget_IsSpectatorExperienceActive_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function Darwin.DarwinShowDirectorWidget.GetThisGameSDTotalSpectatorRating
+struct UDarwinShowDirectorWidget_GetThisGameSDTotalSpectatorRating_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.GetThisGameSDPlayerRating
+struct UDarwinShowDirectorWidget_GetThisGameSDPlayerRating_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.GetThisGameSDAvgSpectatorRating
+struct UDarwinShowDirectorWidget_GetThisGameSDAvgSpectatorRating_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Darwin.DarwinShowDirectorWidget.GetPylonClosestToLoc
 struct UDarwinShowDirectorWidget_GetPylonClosestToLoc_Params
 {
 	struct FVector2D                                   Loc;                                                      // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 	class ADarwinPylon*                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.GetPlayerTargetedPowersMinRating
+struct UDarwinShowDirectorWidget_GetPlayerTargetedPowersMinRating_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.GetNewSDTotalSpectatorRating
+struct UDarwinShowDirectorWidget_GetNewSDTotalSpectatorRating_Params
+{
+	int                                                outOldRating;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.GetNewSDPlayerRating
+struct UDarwinShowDirectorWidget_GetNewSDPlayerRating_Params
+{
+	float                                              outDelta;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              outOldRating;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.GetNewSDAvgSpectatorRating
+struct UDarwinShowDirectorWidget_GetNewSDAvgSpectatorRating_Params
+{
+	float                                              outDelta;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              outOldRating;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.GetCurrentSDTotalSpectatorRating
+struct UDarwinShowDirectorWidget_GetCurrentSDTotalSpectatorRating_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.GetCurrentSDPlayerRating
+struct UDarwinShowDirectorWidget_GetCurrentSDPlayerRating_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.GetCurrentSDAvgSpectatorRating
+struct UDarwinShowDirectorWidget_GetCurrentSDAvgSpectatorRating_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Darwin.DarwinShowDirectorWidget.GetCharacterClosestToLoc
@@ -9701,7 +10264,13 @@ struct UDarwinShowDirectorWidget_EventVoteResultsReceived_Params
 {
 	bool                                               bVoteForPlayers;                                          // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                TotalVoteCount;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	TArray<class UDarwinVoteResultForUMG*>             VoteResults;                                              // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class UDarwinVoteResultForUMG*>             voteResults;                                              // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.EventUpdateThisGameAvgPlayerRating
+struct UDarwinShowDirectorWidget_EventUpdateThisGameAvgPlayerRating_Params
+{
+	float                                              avgRating;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinShowDirectorWidget.EventUpdateSDPowerManaProgress
@@ -9722,6 +10291,12 @@ struct UDarwinShowDirectorWidget_EventUpdateSDMana_Params
 	int                                                Mana;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Darwin.DarwinShowDirectorWidget.EventUpdateCumSpectatorRating
+struct UDarwinShowDirectorWidget_EventUpdateCumSpectatorRating_Params
+{
+	int                                                rating;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Darwin.DarwinShowDirectorWidget.EventStartSDPowerCooldown
 struct UDarwinShowDirectorWidget_EventStartSDPowerCooldown_Params
 {
@@ -9730,7 +10305,16 @@ struct UDarwinShowDirectorWidget_EventStartSDPowerCooldown_Params
 // Function Darwin.DarwinShowDirectorWidget.EventSetShowDirectorName
 struct UDarwinShowDirectorWidget_EventSetShowDirectorName_Params
 {
-	struct FString                                     showDirectorName;                                         // (Parm, ZeroConstructor)
+	struct FString                                     ShowDirectorName;                                         // (Parm, ZeroConstructor)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.EventRatingVoteResultsReceived
+struct UDarwinShowDirectorWidget_EventRatingVoteResultsReceived_Params
+{
+	int                                                TotalVoteCount;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              avgRating;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                totalStars;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TArray<class UDarwinVoteResultForUMG*>             voteResults;                                              // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function Darwin.DarwinShowDirectorWidget.EventPogUnHovered
@@ -9749,6 +10333,12 @@ struct UDarwinShowDirectorWidget_EventPogHovered_Params
 struct UDarwinShowDirectorWidget_EventPogClicked_Params
 {
 	class UDarwinPowerPog*                             senderPog;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function Darwin.DarwinShowDirectorWidget.EventNewPlayerRating
+struct UDarwinShowDirectorWidget_EventNewPlayerRating_Params
+{
+	int                                                rating;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinShowDirectorWidget.EventInitializeManaStuff
@@ -9783,6 +10373,7 @@ struct UDarwinSonarPower_EventSonarPulse_Params
 // Function Darwin.DarwinSpectatorExperienceManager.ServerSendAccessToken
 struct UDarwinSpectatorExperienceManager_ServerSendAccessToken_Params
 {
+	EDarwinStreamingPlatform                           StreamingPlatform;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FString                                     AccessToken;                                              // (Parm, ZeroConstructor)
 };
 
@@ -9790,8 +10381,9 @@ struct UDarwinSpectatorExperienceManager_ServerSendAccessToken_Params
 struct UDarwinSpectatorPowerVoteManager_NetMulticastVoteResultsReceived_Params
 {
 	bool                                               bVoteForPlayers;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinItemTypeEnum                                powerType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                TotalVoteCount;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	TArray<struct FDarwinVoteResult>                   VoteResults;                                              // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+	TArray<struct FDarwinVoteResult>                   voteResults;                                              // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 };
 
 // Function Darwin.DarwinSpectatorPowerVoteManager.NetMulticastStartVote
@@ -9812,10 +10404,29 @@ struct UDarwinStaminaComponent_ServerSetOutOfBreath_Params
 	bool                                               Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Darwin.DarwinStaminaComponent.NetMulticastSetOutOfBreath
-struct UDarwinStaminaComponent_NetMulticastSetOutOfBreath_Params
+// Function Darwin.DarwinStartScreenWidget.EventShowButtonPrompt
+struct UDarwinStartScreenWidget_EventShowButtonPrompt_Params
 {
-	bool                                               Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Darwin.DarwinStartScreenWidget.EventProceedToMainMenu
+struct UDarwinStartScreenWidget_EventProceedToMainMenu_Params
+{
+};
+
+// Function Darwin.DarwinStartScreenWidget.EventHideButtonPrompt
+struct UDarwinStartScreenWidget_EventHideButtonPrompt_Params
+{
+};
+
+// Function Darwin.DarwinStartScreenWidget.EnterStartScreenAndOpenXboxAccountPicker
+struct UDarwinStartScreenWidget_EnterStartScreenAndOpenXboxAccountPicker_Params
+{
+};
+
+// Function Darwin.DarwinStartScreenWidget.EnterStartScreen
+struct UDarwinStartScreenWidget_EnterStartScreen_Params
+{
 };
 
 // Function Darwin.DarwinStatComponent.ServerSetGameStartStats
@@ -10009,6 +10620,7 @@ struct UDarwinStatComponent_AddDamageTaken_Params
 	float                                              Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	class ADarwinCharacter*                            Origin;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	EDarwinDamageTypeEnum                              DamageType;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinItemTypeEnum                                ItemType;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Darwin.DarwinStatComponent.AddDamageDone
@@ -10177,6 +10789,11 @@ struct ADarwinTurret_EventTurretIsNowDeployed_Params
 
 // Function Darwin.DarwinTurret.EventDeployTurret
 struct ADarwinTurret_EventDeployTurret_Params
+{
+};
+
+// Function Darwin.DarwinTwitchLoginBrowserWidget.StartLoginFlow
+struct UDarwinTwitchLoginBrowserWidget_StartLoginFlow_Params
 {
 };
 

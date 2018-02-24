@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,6 +14,17 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function MyNameAndLevel.MyNameAndLevel_C.SetSwitchProfileVisibility
+struct UMyNameAndLevel_C_SetSwitchProfileVisibility_Params
+{
+	bool                                               visible;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function MyNameAndLevel.MyNameAndLevel_C.UpdatePlayerName
+struct UMyNameAndLevel_C_UpdatePlayerName_Params
+{
+};
+
 // Function MyNameAndLevel.MyNameAndLevel_C.UpdatePartyLeaderUI
 struct UMyNameAndLevel_C_UpdatePartyLeaderUI_Params
 {
@@ -22,7 +33,7 @@ struct UMyNameAndLevel_C_UpdatePartyLeaderUI_Params
 // Function MyNameAndLevel.MyNameAndLevel_C.EventUpdateLocalAvatarTexture
 struct UMyNameAndLevel_C_EventUpdateLocalAvatarTexture_Params
 {
-	class UTexture2D**                                 outLocalAvatarTexture;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture**                                   outLocalAvatarTexture;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MyNameAndLevel.MyNameAndLevel_C.Construct
@@ -33,15 +44,15 @@ struct UMyNameAndLevel_C_Construct_Params
 // Function MyNameAndLevel.MyNameAndLevel_C.EventUpdateAvatarTexture
 struct UMyNameAndLevel_C_EventUpdateAvatarTexture_Params
 {
-	class UTexture2D**                                 avatar;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int*                                               PlayerId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture**                                   avatar;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               playerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MyNameAndLevel.MyNameAndLevel_C.EventFriendPartyJoined
 struct UMyNameAndLevel_C_EventFriendPartyJoined_Params
 {
 	struct FText*                                      friendName;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UTexture2D**                                 friendAvatar;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture**                                   friendAvatar;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MyNameAndLevel.MyNameAndLevel_C.EventFriendPartyLeft
@@ -49,10 +60,10 @@ struct UMyNameAndLevel_C_EventFriendPartyLeft_Params
 {
 };
 
-// Function MyNameAndLevel.MyNameAndLevel_C.EventPlayerProfileStatsReceived
-struct UMyNameAndLevel_C_EventPlayerProfileStatsReceived_Params
+// Function MyNameAndLevel.MyNameAndLevel_C.EventPlayerProfileReceived
+struct UMyNameAndLevel_C_EventPlayerProfileReceived_Params
 {
-	struct FDarwinCareerStats*                         stats;                                                    // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FDarwinPlayerStats*                         stats;                                                    // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	struct FDarwinProfile*                             Profile;                                                  // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 

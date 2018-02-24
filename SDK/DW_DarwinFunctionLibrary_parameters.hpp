@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,40 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.GetDamgeTypeForText
+struct UDarwinFunctionLibrary_C_GetDamgeTypeForText_Params
+{
+	EDarwinDamageTypeEnum                              DamageType;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     __WorldContext;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       OutText;                                                  // (Parm, OutParm)
+};
+
+// Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.GetZoneForText
+struct UDarwinFunctionLibrary_C_GetZoneForText_Params
+{
+	struct FString                                     Zone_Text;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	class UObject*                                     __WorldContext;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       Out_Text;                                                 // (Parm, OutParm)
+};
+
+// Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.IsZoneAvailableForAction
+struct UDarwinFunctionLibrary_C_IsZoneAvailableForAction_Params
+{
+	class UDarwinUserWidget*                           SelfRef;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EDarwinItemTypeEnum                                ActionType;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FString                                     zoneName;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	class UObject*                                     __WorldContext;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Available;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.MenuInputModeChangedForCursor
+struct UDarwinFunctionLibrary_C_MenuInputModeChangedForCursor_Params
+{
+	class UObject*                                     WorldContext;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     __WorldContext;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               IsUsingKeyboard;                                          // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.ResetSoundToMenuSetting
 struct UDarwinFunctionLibrary_C_ResetSoundToMenuSetting_Params

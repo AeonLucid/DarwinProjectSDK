@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -24,7 +24,7 @@ struct UNewGuyABP_C_MakeLeftRightBinary_Params
 // Function NewGuyABP.NewGuyABP_C.SetShouldBypassIdle
 struct UNewGuyABP_C_SetShouldBypassIdle_Params
 {
-	bool                                               ShouldBypassIdle;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               shouldBypassIdle;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Out;                                                      // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -37,7 +37,7 @@ struct UNewGuyABP_C_ShouldAxeInteruptGotoAir_Params
 // Function NewGuyABP.NewGuyABP_C.Should180L_tr_idle
 struct UNewGuyABP_C_Should180L_tr_idle_Params
 {
-	bool                                               Should180L;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               should180L;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function NewGuyABP.NewGuyABP_C.Should180R_tr_idle
@@ -49,7 +49,7 @@ struct UNewGuyABP_C_Should180R_tr_idle_Params
 // Function NewGuyABP.NewGuyABP_C.SetShouldBeInAir
 struct UNewGuyABP_C_SetShouldBeInAir_Params
 {
-	bool                                               shouldBeInAir;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ShouldBeInAir;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Out;                                                      // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -78,10 +78,10 @@ struct UNewGuyABP_C_IsGoingBackward_Params
 	bool                                               GoingBackward;                                            // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function NewGuyABP.NewGuyABP_C.Should180L
-struct UNewGuyABP_C_Should180L_Params
+// Function NewGuyABP.NewGuyABP_C.should180L
+struct UNewGuyABP_C_should180L_Params
 {
-	bool                                               Should180L;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               should180L;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function NewGuyABP.NewGuyABP_C.Should180R
@@ -109,6 +109,31 @@ struct UNewGuyABP_C_SetLeftRightBlendBuffer_Params
 	bool                                               OutTrue;                                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BBAA235942829B48D6C564835167FC56
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BBAA235942829B48D6C564835167FC56_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_06B49D2D463E264C6A06C2BBDD090E6F
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_06B49D2D463E264C6A06C2BBDD090E6F_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EE52A0A6423D293C2117BDA8170F29C7
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EE52A0A6423D293C2117BDA8170F29C7_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EC277C794EC1848A4EF195BF70442D48
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EC277C794EC1848A4EF195BF70442D48_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_07795FDE4102F258D4418ABC7174A280
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_07795FDE4102F258D4418ABC7174A280_Params
+{
+};
+
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_13AB04B14A3999B4C03B0698564E666C
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_13AB04B14A3999B4C03B0698564E666C_Params
 {
@@ -121,6 +146,11 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_C697B84042C951B187ED4A94612E8D87
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_C697B84042C951B187ED4A94612E8D87_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8E5001924522C63D6CFB37BDD06E19A1
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8E5001924522C63D6CFB37BDD06E19A1_Params
 {
 };
 
@@ -139,6 +169,16 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_47335C104F895BAF6FB1DA896DBC7D5F
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_47335C104F895BAF6FB1DA896DBC7D5F_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_44E2B70C4D205B87135B28AA40A0CF04
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_44E2B70C4D205B87135B28AA40A0CF04_Params
+{
+};
+
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_422C57314C194F36550C50978DC4E4AC
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_422C57314C194F36550C50978DC4E4AC_Params
 {
@@ -154,6 +194,11 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_A025837842AF9175FBBE75A125F08904
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_A025837842AF9175FBBE75A125F08904_Params
+{
+};
+
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_6CF494A845E297F460DECF9423400F4F
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_6CF494A845E297F460DECF9423400F4F_Params
 {
@@ -164,18 +209,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8E0B26DE4A1052237144959C5F1DC39D
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8E0B26DE4A1052237144959C5F1DC39D_Params
-{
-};
-
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_DD9B8FD84841B8C99D977B9DDC0EFA73
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_DD9B8FD84841B8C99D977B9DDC0EFA73_Params
-{
-};
-
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_C5085F014AC772FCB211D0AE548D80BF
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_C5085F014AC772FCB211D0AE548D80BF_Params
 {
 };
 
@@ -184,8 +219,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_69F940534DE23E2DE7221488133AF4BD
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_69F940534DE23E2DE7221488133AF4BD_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37E4F2C449D32F6E3E9DF58AC8233834
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37E4F2C449D32F6E3E9DF58AC8233834_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_9AE5E907443A616985A60895164FCF48
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_9AE5E907443A616985A60895164FCF48_Params
 {
 };
 
@@ -196,6 +236,11 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_0807E6784D354D620A2562AC66034ED8
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_0807E6784D354D620A2562AC66034ED8_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_241D6B5D4B383D3E717931B51007C8C6
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_241D6B5D4B383D3E717931B51007C8C6_Params
 {
 };
 
@@ -214,18 +259,28 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_102F4E93400C9EC2FF12A2A455EE8F1C
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_102F4E93400C9EC2FF12A2A455EE8F1C_Params
+{
+};
+
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_130D2C074966DCDF6F81E2B45B9E25A5
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_130D2C074966DCDF6F81E2B45B9E25A5_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FDA76CEF4A8EE1B8CF8021857F048488
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FDA76CEF4A8EE1B8CF8021857F048488_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_C5085F014AC772FCB211D0AE548D80BF
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_C5085F014AC772FCB211D0AE548D80BF_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_9AE5E907443A616985A60895164FCF48
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_9AE5E907443A616985A60895164FCF48_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendListByInt_9AFC3F17451B1FD311F7ABA2B4192621
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendListByInt_9AFC3F17451B1FD311F7ABA2B4192621_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_681386984D8D48B96BC581A883B66066
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_681386984D8D48B96BC581A883B66066_Params
 {
 };
 
@@ -234,8 +289,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EE52A0A6423D293C2117BDA8170F29C7
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EE52A0A6423D293C2117BDA8170F29C7_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D27057E440F5AD205B7EF2967B44F19E
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D27057E440F5AD205B7EF2967B44F19E_Params
 {
 };
 
@@ -244,8 +299,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8E5001924522C63D6CFB37BDD06E19A1
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8E5001924522C63D6CFB37BDD06E19A1_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_030515C941CA83FE36C2CA8BA6B6D1D3
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_030515C941CA83FE36C2CA8BA6B6D1D3_Params
 {
 };
 
@@ -254,8 +309,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_47335C104F895BAF6FB1DA896DBC7D5F
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_47335C104F895BAF6FB1DA896DBC7D5F_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_95F1DAAE435D8016C339D29638BA2F17
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_95F1DAAE435D8016C339D29638BA2F17_Params
 {
 };
 
@@ -269,18 +324,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_A025837842AF9175FBBE75A125F08904
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_A025837842AF9175FBBE75A125F08904_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_5E016E7B4F8A432C42C45B8EF39EC6BA
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_5E016E7B4F8A432C42C45B8EF39EC6BA_Params
 {
 };
 
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_0CAFC53247362D72DB80E982FCB834DB
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_0CAFC53247362D72DB80E982FCB834DB_Params
-{
-};
-
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37E4F2C449D32F6E3E9DF58AC8233834
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37E4F2C449D32F6E3E9DF58AC8233834_Params
 {
 };
 
@@ -344,23 +394,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_241D6B5D4B383D3E717931B51007C8C6
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_241D6B5D4B383D3E717931B51007C8C6_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_2962BEBC412810D3AA6618B3A873DE0A
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_2962BEBC412810D3AA6618B3A873DE0A_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_102F4E93400C9EC2FF12A2A455EE8F1C
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_102F4E93400C9EC2FF12A2A455EE8F1C_Params
-{
-};
-
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_681386984D8D48B96BC581A883B66066
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_681386984D8D48B96BC581A883B66066_Params
-{
-};
-
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D27057E440F5AD205B7EF2967B44F19E
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D27057E440F5AD205B7EF2967B44F19E_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_33C099B5435EEEF1B59A49A7FACC6598
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_33C099B5435EEEF1B59A49A7FACC6598_Params
 {
 };
 
@@ -379,13 +419,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_030515C941CA83FE36C2CA8BA6B6D1D3
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_030515C941CA83FE36C2CA8BA6B6D1D3_Params
-{
-};
-
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_95F1DAAE435D8016C339D29638BA2F17
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_95F1DAAE435D8016C339D29638BA2F17_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_2D09BF9D4D980F12CDA1E78A8209E0F6
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_2D09BF9D4D980F12CDA1E78A8209E0F6_Params
 {
 };
 
@@ -434,38 +469,33 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F88F3A08476891C35E4C649C650BB6A5
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F88F3A08476891C35E4C649C650BB6A5_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FADE4FE34F50D12DD189C5AC88A2AB77
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FADE4FE34F50D12DD189C5AC88A2AB77_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_5E016E7B4F8A432C42C45B8EF39EC6BA
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_5E016E7B4F8A432C42C45B8EF39EC6BA_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FDDEF4244295E480F0078A8957B6B1E5
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FDDEF4244295E480F0078A8957B6B1E5_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_06B49D2D463E264C6A06C2BBDD090E6F
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_06B49D2D463E264C6A06C2BBDD090E6F_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_87B89902469DCF3B16FB8AB2A2654AA2
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_87B89902469DCF3B16FB8AB2A2654AA2_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_778CD0E44F82B9109D600CA580173DD5
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_778CD0E44F82B9109D600CA580173DD5_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8F96FB0249D5CA688CC7D3B40E2C22D4
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8F96FB0249D5CA688CC7D3B40E2C22D4_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BBAA235942829B48D6C564835167FC56
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BBAA235942829B48D6C564835167FC56_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FFE517F844A82624C0A9E29C4AFF6EB4
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FFE517F844A82624C0A9E29C4AFF6EB4_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EC277C794EC1848A4EF195BF70442D48
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EC277C794EC1848A4EF195BF70442D48_Params
-{
-};
-
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_2962BEBC412810D3AA6618B3A873DE0A
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_2962BEBC412810D3AA6618B3A873DE0A_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_90B9BF5D48C33FF68BF6978D2D8B6C8F
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_90B9BF5D48C33FF68BF6978D2D8B6C8F_Params
 {
 };
 
@@ -484,8 +514,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_2D09BF9D4D980F12CDA1E78A8209E0F6
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_2D09BF9D4D980F12CDA1E78A8209E0F6_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BE7E1C9940D18274D65C1EA76D798F12
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BE7E1C9940D18274D65C1EA76D798F12_Params
 {
 };
 
@@ -514,13 +544,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FADE4FE34F50D12DD189C5AC88A2AB77
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FADE4FE34F50D12DD189C5AC88A2AB77_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_4CDB76374C8B0FBC8E7309B7D9E92B7F
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_4CDB76374C8B0FBC8E7309B7D9E92B7F_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_33C099B5435EEEF1B59A49A7FACC6598
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_33C099B5435EEEF1B59A49A7FACC6598_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_7A54BD39458C2C51021C76B0D58C378F
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_7A54BD39458C2C51021C76B0D58C378F_Params
 {
 };
 
@@ -529,13 +559,18 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FFE517F844A82624C0A9E29C4AFF6EB4
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FFE517F844A82624C0A9E29C4AFF6EB4_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_19CD561945B2F4C660862A99D1F909EB
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_19CD561945B2F4C660862A99D1F909EB_Params
 {
 };
 
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_278C020A44E9AD5505369A8BBECA42E9
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_278C020A44E9AD5505369A8BBECA42E9_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_AD9DC0D8426714B2FDA2D3BE04DE8B13
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_AD9DC0D8426714B2FDA2D3BE04DE8B13_Params
 {
 };
 
@@ -554,13 +589,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_90B9BF5D48C33FF68BF6978D2D8B6C8F
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_90B9BF5D48C33FF68BF6978D2D8B6C8F_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F665EF7744C199818EDF238FE89FB8CD
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F665EF7744C199818EDF238FE89FB8CD_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F665EF7744C199818EDF238FE89FB8CD
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F665EF7744C199818EDF238FE89FB8CD_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D55E981D4191124BD569F6BF0BDF0091
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D55E981D4191124BD569F6BF0BDF0091_Params
 {
 };
 
@@ -569,13 +604,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BAC78F004832B5C2FD1814A74879F910
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BAC78F004832B5C2FD1814A74879F910_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37F86DD54B94B55198B841B30FD96E09
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37F86DD54B94B55198B841B30FD96E09_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BE7E1C9940D18274D65C1EA76D798F12
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BE7E1C9940D18274D65C1EA76D798F12_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BAC78F004832B5C2FD1814A74879F910
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BAC78F004832B5C2FD1814A74879F910_Params
 {
 };
 
@@ -594,13 +629,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_193F518F47324F134A6DD6BE5C6D50A2
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_193F518F47324F134A6DD6BE5C6D50A2_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37D3BA584AAAB507B69B18807D142B26
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37D3BA584AAAB507B69B18807D142B26_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_4CDB76374C8B0FBC8E7309B7D9E92B7F
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_4CDB76374C8B0FBC8E7309B7D9E92B7F_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_193F518F47324F134A6DD6BE5C6D50A2
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_193F518F47324F134A6DD6BE5C6D50A2_Params
 {
 };
 
@@ -624,8 +659,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_7A54BD39458C2C51021C76B0D58C378F
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_7A54BD39458C2C51021C76B0D58C378F_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D71C42EA46643442037BF7ACBC90D47B
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D71C42EA46643442037BF7ACBC90D47B_Params
 {
 };
 
@@ -644,13 +679,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F701FFC247940F6F4F19BCA9CA43EB88
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F701FFC247940F6F4F19BCA9CA43EB88_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_E9E87352405C267D6DABB897B0593A80
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_E9E87352405C267D6DABB897B0593A80_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_19CD561945B2F4C660862A99D1F909EB
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_19CD561945B2F4C660862A99D1F909EB_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F701FFC247940F6F4F19BCA9CA43EB88
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F701FFC247940F6F4F19BCA9CA43EB88_Params
 {
 };
 
@@ -669,13 +704,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_92926EAB4B93946F56AA91BBC69D6BB4
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_92926EAB4B93946F56AA91BBC69D6BB4_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F35B6E314A1F3D9436757E9FC86DA7E3
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F35B6E314A1F3D9436757E9FC86DA7E3_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_AD9DC0D8426714B2FDA2D3BE04DE8B13
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_AD9DC0D8426714B2FDA2D3BE04DE8B13_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_92926EAB4B93946F56AA91BBC69D6BB4
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_92926EAB4B93946F56AA91BBC69D6BB4_Params
 {
 };
 
@@ -704,8 +739,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37F86DD54B94B55198B841B30FD96E09
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37F86DD54B94B55198B841B30FD96E09_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_CC16AAA7427A79D75A6C0398B40794A1
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_CC16AAA7427A79D75A6C0398B40794A1_Params
 {
 };
 
@@ -719,11 +754,6 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37D3BA584AAAB507B69B18807D142B26
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_37D3BA584AAAB507B69B18807D142B26_Params
-{
-};
-
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_AA3E1CF94FDE29E990886DA7BE6D8CBD
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_AA3E1CF94FDE29E990886DA7BE6D8CBD_Params
 {
@@ -734,13 +764,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_5C729AE14980548720C3A8910E500651
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_5C729AE14980548720C3A8910E500651_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_135D3BA748CBC500EBEBC388C41849AE
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_135D3BA748CBC500EBEBC388C41849AE_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D71C42EA46643442037BF7ACBC90D47B
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D71C42EA46643442037BF7ACBC90D47B_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_5C729AE14980548720C3A8910E500651
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_5C729AE14980548720C3A8910E500651_Params
 {
 };
 
@@ -769,13 +799,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_E9E87352405C267D6DABB897B0593A80
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_E9E87352405C267D6DABB897B0593A80_Params
-{
-};
-
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F35B6E314A1F3D9436757E9FC86DA7E3
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F35B6E314A1F3D9436757E9FC86DA7E3_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_C097D9E7450B8720493C7CB4B7925DB8
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_C097D9E7450B8720493C7CB4B7925DB8_Params
 {
 };
 
@@ -794,8 +819,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_CC16AAA7427A79D75A6C0398B40794A1
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_CC16AAA7427A79D75A6C0398B40794A1_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_B3BE0B2142BDC6AC3AF2A99395D58E4D
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_B3BE0B2142BDC6AC3AF2A99395D58E4D_Params
 {
 };
 
@@ -804,8 +829,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FDDEF4244295E480F0078A8957B6B1E5
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FDDEF4244295E480F0078A8957B6B1E5_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_382043034170AE61AC99D782A534175B
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_382043034170AE61AC99D782A534175B_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_69F940534DE23E2DE7221488133AF4BD
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_69F940534DE23E2DE7221488133AF4BD_Params
 {
 };
 
@@ -829,13 +859,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_135D3BA748CBC500EBEBC388C41849AE
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_135D3BA748CBC500EBEBC388C41849AE_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_778CD0E44F82B9109D600CA580173DD5
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_778CD0E44F82B9109D600CA580173DD5_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_87B89902469DCF3B16FB8AB2A2654AA2
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_87B89902469DCF3B16FB8AB2A2654AA2_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F4D6E08E4DB748AE6818269D1E43C0C1
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F4D6E08E4DB748AE6818269D1E43C0C1_Params
 {
 };
 
@@ -854,13 +884,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_C097D9E7450B8720493C7CB4B7925DB8
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_C097D9E7450B8720493C7CB4B7925DB8_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_E1035AF6431F743AB20E5B93E4D4303C
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_E1035AF6431F743AB20E5B93E4D4303C_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_B3BE0B2142BDC6AC3AF2A99395D58E4D
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_B3BE0B2142BDC6AC3AF2A99395D58E4D_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_0DA4D77148106E3B8046BC8DFFE45015
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_0DA4D77148106E3B8046BC8DFFE45015_Params
 {
 };
 
@@ -869,8 +899,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_382043034170AE61AC99D782A534175B
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_382043034170AE61AC99D782A534175B_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BF30E0C844C4CD51CD18758332A14664
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BF30E0C844C4CD51CD18758332A14664_Params
 {
 };
 
@@ -904,6 +934,11 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_78B030384B7878FA8DEBC984BDAA9ED4
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_78B030384B7878FA8DEBC984BDAA9ED4_Params
+{
+};
+
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_06A78CFF44766E6C8E60A486B02D647A
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_06A78CFF44766E6C8E60A486B02D647A_Params
 {
@@ -916,11 +951,6 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_B05EE8624903BE82477E2BB99AC4D3AD
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_B05EE8624903BE82477E2BB99AC4D3AD_Params
-{
-};
-
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F4D6E08E4DB748AE6818269D1E43C0C1
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_F4D6E08E4DB748AE6818269D1E43C0C1_Params
 {
 };
 
@@ -954,11 +984,6 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_E1035AF6431F743AB20E5B93E4D4303C
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_E1035AF6431F743AB20E5B93E4D4303C_Params
-{
-};
-
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_2F0124D94786B63A9176C8B61A2654CF
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_2F0124D94786B63A9176C8B61A2654CF_Params
 {
@@ -966,6 +991,11 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_0C18790A42E8AD7FB86E6BA2EAF0D91D
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_0C18790A42E8AD7FB86E6BA2EAF0D91D_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_42850F9E47919253C9F273894CF41D13
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_42850F9E47919253C9F273894CF41D13_Params
 {
 };
 
@@ -984,13 +1014,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_0DA4D77148106E3B8046BC8DFFE45015
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_0DA4D77148106E3B8046BC8DFFE45015_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_716B3D1E46F0C081CA6DEA823AA0F04E
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_716B3D1E46F0C081CA6DEA823AA0F04E_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_716B3D1E46F0C081CA6DEA823AA0F04E
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_716B3D1E46F0C081CA6DEA823AA0F04E_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EF5511124B2E3E5F8F585794FEE844C6
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EF5511124B2E3E5F8F585794FEE844C6_Params
 {
 };
 
@@ -1009,11 +1039,6 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BF30E0C844C4CD51CD18758332A14664
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_BF30E0C844C4CD51CD18758332A14664_Params
-{
-};
-
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_9FABA90B42615D9B70C8CCB5F951B293
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_9FABA90B42615D9B70C8CCB5F951B293_Params
 {
@@ -1029,13 +1054,13 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D41EF7D8496B27C2F57521A8D477E1D9
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D41EF7D8496B27C2F57521A8D477E1D9_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_1BC0260A4440D752B81DDFA60E82F610
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_1BC0260A4440D752B81DDFA60E82F610_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_78B030384B7878FA8DEBC984BDAA9ED4
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_78B030384B7878FA8DEBC984BDAA9ED4_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D41EF7D8496B27C2F57521A8D477E1D9
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D41EF7D8496B27C2F57521A8D477E1D9_Params
 {
 };
 
@@ -1074,18 +1099,8 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_42850F9E47919253C9F273894CF41D13
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_42850F9E47919253C9F273894CF41D13_Params
-{
-};
-
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_FF675A2943519415F690D7BFA18166EB
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_FF675A2943519415F690D7BFA18166EB_Params
-{
-};
-
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EF5511124B2E3E5F8F585794FEE844C6
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_EF5511124B2E3E5F8F585794FEE844C6_Params
 {
 };
 
@@ -1114,13 +1129,18 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_1BC0260A4440D752B81DDFA60E82F610
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_1BC0260A4440D752B81DDFA60E82F610_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_6A821597443FE56F8867B7A54BE97855
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_6A821597443FE56F8867B7A54BE97855_Params
 {
 };
 
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_71BB0EE34D551295CA7F17B62826BD42
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendSpacePlayer_71BB0EE34D551295CA7F17B62826BD42_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendListByBool_308F8F484D912F6BE48A35A007A5ABBB
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendListByBool_308F8F484D912F6BE48A35A007A5ABBB_Params
 {
 };
 
@@ -1169,6 +1189,11 @@ struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGr
 {
 };
 
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendListByBool_0BC1103345DB750B22D3B490607C6382
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_BlendListByBool_0BC1103345DB750B22D3B490607C6382_Params
+{
+};
+
 // Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_5E4B43084A258FAEF3CCCFBFDD26BA65
 struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_5E4B43084A258FAEF3CCCFBFDD26BA65_Params
 {
@@ -1185,8 +1210,8 @@ struct UNewGuyABP_C_BlueprintUpdateAnimation_Params
 	float*                                             DeltaTimeX;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_07795FDE4102F258D4418ABC7174A280
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_07795FDE4102F258D4418ABC7174A280_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FDA76CEF4A8EE1B8CF8021857F048488
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_FDA76CEF4A8EE1B8CF8021857F048488_Params
 {
 };
 
@@ -1270,13 +1295,38 @@ struct UNewGuyABP_C_AnimNotify_EnterJumpThrust_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8F96FB0249D5CA688CC7D3B40E2C22D4
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8F96FB0249D5CA688CC7D3B40E2C22D4_Params
+// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8E0B26DE4A1052237144959C5F1DC39D
+struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_8E0B26DE4A1052237144959C5F1DC39D_Params
 {
 };
 
-// Function NewGuyABP.NewGuyABP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D55E981D4191124BD569F6BF0BDF0091
-struct UNewGuyABP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_NewGuyABP_AnimGraphNode_TransitionResult_D55E981D4191124BD569F6BF0BDF0091_Params
+// Function NewGuyABP.NewGuyABP_C.AnimNotify_EnteredWinner
+struct UNewGuyABP_C_AnimNotify_EnteredWinner_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.AnimNotify_ForceFeedback_Str3
+struct UNewGuyABP_C_AnimNotify_ForceFeedback_Str3_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.AnimNotify_ForceFeedback_Str5
+struct UNewGuyABP_C_AnimNotify_ForceFeedback_Str5_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.AnimNotify_EnteredEmoteM
+struct UNewGuyABP_C_AnimNotify_EnteredEmoteM_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.AnimNotify_LeftEmoteM
+struct UNewGuyABP_C_AnimNotify_LeftEmoteM_Params
+{
+};
+
+// Function NewGuyABP.NewGuyABP_C.AnimNotify_ForceFeedback_Str2
+struct UNewGuyABP_C_AnimNotify_ForceFeedback_Str2_Params
 {
 };
 

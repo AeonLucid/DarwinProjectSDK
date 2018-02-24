@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -121,7 +121,7 @@ void UDarwinInventoryBP_C::FindNextFullSlot(int InitialSlot, int* NextFullSlot)
 
 
 // Function DarwinInventoryBP.DarwinInventoryBP_C.DarwinSetTooltipText
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UDarwinInventorySlot_C*  InvSlot                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -334,35 +334,18 @@ void UDarwinInventoryBP_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime
 }
 
 
-// Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryUse
-// (Event, Public, BlueprintEvent)
-
-void UDarwinInventoryBP_C::EventGamepadInventoryUse()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryUse");
-
-	UDarwinInventoryBP_C_EventGamepadInventoryUse_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function DarwinInventoryBP.DarwinInventoryBP_C.EventPlayerCraftedPower
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // EDarwinItemTypeEnum*           powerType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinInventoryBP_C::EventPlayerCraftedPower(int* PlayerId, EDarwinItemTypeEnum* powerType)
+void UDarwinInventoryBP_C::EventPlayerCraftedPower(int* playerID, EDarwinItemTypeEnum* powerType)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryBP.DarwinInventoryBP_C.EventPlayerCraftedPower");
 
 	UDarwinInventoryBP_C_EventPlayerCraftedPower_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.powerType = powerType;
 
 	auto flags = fn->FunctionFlags;
@@ -386,6 +369,23 @@ void UDarwinInventoryBP_C::EventUpdateNumberOfElectronic(int* numberOfElectronic
 	UDarwinInventoryBP_C_EventUpdateNumberOfElectronic_Params params;
 	params.numberOfElectronic = numberOfElectronic;
 	params.bIncrement = bIncrement;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryUse
+// (Event, Public, BlueprintEvent)
+
+void UDarwinInventoryBP_C::EventGamepadInventoryUse()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryUse");
+
+	UDarwinInventoryBP_C_EventGamepadInventoryUse_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -483,6 +483,23 @@ void UDarwinInventoryBP_C::EventGamepadInventoryPressed()
 }
 
 
+// Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryReleased
+// (Event, Public, BlueprintEvent)
+
+void UDarwinInventoryBP_C::EventGamepadInventoryReleased()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryReleased");
+
+	UDarwinInventoryBP_C_EventGamepadInventoryReleased_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryMoveRight
 // (Event, Public, BlueprintEvent)
 
@@ -508,23 +525,6 @@ void UDarwinInventoryBP_C::EventGamepadInventoryMoveLeft()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryMoveLeft");
 
 	UDarwinInventoryBP_C_EventGamepadInventoryMoveLeft_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryReleased
-// (Event, Public, BlueprintEvent)
-
-void UDarwinInventoryBP_C::EventGamepadInventoryReleased()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryBP.DarwinInventoryBP_C.EventGamepadInventoryReleased");
-
-	UDarwinInventoryBP_C_EventGamepadInventoryReleased_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -564,6 +564,28 @@ void UDarwinInventoryBP_C::EventInputResetToDefault()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryBP.DarwinInventoryBP_C.EventInputResetToDefault");
 
 	UDarwinInventoryBP_C_EventInputResetToDefault_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinInventoryBP.DarwinInventoryBP_C.EventManHuntStart
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// int*                           targetCharacterID              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector2D*              Loc                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+
+void UDarwinInventoryBP_C::EventManHuntStart(int* targetCharacterID, struct FVector2D* Loc)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinInventoryBP.DarwinInventoryBP_C.EventManHuntStart");
+
+	UDarwinInventoryBP_C_EventManHuntStart_Params params;
+	params.targetCharacterID = targetCharacterID;
+	params.Loc = Loc;
 
 	auto flags = fn->FunctionFlags;
 

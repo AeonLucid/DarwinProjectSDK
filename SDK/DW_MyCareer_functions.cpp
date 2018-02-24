@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,19 +12,85 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
+// Function MyCareer.MyCareer_C.ClearLeaderBoard
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Array_Index                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UMyCareer_C::ClearLeaderBoard(int Array_Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.ClearLeaderBoard");
+
+	UMyCareer_C_ClearLeaderBoard_Params params;
+	params.Array_Index = Array_Index;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.FillLocalPlayerRank
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FString                 Player_Name                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// float                          Primary_Value                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Secondary_Value                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Rank                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UMyCareer_C::FillLocalPlayerRank(const struct FString& Player_Name, float Primary_Value, float Secondary_Value, int Rank)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.FillLocalPlayerRank");
+
+	UMyCareer_C_FillLocalPlayerRank_Params params;
+	params.Player_Name = Player_Name;
+	params.Primary_Value = Primary_Value;
+	params.Secondary_Value = Secondary_Value;
+	params.Rank = Rank;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.SetChooseComboBoxOpen
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bIsOpen                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UMyCareer_C::SetChooseComboBoxOpen(bool bIsOpen)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.SetChooseComboBoxOpen");
+
+	UMyCareer_C_SetChooseComboBoxOpen_Params params;
+	params.bIsOpen = bIsOpen;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function MyCareer.MyCareer_C.GetLeaderboard
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int                            StartRank                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FString                 LeaderboardType                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// int                            LeaderboardTypeInt             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UMyCareer_C::GetLeaderboard(int StartRank, const struct FString& LeaderboardType)
+void UMyCareer_C::GetLeaderboard(int StartRank, int LeaderboardTypeInt)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.GetLeaderboard");
 
 	UMyCareer_C_GetLeaderboard_Params params;
 	params.StartRank = StartRank;
-	params.LeaderboardType = LeaderboardType;
+	params.LeaderboardTypeInt = LeaderboardTypeInt;
 
 	auto flags = fn->FunctionFlags;
 
@@ -43,8 +109,9 @@ void UMyCareer_C::GetLeaderboard(int StartRank, const struct FString& Leaderboar
 // float                          Primary_Value                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // float                          Secondary_Value                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int                            Rank                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            OnlineId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UMyCareer_C::FillLeaderboard(int Array_Index, bool IsLocalPlayer, const struct FString& Player_Name, float Primary_Value, float Secondary_Value, int Rank)
+void UMyCareer_C::FillLeaderboard(int Array_Index, bool IsLocalPlayer, const struct FString& Player_Name, float Primary_Value, float Secondary_Value, int Rank, int OnlineId)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.FillLeaderboard");
 
@@ -55,6 +122,7 @@ void UMyCareer_C::FillLeaderboard(int Array_Index, bool IsLocalPlayer, const str
 	params.Primary_Value = Primary_Value;
 	params.Secondary_Value = Secondary_Value;
 	params.Rank = Rank;
+	params.OnlineId = OnlineId;
 
 	auto flags = fn->FunctionFlags;
 
@@ -72,62 +140,6 @@ void UMyCareer_C::Init()
 	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.Init");
 
 	UMyCareer_C_Init_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MyCareer.MyCareer_C.BndEvt__ChooseSortingforranking_K2Node_ComponentBoundEvent_15_OnSelectionChangedEvent__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// struct FString                 SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-// TEnumAsByte<ESelectInfo>       SelectionType                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UMyCareer_C::BndEvt__ChooseSortingforranking_K2Node_ComponentBoundEvent_15_OnSelectionChangedEvent__DelegateSignature(const struct FString& SelectedItem, TEnumAsByte<ESelectInfo> SelectionType)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.BndEvt__ChooseSortingforranking_K2Node_ComponentBoundEvent_15_OnSelectionChangedEvent__DelegateSignature");
-
-	UMyCareer_C_BndEvt__ChooseSortingforranking_K2Node_ComponentBoundEvent_15_OnSelectionChangedEvent__DelegateSignature_Params params;
-	params.SelectedItem = SelectedItem;
-	params.SelectionType = SelectionType;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MyCareer.MyCareer_C.BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UMyCareer_C::BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature");
-
-	UMyCareer_C_BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MyCareer.MyCareer_C.BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UMyCareer_C::BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature");
-
-	UMyCareer_C_BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -402,46 +414,15 @@ void UMyCareer_C::EventInputSourceChanged()
 
 // Function MyCareer.MyCareer_C.EventMenuBack
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bIsEscape                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UMyCareer_C::EventMenuBack()
+void UMyCareer_C::EventMenuBack(bool* bIsEscape)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuBack");
 
 	UMyCareer_C_EventMenuBack_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MyCareer.MyCareer_C.EventMenuDown
-// (Event, Public, BlueprintEvent)
-
-void UMyCareer_C::EventMenuDown()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuDown");
-
-	UMyCareer_C_EventMenuDown_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MyCareer.MyCareer_C.EventMenuUp
-// (Event, Public, BlueprintEvent)
-
-void UMyCareer_C::EventMenuUp()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuUp");
-
-	UMyCareer_C_EventMenuUp_Params params;
+	params.bIsEscape = bIsEscape;
 
 	auto flags = fn->FunctionFlags;
 
@@ -519,40 +500,6 @@ void UMyCareer_C::OnClickFirstPage()
 }
 
 
-// Function MyCareer.MyCareer_C.EventMenuLeftPagePressed
-// (Event, Public, BlueprintEvent)
-
-void UMyCareer_C::EventMenuLeftPagePressed()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuLeftPagePressed");
-
-	UMyCareer_C_EventMenuLeftPagePressed_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MyCareer.MyCareer_C.EventMenuRightPagePressed
-// (Event, Public, BlueprintEvent)
-
-void UMyCareer_C::EventMenuRightPagePressed()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuRightPagePressed");
-
-	UMyCareer_C_EventMenuRightPagePressed_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function MyCareer.MyCareer_C.EventMenuXPressed
 // (Event, Public, BlueprintEvent)
 
@@ -604,62 +551,6 @@ void UMyCareer_C::OnClickLastPage()
 }
 
 
-// Function MyCareer.MyCareer_C.EventMenuLeftTriggerPressed
-// (Event, Public, BlueprintEvent)
-
-void UMyCareer_C::EventMenuLeftTriggerPressed()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuLeftTriggerPressed");
-
-	UMyCareer_C_EventMenuLeftTriggerPressed_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MyCareer.MyCareer_C.EventMenuRightTriggerPressed
-// (Event, Public, BlueprintEvent)
-
-void UMyCareer_C::EventMenuRightTriggerPressed()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuRightTriggerPressed");
-
-	UMyCareer_C_EventMenuRightTriggerPressed_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MyCareer.MyCareer_C.EventPlayerProfileStatsReceived
-// (Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FDarwinCareerStats*     stats                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FDarwinProfile*         Profile                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void UMyCareer_C::EventPlayerProfileStatsReceived(struct FDarwinCareerStats* stats, struct FDarwinProfile* Profile)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventPlayerProfileStatsReceived");
-
-	UMyCareer_C_EventPlayerProfileStatsReceived_Params params;
-	params.stats = stats;
-	params.Profile = Profile;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function MyCareer.MyCareer_C.EventLeaderboardReceived
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
@@ -688,6 +579,295 @@ void UMyCareer_C::FillCareerStats()
 	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.FillCareerStats");
 
 	UMyCareer_C_FillCareerStats_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.PostInit
+// (BlueprintCallable, BlueprintEvent)
+
+void UMyCareer_C::PostInit()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.PostInit");
+
+	UMyCareer_C_PostInit_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.Tick
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// float*                         InDeltaTime                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UMyCareer_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.Tick");
+
+	UMyCareer_C_Tick_Params params;
+	params.MyGeometry = MyGeometry;
+	params.InDeltaTime = InDeltaTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.ShowInmateStats
+// (BlueprintCallable, BlueprintEvent)
+
+void UMyCareer_C::ShowInmateStats()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.ShowInmateStats");
+
+	UMyCareer_C_ShowInmateStats_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.ShowSDStats
+// (BlueprintCallable, BlueprintEvent)
+
+void UMyCareer_C::ShowSDStats()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.ShowSDStats");
+
+	UMyCareer_C_ShowSDStats_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.ShowAchievementStats
+// (BlueprintCallable, BlueprintEvent)
+
+void UMyCareer_C::ShowAchievementStats()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.ShowAchievementStats");
+
+	UMyCareer_C_ShowAchievementStats_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.EventMenuRightPagePressed
+// (Event, Public, BlueprintEvent)
+
+void UMyCareer_C::EventMenuRightPagePressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuRightPagePressed");
+
+	UMyCareer_C_EventMenuRightPagePressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.EventMenuLeftPagePressed
+// (Event, Public, BlueprintEvent)
+
+void UMyCareer_C::EventMenuLeftPagePressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuLeftPagePressed");
+
+	UMyCareer_C_EventMenuLeftPagePressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UMyCareer_C::BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature");
+
+	UMyCareer_C_BndEvt__Button_SDStats_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UMyCareer_C::BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature");
+
+	UMyCareer_C_BndEvt__Button_Inmate_K2Node_ComponentBoundEvent_27_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.EventMenuClick
+// (Event, Public, BlueprintEvent)
+
+void UMyCareer_C::EventMenuClick()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuClick");
+
+	UMyCareer_C_EventMenuClick_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.EventMenuDPadLeft
+// (Event, Public, BlueprintEvent)
+
+void UMyCareer_C::EventMenuDPadLeft()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuDPadLeft");
+
+	UMyCareer_C_EventMenuDPadLeft_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.EventMenuRightTriggerPressed
+// (Event, Public, BlueprintEvent)
+
+void UMyCareer_C::EventMenuRightTriggerPressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuRightTriggerPressed");
+
+	UMyCareer_C_EventMenuRightTriggerPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.EventMenuLeftTriggerPressed
+// (Event, Public, BlueprintEvent)
+
+void UMyCareer_C::EventMenuLeftTriggerPressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuLeftTriggerPressed");
+
+	UMyCareer_C_EventMenuLeftTriggerPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.EventMenuDPadRight
+// (Event, Public, BlueprintEvent)
+
+void UMyCareer_C::EventMenuDPadRight()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventMenuDPadRight");
+
+	UMyCareer_C_EventMenuDPadRight_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.EventPlayerProfileReceived
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FDarwinPlayerStats*     stats                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FDarwinProfile*         Profile                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UMyCareer_C::EventPlayerProfileReceived(struct FDarwinPlayerStats* stats, struct FDarwinProfile* Profile)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.EventPlayerProfileReceived");
+
+	UMyCareer_C_EventPlayerProfileReceived_Params params;
+	params.stats = stats;
+	params.Profile = Profile;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MyCareer.MyCareer_C.BndEvt__ChooseSortingText_K2Node_ComponentBoundEvent_44_OnSelectionChangedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// struct FText                   SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// int                            SelectedIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<ESelectInfo>       SelectionType                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UMyCareer_C::BndEvt__ChooseSortingText_K2Node_ComponentBoundEvent_44_OnSelectionChangedEvent__DelegateSignature(const struct FText& SelectedItem, int SelectedIndex, TEnumAsByte<ESelectInfo> SelectionType)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MyCareer.MyCareer_C.BndEvt__ChooseSortingText_K2Node_ComponentBoundEvent_44_OnSelectionChangedEvent__DelegateSignature");
+
+	UMyCareer_C_BndEvt__ChooseSortingText_K2Node_ComponentBoundEvent_44_OnSelectionChangedEvent__DelegateSignature_Params params;
+	params.SelectedItem = SelectedItem;
+	params.SelectedIndex = SelectedIndex;
+	params.SelectionType = SelectionType;
 
 	auto flags = fn->FunctionFlags;
 

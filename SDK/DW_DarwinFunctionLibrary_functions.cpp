@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,114 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.GetDamgeTypeForText
+// (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EDarwinDamageTypeEnum          DamageType                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   OutText                        (Parm, OutParm)
+
+void UDarwinFunctionLibrary_C::STATIC_GetDamgeTypeForText(EDarwinDamageTypeEnum DamageType, class UObject* __WorldContext, struct FText* OutText)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.GetDamgeTypeForText");
+
+	UDarwinFunctionLibrary_C_GetDamgeTypeForText_Params params;
+	params.DamageType = DamageType;
+	params.__WorldContext = __WorldContext;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (OutText != nullptr)
+		*OutText = params.OutText;
+}
+
+
+// Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.GetZoneForText
+// (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FString                 Zone_Text                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Out_Text                       (Parm, OutParm)
+
+void UDarwinFunctionLibrary_C::STATIC_GetZoneForText(const struct FString& Zone_Text, class UObject* __WorldContext, struct FText* Out_Text)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.GetZoneForText");
+
+	UDarwinFunctionLibrary_C_GetZoneForText_Params params;
+	params.Zone_Text = Zone_Text;
+	params.__WorldContext = __WorldContext;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Out_Text != nullptr)
+		*Out_Text = params.Out_Text;
+}
+
+
+// Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.IsZoneAvailableForAction
+// (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UDarwinUserWidget*       SelfRef                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinItemTypeEnum            ActionType                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 zoneName                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Available                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinFunctionLibrary_C::STATIC_IsZoneAvailableForAction(class UDarwinUserWidget* SelfRef, EDarwinItemTypeEnum ActionType, const struct FString& zoneName, class UObject* __WorldContext, bool* Available)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.IsZoneAvailableForAction");
+
+	UDarwinFunctionLibrary_C_IsZoneAvailableForAction_Params params;
+	params.SelfRef = SelfRef;
+	params.ActionType = ActionType;
+	params.zoneName = zoneName;
+	params.__WorldContext = __WorldContext;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Available != nullptr)
+		*Available = params.Available;
+}
+
+
+// Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.MenuInputModeChangedForCursor
+// (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                 WorldContext                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsUsingKeyboard                (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinFunctionLibrary_C::STATIC_MenuInputModeChangedForCursor(class UObject* WorldContext, class UObject* __WorldContext, bool* IsUsingKeyboard)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.MenuInputModeChangedForCursor");
+
+	UDarwinFunctionLibrary_C_MenuInputModeChangedForCursor_Params params;
+	params.WorldContext = WorldContext;
+	params.__WorldContext = __WorldContext;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (IsUsingKeyboard != nullptr)
+		*IsUsingKeyboard = params.IsUsingKeyboard;
+}
+
 
 // Function DarwinFunctionLibrary.DarwinFunctionLibrary_C.ResetSoundToMenuSetting
 // (Static, Public, BlueprintCallable, BlueprintEvent)

@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,14 +12,14 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.SelectItem
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.UnhighlightItem
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UDressRoomNewMaterialWidget_C::SelectItem()
+void UDressRoomNewMaterialWidget_C::UnhighlightItem()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.SelectItem");
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.UnhighlightItem");
 
-	UDressRoomNewMaterialWidget_C_SelectItem_Params params;
+	UDressRoomNewMaterialWidget_C_UnhighlightItem_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -29,14 +29,48 @@ void UDressRoomNewMaterialWidget_C::SelectItem()
 }
 
 
-// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.UnselectItem
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.HighlightItem
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UDressRoomNewMaterialWidget_C::UnselectItem()
+void UDressRoomNewMaterialWidget_C::HighlightItem()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.UnselectItem");
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.HighlightItem");
 
-	UDressRoomNewMaterialWidget_C_UnselectItem_Params params;
+	UDressRoomNewMaterialWidget_C_HighlightItem_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.EquipItem
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UDressRoomNewMaterialWidget_C::EquipItem()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.EquipItem");
+
+	UDressRoomNewMaterialWidget_C_EquipItem_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.Unequip
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UDressRoomNewMaterialWidget_C::Unequip()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.Unequip");
+
+	UDressRoomNewMaterialWidget_C_Unequip_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -110,23 +144,6 @@ ESlateVisibility UDressRoomNewMaterialWidget_C::CheckIfItemIsSelected()
 }
 
 
-// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UDressRoomNewMaterialWidget_C::BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature");
-
-	UDressRoomNewMaterialWidget_C_BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -169,6 +186,23 @@ void UDressRoomNewMaterialWidget_C::BndEvt__Button_Option_K2Node_ComponentBoundE
 	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.BndEvt__Button_Option_K2Node_ComponentBoundEvent_205_OnButtonHoverEvent__DelegateSignature");
 
 	UDressRoomNewMaterialWidget_C_BndEvt__Button_Option_K2Node_ComponentBoundEvent_205_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UDressRoomNewMaterialWidget_C::BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature");
+
+	UDressRoomNewMaterialWidget_C_BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -259,6 +293,23 @@ void UDressRoomNewMaterialWidget_C::Tick(struct FGeometry* MyGeometry, float* In
 	UDressRoomNewMaterialWidget_C_Tick_Params params;
 	params.MyGeometry = MyGeometry;
 	params.InDeltaTime = InDeltaTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.BndEvt__Button_Option_K2Node_ComponentBoundEvent_27_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UDressRoomNewMaterialWidget_C::BndEvt__Button_Option_K2Node_ComponentBoundEvent_27_OnButtonReleasedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.BndEvt__Button_Option_K2Node_ComponentBoundEvent_27_OnButtonReleasedEvent__DelegateSignature");
+
+	UDressRoomNewMaterialWidget_C_BndEvt__Button_Option_K2Node_ComponentBoundEvent_27_OnButtonReleasedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

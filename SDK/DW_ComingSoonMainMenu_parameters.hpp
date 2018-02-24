@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -38,6 +38,7 @@ struct UComingSoonMainMenu_C_Init_Parent_In_Coming_Soon_Params
 // Function ComingSoonMainMenu.ComingSoonMainMenu_C.EventMenuBack
 struct UComingSoonMainMenu_C_EventMenuBack_Params
 {
+	bool*                                              bIsEscape;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ComingSoonMainMenu.ComingSoonMainMenu_C.Menu Back Pressed

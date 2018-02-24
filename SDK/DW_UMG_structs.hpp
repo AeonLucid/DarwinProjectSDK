@@ -1,19 +1,19 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "DW_Basic.hpp"
-#include "DW_InputCore_classes.hpp"
 #include "DW_CoreUObject_classes.hpp"
 #include "DW_SlateCore_classes.hpp"
+#include "DW_MovieScene_classes.hpp"
 #include "DW_Engine_classes.hpp"
 #include "DW_MovieSceneTracks_classes.hpp"
-#include "DW_MovieScene_classes.hpp"
 #include "DW_Slate_classes.hpp"
+#include "DW_InputCore_classes.hpp"
 
 namespace SDK
 {
@@ -212,6 +212,15 @@ struct FAnchorData
 	struct FMargin                                     Offsets;                                                  // 0x0000(0x0010) (Edit, BlueprintVisible)
 	struct FAnchors                                    Anchors;                                                  // 0x0010(0x0010) (Edit, BlueprintVisible)
 	struct FVector2D                                   Alignment;                                                // 0x0020(0x0008) (Edit, BlueprintVisible, IsPlainOldData)
+};
+
+// ScriptStruct UMG.DarwinTextBlockDecoratorType
+// 0x0078
+struct FDarwinTextBlockDecoratorType
+{
+	struct FSlateFontInfo                              Material;                                                 // 0x0000(0x0058) (Edit, BlueprintVisible)
+	struct FLinearColor                                ShadowColor;                                              // 0x0058(0x0010) (Edit, BlueprintVisible, IsPlainOldData)
+	struct FLinearColor                                ColorAndOpacity;                                          // 0x0068(0x0010) (Edit, BlueprintVisible, IsPlainOldData)
 };
 
 // ScriptStruct UMG.ShapedTextOptions

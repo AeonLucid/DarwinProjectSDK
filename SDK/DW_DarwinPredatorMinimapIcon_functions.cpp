@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -39,15 +39,15 @@ void UDarwinPredatorMinimapIcon_C::ToMapCoord(const struct FVector2D& InLoc, str
 // Function DarwinPredatorMinimapIcon.DarwinPredatorMinimapIcon_C.Initialize
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector2D               Loc                            (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
 
-void UDarwinPredatorMinimapIcon_C::Initialize(int PlayerId, const struct FVector2D& Loc)
+void UDarwinPredatorMinimapIcon_C::Initialize(int playerID, const struct FVector2D& Loc)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinPredatorMinimapIcon.DarwinPredatorMinimapIcon_C.Initialize");
 
 	UDarwinPredatorMinimapIcon_C_Initialize_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.Loc = Loc;
 
 	auto flags = fn->FunctionFlags;

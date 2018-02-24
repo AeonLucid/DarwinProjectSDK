@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,17 +13,17 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Function DarwinClueMinimapIcon.DarwinClueMinimapIcon_C.Initialize
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // EDarwinItemTypeEnum            clueType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinClueMinimapIcon_C::Initialize(int PlayerId, EDarwinItemTypeEnum clueType)
+void UDarwinClueMinimapIcon_C::Initialize(int playerID, EDarwinItemTypeEnum clueType)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinClueMinimapIcon.DarwinClueMinimapIcon_C.Initialize");
 
 	UDarwinClueMinimapIcon_C_Initialize_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.clueType = clueType;
 
 	auto flags = fn->FunctionFlags;

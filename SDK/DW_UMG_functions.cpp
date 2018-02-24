@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -4546,6 +4546,32 @@ void UComboBoxString::SetSelectedOption(const struct FString& Option)
 }
 
 
+// Function UMG.ComboBoxString.SetOpen
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           bOpen                          (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bFocusOnMenu                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UComboBoxString::SetOpen(bool bOpen, bool bFocusOnMenu)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.ComboBoxString.SetOpen");
+
+	UComboBoxString_SetOpen_Params params;
+	params.bOpen = bOpen;
+	params.bFocusOnMenu = bFocusOnMenu;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function UMG.ComboBoxString.RemoveOption
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -4804,6 +4830,367 @@ void UComboBoxString::AddOption(const struct FString& Option)
 	static auto fn = UObject::FindObject<UFunction>("Function UMG.ComboBoxString.AddOption");
 
 	UComboBoxString_AddOption_Params params;
+	params.Option = Option;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.DarwinComboBoxText.SetSelectedOptionIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            Option                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinComboBoxText::SetSelectedOptionIndex(int Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.SetSelectedOptionIndex");
+
+	UDarwinComboBoxText_SetSelectedOptionIndex_Params params;
+	params.Option = Option;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.DarwinComboBoxText.SetSelectedOption
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FText                   Option                         (Parm)
+
+void UDarwinComboBoxText::SetSelectedOption(const struct FText& Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.SetSelectedOption");
+
+	UDarwinComboBoxText_SetSelectedOption_Params params;
+	params.Option = Option;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.DarwinComboBoxText.SetOpen
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           bOpen                          (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bFocusOnMenu                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinComboBoxText::SetOpen(bool bOpen, bool bFocusOnMenu)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.SetOpen");
+
+	UDarwinComboBoxText_SetOpen_Params params;
+	params.bOpen = bOpen;
+	params.bFocusOnMenu = bFocusOnMenu;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.DarwinComboBoxText.RemoveOption
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FText                   Option                         (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinComboBoxText::RemoveOption(const struct FText& Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.RemoveOption");
+
+	UDarwinComboBoxText_RemoveOption_Params params;
+	params.Option = Option;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.DarwinComboBoxText.RefreshOptions
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinComboBoxText::RefreshOptions()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.RefreshOptions");
+
+	UDarwinComboBoxText_RefreshOptions_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// DelegateFunction UMG.DarwinComboBoxText.OnSelectionChangedEvent__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// struct FText                   SelectedItem                   (Parm)
+// int                            SelectedIndex                  (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<ESelectInfo>       SelectionType                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinComboBoxText::OnSelectionChangedEvent__DelegateSignature(const struct FText& SelectedItem, int SelectedIndex, TEnumAsByte<ESelectInfo> SelectionType)
+{
+	static auto fn = UObject::FindObject<UFunction>("DelegateFunction UMG.DarwinComboBoxText.OnSelectionChangedEvent__DelegateSignature");
+
+	UDarwinComboBoxText_OnSelectionChangedEvent__DelegateSignature_Params params;
+	params.SelectedItem = SelectedItem;
+	params.SelectedIndex = SelectedIndex;
+	params.SelectionType = SelectionType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// DelegateFunction UMG.DarwinComboBoxText.OnOpeningEvent__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+
+void UDarwinComboBoxText::OnOpeningEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("DelegateFunction UMG.DarwinComboBoxText.OnOpeningEvent__DelegateSignature");
+
+	UDarwinComboBoxText_OnOpeningEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// DelegateFunction UMG.DarwinComboBoxText.OnClosingEvent__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+
+void UDarwinComboBoxText::OnClosingEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("DelegateFunction UMG.DarwinComboBoxText.OnClosingEvent__DelegateSignature");
+
+	UDarwinComboBoxText_OnClosingEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.DarwinComboBoxText.IsOpen
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinComboBoxText::IsOpen()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.IsOpen");
+
+	UDarwinComboBoxText_IsOpen_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.DarwinComboBoxText.GetSelectedOptionIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UDarwinComboBoxText::GetSelectedOptionIndex()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.GetSelectedOptionIndex");
+
+	UDarwinComboBoxText_GetSelectedOptionIndex_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.DarwinComboBoxText.GetSelectedOption
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FText UDarwinComboBoxText::GetSelectedOption()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.GetSelectedOption");
+
+	UDarwinComboBoxText_GetSelectedOption_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.DarwinComboBoxText.GetOptionCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UDarwinComboBoxText::GetOptionCount()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.GetOptionCount");
+
+	UDarwinComboBoxText_GetOptionCount_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.DarwinComboBoxText.GetOptionAtIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FText UDarwinComboBoxText::GetOptionAtIndex(int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.GetOptionAtIndex");
+
+	UDarwinComboBoxText_GetOptionAtIndex_Params params;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.DarwinComboBoxText.FindOptionIndex
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FText                   Option                         (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UDarwinComboBoxText::FindOptionIndex(const struct FText& Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.FindOptionIndex");
+
+	UDarwinComboBoxText_FindOptionIndex_Params params;
+	params.Option = Option;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.DarwinComboBoxText.ClearSelection
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinComboBoxText::ClearSelection()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.ClearSelection");
+
+	UDarwinComboBoxText_ClearSelection_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.DarwinComboBoxText.ClearOptions
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinComboBoxText::ClearOptions()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.ClearOptions");
+
+	UDarwinComboBoxText_ClearOptions_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.DarwinComboBoxText.AddOption
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FText                   Option                         (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UDarwinComboBoxText::AddOption(const struct FText& Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.DarwinComboBoxText.AddOption");
+
+	UDarwinComboBoxText_AddOption_Params params;
 	params.Option = Option;
 
 	auto flags = fn->FunctionFlags;
@@ -6676,6 +7063,27 @@ class UMaterialInstanceDynamic* URetainerBox::GetEffectMaterial()
 }
 
 
+// Function UMG.RichTextBlock.SetText
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FText                   Text                           (ConstParm, Parm, OutParm, ReferenceParm)
+
+void URichTextBlock::SetText(const struct FText& Text)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UMG.RichTextBlock.SetText");
+
+	URichTextBlock_SetText_Params params;
+	params.Text = Text;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function UMG.SafeZone.SetSidesToPad
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -7761,13 +8169,15 @@ struct FVector2D USlateBlueprintLibrary::STATIC_AbsoluteToLocal(const struct FGe
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          InValue                        (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bTriggerValueChangedEvent      (Parm, ZeroConstructor, IsPlainOldData)
 
-void USlider::SetValue(float InValue)
+void USlider::SetValue(float InValue, bool bTriggerValueChangedEvent)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function UMG.Slider.SetValue");
 
 	USlider_SetValue_Params params;
 	params.InValue = InValue;
+	params.bTriggerValueChangedEvent = bTriggerValueChangedEvent;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

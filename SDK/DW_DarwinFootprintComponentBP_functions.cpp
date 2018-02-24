@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,28 +12,6 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function DarwinFootprintComponentBP.DarwinFootprintComponentBP_C.EventLocalFootStepSound
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class ADarwinCharacter**       CharacterOwner                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFootprintTypeEnum*            Type                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UDarwinFootprintComponentBP_C::EventLocalFootStepSound(class ADarwinCharacter** CharacterOwner, EFootprintTypeEnum* Type)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinFootprintComponentBP.DarwinFootprintComponentBP_C.EventLocalFootStepSound");
-
-	UDarwinFootprintComponentBP_C_EventLocalFootStepSound_Params params;
-	params.CharacterOwner = CharacterOwner;
-	params.Type = Type;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function DarwinFootprintComponentBP.DarwinFootprintComponentBP_C.EventSimulatedFootStepSound
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -45,6 +23,28 @@ void UDarwinFootprintComponentBP_C::EventSimulatedFootStepSound(class ADarwinCha
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinFootprintComponentBP.DarwinFootprintComponentBP_C.EventSimulatedFootStepSound");
 
 	UDarwinFootprintComponentBP_C_EventSimulatedFootStepSound_Params params;
+	params.CharacterOwner = CharacterOwner;
+	params.Type = Type;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinFootprintComponentBP.DarwinFootprintComponentBP_C.EventLocalFootStepSound
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class ADarwinCharacter**       CharacterOwner                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFootprintTypeEnum*            Type                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinFootprintComponentBP_C::EventLocalFootStepSound(class ADarwinCharacter** CharacterOwner, EFootprintTypeEnum* Type)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinFootprintComponentBP.DarwinFootprintComponentBP_C.EventLocalFootStepSound");
+
+	UDarwinFootprintComponentBP_C_EventLocalFootStepSound_Params params;
 	params.CharacterOwner = CharacterOwner;
 	params.Type = Type;
 

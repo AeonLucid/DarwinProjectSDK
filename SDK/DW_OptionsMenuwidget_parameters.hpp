@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,62 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.ShowOnlyThisScrollbox
+struct UOptionsMenuwidget_C_ShowOnlyThisScrollbox_Params
+{
+	class UWidget*                                     ScrollBox;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.RefreshCategoryGamepadFocus
+struct UOptionsMenuwidget_C_RefreshCategoryGamepadFocus_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.SetOptionMenuGamepadActive
+struct UOptionsMenuwidget_C_SetOptionMenuGamepadActive_Params
+{
+	bool                                               bActive;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.PageNavigation
+struct UOptionsMenuwidget_C_PageNavigation_Params
+{
+	int                                                side;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.InputStyleChangedCallback
+struct UOptionsMenuwidget_C_InputStyleChangedCallback_Params
+{
+	bool                                               IsGamepad;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.MakeInteractiveWidgetList
+struct UOptionsMenuwidget_C_MakeInteractiveWidgetList_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.StickInputValue
+struct UOptionsMenuwidget_C_StickInputValue_Params
+{
+	float                                              DeltaTime;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class USlider*                                     Slider;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Speed;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Exp;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               SomethingChanged;                                         // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.GetInteractiveWidgetList
+struct UOptionsMenuwidget_C_GetInteractiveWidgetList_Params
+{
+	class UPanelWidget*                                Panel;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TArray<class UWidget*>                             InteractiveWidgets;                                       // (Parm, OutParm, ZeroConstructor)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.SetupVisibilityByPlatform
+struct UOptionsMenuwidget_C_SetupVisibilityByPlatform_Params
+{
+};
 
 // Function OptionsMenuwidget.OptionsMenuwidget_C.SaveVideoSetting_VSync
 struct UOptionsMenuwidget_C_SaveVideoSetting_VSync_Params
@@ -146,6 +202,7 @@ struct UOptionsMenuwidget_C_UpdateWidgetFocusState_Params
 	class UWidget*                                     LineWidget;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	class UWidget*                                     SelectionWidget;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               FocusForced;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bFocus;                                                   // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function OptionsMenuwidget.OptionsMenuwidget_C.IsFocused
@@ -343,6 +400,7 @@ struct UOptionsMenuwidget_C_BndEvt__Slider_DeadZone_K2Node_ComponentBoundEvent_3
 // Function OptionsMenuwidget.OptionsMenuwidget_C.EventMenuBack
 struct UOptionsMenuwidget_C_EventMenuBack_Params
 {
+	bool*                                              bIsEscape;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function OptionsMenuwidget.OptionsMenuwidget_C.EventMenuLeftPagePressed
@@ -437,11 +495,6 @@ struct UOptionsMenuwidget_C_BndEvt__ComboBoxString_Resoltion_K2Node_ComponentBou
 
 // Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxString_Windowed_K2Node_ComponentBoundEvent_4053_OnOpeningEvent__DelegateSignature
 struct UOptionsMenuwidget_C_BndEvt__ComboBoxString_Windowed_K2Node_ComponentBoundEvent_4053_OnOpeningEvent__DelegateSignature_Params
-{
-};
-
-// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_4147_OnOpeningEvent__DelegateSignature
-struct UOptionsMenuwidget_C_BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_4147_OnOpeningEvent__DelegateSignature_Params
 {
 };
 
@@ -800,13 +853,6 @@ struct UOptionsMenuwidget_C_BndEvt__Button_Sound_K2Node_ComponentBoundEvent_7_On
 {
 };
 
-// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_10_OnSelectionChangedEvent__DelegateSignature
-struct UOptionsMenuwidget_C_BndEvt__ComboBoxStringGraphicsQuality_K2Node_ComponentBoundEvent_10_OnSelectionChangedEvent__DelegateSignature_Params
-{
-	struct FString                                     SelectedItem;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-	TEnumAsByte<ESelectInfo>                           SelectionType;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ClueLookatCamButton_K2Node_ComponentBoundEvent_835_OnButtonClickedEvent__DelegateSignature
 struct UOptionsMenuwidget_C_BndEvt__ClueLookatCamButton_K2Node_ComponentBoundEvent_835_OnButtonClickedEvent__DelegateSignature_Params
 {
@@ -836,6 +882,155 @@ struct UOptionsMenuwidget_C_BndEvt__Slider_VoiceChat_K2Node_ComponentBoundEvent_
 struct UOptionsMenuwidget_C_BndEvt__Slider_VoiceChat_K2Node_ComponentBoundEvent_990_OnFloatValueChangedEvent__DelegateSignature_Params
 {
 	float                                              Value;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.OnGammaSettingFocus
+struct UOptionsMenuwidget_C_OnGammaSettingFocus_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.GammaChanged
+struct UOptionsMenuwidget_C_GammaChanged_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.OpenOptionMenuGamepad
+struct UOptionsMenuwidget_C_OpenOptionMenuGamepad_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_13_OnOpeningEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_13_OnOpeningEvent__DelegateSignature_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.OnClickGameplay
+struct UOptionsMenuwidget_C_OnClickGameplay_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.OnClickGamepadOptions
+struct UOptionsMenuwidget_C_OnClickGamepadOptions_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_4350_OnButtonClickedEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_4350_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5473_OnButtonHoverEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5473_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5595_OnButtonHoverEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__Button_Gameplay_K2Node_ComponentBoundEvent_5595_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_5947_OnButtonHoverEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__Button_ControllerOptions_K2Node_ComponentBoundEvent_5947_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.OnGammaSettingUnfocus
+struct UOptionsMenuwidget_C_OnGammaSettingUnfocus_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1515_OnOpeningEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1515_OnOpeningEvent__DelegateSignature_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_814_OnSelectionChangedEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__ComboBoxText_Windowed_K2Node_ComponentBoundEvent_814_OnSelectionChangedEvent__DelegateSignature_Params
+{
+	struct FText                                       SelectedItem;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
+	int                                                SelectedIndex;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESelectInfo>                           SelectionType;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1508_OnSelectionChangedEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__ComboBoxTextGraphics_K2Node_ComponentBoundEvent_1508_OnSelectionChangedEvent__DelegateSignature_Params
+{
+	struct FText                                       SelectedItem;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
+	int                                                SelectedIndex;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESelectInfo>                           SelectionType;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.Show Gamepad Stuff
+struct UOptionsMenuwidget_C_Show_Gamepad_Stuff_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.Hide Gamepad Stuff
+struct UOptionsMenuwidget_C_Hide_Gamepad_Stuff_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.EventNewVivoxAudioInputDevices
+struct UOptionsMenuwidget_C_EventNewVivoxAudioInputDevices_Params
+{
+	struct FString*                                    audioDevName;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.EventNewVivoxAudioOutputDevices
+struct UOptionsMenuwidget_C_EventNewVivoxAudioOutputDevices_Params
+{
+	struct FString*                                    audioDevName;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.EventUpdateActiveVivoxAudioInputDevice
+struct UOptionsMenuwidget_C_EventUpdateActiveVivoxAudioInputDevice_Params
+{
+	struct FString*                                    audioDevName;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.EventUpdateActiveVivoxAudioOuputDevice
+struct UOptionsMenuwidget_C_EventUpdateActiveVivoxAudioOuputDevice_Params
+{
+	struct FString*                                    audioDevName;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_238_OnSelectionChangedEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_238_OnSelectionChangedEvent__DelegateSignature_Params
+{
+	struct FString                                     SelectedItem;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	TEnumAsByte<ESelectInfo>                           SelectionType;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_478_OnSelectionChangedEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_478_OnSelectionChangedEvent__DelegateSignature_Params
+{
+	struct FString                                     SelectedItem;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	TEnumAsByte<ESelectInfo>                           SelectionType;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1556_OnOpeningEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1556_OnOpeningEvent__DelegateSignature_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1911_OnClosingEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__VivoxAudioOutputDevicesCombo_K2Node_ComponentBoundEvent_1911_OnClosingEvent__DelegateSignature_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_2_OnOpeningEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_2_OnOpeningEvent__DelegateSignature_Params
+{
+};
+
+// Function OptionsMenuwidget.OptionsMenuwidget_C.BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_11_OnClosingEvent__DelegateSignature
+struct UOptionsMenuwidget_C_BndEvt__VivoxAudioInputDevicesCombo_K2Node_ComponentBoundEvent_11_OnClosingEvent__DelegateSignature_Params
+{
 };
 
 // Function OptionsMenuwidget.OptionsMenuwidget_C.ExecuteUbergraph_OptionsMenuwidget

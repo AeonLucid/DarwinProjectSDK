@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,7 +21,7 @@ struct UServerBoxWidgetNew_C_Init_Params
 	struct FString                                     ServerName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 	struct FString                                     version;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 	struct FString                                     MapName;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-	struct FString                                     showDirectorName;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FString                                     ShowDirectorName;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 	TArray<struct FDarwinPlayerInfo>                   PlayerInfo;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 	bool                                               GameStarted;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	struct FString                                     NumSpectators;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)

@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,60 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function InGameMenuBP.InGameMenuBP_C.RefreshPromptsSetup
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UInGameMenuBP_C::RefreshPromptsSetup()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.RefreshPromptsSetup");
+
+	UInGameMenuBP_C_RefreshPromptsSetup_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.UpdateExitMenuNavButtons
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UInGameMenuBP_C::UpdateExitMenuNavButtons()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.UpdateExitMenuNavButtons");
+
+	UInGameMenuBP_C_UpdateExitMenuNavButtons_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.UnhoverButton
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EInGameMenu_Tiles> Tile                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UInGameMenuBP_C::UnhoverButton(TEnumAsByte<EInGameMenu_Tiles> Tile)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.UnhoverButton");
+
+	UInGameMenuBP_C_UnhoverButton_Params params;
+	params.Tile = Tile;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function InGameMenuBP.InGameMenuBP_C.IsMenuVisible
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
@@ -799,12 +853,15 @@ void UInGameMenuBP_C::EventMenuClick()
 
 // Function InGameMenuBP.InGameMenuBP_C.EventMenuBack
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bIsEscape                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UInGameMenuBP_C::EventMenuBack()
+void UInGameMenuBP_C::EventMenuBack(bool* bIsEscape)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.EventMenuBack");
 
 	UInGameMenuBP_C_EventMenuBack_Params params;
+	params.bIsEscape = bIsEscape;
 
 	auto flags = fn->FunctionFlags;
 
@@ -822,40 +879,6 @@ void UInGameMenuBP_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.Construct");
 
 	UInGameMenuBP_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function InGameMenuBP.InGameMenuBP_C.BndEvt__ButtonNo_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UInGameMenuBP_C::BndEvt__ButtonNo_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.BndEvt__ButtonNo_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
-
-	UInGameMenuBP_C_BndEvt__ButtonNo_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function InGameMenuBP.InGameMenuBP_C.BndEvt__ButtonYes_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UInGameMenuBP_C::BndEvt__ButtonYes_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.BndEvt__ButtonYes_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature");
-
-	UInGameMenuBP_C_BndEvt__ButtonYes_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -924,6 +947,369 @@ void UInGameMenuBP_C::Destruct()
 	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.Destruct");
 
 	UInGameMenuBP_C_Destruct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.EventMenuRight
+// (Event, Public, BlueprintEvent)
+
+void UInGameMenuBP_C::EventMenuRight()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.EventMenuRight");
+
+	UInGameMenuBP_C_EventMenuRight_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.EventMenuLeft
+// (Event, Public, BlueprintEvent)
+
+void UInGameMenuBP_C::EventMenuLeft()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.EventMenuLeft");
+
+	UInGameMenuBP_C_EventMenuLeft_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.EventIsPrivateMatchOwner
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString*                password                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+
+void UInGameMenuBP_C::EventIsPrivateMatchOwner(struct FString* password)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.EventIsPrivateMatchOwner");
+
+	UInGameMenuBP_C_EventIsPrivateMatchOwner_Params params;
+	params.password = password;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UInGameMenuBP_C::BndEvt__Button_YES_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature");
+
+	UInGameMenuBP_C_BndEvt__Button_YES_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_161_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UInGameMenuBP_C::BndEvt__Button_NO_K2Node_ComponentBoundEvent_161_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_161_OnButtonClickedEvent__DelegateSignature");
+
+	UInGameMenuBP_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_161_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.Show Gamepad Stuff
+// (BlueprintCallable, BlueprintEvent)
+
+void UInGameMenuBP_C::Show_Gamepad_Stuff()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.Show Gamepad Stuff");
+
+	UInGameMenuBP_C_Show_Gamepad_Stuff_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.Hide Gamepad Stuff
+// (BlueprintCallable, BlueprintEvent)
+
+void UInGameMenuBP_C::Hide_Gamepad_Stuff()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.Hide Gamepad Stuff");
+
+	UInGameMenuBP_C_Hide_Gamepad_Stuff_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__CopyPassButton_K2Node_ComponentBoundEvent_454_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UInGameMenuBP_C::BndEvt__CopyPassButton_K2Node_ComponentBoundEvent_454_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.BndEvt__CopyPassButton_K2Node_ComponentBoundEvent_454_OnButtonClickedEvent__DelegateSignature");
+
+	UInGameMenuBP_C_BndEvt__CopyPassButton_K2Node_ComponentBoundEvent_454_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__ShowButton_K2Node_ComponentBoundEvent_546_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UInGameMenuBP_C::BndEvt__ShowButton_K2Node_ComponentBoundEvent_546_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.BndEvt__ShowButton_K2Node_ComponentBoundEvent_546_OnButtonClickedEvent__DelegateSignature");
+
+	UInGameMenuBP_C_BndEvt__ShowButton_K2Node_ComponentBoundEvent_546_OnButtonClickedEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.OpenMenuForPassword
+// (BlueprintCallable, BlueprintEvent)
+
+void UInGameMenuBP_C::OpenMenuForPassword()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.OpenMenuForPassword");
+
+	UInGameMenuBP_C_OpenMenuForPassword_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.test
+// (BlueprintCallable, BlueprintEvent)
+
+void UInGameMenuBP_C::test()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.test");
+
+	UInGameMenuBP_C_test_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.EventGameStartsNow
+// (Event, Public, BlueprintEvent)
+
+void UInGameMenuBP_C::EventGameStartsNow()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.EventGameStartsNow");
+
+	UInGameMenuBP_C_EventGameStartsNow_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.ToggleInGameMenu
+// (BlueprintCallable, BlueprintEvent)
+
+void UInGameMenuBP_C::ToggleInGameMenu()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.ToggleInGameMenu");
+
+	UInGameMenuBP_C_ToggleInGameMenu_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.EventMenuYPressed
+// (Event, Public, BlueprintEvent)
+
+void UInGameMenuBP_C::EventMenuYPressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.EventMenuYPressed");
+
+	UInGameMenuBP_C_EventMenuYPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.ToggleShowPassword
+// (BlueprintCallable, BlueprintEvent)
+
+void UInGameMenuBP_C::ToggleShowPassword()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.ToggleShowPassword");
+
+	UInGameMenuBP_C_ToggleShowPassword_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.EventToggleMuteAll
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          active                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UInGameMenuBP_C::EventToggleMuteAll(bool* active)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.EventToggleMuteAll");
+
+	UInGameMenuBP_C_EventToggleMuteAll_Params params;
+	params.active = active;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.EventGameHasStarted
+// (Event, Public, BlueprintEvent)
+
+void UInGameMenuBP_C::EventGameHasStarted()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.EventGameHasStarted");
+
+	UInGameMenuBP_C_EventGameHasStarted_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_468_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UInGameMenuBP_C::BndEvt__Button_YES_K2Node_ComponentBoundEvent_468_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_468_OnButtonHoverEvent__DelegateSignature");
+
+	UInGameMenuBP_C_BndEvt__Button_YES_K2Node_ComponentBoundEvent_468_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_478_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UInGameMenuBP_C::BndEvt__Button_YES_K2Node_ComponentBoundEvent_478_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_YES_K2Node_ComponentBoundEvent_478_OnButtonHoverEvent__DelegateSignature");
+
+	UInGameMenuBP_C_BndEvt__Button_YES_K2Node_ComponentBoundEvent_478_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_528_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UInGameMenuBP_C::BndEvt__Button_NO_K2Node_ComponentBoundEvent_528_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_528_OnButtonHoverEvent__DelegateSignature");
+
+	UInGameMenuBP_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_528_OnButtonHoverEvent__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UInGameMenuBP_C::BndEvt__Button_NO_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InGameMenuBP.InGameMenuBP_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature");
+
+	UInGameMenuBP_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

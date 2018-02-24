@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -43,6 +43,11 @@ struct UOneZoneAnswer_C_Tick_Params
 {
 	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
 	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OneZoneAnswer.OneZoneAnswer_C.ResetToZero
+struct UOneZoneAnswer_C_ResetToZero_Params
+{
 };
 
 // Function OneZoneAnswer.OneZoneAnswer_C.ExecuteUbergraph_OneZoneAnswer

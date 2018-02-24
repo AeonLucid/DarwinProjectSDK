@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,25 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.Key Binding
+struct UDarwinCraftWheelCustomization_C_Key_Binding_Params
+{
+};
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.IsCraftWheelHoverActive
+struct UDarwinCraftWheelCustomization_C_IsCraftWheelHoverActive_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.FindWidgetByItemType
+struct UDarwinCraftWheelCustomization_C_FindWidgetByItemType_Params
+{
+	EDarwinItemTypeEnum                                ItemType;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Column;                                                   // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	int                                                Row;                                                      // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.SetIsEnabledAllWheelElements
 struct UDarwinCraftWheelCustomization_C_SetIsEnabledAllWheelElements_Params
@@ -28,15 +47,15 @@ struct UDarwinCraftWheelCustomization_C_SetIsSelectingItem_Params
 	bool                                               ShouldSelectItem;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumRow
-struct UDarwinCraftWheelCustomization_C_GetMaximumRow_Params
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumRowIndex
+struct UDarwinCraftWheelCustomization_C_GetMaximumRowIndex_Params
 {
 	int                                                ColumnIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int                                                Max;                                                      // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumColumn
-struct UDarwinCraftWheelCustomization_C_GetMaximumColumn_Params
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.GetMaximumColumnIndex
+struct UDarwinCraftWheelCustomization_C_GetMaximumColumnIndex_Params
 {
 	int                                                RowIndex;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int                                                Max;                                                      // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
@@ -256,6 +275,7 @@ struct UDarwinCraftWheelCustomization_C_EventMenuClick_Params
 // Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.EventMenuBack
 struct UDarwinCraftWheelCustomization_C_EventMenuBack_Params
 {
+	bool*                                              bIsEscape;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.EventMenuUpReleased
@@ -295,6 +315,28 @@ struct UDarwinCraftWheelCustomization_C_ExitWheelCustomization_Params
 
 // Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.ShowTuto
 struct UDarwinCraftWheelCustomization_C_ShowTuto_Params
+{
+};
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.BackOutOfMenu
+struct UDarwinCraftWheelCustomization_C_BackOutOfMenu_Params
+{
+};
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.Hide hud Gamepad
+struct UDarwinCraftWheelCustomization_C_Hide_hud_Gamepad_Params
+{
+};
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.EventInputRebindSucceeded
+struct UDarwinCraftWheelCustomization_C_EventInputRebindSucceeded_Params
+{
+	struct FName*                                      ActionToRebind;                                           // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	struct FText*                                      NewKeyName;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+
+// Function DarwinCraftWheelCustomization.DarwinCraftWheelCustomization_C.EventInputResetToDefault
+struct UDarwinCraftWheelCustomization_C_EventInputResetToDefault_Params
 {
 };
 

@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -148,15 +148,15 @@ void UDarwinPylonScreendicatorBP_C::EventLeaveScreen()
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // struct FString*                harvesterName                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-// int*                           PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinPylonScreendicatorBP_C::EventPylonHarvestStart(struct FString* harvesterName, int* PlayerId)
+void UDarwinPylonScreendicatorBP_C::EventPylonHarvestStart(struct FString* harvesterName, int* playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinPylonScreendicatorBP.DarwinPylonScreendicatorBP_C.EventPylonHarvestStart");
 
 	UDarwinPylonScreendicatorBP_C_EventPylonHarvestStart_Params params;
 	params.harvesterName = harvesterName;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 

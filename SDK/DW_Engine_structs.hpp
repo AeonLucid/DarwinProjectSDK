@@ -1,17 +1,17 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "DW_Basic.hpp"
-#include "DW_InputCore_classes.hpp"
 #include "DW_CoreUObject_classes.hpp"
+#include "DW_InputCore_classes.hpp"
 #include "DW_SlateCore_classes.hpp"
-#include "DW_Slate_classes.hpp"
 #include "DW_PacketHandler_classes.hpp"
+#include "DW_Slate_classes.hpp"
 
 namespace SDK
 {
@@ -3110,6 +3110,16 @@ enum class EViewTargetBlendFunction : uint8_t
 };
 
 
+// Enum Engine.EInputModeType
+enum class EInputModeType : uint8_t
+{
+	EInputModeType__UIOnly         = 0,
+	EInputModeType__GameAndUI      = 1,
+	EInputModeType__GameOnly       = 2,
+	EInputModeType__EInputModeType_MAX = 3
+};
+
+
 // Enum Engine.EDynamicForceFeedbackAction
 enum class EDynamicForceFeedbackAction : uint8_t
 {
@@ -5828,17 +5838,17 @@ struct FPrimaryAssetRules
 struct FPrimaryAssetTypeInfo
 {
 	struct FName                                       PrimaryAssetType;                                         // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0008(0x0028) UNKNOWN PROPERTY: SoftClassProperty Engine.PrimaryAssetTypeInfo.AssetBaseClass
+	TSoftObjectPtr<class UClass>                       AssetBaseClass;                                           // 0x0008(0x0028) (Edit)
 	class UClass*                                      AssetBaseClassLoaded;                                     // 0x0030(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	bool                                               bHasBlueprintClasses;                                     // 0x0038(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	bool                                               bIsEditorOnly;                                            // 0x0039(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x6];                                       // 0x003A(0x0006) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x6];                                       // 0x003A(0x0006) MISSED OFFSET
 	TArray<struct FDirectoryPath>                      Directories;                                              // 0x0040(0x0010) (Edit, ZeroConstructor)
 	TArray<struct FSoftObjectPath>                     SpecificAssets;                                           // 0x0050(0x0010) (Edit, ZeroConstructor)
 	struct FPrimaryAssetRules                          Rules;                                                    // 0x0060(0x0010) (Edit)
 	TArray<struct FString>                             AssetScanPaths;                                           // 0x0070(0x0010) (ZeroConstructor, Transient)
 	bool                                               bIsDynamicAsset;                                          // 0x0080(0x0001) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x3];                                       // 0x0081(0x0003) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x3];                                       // 0x0081(0x0003) MISSED OFFSET
 	int                                                NumberOfAssets;                                           // 0x0084(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
 };
 
@@ -7867,7 +7877,7 @@ struct FPoseDataContainer
 // 0x0028
 struct FPreviewMeshCollectionEntry
 {
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0000(0x0028) UNKNOWN PROPERTY: SoftObjectProperty Engine.PreviewMeshCollectionEntry.SkeletalMesh
+	TSoftObjectPtr<class USkeletalMesh>                SkeletalMesh;                                             // 0x0000(0x0028) (Edit)
 };
 
 // ScriptStruct Engine.CollectionReference
@@ -10134,7 +10144,7 @@ struct FPlayerMuteList
 // 0x0038
 struct FPreviewAttachedObjectPair
 {
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0000(0x0028) UNKNOWN PROPERTY: SoftObjectProperty Engine.PreviewAttachedObjectPair.AttachedObject
+	TSoftObjectPtr<class UObject>                      AttachedObject;                                           // 0x0000(0x0028)
 	class UObject*                                     Object;                                                   // 0x0028(0x0008) (ZeroConstructor, Deprecated, IsPlainOldData)
 	struct FName                                       AttachedTo;                                               // 0x0030(0x0008) (ZeroConstructor, IsPlainOldData)
 };
@@ -10392,7 +10402,7 @@ struct FSkeletalMeshClothBuildParams
 	int                                                SourceSection;                                            // 0x0024(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	bool                                               bRemoveFromMesh;                                          // 0x0028(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x7];                                       // 0x0029(0x0007) MISSED OFFSET
-	unsigned char                                      UnknownData02[0x28];                                      // 0x0029(0x0028) UNKNOWN PROPERTY: SoftObjectProperty Engine.SkeletalMeshClothBuildParams.PhysicsAsset
+	TSoftObjectPtr<class UPhysicsAsset>                PhysicsAsset;                                             // 0x0030(0x0028) (Edit)
 };
 
 // ScriptStruct Engine.BoneMirrorExport

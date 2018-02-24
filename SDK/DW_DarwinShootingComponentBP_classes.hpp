@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass DarwinShootingComponentBP.DarwinShootingComponentBP_C
-// 0x0008 (0x0290 - 0x0288)
+// 0x0008 (0x0298 - 0x0290)
 class UDarwinShootingComponentBP_C : public UDarwinShootingComponent
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0288(0x0008) (Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0290(0x0008) (Transient, DuplicateTransient)
 
 	static UClass* StaticClass()
 	{

@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,15 +37,15 @@ void UHealthColdStam_C::EventUpdateRealColdFactor(int* coldFactor, int* coldFact
 // Function HealthColdStam.HealthColdStam_C.EventUpdateRealHealth
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           health                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           Health                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           healthMax                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UHealthColdStam_C::EventUpdateRealHealth(int* health, int* healthMax)
+void UHealthColdStam_C::EventUpdateRealHealth(int* Health, int* healthMax)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function HealthColdStam.HealthColdStam_C.EventUpdateRealHealth");
 
 	UHealthColdStam_C_EventUpdateRealHealth_Params params;
-	params.health = health;
+	params.Health = Health;
 	params.healthMax = healthMax;
 
 	auto flags = fn->FunctionFlags;

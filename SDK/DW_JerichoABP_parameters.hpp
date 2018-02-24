@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -24,7 +24,7 @@ struct UJerichoABP_C_MakeLeftRightBinary_Params
 // Function JerichoABP.JerichoABP_C.SetShouldBypassIdle
 struct UJerichoABP_C_SetShouldBypassIdle_Params
 {
-	bool                                               ShouldBypassIdle;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               shouldBypassIdle;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Out;                                                      // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -37,7 +37,7 @@ struct UJerichoABP_C_ShouldAxeInteruptGotoAir_Params
 // Function JerichoABP.JerichoABP_C.Should180L_tr_idle
 struct UJerichoABP_C_Should180L_tr_idle_Params
 {
-	bool                                               Should180L;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               should180L;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function JerichoABP.JerichoABP_C.Should180R_tr_idle
@@ -49,7 +49,7 @@ struct UJerichoABP_C_Should180R_tr_idle_Params
 // Function JerichoABP.JerichoABP_C.SetShouldBeInAir
 struct UJerichoABP_C_SetShouldBeInAir_Params
 {
-	bool                                               shouldBeInAir;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ShouldBeInAir;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Out;                                                      // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -78,10 +78,10 @@ struct UJerichoABP_C_IsGoingBackward_Params
 	bool                                               GoingBackward;                                            // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function JerichoABP.JerichoABP_C.Should180L
-struct UJerichoABP_C_Should180L_Params
+// Function JerichoABP.JerichoABP_C.should180L
+struct UJerichoABP_C_should180L_Params
 {
-	bool                                               Should180L;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               should180L;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function JerichoABP.JerichoABP_C.Should180R

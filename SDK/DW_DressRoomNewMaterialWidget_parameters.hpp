@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,13 +14,23 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.SelectItem
-struct UDressRoomNewMaterialWidget_C_SelectItem_Params
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.UnhighlightItem
+struct UDressRoomNewMaterialWidget_C_UnhighlightItem_Params
 {
 };
 
-// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.UnselectItem
-struct UDressRoomNewMaterialWidget_C_UnselectItem_Params
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.HighlightItem
+struct UDressRoomNewMaterialWidget_C_HighlightItem_Params
+{
+};
+
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.EquipItem
+struct UDressRoomNewMaterialWidget_C_EquipItem_Params
+{
+};
+
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.Unequip
+struct UDressRoomNewMaterialWidget_C_Unequip_Params
 {
 };
 
@@ -43,11 +53,6 @@ struct UDressRoomNewMaterialWidget_C_CheckIfItemIsSelected_Params
 	ESlateVisibility                                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature
-struct UDressRoomNewMaterialWidget_C_BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
 // Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.Construct
 struct UDressRoomNewMaterialWidget_C_Construct_Params
 {
@@ -60,6 +65,11 @@ struct UDressRoomNewMaterialWidget_C_BndEvt__Button_Option_K2Node_ComponentBound
 
 // Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.BndEvt__Button_Option_K2Node_ComponentBoundEvent_205_OnButtonHoverEvent__DelegateSignature
 struct UDressRoomNewMaterialWidget_C_BndEvt__Button_Option_K2Node_ComponentBoundEvent_205_OnButtonHoverEvent__DelegateSignature_Params
+{
+};
+
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature
+struct UDressRoomNewMaterialWidget_C_BndEvt__Button_Hairs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature_Params
 {
 };
 
@@ -88,6 +98,11 @@ struct UDressRoomNewMaterialWidget_C_Tick_Params
 {
 	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
 	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.BndEvt__Button_Option_K2Node_ComponentBoundEvent_27_OnButtonReleasedEvent__DelegateSignature
+struct UDressRoomNewMaterialWidget_C_BndEvt__Button_Option_K2Node_ComponentBoundEvent_27_OnButtonReleasedEvent__DelegateSignature_Params
+{
 };
 
 // Function DressRoomNewMaterialWidget.DressRoomNewMaterialWidget_C.ExecuteUbergraph_DressRoomNewMaterialWidget

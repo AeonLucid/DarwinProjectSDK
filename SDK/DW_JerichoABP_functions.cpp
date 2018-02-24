@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -39,15 +39,15 @@ void UJerichoABP_C::MakeLeftRightBinary(float InLeftRight, float* OutLeftRight)
 // Function JerichoABP.JerichoABP_C.SetShouldBypassIdle
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// bool                           ShouldBypassIdle               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           shouldBypassIdle               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Out                            (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UJerichoABP_C::SetShouldBypassIdle(bool ShouldBypassIdle, bool* Out)
+void UJerichoABP_C::SetShouldBypassIdle(bool shouldBypassIdle, bool* Out)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function JerichoABP.JerichoABP_C.SetShouldBypassIdle");
 
 	UJerichoABP_C_SetShouldBypassIdle_Params params;
-	params.ShouldBypassIdle = ShouldBypassIdle;
+	params.shouldBypassIdle = shouldBypassIdle;
 
 	auto flags = fn->FunctionFlags;
 
@@ -85,9 +85,9 @@ void UJerichoABP_C::ShouldAxeInteruptGotoAir(bool* ShouldGotoAir)
 // Function JerichoABP.JerichoABP_C.Should180L_tr_idle
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// bool                           Should180L                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           should180L                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UJerichoABP_C::Should180L_tr_idle(bool* Should180L)
+void UJerichoABP_C::Should180L_tr_idle(bool* should180L)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function JerichoABP.JerichoABP_C.Should180L_tr_idle");
 
@@ -99,8 +99,8 @@ void UJerichoABP_C::Should180L_tr_idle(bool* Should180L)
 
 	fn->FunctionFlags = flags;
 
-	if (Should180L != nullptr)
-		*Should180L = params.Should180L;
+	if (should180L != nullptr)
+		*should180L = params.should180L;
 }
 
 
@@ -129,15 +129,15 @@ void UJerichoABP_C::Should180R_tr_idle(bool* Should180R)
 // Function JerichoABP.JerichoABP_C.SetShouldBeInAir
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// bool                           shouldBeInAir                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ShouldBeInAir                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Out                            (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UJerichoABP_C::SetShouldBeInAir(bool shouldBeInAir, bool* Out)
+void UJerichoABP_C::SetShouldBeInAir(bool ShouldBeInAir, bool* Out)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function JerichoABP.JerichoABP_C.SetShouldBeInAir");
 
 	UJerichoABP_C_SetShouldBeInAir_Params params;
-	params.shouldBeInAir = shouldBeInAir;
+	params.ShouldBeInAir = ShouldBeInAir;
 
 	auto flags = fn->FunctionFlags;
 
@@ -240,16 +240,16 @@ void UJerichoABP_C::IsGoingBackward(bool* GoingBackward)
 }
 
 
-// Function JerichoABP.JerichoABP_C.Should180L
+// Function JerichoABP.JerichoABP_C.should180L
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// bool                           Should180L                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           should180L                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UJerichoABP_C::Should180L(bool* Should180L)
+void UJerichoABP_C::should180L(bool* should180L)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function JerichoABP.JerichoABP_C.Should180L");
+	static auto fn = UObject::FindObject<UFunction>("Function JerichoABP.JerichoABP_C.should180L");
 
-	UJerichoABP_C_Should180L_Params params;
+	UJerichoABP_C_should180L_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -257,8 +257,8 @@ void UJerichoABP_C::Should180L(bool* Should180L)
 
 	fn->FunctionFlags = flags;
 
-	if (Should180L != nullptr)
-		*Should180L = params.Should180L;
+	if (should180L != nullptr)
+		*should180L = params.should180L;
 }
 
 

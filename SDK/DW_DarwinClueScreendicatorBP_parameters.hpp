@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventSetDarwinPlayerName
-struct UDarwinClueScreendicatorBP_C_EventSetDarwinPlayerName_Params
-{
-	struct FString*                                    playerName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-};
 
 // Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventEnterScreen
 struct UDarwinClueScreendicatorBP_C_EventEnterScreen_Params
@@ -34,13 +28,14 @@ struct UDarwinClueScreendicatorBP_C_EventLeaveScreen_Params
 struct UDarwinClueScreendicatorBP_C_EventUpdateClueTime_Params
 {
 	int*                                               timeLeft;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             outNormalized;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventUpdatePlayerStatus
 struct UDarwinClueScreendicatorBP_C_EventUpdatePlayerStatus_Params
 {
 	float*                                             Stamina;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float*                                             health;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             Health;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	float*                                             Cold;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -54,6 +49,17 @@ struct UDarwinClueScreendicatorBP_C_EventLeaveCenter_Params
 {
 };
 
+// Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventClueNinjaVanish
+struct UDarwinClueScreendicatorBP_C_EventClueNinjaVanish_Params
+{
+};
+
+// Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventSetCharacterUniqueID
+struct UDarwinClueScreendicatorBP_C_EventSetCharacterUniqueID_Params
+{
+	int*                                               UniqueId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventUpdateScreendication
 struct UDarwinClueScreendicatorBP_C_EventUpdateScreendication_Params
 {
@@ -65,9 +71,10 @@ struct UDarwinClueScreendicatorBP_C_EventUpdateScreendication_Params
 	bool*                                              behindCam;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventClueNinjaVanish
-struct UDarwinClueScreendicatorBP_C_EventClueNinjaVanish_Params
+// Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.EventSetDarwinPlayerName
+struct UDarwinClueScreendicatorBP_C_EventSetDarwinPlayerName_Params
 {
+	struct FString*                                    playerName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 };
 
 // Function DarwinClueScreendicatorBP.DarwinClueScreendicatorBP_C.ExecuteUbergraph_DarwinClueScreendicatorBP

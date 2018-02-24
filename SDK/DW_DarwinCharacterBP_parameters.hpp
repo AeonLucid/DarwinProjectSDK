@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -35,6 +35,11 @@ struct ADarwinCharacterBP_C_EventUpdateStormParticles_Params
 {
 };
 
+// Function DarwinCharacterBP.DarwinCharacterBP_C.EventManHuntActivate
+struct ADarwinCharacterBP_C_EventManHuntActivate_Params
+{
+};
+
 // Function DarwinCharacterBP.DarwinCharacterBP_C.EventHitByAxe
 struct ADarwinCharacterBP_C_EventHitByAxe_Params
 {
@@ -57,11 +62,6 @@ struct ADarwinCharacterBP_C_EventProjectileHeadShot_Params
 
 // Function DarwinCharacterBP.DarwinCharacterBP_C.EventSpawnDeadDecal
 struct ADarwinCharacterBP_C_EventSpawnDeadDecal_Params
-{
-};
-
-// Function DarwinCharacterBP.DarwinCharacterBP_C.EventManHuntActivate
-struct ADarwinCharacterBP_C_EventManHuntActivate_Params
 {
 };
 
@@ -199,6 +199,7 @@ struct ADarwinCharacterBP_C_EventKilled_Params
 	EDarwinDamageTypeEnum*                             DamageType;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int*                                               numberLeftAlive;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool*                                              bSuicide;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              bIsLocalDeath;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DarwinCharacterBP.DarwinCharacterBP_C.DeathForceFeedback
@@ -245,6 +246,11 @@ struct ADarwinCharacterBP_C_EventBloodPactRevive_Params
 
 // Function DarwinCharacterBP.DarwinCharacterBP_C.EventBloodPactDeadHeartbeat
 struct ADarwinCharacterBP_C_EventBloodPactDeadHeartbeat_Params
+{
+};
+
+// Function DarwinCharacterBP.DarwinCharacterBP_C.EventBurnt
+struct ADarwinCharacterBP_C_EventBurnt_Params
 {
 };
 

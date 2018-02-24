@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,40 +20,6 @@ void ADarwinGameStateBP_C::UserConstructionScript()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinGameStateBP.DarwinGameStateBP_C.UserConstructionScript");
 
 	ADarwinGameStateBP_C_UserConstructionScript_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinGameStateBP.DarwinGameStateBP_C.EventCheer
-// (Event, Public, BlueprintEvent)
-
-void ADarwinGameStateBP_C::EventCheer()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinGameStateBP.DarwinGameStateBP_C.EventCheer");
-
-	ADarwinGameStateBP_C_EventCheer_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DarwinGameStateBP.DarwinGameStateBP_C.EventBoo
-// (Event, Public, BlueprintEvent)
-
-void ADarwinGameStateBP_C::EventBoo()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DarwinGameStateBP.DarwinGameStateBP_C.EventBoo");
-
-	ADarwinGameStateBP_C_EventBoo_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function ChooseRegionLine.ChooseRegionLine_C.SetHighlighted
+struct UChooseRegionLine_C_SetHighlighted_Params
+{
+	bool                                               highlighted;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function ChooseRegionLine.ChooseRegionLine_C.Initialize
 struct UChooseRegionLine_C_Initialize_Params
@@ -36,6 +42,11 @@ struct UChooseRegionLine_C_EventRemoveRegion_Params
 
 // Function ChooseRegionLine.ChooseRegionLine_C.BndEvt__Button_Region_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 struct UChooseRegionLine_C_BndEvt__Button_Region_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params
+{
+};
+
+// Function ChooseRegionLine.ChooseRegionLine_C.OnSelectionAction
+struct UChooseRegionLine_C_OnSelectionAction_Params
 {
 };
 

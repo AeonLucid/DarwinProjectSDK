@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,15 +15,15 @@ namespace SDK
 // Function DarwinManHuntMinimapIcon.DarwinManHuntMinimapIcon_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector2D               Loc                            (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
 
-void UDarwinManHuntMinimapIcon_C::Initialize(int PlayerId, const struct FVector2D& Loc)
+void UDarwinManHuntMinimapIcon_C::Initialize(int playerID, const struct FVector2D& Loc)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinManHuntMinimapIcon.DarwinManHuntMinimapIcon_C.Initialize");
 
 	UDarwinManHuntMinimapIcon_C_Initialize_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.Loc = Loc;
 
 	auto flags = fn->FunctionFlags;
@@ -63,14 +63,16 @@ void UDarwinManHuntMinimapIcon_C::ToMapCoord(const struct FVector2D& InLoc, stru
 // Parameters:
 // int*                           targetCharacterID              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int*                           killerCharacterID              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          isDead                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinManHuntMinimapIcon_C::EventManHuntEnd(int* targetCharacterID, int* killerCharacterID)
+void UDarwinManHuntMinimapIcon_C::EventManHuntEnd(int* targetCharacterID, int* killerCharacterID, bool* isDead)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinManHuntMinimapIcon.DarwinManHuntMinimapIcon_C.EventManHuntEnd");
 
 	UDarwinManHuntMinimapIcon_C_EventManHuntEnd_Params params;
 	params.targetCharacterID = targetCharacterID;
 	params.killerCharacterID = killerCharacterID;
+	params.isDead = isDead;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,11 +14,37 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function DressRoomNewWidget.DressRoomNewWidget_C.IsHeadCam
+struct UDressRoomNewWidget_C_IsHeadCam_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function DressRoomNewWidget.DressRoomNewWidget_C.ChangeSection
+struct UDressRoomNewWidget_C_ChangeSection_Params
+{
+	int                                                ChangeDirection;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DressRoomNewWidget.DressRoomNewWidget_C.SetSelectedItem
+struct UDressRoomNewWidget_C_SetSelectedItem_Params
+{
+	int                                                Row;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Column;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DressRoomNewWidget.DressRoomNewWidget_C.GetNumberOfCategories
+struct UDressRoomNewWidget_C_GetNumberOfCategories_Params
+{
+	int                                                NumberOfCategories;                                       // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function DressRoomNewWidget.DressRoomNewWidget_C.IsItemVisible
 struct UDressRoomNewWidget_C_IsItemVisible_Params
 {
 	bool                                               MaterialVisibility;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               MaterialVisibilityForDeveloppers;                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               MaterialVisibilityForEnforcers;                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               IsVisible;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -447,6 +473,11 @@ struct UDressRoomNewWidget_C_Tick_Params
 	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function DressRoomNewWidget.DressRoomNewWidget_C.Construct
+struct UDressRoomNewWidget_C_Construct_Params
+{
+};
+
 // Function DressRoomNewWidget.DressRoomNewWidget_C.Are you sure ?
 struct UDressRoomNewWidget_C_Are_you_sure___Params
 {
@@ -474,11 +505,6 @@ struct UDressRoomNewWidget_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_292_On
 
 // Function DressRoomNewWidget.DressRoomNewWidget_C.BndEvt__Button_NO_K2Node_ComponentBoundEvent_345_OnButtonClickedEvent__DelegateSignature
 struct UDressRoomNewWidget_C_BndEvt__Button_NO_K2Node_ComponentBoundEvent_345_OnButtonClickedEvent__DelegateSignature_Params
-{
-};
-
-// Function DressRoomNewWidget.DressRoomNewWidget_C.Construct
-struct UDressRoomNewWidget_C_Construct_Params
 {
 };
 
@@ -741,6 +767,7 @@ struct UDressRoomNewWidget_C_EventMenuClick_Params
 // Function DressRoomNewWidget.DressRoomNewWidget_C.EventMenuBack
 struct UDressRoomNewWidget_C_EventMenuBack_Params
 {
+	bool*                                              bIsEscape;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DressRoomNewWidget.DressRoomNewWidget_C.EventGameStartsNow
@@ -753,10 +780,15 @@ struct UDressRoomNewWidget_C_EventInGameMenuAction_Params
 {
 };
 
-// Function DressRoomNewWidget.DressRoomNewWidget_C.EventPlayerProfileStatsReceived
-struct UDressRoomNewWidget_C_EventPlayerProfileStatsReceived_Params
+// Function DressRoomNewWidget.DressRoomNewWidget_C.RefreshCraftableStatus
+struct UDressRoomNewWidget_C_RefreshCraftableStatus_Params
 {
-	struct FDarwinCareerStats*                         stats;                                                    // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+
+// Function DressRoomNewWidget.DressRoomNewWidget_C.EventPlayerProfileReceived
+struct UDressRoomNewWidget_C_EventPlayerProfileReceived_Params
+{
+	struct FDarwinPlayerStats*                         stats;                                                    // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	struct FDarwinProfile*                             Profile;                                                  // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 

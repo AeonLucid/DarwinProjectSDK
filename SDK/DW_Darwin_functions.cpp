@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -727,9 +727,9 @@ void ADarwinAllyFlag::NetMulticastAllyFlagDestroy(EDarwinDamageTypeEnum dmgType,
 // Function Darwin.DarwinAllyFlag.EventInitializeAvatarTexture
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UTexture2D*              AvatarTexture                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture*                AvatarTexture                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void ADarwinAllyFlag::EventInitializeAvatarTexture(class UTexture2D* AvatarTexture)
+void ADarwinAllyFlag::EventInitializeAvatarTexture(class UTexture* AvatarTexture)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinAllyFlag.EventInitializeAvatarTexture");
 
@@ -1690,17 +1690,19 @@ void ADarwinDronePawn::ServerSetRotaCam(bool bValue)
 }
 
 
-// Function Darwin.DarwinDronePawn.ServerSetNetId
+// Function Darwin.DarwinDronePawn.ServerSetNetIdAndOnlineId
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
 // struct FString                 inNetId                        (Parm, ZeroConstructor)
+// int                            inOnlineId                     (Parm, ZeroConstructor, IsPlainOldData)
 
-void ADarwinDronePawn::ServerSetNetId(const struct FString& inNetId)
+void ADarwinDronePawn::ServerSetNetIdAndOnlineId(const struct FString& inNetId, int inOnlineId)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDronePawn.ServerSetNetId");
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDronePawn.ServerSetNetIdAndOnlineId");
 
-	ADarwinDronePawn_ServerSetNetId_Params params;
+	ADarwinDronePawn_ServerSetNetIdAndOnlineId_Params params;
 	params.inNetId = inNetId;
+	params.inOnlineId = inOnlineId;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1984,6 +1986,28 @@ bool ADarwinDronePawn::GetIsInLobby()
 }
 
 
+// Function Darwin.DarwinDronePawn.GetIsInCamStateManhunt
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool ADarwinDronePawn::GetIsInCamStateManhunt()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDronePawn.GetIsInCamStateManhunt");
+
+	ADarwinDronePawn_GetIsInCamStateManhunt_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function Darwin.DarwinDronePawn.GetIsInCamStateCharacter
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -1994,6 +2018,28 @@ bool ADarwinDronePawn::GetIsInCamStateCharacter()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDronePawn.GetIsInCamStateCharacter");
 
 	ADarwinDronePawn_GetIsInCamStateCharacter_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinDronePawn.GetActiveFollowedCharacter
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ADarwinCharacter*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class ADarwinCharacter* ADarwinDronePawn::GetActiveFollowedCharacter()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDronePawn.GetActiveFollowedCharacter");
+
+	ADarwinDronePawn_GetActiveFollowedCharacter_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -2183,6 +2229,24 @@ void ADarwinDronePawn::EventEnterForbiddenZone(class ADarwinDronePawn* drone)
 }
 
 
+// Function Darwin.DarwinDronePawn.DisableShowDirectorPowers
+// (Final, Native, Public, BlueprintCallable)
+
+void ADarwinDronePawn::DisableShowDirectorPowers()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDronePawn.DisableShowDirectorPowers");
+
+	ADarwinDronePawn_DisableShowDirectorPowers_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinBeholder.OnRepBeholderName
 // (Final, Native, Public)
 
@@ -2349,6 +2413,27 @@ class ADarwinCharacter* UDarwinUserWidget::SpawnDummyCharacter(class UClass* cha
 }
 
 
+// Function Darwin.DarwinUserWidget.ShowXboxPlayerProfile
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FString                 playerID                       (Parm, ZeroConstructor)
+
+void UDarwinUserWidget::ShowXboxPlayerProfile(const struct FString& playerID)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.ShowXboxPlayerProfile");
+
+	UDarwinUserWidget_ShowXboxPlayerProfile_Params params;
+	params.playerID = playerID;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinUserWidget.ShouldShowTutorial
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -2395,14 +2480,14 @@ void UDarwinUserWidget::SetMouseVisible(bool setInputModeGameAndUI)
 // Function Darwin.DarwinUserWidget.SetMouseInvisible
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                           setInputModeUIOnly             (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           setInputModeGameOnly           (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::SetMouseInvisible(bool setInputModeUIOnly)
+void UDarwinUserWidget::SetMouseInvisible(bool setInputModeGameOnly)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.SetMouseInvisible");
 
 	UDarwinUserWidget_SetMouseInvisible_Params params;
-	params.setInputModeUIOnly = setInputModeUIOnly;
+	params.setInputModeGameOnly = setInputModeGameOnly;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -2438,6 +2523,31 @@ struct FVector2D UDarwinUserWidget::STATIC_ScaleToMiniMapWidget(const struct FVe
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinUserWidget.ReportPlayer
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            reporterID                     (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinPlayerReportTypeEnum    Type                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinUserWidget::ReportPlayer(int reporterID, int playerID, EDarwinPlayerReportTypeEnum Type)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.ReportPlayer");
+
+	UDarwinUserWidget_ReportPlayer_Params params;
+	params.reporterID = reporterID;
+	params.playerID = playerID;
+	params.Type = Type;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -2538,6 +2648,28 @@ bool UDarwinUserWidget::IsZoneAllowedForClosing(const struct FString& zoneName)
 }
 
 
+// Function Darwin.DarwinUserWidget.IsSDBlackListed
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinUserWidget::IsSDBlackListed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.IsSDBlackListed");
+
+	UDarwinUserWidget_IsSDBlackListed_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function Darwin.DarwinUserWidget.IsOwnerShowDirector
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -2585,15 +2717,15 @@ bool UDarwinUserWidget::IsOwnerCharacter()
 // Function Darwin.DarwinUserWidget.IsOwnerBloodPactedTo
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UDarwinUserWidget::IsOwnerBloodPactedTo(int PlayerId)
+bool UDarwinUserWidget::IsOwnerBloodPactedTo(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.IsOwnerBloodPactedTo");
 
 	UDarwinUserWidget_IsOwnerBloodPactedTo_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -2631,15 +2763,37 @@ bool UDarwinUserWidget::IsOwnerBeholder()
 // Function Darwin.DarwinUserWidget.IsInCamStateForPlayer
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UDarwinUserWidget::IsInCamStateForPlayer(int PlayerId)
+bool UDarwinUserWidget::IsInCamStateForPlayer(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.IsInCamStateForPlayer");
 
 	UDarwinUserWidget_IsInCamStateForPlayer_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinUserWidget.IsEnforcer
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinUserWidget::IsEnforcer()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.IsEnforcer");
+
+	UDarwinUserWidget_IsEnforcer_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -2745,15 +2899,15 @@ int UDarwinUserWidget::GetTotalMatchesForLeaderboard()
 // Function Darwin.DarwinUserWidget.GetTimeSurvived
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
 
-struct FString UDarwinUserWidget::GetTimeSurvived(int PlayerId)
+struct FString UDarwinUserWidget::GetTimeSurvived(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetTimeSurvived");
 
 	UDarwinUserWidget_GetTimeSurvived_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -2815,15 +2969,15 @@ class ADarwinPylon* UDarwinUserWidget::GetPylon(int Index)
 // Function Darwin.DarwinUserWidget.GetPodiumRank
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetPodiumRank(int PlayerId)
+int UDarwinUserWidget::GetPodiumRank(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetPodiumRank");
 
 	UDarwinUserWidget_GetPodiumRank_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -2871,6 +3025,28 @@ int UDarwinUserWidget::GetPlayerSuitIndex(int UniqueId)
 
 	UDarwinUserWidget_GetPlayerSuitIndex_Params params;
 	params.UniqueId = UniqueId;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinUserWidget.GetPlayerStats
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FDarwinPlayerStats      ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FDarwinPlayerStats UDarwinUserWidget::GetPlayerStats()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetPlayerStats");
+
+	UDarwinUserWidget_GetPlayerStats_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3056,16 +3232,16 @@ struct FVector UDarwinUserWidget::GetPlayerHeadLoc(int UniqueId)
 // Function Darwin.DarwinUserWidget.GetPlayerCraftedPower
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // EDarwinItemTypeEnum            powerType                      (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UDarwinUserWidget::GetPlayerCraftedPower(int PlayerId, EDarwinItemTypeEnum powerType)
+bool UDarwinUserWidget::GetPlayerCraftedPower(int playerID, EDarwinItemTypeEnum powerType)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetPlayerCraftedPower");
 
 	UDarwinUserWidget_GetPlayerCraftedPower_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.powerType = powerType;
 
 	auto flags = fn->FunctionFlags;
@@ -3082,15 +3258,15 @@ bool UDarwinUserWidget::GetPlayerCraftedPower(int PlayerId, EDarwinItemTypeEnum 
 // Function Darwin.DarwinUserWidget.GetPlayerColorGradientFromID
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // struct FDarwinColorGradient    ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FDarwinColorGradient UDarwinUserWidget::GetPlayerColorGradientFromID(int PlayerId)
+struct FDarwinColorGradient UDarwinUserWidget::GetPlayerColorGradientFromID(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetPlayerColorGradientFromID");
 
 	UDarwinUserWidget_GetPlayerColorGradientFromID_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3106,15 +3282,15 @@ struct FDarwinColorGradient UDarwinUserWidget::GetPlayerColorGradientFromID(int 
 // Function Darwin.DarwinUserWidget.GetPlayerColorFromID
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
 
-struct FLinearColor UDarwinUserWidget::GetPlayerColorFromID(int PlayerId)
+struct FLinearColor UDarwinUserWidget::GetPlayerColorFromID(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetPlayerColorFromID");
 
 	UDarwinUserWidget_GetPlayerColorFromID_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3130,15 +3306,15 @@ struct FLinearColor UDarwinUserWidget::GetPlayerColorFromID(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetNumWoodHarvest
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumWoodHarvest(int PlayerId)
+int UDarwinUserWidget::GetNumWoodHarvest(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumWoodHarvest");
 
 	UDarwinUserWidget_GetNumWoodHarvest_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3176,15 +3352,15 @@ int UDarwinUserWidget::GetNumUnopenedLootBox()
 // Function Darwin.DarwinUserWidget.GetNumTrapsLanded
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumTrapsLanded(int PlayerId)
+int UDarwinUserWidget::GetNumTrapsLanded(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumTrapsLanded");
 
 	UDarwinUserWidget_GetNumTrapsLanded_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3200,15 +3376,15 @@ int UDarwinUserWidget::GetNumTrapsLanded(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetNumRessourcesHarvested
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumRessourcesHarvested(int PlayerId)
+int UDarwinUserWidget::GetNumRessourcesHarvested(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumRessourcesHarvested");
 
 	UDarwinUserWidget_GetNumRessourcesHarvested_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3224,15 +3400,15 @@ int UDarwinUserWidget::GetNumRessourcesHarvested(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetNumPowersCrafted
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumPowersCrafted(int PlayerId)
+int UDarwinUserWidget::GetNumPowersCrafted(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumPowersCrafted");
 
 	UDarwinUserWidget_GetNumPowersCrafted_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3248,15 +3424,15 @@ int UDarwinUserWidget::GetNumPowersCrafted(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetNumLooted
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumLooted(int PlayerId)
+int UDarwinUserWidget::GetNumLooted(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumLooted");
 
 	UDarwinUserWidget_GetNumLooted_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3272,15 +3448,15 @@ int UDarwinUserWidget::GetNumLooted(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetNumLeatherHarvest
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumLeatherHarvest(int PlayerId)
+int UDarwinUserWidget::GetNumLeatherHarvest(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumLeatherHarvest");
 
 	UDarwinUserWidget_GetNumLeatherHarvest_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3296,15 +3472,15 @@ int UDarwinUserWidget::GetNumLeatherHarvest(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetNumKills
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumKills(int PlayerId)
+int UDarwinUserWidget::GetNumKills(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumKills");
 
 	UDarwinUserWidget_GetNumKills_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3320,15 +3496,15 @@ int UDarwinUserWidget::GetNumKills(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetNumItemsCrafted
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumItemsCrafted(int PlayerId)
+int UDarwinUserWidget::GetNumItemsCrafted(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumItemsCrafted");
 
 	UDarwinUserWidget_GetNumItemsCrafted_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3344,15 +3520,15 @@ int UDarwinUserWidget::GetNumItemsCrafted(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetNumElectronicHarvest
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumElectronicHarvest(int PlayerId)
+int UDarwinUserWidget::GetNumElectronicHarvest(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumElectronicHarvest");
 
 	UDarwinUserWidget_GetNumElectronicHarvest_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3368,15 +3544,15 @@ int UDarwinUserWidget::GetNumElectronicHarvest(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetNumCluesAcquired
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumCluesAcquired(int PlayerId)
+int UDarwinUserWidget::GetNumCluesAcquired(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumCluesAcquired");
 
 	UDarwinUserWidget_GetNumCluesAcquired_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3436,15 +3612,15 @@ int UDarwinUserWidget::GetNumberOfGamesPlayed()
 // Function Darwin.DarwinUserWidget.GetNumArrowsShot
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumArrowsShot(int PlayerId)
+int UDarwinUserWidget::GetNumArrowsShot(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumArrowsShot");
 
 	UDarwinUserWidget_GetNumArrowsShot_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3460,15 +3636,15 @@ int UDarwinUserWidget::GetNumArrowsShot(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetNumArrowsHitObject
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumArrowsHitObject(int PlayerId)
+int UDarwinUserWidget::GetNumArrowsHitObject(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumArrowsHitObject");
 
 	UDarwinUserWidget_GetNumArrowsHitObject_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3484,15 +3660,15 @@ int UDarwinUserWidget::GetNumArrowsHitObject(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetNumArrowsHit
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetNumArrowsHit(int PlayerId)
+int UDarwinUserWidget::GetNumArrowsHit(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNumArrowsHit");
 
 	UDarwinUserWidget_GetNumArrowsHit_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3552,15 +3728,15 @@ int UDarwinUserWidget::GetNextLevelXp()
 // Function Darwin.DarwinUserWidget.GetNetAvatarFromID
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
-// class UTexture2D*              ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture*                ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UTexture2D* UDarwinUserWidget::GetNetAvatarFromID(int PlayerId)
+class UTexture* UDarwinUserWidget::GetNetAvatarFromID(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetNetAvatarFromID");
 
 	UDarwinUserWidget_GetNetAvatarFromID_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3605,6 +3781,50 @@ int UDarwinUserWidget::GetMoney()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetMoney");
 
 	UDarwinUserWidget_GetMoney_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinUserWidget.GetLocalUniqueID
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UDarwinUserWidget::GetLocalUniqueID()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetLocalUniqueID");
+
+	UDarwinUserWidget_GetLocalUniqueID_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinUserWidget.GetLocalPlayerName
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+
+struct FString UDarwinUserWidget::GetLocalPlayerName()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetLocalPlayerName");
+
+	UDarwinUserWidget_GetLocalPlayerName_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3741,6 +3961,34 @@ void UDarwinUserWidget::GetKilledIDs(int UniqueId, TArray<int>* killedArray)
 }
 
 
+// Function Darwin.DarwinUserWidget.GetItemLootInfo
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FString                 UniqueId                       (Parm, ZeroConstructor)
+// bool                           bIsValid                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// struct FItemLoot               outItemLoot                    (Parm, OutParm)
+
+void UDarwinUserWidget::GetItemLootInfo(const struct FString& UniqueId, bool* bIsValid, struct FItemLoot* outItemLoot)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetItemLootInfo");
+
+	UDarwinUserWidget_GetItemLootInfo_Params params;
+	params.UniqueId = UniqueId;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bIsValid != nullptr)
+		*bIsValid = params.bIsValid;
+	if (outItemLoot != nullptr)
+		*outItemLoot = params.outItemLoot;
+}
+
+
 // Function Darwin.DarwinUserWidget.GetIsUsingGamepad
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -3751,6 +3999,28 @@ bool UDarwinUserWidget::GetIsUsingGamepad()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetIsUsingGamepad");
 
 	UDarwinUserWidget_GetIsUsingGamepad_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinUserWidget.GetIsPrivateMatch
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinUserWidget::GetIsPrivateMatch()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetIsPrivateMatch");
+
+	UDarwinUserWidget_GetIsPrivateMatch_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3862,16 +4132,16 @@ bool UDarwinUserWidget::GetIsOwnedByPlayer(int UniqueId)
 // Function Darwin.DarwinUserWidget.GetHasCraftedCraftWheelIndex
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            cwIndex                        (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UDarwinUserWidget::GetHasCraftedCraftWheelIndex(int PlayerId, int cwIndex)
+bool UDarwinUserWidget::GetHasCraftedCraftWheelIndex(int playerID, int cwIndex)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetHasCraftedCraftWheelIndex");
 
 	UDarwinUserWidget_GetHasCraftedCraftWheelIndex_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.cwIndex = cwIndex;
 
 	auto flags = fn->FunctionFlags;
@@ -3910,15 +4180,15 @@ int UDarwinUserWidget::GetELO()
 // Function Darwin.DarwinUserWidget.GetDistanceTravelled
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetDistanceTravelled(int PlayerId)
+int UDarwinUserWidget::GetDistanceTravelled(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetDistanceTravelled");
 
 	UDarwinUserWidget_GetDistanceTravelled_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3934,15 +4204,15 @@ int UDarwinUserWidget::GetDistanceTravelled(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetDamageTaken
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetDamageTaken(int PlayerId)
+int UDarwinUserWidget::GetDamageTaken(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetDamageTaken");
 
 	UDarwinUserWidget_GetDamageTaken_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3958,15 +4228,15 @@ int UDarwinUserWidget::GetDamageTaken(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetDamageDone
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetDamageDone(int PlayerId)
+int UDarwinUserWidget::GetDamageDone(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetDamageDone");
 
 	UDarwinUserWidget_GetDamageDone_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3982,15 +4252,15 @@ int UDarwinUserWidget::GetDamageDone(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetCraftableItems
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // TArray<EDarwinItemTypeEnum>    ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
 
-TArray<EDarwinItemTypeEnum> UDarwinUserWidget::GetCraftableItems(int PlayerId)
+TArray<EDarwinItemTypeEnum> UDarwinUserWidget::GetCraftableItems(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetCraftableItems");
 
 	UDarwinUserWidget_GetCraftableItems_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4006,15 +4276,15 @@ TArray<EDarwinItemTypeEnum> UDarwinUserWidget::GetCraftableItems(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetClueTime
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetClueTime(int PlayerId)
+int UDarwinUserWidget::GetClueTime(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetClueTime");
 
 	UDarwinUserWidget_GetClueTime_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4030,37 +4300,15 @@ int UDarwinUserWidget::GetClueTime(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetCharacterFromID
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // class ADarwinCharacter*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class ADarwinCharacter* UDarwinUserWidget::GetCharacterFromID(int PlayerId)
+class ADarwinCharacter* UDarwinUserWidget::GetCharacterFromID(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetCharacterFromID");
 
 	UDarwinUserWidget_GetCharacterFromID_Params params;
-	params.PlayerId = PlayerId;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function Darwin.DarwinUserWidget.GetCareerStats
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FDarwinCareerStats      ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FDarwinCareerStats UDarwinUserWidget::GetCareerStats()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetCareerStats");
-
-	UDarwinUserWidget_GetCareerStats_Params params;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4076,15 +4324,15 @@ struct FDarwinCareerStats UDarwinUserWidget::GetCareerStats()
 // Function Darwin.DarwinUserWidget.GetBloodPactPodiumRank
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetBloodPactPodiumRank(int PlayerId)
+int UDarwinUserWidget::GetBloodPactPodiumRank(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetBloodPactPodiumRank");
 
 	UDarwinUserWidget_GetBloodPactPodiumRank_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4123,15 +4371,15 @@ void UDarwinUserWidget::GetBloodPactPodiumIDs(TArray<struct FDarwinBloodPactDuo>
 // Function Darwin.DarwinUserWidget.GetBloodPactDeadTimerNormalized
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-float UDarwinUserWidget::GetBloodPactDeadTimerNormalized(int PlayerId)
+float UDarwinUserWidget::GetBloodPactDeadTimerNormalized(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetBloodPactDeadTimerNormalized");
 
 	UDarwinUserWidget_GetBloodPactDeadTimerNormalized_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4147,15 +4395,15 @@ float UDarwinUserWidget::GetBloodPactDeadTimerNormalized(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetBloodPactDeadTimer
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinUserWidget::GetBloodPactDeadTimer(int PlayerId)
+int UDarwinUserWidget::GetBloodPactDeadTimer(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetBloodPactDeadTimer");
 
 	UDarwinUserWidget_GetBloodPactDeadTimer_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4171,15 +4419,15 @@ int UDarwinUserWidget::GetBloodPactDeadTimer(int PlayerId)
 // Function Darwin.DarwinUserWidget.GetBloodPactDead
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UDarwinUserWidget::GetBloodPactDead(int PlayerId)
+bool UDarwinUserWidget::GetBloodPactDead(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.GetBloodPactDead");
 
 	UDarwinUserWidget_GetBloodPactDead_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4258,6 +4506,26 @@ void UDarwinUserWidget::EventZoneNowForbidden(const struct FString& zoneName)
 }
 
 
+// Function Darwin.DarwinUserWidget.EventVivoxPlayerNotConnected
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int                            UniqueId                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinUserWidget::EventVivoxPlayerNotConnected(int UniqueId)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventVivoxPlayerNotConnected");
+
+	UDarwinUserWidget_EventVivoxPlayerNotConnected_Params params;
+	params.UniqueId = UniqueId;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinUserWidget.EventUpdateSuddenDeathProgress
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -4298,18 +4566,58 @@ void UDarwinUserWidget::EventUpdateSuddenDeath(const struct FString& gameTimeStr
 }
 
 
+// Function Darwin.DarwinUserWidget.EventUpdateShowDirectorIsLoading
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                           Value                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinUserWidget::EventUpdateShowDirectorIsLoading(bool Value)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdateShowDirectorIsLoading");
+
+	UDarwinUserWidget_EventUpdateShowDirectorIsLoading_Params params;
+	params.Value = Value;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinUserWidget.EventUpdatePrivateMatchTimer
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString                 timeUntilRestart               (Parm, ZeroConstructor)
+
+void UDarwinUserWidget::EventUpdatePrivateMatchTimer(const struct FString& timeUntilRestart)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdatePrivateMatchTimer");
+
+	UDarwinUserWidget_EventUpdatePrivateMatchTimer_Params params;
+	params.timeUntilRestart = timeUntilRestart;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinUserWidget.EventUpdatePodiumRank
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            PodiumRank                     (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdatePodiumRank(int PlayerId, int PodiumRank)
+void UDarwinUserWidget::EventUpdatePodiumRank(int playerID, int PodiumRank)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdatePodiumRank");
 
 	UDarwinUserWidget_EventUpdatePodiumRank_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.PodiumRank = PodiumRank;
 
 	auto flags = fn->FunctionFlags;
@@ -4325,16 +4633,16 @@ void UDarwinUserWidget::EventUpdatePodiumRank(int PlayerId, int PodiumRank)
 // Parameters:
 // struct FString                 zoneName                       (Parm, ZeroConstructor)
 // bool                           bForbiddenZone                 (Parm, ZeroConstructor, IsPlainOldData)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdatePlayerZoneName(const struct FString& zoneName, bool bForbiddenZone, int PlayerId)
+void UDarwinUserWidget::EventUpdatePlayerZoneName(const struct FString& zoneName, bool bForbiddenZone, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdatePlayerZoneName");
 
 	UDarwinUserWidget_EventUpdatePlayerZoneName_Params params;
 	params.zoneName = zoneName;
 	params.bForbiddenZone = bForbiddenZone;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4348,15 +4656,15 @@ void UDarwinUserWidget::EventUpdatePlayerZoneName(const struct FString& zoneName
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float                          Yaw                            (Parm, ZeroConstructor, IsPlainOldData)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdatePlayerYaw(float Yaw, int PlayerId)
+void UDarwinUserWidget::EventUpdatePlayerYaw(float Yaw, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdatePlayerYaw");
 
 	UDarwinUserWidget_EventUpdatePlayerYaw_Params params;
 	params.Yaw = Yaw;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4370,15 +4678,15 @@ void UDarwinUserWidget::EventUpdatePlayerYaw(float Yaw, int PlayerId)
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float                          staminaNormalized              (Parm, ZeroConstructor, IsPlainOldData)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdatePlayerStamina(float staminaNormalized, int PlayerId)
+void UDarwinUserWidget::EventUpdatePlayerStamina(float staminaNormalized, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdatePlayerStamina");
 
 	UDarwinUserWidget_EventUpdatePlayerStamina_Params params;
 	params.staminaNormalized = staminaNormalized;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4391,15 +4699,15 @@ void UDarwinUserWidget::EventUpdatePlayerStamina(float staminaNormalized, int Pl
 // Function Darwin.DarwinUserWidget.EventUpdatePlayerIndex
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            playerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdatePlayerIndex(int PlayerId, int playerIndex)
+void UDarwinUserWidget::EventUpdatePlayerIndex(int playerID, int playerIndex)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdatePlayerIndex");
 
 	UDarwinUserWidget_EventUpdatePlayerIndex_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.playerIndex = playerIndex;
 
 	auto flags = fn->FunctionFlags;
@@ -4414,15 +4722,15 @@ void UDarwinUserWidget::EventUpdatePlayerIndex(int PlayerId, int playerIndex)
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float                          healthNormalized               (Parm, ZeroConstructor, IsPlainOldData)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdatePlayerHealth(float healthNormalized, int PlayerId)
+void UDarwinUserWidget::EventUpdatePlayerHealth(float healthNormalized, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdatePlayerHealth");
 
 	UDarwinUserWidget_EventUpdatePlayerHealth_Params params;
 	params.healthNormalized = healthNormalized;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4436,15 +4744,15 @@ void UDarwinUserWidget::EventUpdatePlayerHealth(float healthNormalized, int Play
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // struct FDarwinColorGradient    payerGradient                  (Parm)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdatePlayerGradient(const struct FDarwinColorGradient& payerGradient, int PlayerId)
+void UDarwinUserWidget::EventUpdatePlayerGradient(const struct FDarwinColorGradient& payerGradient, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdatePlayerGradient");
 
 	UDarwinUserWidget_EventUpdatePlayerGradient_Params params;
 	params.payerGradient = payerGradient;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4458,15 +4766,15 @@ void UDarwinUserWidget::EventUpdatePlayerGradient(const struct FDarwinColorGradi
 // (Event, Public, HasDefaults, BlueprintEvent)
 // Parameters:
 // struct FLinearColor            playerColor                    (Parm, IsPlainOldData)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdatePlayerColor(const struct FLinearColor& playerColor, int PlayerId)
+void UDarwinUserWidget::EventUpdatePlayerColor(const struct FLinearColor& playerColor, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdatePlayerColor");
 
 	UDarwinUserWidget_EventUpdatePlayerColor_Params params;
 	params.playerColor = playerColor;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4480,15 +4788,15 @@ void UDarwinUserWidget::EventUpdatePlayerColor(const struct FLinearColor& player
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float                          coldFactorNormalized           (Parm, ZeroConstructor, IsPlainOldData)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdatePlayerColdFactor(float coldFactorNormalized, int PlayerId)
+void UDarwinUserWidget::EventUpdatePlayerColdFactor(float coldFactorNormalized, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdatePlayerColdFactor");
 
 	UDarwinUserWidget_EventUpdatePlayerColdFactor_Params params;
 	params.coldFactorNormalized = coldFactorNormalized;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4509,6 +4817,26 @@ void UDarwinUserWidget::EventUpdatePing(int ping)
 
 	UDarwinUserWidget_EventUpdatePing_Params params;
 	params.ping = ping;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinUserWidget.EventUpdateNumberOfTwitchSpectators
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int                            Number                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinUserWidget::EventUpdateNumberOfTwitchSpectators(int Number)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdateNumberOfTwitchSpectators");
+
+	UDarwinUserWidget_EventUpdateNumberOfTwitchSpectators_Params params;
+	params.Number = Number;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4609,9 +4937,9 @@ void UDarwinUserWidget::EventUpdateManHuntInfo(const struct FString& Time, int t
 // Function Darwin.DarwinUserWidget.EventUpdateLocalAvatarTexture
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UTexture2D*              outLocalAvatarTexture          (Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture*                outLocalAvatarTexture          (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdateLocalAvatarTexture(class UTexture2D* outLocalAvatarTexture)
+void UDarwinUserWidget::EventUpdateLocalAvatarTexture(class UTexture* outLocalAvatarTexture)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdateLocalAvatarTexture");
 
@@ -4710,15 +5038,15 @@ void UDarwinUserWidget::EventUpdateGameAboutToStart(bool aboutToStart)
 // (Event, Public, HasOutParms, HasDefaults, BlueprintEvent)
 // Parameters:
 // struct FVector2D               Loc                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdateCharacterLocationByID(const struct FVector2D& Loc, int PlayerId)
+void UDarwinUserWidget::EventUpdateCharacterLocationByID(const struct FVector2D& Loc, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdateCharacterLocationByID");
 
 	UDarwinUserWidget_EventUpdateCharacterLocationByID_Params params;
 	params.Loc = Loc;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4731,16 +5059,16 @@ void UDarwinUserWidget::EventUpdateCharacterLocationByID(const struct FVector2D&
 // Function Darwin.DarwinUserWidget.EventUpdateAvatarTexture
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UTexture2D*              avatar                         (Parm, ZeroConstructor, IsPlainOldData)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture*                avatar                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventUpdateAvatarTexture(class UTexture2D* avatar, int PlayerId)
+void UDarwinUserWidget::EventUpdateAvatarTexture(class UTexture* avatar, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventUpdateAvatarTexture");
 
 	UDarwinUserWidget_EventUpdateAvatarTexture_Params params;
 	params.avatar = avatar;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4871,14 +5199,14 @@ void UDarwinUserWidget::EventSoonToBeForbiddenZone(const struct FString& zoneNam
 // Function Darwin.DarwinUserWidget.EventShowDirectorLeft
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FString                 showDirectorName               (Parm, ZeroConstructor)
+// struct FString                 ShowDirectorName               (Parm, ZeroConstructor)
 
-void UDarwinUserWidget::EventShowDirectorLeft(const struct FString& showDirectorName)
+void UDarwinUserWidget::EventShowDirectorLeft(const struct FString& ShowDirectorName)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventShowDirectorLeft");
 
 	UDarwinUserWidget_EventShowDirectorLeft_Params params;
-	params.showDirectorName = showDirectorName;
+	params.ShowDirectorName = ShowDirectorName;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4891,14 +5219,14 @@ void UDarwinUserWidget::EventShowDirectorLeft(const struct FString& showDirector
 // Function Darwin.DarwinUserWidget.EventShowDirectorJoined
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FString                 showDirectorName               (Parm, ZeroConstructor)
+// struct FString                 ShowDirectorName               (Parm, ZeroConstructor)
 
-void UDarwinUserWidget::EventShowDirectorJoined(const struct FString& showDirectorName)
+void UDarwinUserWidget::EventShowDirectorJoined(const struct FString& ShowDirectorName)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventShowDirectorJoined");
 
 	UDarwinUserWidget_EventShowDirectorJoined_Params params;
-	params.showDirectorName = showDirectorName;
+	params.ShowDirectorName = ShowDirectorName;
 
 	auto flags = fn->FunctionFlags;
 
@@ -4987,6 +5315,26 @@ void UDarwinUserWidget::EventRotaCam(bool bValue)
 
 	UDarwinUserWidget_EventRotaCam_Params params;
 	params.bValue = bValue;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinUserWidget.EventQueuedCraftingStart
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// EDarwinItemTypeEnum            Type                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinUserWidget::EventQueuedCraftingStart(EDarwinItemTypeEnum Type)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventQueuedCraftingStart");
+
+	UDarwinUserWidget_EventQueuedCraftingStart_Params params;
+	params.Type = Type;
 
 	auto flags = fn->FunctionFlags;
 
@@ -5124,6 +5472,40 @@ void UDarwinUserWidget::EventPylonCreated(int Index, const struct FVector2D& Loc
 }
 
 
+// Function Darwin.DarwinUserWidget.EventPrivateMatchStarted
+// (Event, Public, BlueprintEvent)
+
+void UDarwinUserWidget::EventPrivateMatchStarted()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventPrivateMatchStarted");
+
+	UDarwinUserWidget_EventPrivateMatchStarted_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinUserWidget.EventPrivateMatchNeedsMorePlayers
+// (Event, Public, BlueprintEvent)
+
+void UDarwinUserWidget::EventPrivateMatchNeedsMorePlayers()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventPrivateMatchNeedsMorePlayers");
+
+	UDarwinUserWidget_EventPrivateMatchNeedsMorePlayers_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinUserWidget.EventPlayerSpeakStart
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -5168,15 +5550,15 @@ void UDarwinUserWidget::EventPlayerSpeakEnd(int UniqueId)
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // int                            Damage                         (Parm, ZeroConstructor, IsPlainOldData)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventPlayerReceivedDamage(int Damage, int PlayerId)
+void UDarwinUserWidget::EventPlayerReceivedDamage(int Damage, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventPlayerReceivedDamage");
 
 	UDarwinUserWidget_EventPlayerReceivedDamage_Params params;
 	params.Damage = Damage;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -5186,17 +5568,17 @@ void UDarwinUserWidget::EventPlayerReceivedDamage(int Damage, int PlayerId)
 }
 
 
-// Function Darwin.DarwinUserWidget.EventPlayerProfileStatsReceived
+// Function Darwin.DarwinUserWidget.EventPlayerProfileReceived
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FDarwinCareerStats      stats                          (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FDarwinPlayerStats      stats                          (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FDarwinProfile          Profile                        (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UDarwinUserWidget::EventPlayerProfileStatsReceived(const struct FDarwinCareerStats& stats, const struct FDarwinProfile& Profile)
+void UDarwinUserWidget::EventPlayerProfileReceived(const struct FDarwinPlayerStats& stats, const struct FDarwinProfile& Profile)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventPlayerProfileStatsReceived");
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventPlayerProfileReceived");
 
-	UDarwinUserWidget_EventPlayerProfileStatsReceived_Params params;
+	UDarwinUserWidget_EventPlayerProfileReceived_Params params;
 	params.stats = stats;
 	params.Profile = Profile;
 
@@ -5211,14 +5593,14 @@ void UDarwinUserWidget::EventPlayerProfileStatsReceived(const struct FDarwinCare
 // Function Darwin.DarwinUserWidget.EventPlayerLeftGame
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventPlayerLeftGame(int PlayerId)
+void UDarwinUserWidget::EventPlayerLeftGame(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventPlayerLeftGame");
 
 	UDarwinUserWidget_EventPlayerLeftGame_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -5232,16 +5614,16 @@ void UDarwinUserWidget::EventPlayerLeftGame(int PlayerId)
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // struct FString                 playerName                     (Parm, ZeroConstructor)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // struct FString                 playerName12                   (Parm, ZeroConstructor)
 
-void UDarwinUserWidget::EventPlayerJoinedGame(const struct FString& playerName, int PlayerId, const struct FString& playerName12)
+void UDarwinUserWidget::EventPlayerJoinedGame(const struct FString& playerName, int playerID, const struct FString& playerName12)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventPlayerJoinedGame");
 
 	UDarwinUserWidget_EventPlayerJoinedGame_Params params;
 	params.playerName = playerName;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.playerName12 = playerName12;
 
 	auto flags = fn->FunctionFlags;
@@ -5255,16 +5637,16 @@ void UDarwinUserWidget::EventPlayerJoinedGame(const struct FString& playerName, 
 // Function Darwin.DarwinUserWidget.EventPlayerIsWinner
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           bBloodPactActive               (Parm, ZeroConstructor, IsPlainOldData)
 // int                            allyID                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventPlayerIsWinner(int PlayerId, bool bBloodPactActive, int allyID)
+void UDarwinUserWidget::EventPlayerIsWinner(int playerID, bool bBloodPactActive, int allyID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventPlayerIsWinner");
 
 	UDarwinUserWidget_EventPlayerIsWinner_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.bBloodPactActive = bBloodPactActive;
 	params.allyID = allyID;
 
@@ -5279,14 +5661,14 @@ void UDarwinUserWidget::EventPlayerIsWinner(int PlayerId, bool bBloodPactActive,
 // Function Darwin.DarwinUserWidget.EventPlayerIsLooted
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventPlayerIsLooted(int PlayerId)
+void UDarwinUserWidget::EventPlayerIsLooted(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventPlayerIsLooted");
 
 	UDarwinUserWidget_EventPlayerIsLooted_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -5299,16 +5681,16 @@ void UDarwinUserWidget::EventPlayerIsLooted(int PlayerId)
 // Function Darwin.DarwinUserWidget.EventPlayerIsDead
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            PodiumRank                     (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           firstDeath                     (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventPlayerIsDead(int PlayerId, int PodiumRank, bool firstDeath)
+void UDarwinUserWidget::EventPlayerIsDead(int playerID, int PodiumRank, bool firstDeath)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventPlayerIsDead");
 
 	UDarwinUserWidget_EventPlayerIsDead_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.PodiumRank = PodiumRank;
 	params.firstDeath = firstDeath;
 
@@ -5323,15 +5705,15 @@ void UDarwinUserWidget::EventPlayerIsDead(int PlayerId, int PodiumRank, bool fir
 // Function Darwin.DarwinUserWidget.EventPlayerCraftedPower
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // EDarwinItemTypeEnum            powerType                      (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventPlayerCraftedPower(int PlayerId, EDarwinItemTypeEnum powerType)
+void UDarwinUserWidget::EventPlayerCraftedPower(int playerID, EDarwinItemTypeEnum powerType)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventPlayerCraftedPower");
 
 	UDarwinUserWidget_EventPlayerCraftedPower_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 	params.powerType = powerType;
 
 	auto flags = fn->FunctionFlags;
@@ -5766,6 +6148,40 @@ void UDarwinUserWidget::EventMenuUp()
 }
 
 
+// Function Darwin.DarwinUserWidget.EventMenuSpecialRightPressed
+// (Event, Public, BlueprintEvent)
+
+void UDarwinUserWidget::EventMenuSpecialRightPressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventMenuSpecialRightPressed");
+
+	UDarwinUserWidget_EventMenuSpecialRightPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinUserWidget.EventMenuSpecialLeftPressed
+// (Event, Public, BlueprintEvent)
+
+void UDarwinUserWidget::EventMenuSpecialLeftPressed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventMenuSpecialLeftPressed");
+
+	UDarwinUserWidget_EventMenuSpecialLeftPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinUserWidget.EventMenuRightTriggerPressed
 // (Event, Public, BlueprintEvent)
 
@@ -5902,6 +6318,74 @@ void UDarwinUserWidget::EventMenuLeft()
 }
 
 
+// Function Darwin.DarwinUserWidget.EventMenuDPadUp
+// (Event, Public, BlueprintEvent)
+
+void UDarwinUserWidget::EventMenuDPadUp()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventMenuDPadUp");
+
+	UDarwinUserWidget_EventMenuDPadUp_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinUserWidget.EventMenuDPadRight
+// (Event, Public, BlueprintEvent)
+
+void UDarwinUserWidget::EventMenuDPadRight()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventMenuDPadRight");
+
+	UDarwinUserWidget_EventMenuDPadRight_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinUserWidget.EventMenuDPadLeft
+// (Event, Public, BlueprintEvent)
+
+void UDarwinUserWidget::EventMenuDPadLeft()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventMenuDPadLeft");
+
+	UDarwinUserWidget_EventMenuDPadLeft_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinUserWidget.EventMenuDPadDown
+// (Event, Public, BlueprintEvent)
+
+void UDarwinUserWidget::EventMenuDPadDown()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventMenuDPadDown");
+
+	UDarwinUserWidget_EventMenuDPadDown_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinUserWidget.EventMenuDownReleased
 // (Event, Public, BlueprintEvent)
 
@@ -5955,12 +6439,15 @@ void UDarwinUserWidget::EventMenuClick()
 
 // Function Darwin.DarwinUserWidget.EventMenuBack
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                           bIsEscape                      (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventMenuBack()
+void UDarwinUserWidget::EventMenuBack(bool bIsEscape)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventMenuBack");
 
 	UDarwinUserWidget_EventMenuBack_Params params;
+	params.bIsEscape = bIsEscape;
 
 	auto flags = fn->FunctionFlags;
 
@@ -5997,14 +6484,16 @@ void UDarwinUserWidget::EventManHuntStart(int targetCharacterID, const struct FV
 // Parameters:
 // int                            targetCharacterID              (Parm, ZeroConstructor, IsPlainOldData)
 // int                            killerCharacterID              (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           isDead                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventManHuntEnd(int targetCharacterID, int killerCharacterID)
+void UDarwinUserWidget::EventManHuntEnd(int targetCharacterID, int killerCharacterID, bool isDead)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventManHuntEnd");
 
 	UDarwinUserWidget_EventManHuntEnd_Params params;
 	params.targetCharacterID = targetCharacterID;
 	params.killerCharacterID = killerCharacterID;
+	params.isDead = isDead;
 
 	auto flags = fn->FunctionFlags;
 
@@ -6017,14 +6506,14 @@ void UDarwinUserWidget::EventManHuntEnd(int targetCharacterID, int killerCharact
 // Function Darwin.DarwinUserWidget.EventLeaveCamStateCharacter
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventLeaveCamStateCharacter(int PlayerId)
+void UDarwinUserWidget::EventLeaveCamStateCharacter(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventLeaveCamStateCharacter");
 
 	UDarwinUserWidget_EventLeaveCamStateCharacter_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -6065,6 +6554,26 @@ void UDarwinUserWidget::EventItemBought(const struct FString& itemUniqueId)
 
 	UDarwinUserWidget_EventItemBought_Params params;
 	params.itemUniqueId = itemUniqueId;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinUserWidget.EventIsPrivateMatchOwner
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString                 password                       (Parm, ZeroConstructor)
+
+void UDarwinUserWidget::EventIsPrivateMatchOwner(const struct FString& password)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventIsPrivateMatchOwner");
+
+	UDarwinUserWidget_EventIsPrivateMatchOwner_Params params;
+	params.password = password;
 
 	auto flags = fn->FunctionFlags;
 
@@ -6313,9 +6822,9 @@ void UDarwinUserWidget::EventFriendPartyLeft()
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
 // struct FText                   friendName                     (ConstParm, Parm, OutParm, ReferenceParm)
-// class UTexture2D*              friendAvatar                   (Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture*                friendAvatar                   (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventFriendPartyJoined(const struct FText& friendName, class UTexture2D* friendAvatar)
+void UDarwinUserWidget::EventFriendPartyJoined(const struct FText& friendName, class UTexture* friendAvatar)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventFriendPartyJoined");
 
@@ -6382,14 +6891,14 @@ void UDarwinUserWidget::EventFirstBlood(int attackerID, int victimID, EDarwinDam
 // Function Darwin.DarwinUserWidget.EventEnterCamStateCharacter
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventEnterCamStateCharacter(int PlayerId)
+void UDarwinUserWidget::EventEnterCamStateCharacter(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventEnterCamStateCharacter");
 
 	UDarwinUserWidget_EventEnterCamStateCharacter_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -6635,12 +7144,17 @@ void UDarwinUserWidget::EventChangeCamera(EPlayerCameraState NewState)
 
 // Function Darwin.DarwinUserWidget.EventCannotUseItemInLobby
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinItemTypeEnum            Type                           (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventCannotUseItemInLobby()
+void UDarwinUserWidget::EventCannotUseItemInLobby(int Index, EDarwinItemTypeEnum Type)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventCannotUseItemInLobby");
 
 	UDarwinUserWidget_EventCannotUseItemInLobby_Params params;
+	params.Index = Index;
+	params.Type = Type;
 
 	auto flags = fn->FunctionFlags;
 
@@ -6763,15 +7277,15 @@ void UDarwinUserWidget::EventArmorBreakNotification(EDarwinDamageTypeEnum Type, 
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // struct FString                 Message                        (Parm, ZeroConstructor)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinUserWidget::EventAddMessageFromSpectator(const struct FString& Message, int PlayerId)
+void UDarwinUserWidget::EventAddMessageFromSpectator(const struct FString& Message, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.EventAddMessageFromSpectator");
 
 	UDarwinUserWidget_EventAddMessageFromSpectator_Params params;
 	params.Message = Message;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -6796,6 +7310,51 @@ void UDarwinUserWidget::DarwinRemove()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinUserWidget.DarwinCopyToClipboard
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FString                 stringToCopy                   (Parm, ZeroConstructor)
+
+void UDarwinUserWidget::DarwinCopyToClipboard(const struct FString& stringToCopy)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.DarwinCopyToClipboard");
+
+	UDarwinUserWidget_DarwinCopyToClipboard_Params params;
+	params.stringToCopy = stringToCopy;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinUserWidget.CanPylonBeActivatedPylon
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ADarwinPylon*            pylon                          (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinUserWidget::CanPylonBeActivatedPylon(class ADarwinPylon* pylon)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinUserWidget.CanPylonBeActivatedPylon");
+
+	UDarwinUserWidget_CanPylonBeActivatedPylon_Params params;
+	params.pylon = pylon;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 
@@ -6987,6 +7546,23 @@ void UDarwinBeholderWidget::EventBloodPactReconBeholder()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinBeholderWidget.EventBloodPactReconBeholder");
 
 	UDarwinBeholderWidget_EventBloodPactReconBeholder_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinBeholderWidget.EventBeholderLocalSpeakLocked
+// (Event, Public, BlueprintEvent)
+
+void UDarwinBeholderWidget::EventBeholderLocalSpeakLocked()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinBeholderWidget.EventBeholderLocalSpeakLocked");
+
+	UDarwinBeholderWidget_EventBeholderLocalSpeakLocked_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -7326,6 +7902,24 @@ void UDarwinCharacterPower::EventLocalPowerActivate(class ADarwinCharacter* Char
 }
 
 
+// Function Darwin.DarwinCamouflagePower.NetMulticastOnBreakCamouflage
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+
+void UDarwinCamouflagePower::NetMulticastOnBreakCamouflage()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCamouflagePower.NetMulticastOnBreakCamouflage");
+
+	UDarwinCamouflagePower_NetMulticastOnBreakCamouflage_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinCampFire.NetMulticastFireEnded
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 
@@ -7337,6 +7931,28 @@ void ADarwinCampFire::NetMulticastFireEnded()
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinCampFire.EventUpdateLights
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                          red_intensity                  (Parm, ZeroConstructor, IsPlainOldData)
+// float                          blue_intensity                 (Parm, ZeroConstructor, IsPlainOldData)
+
+void ADarwinCampFire::EventUpdateLights(float red_intensity, float blue_intensity)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCampFire.EventUpdateLights");
+
+	ADarwinCampFire_EventUpdateLights_Params params;
+	params.red_intensity = red_intensity;
+	params.blue_intensity = blue_intensity;
+
+	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -7816,17 +8432,19 @@ void ADarwinCharacter::ServerSetShouldUseStrafe(bool inShouldUseStrafe)
 }
 
 
-// Function Darwin.DarwinCharacter.ServerSetNetId
+// Function Darwin.DarwinCharacter.ServerSetNetIdAndOnlineId
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
 // struct FString                 inNetId                        (Parm, ZeroConstructor)
+// int                            inOnlineId                     (Parm, ZeroConstructor, IsPlainOldData)
 
-void ADarwinCharacter::ServerSetNetId(const struct FString& inNetId)
+void ADarwinCharacter::ServerSetNetIdAndOnlineId(const struct FString& inNetId, int inOnlineId)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.ServerSetNetId");
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.ServerSetNetIdAndOnlineId");
 
-	ADarwinCharacter_ServerSetNetId_Params params;
+	ADarwinCharacter_ServerSetNetIdAndOnlineId_Params params;
 	params.inNetId = inNetId;
+	params.inOnlineId = inOnlineId;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -8068,6 +8686,27 @@ void ADarwinCharacter::ServerExecuteSDPower(EDarwinItemTypeEnum powerType, int t
 }
 
 
+// Function Darwin.DarwinCharacter.ServerEmoteAction
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void ADarwinCharacter::ServerEmoteAction(int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.ServerEmoteAction");
+
+	ADarwinCharacter_ServerEmoteAction_Params params;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinCharacter.ServerDebugGotoToNextGameStart
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 
@@ -8094,6 +8733,27 @@ void ADarwinCharacter::ServerDeactivateFootprintHighlights()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.ServerDeactivateFootprintHighlights");
 
 	ADarwinCharacter_ServerDeactivateFootprintHighlights_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinCharacter.ServerCastSDRating
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// int                            rating                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void ADarwinCharacter::ServerCastSDRating(int rating)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.ServerCastSDRating");
+
+	ADarwinCharacter_ServerCastSDRating_Params params;
+	params.rating = rating;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -9197,15 +9857,19 @@ void ADarwinCharacter::NetMulticastManHunOutro()
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
 // class ADarwinCharacter*        killerChar                     (Parm, ZeroConstructor, IsPlainOldData)
+// class ADarwinCharacter*        tagChar                        (Parm, ZeroConstructor, IsPlainOldData)
+// class ADarwinCharacter*        snowBallChar                   (Parm, ZeroConstructor, IsPlainOldData)
 // EDarwinDamageTypeEnum          DamageType                     (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           bFirstBlood                    (Parm, ZeroConstructor, IsPlainOldData)
 
-void ADarwinCharacter::NetMulticastKill(class ADarwinCharacter* killerChar, EDarwinDamageTypeEnum DamageType, bool bFirstBlood)
+void ADarwinCharacter::NetMulticastKill(class ADarwinCharacter* killerChar, class ADarwinCharacter* tagChar, class ADarwinCharacter* snowBallChar, EDarwinDamageTypeEnum DamageType, bool bFirstBlood)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.NetMulticastKill");
 
 	ADarwinCharacter_NetMulticastKill_Params params;
 	params.killerChar = killerChar;
+	params.tagChar = tagChar;
+	params.snowBallChar = snowBallChar;
 	params.DamageType = DamageType;
 	params.bFirstBlood = bFirstBlood;
 
@@ -9280,14 +9944,37 @@ void ADarwinCharacter::NetMulticastExecuteSDPower(EDarwinItemTypeEnum powerType,
 // Function Darwin.DarwinCharacter.NetMulticastEndManHunt
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
-// int                            KillerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            killerID                       (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           isDead                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void ADarwinCharacter::NetMulticastEndManHunt(int KillerId)
+void ADarwinCharacter::NetMulticastEndManHunt(int killerID, bool isDead)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.NetMulticastEndManHunt");
 
 	ADarwinCharacter_NetMulticastEndManHunt_Params params;
-	params.KillerId = KillerId;
+	params.killerID = killerID;
+	params.isDead = isDead;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinCharacter.NetMulticastEmoteAction
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+// Parameters:
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void ADarwinCharacter::NetMulticastEmoteAction(int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.NetMulticastEmoteAction");
+
+	ADarwinCharacter_NetMulticastEmoteAction_Params params;
+	params.Index = Index;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -9327,6 +10014,24 @@ void ADarwinCharacter::NetMulticastDeactivateFootprintHighlights()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.NetMulticastDeactivateFootprintHighlights");
 
 	ADarwinCharacter_NetMulticastDeactivateFootprintHighlights_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinCharacter.NetMulticastBurnt
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+
+void ADarwinCharacter::NetMulticastBurnt()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.NetMulticastBurnt");
+
+	ADarwinCharacter_NetMulticastBurnt_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -9771,7 +10476,7 @@ bool ADarwinCharacter::GetIsTeleporting()
 
 
 // Function Darwin.DarwinCharacter.GetIsSprinting
-// (Final, Native, Public, BlueprintCallable)
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -10123,7 +10828,7 @@ bool ADarwinCharacter::GetIsDead()
 
 
 // Function Darwin.DarwinCharacter.GetIsCrouching
-// (Final, Native, Public, BlueprintCallable)
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -10968,8 +11673,9 @@ void ADarwinCharacter::EventLocalIsLoser(class ADarwinCharacter* Character, int 
 // EDarwinDamageTypeEnum          DamageType                     (Parm, ZeroConstructor, IsPlainOldData)
 // int                            numberLeftAlive                (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           bSuicide                       (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIsLocalDeath                  (Parm, ZeroConstructor, IsPlainOldData)
 
-void ADarwinCharacter::EventKilled(EDarwinDamageTypeEnum DamageType, int numberLeftAlive, bool bSuicide)
+void ADarwinCharacter::EventKilled(EDarwinDamageTypeEnum DamageType, int numberLeftAlive, bool bSuicide, bool bIsLocalDeath)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.EventKilled");
 
@@ -10977,6 +11683,7 @@ void ADarwinCharacter::EventKilled(EDarwinDamageTypeEnum DamageType, int numberL
 	params.DamageType = DamageType;
 	params.numberLeftAlive = numberLeftAlive;
 	params.bSuicide = bSuicide;
+	params.bIsLocalDeath = bIsLocalDeath;
 
 	auto flags = fn->FunctionFlags;
 
@@ -11175,6 +11882,23 @@ void ADarwinCharacter::EventCallDeliveryDrone(EDarwinDeliveryType delivery_type,
 	ADarwinCharacter_EventCallDeliveryDrone_Params params;
 	params.delivery_type = delivery_type;
 	params.delivery_duration = delivery_duration;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinCharacter.EventBurnt
+// (Event, Public, BlueprintEvent)
+
+void ADarwinCharacter::EventBurnt()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacter.EventBurnt");
+
+	ADarwinCharacter_EventBurnt_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -11898,15 +12622,15 @@ void UDarwinCharacterWidget::EventUpdateRealStamina(int Stamina, int staminaMax)
 // Function Darwin.DarwinCharacterWidget.EventUpdateRealHealth
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int                            health                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Health                         (Parm, ZeroConstructor, IsPlainOldData)
 // int                            healthMax                      (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinCharacterWidget::EventUpdateRealHealth(int health, int healthMax)
+void UDarwinCharacterWidget::EventUpdateRealHealth(int Health, int healthMax)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacterWidget.EventUpdateRealHealth");
 
 	UDarwinCharacterWidget_EventUpdateRealHealth_Params params;
-	params.health = health;
+	params.Health = Health;
 	params.healthMax = healthMax;
 
 	auto flags = fn->FunctionFlags;
@@ -13415,12 +14139,17 @@ void UDarwinCharacterWidget::EventInventorySlotChanged(int Index, EDarwinItemTyp
 
 // Function Darwin.DarwinCharacterWidget.EventInventoryActionFail
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinItemTypeEnum            ItemType                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinCharacterWidget::EventInventoryActionFail()
+void UDarwinCharacterWidget::EventInventoryActionFail(int Index, EDarwinItemTypeEnum ItemType)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacterWidget.EventInventoryActionFail");
 
 	UDarwinCharacterWidget_EventInventoryActionFail_Params params;
+	params.Index = Index;
+	params.ItemType = ItemType;
 
 	auto flags = fn->FunctionFlags;
 
@@ -14261,12 +14990,13 @@ bool UDarwinCharacterWidget::DarwinPlayerAction(EDarwinItemTypeEnum Type)
 
 
 // Function Darwin.DarwinCharacterWidget.CraftItem
-// (Final, Native, Public, BlueprintCallable)
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // EDarwinItemTypeEnum            enum_type                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           outCraftQueued                 (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UDarwinCharacterWidget::CraftItem(EDarwinItemTypeEnum enum_type)
+bool UDarwinCharacterWidget::CraftItem(EDarwinItemTypeEnum enum_type, bool* outCraftQueued)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacterWidget.CraftItem");
 
@@ -14280,7 +15010,31 @@ bool UDarwinCharacterWidget::CraftItem(EDarwinItemTypeEnum enum_type)
 
 	fn->FunctionFlags = flags;
 
+	if (outCraftQueued != nullptr)
+		*outCraftQueued = params.outCraftQueued;
+
 	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinCharacterWidget.CastSDRating
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            rating                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinCharacterWidget::CastSDRating(int rating)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacterWidget.CastSDRating");
+
+	UDarwinCharacterWidget_CastSDRating_Params params;
+	params.rating = rating;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -14296,6 +15050,28 @@ ECraftStatusEnum UDarwinCharacterWidget::CanCraftItem(EDarwinItemTypeEnum enum_t
 
 	UDarwinCharacterWidget_CanCraftItem_Params params;
 	params.enum_type = enum_type;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinCharacterWidget.CanCastSDRating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinCharacterWidget::CanCastSDRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCharacterWidget.CanCastSDRating");
+
+	UDarwinCharacterWidget_CanCastSDRating_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -16391,6 +17167,24 @@ void ADarwinController::ToggleNormalCameraDistance()
 }
 
 
+// Function Darwin.DarwinController.ToggleInputModeDebug
+// (Final, Exec, Native, Public)
+
+void ADarwinController::ToggleInputModeDebug()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ToggleInputModeDebug");
+
+	ADarwinController_ToggleInputModeDebug_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinController.ToggleCamStateFarPlayer
 // (Final, Native, Public, BlueprintCallable)
 
@@ -16399,6 +17193,27 @@ void ADarwinController::ToggleCamStateFarPlayer()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ToggleCamStateFarPlayer");
 
 	ADarwinController_ToggleCamStateFarPlayer_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinController.TestCastSDRating
+// (Final, Exec, Native, Public)
+// Parameters:
+// int                            Value                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void ADarwinController::TestCastSDRating(int Value)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.TestCastSDRating");
+
+	ADarwinController_TestCastSDRating_Params params;
+	params.Value = Value;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -16435,6 +17250,24 @@ void ADarwinController::StopEnvironmentTime()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.StopEnvironmentTime");
 
 	ADarwinController_StopEnvironmentTime_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinController.StartVoteDebug
+// (Final, Exec, Native, Public)
+
+void ADarwinController::StartVoteDebug()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.StartVoteDebug");
+
+	ADarwinController_StartVoteDebug_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -16493,8 +17326,10 @@ void ADarwinController::StartStorm(float Intensity)
 // EDarwinGameMode                GameMode                       (Parm, ZeroConstructor, IsPlainOldData)
 // EDarwinRoleEnum                PlayerRole                     (Parm, ZeroConstructor, IsPlainOldData)
 // struct FString                 friendPlayerId                 (Parm, ZeroConstructor)
+// bool                           RequestPrivateServer           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 PrivateServerPassword          (Parm, ZeroConstructor)
 
-void ADarwinController::StartMatchmaking(EDarwinGameMode GameMode, EDarwinRoleEnum PlayerRole, const struct FString& friendPlayerId)
+void ADarwinController::StartMatchmaking(EDarwinGameMode GameMode, EDarwinRoleEnum PlayerRole, const struct FString& friendPlayerId, bool RequestPrivateServer, const struct FString& PrivateServerPassword)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.StartMatchmaking");
 
@@ -16502,6 +17337,8 @@ void ADarwinController::StartMatchmaking(EDarwinGameMode GameMode, EDarwinRoleEn
 	params.GameMode = GameMode;
 	params.PlayerRole = PlayerRole;
 	params.friendPlayerId = friendPlayerId;
+	params.RequestPrivateServer = RequestPrivateServer;
+	params.PrivateServerPassword = PrivateServerPassword;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -16550,12 +17387,15 @@ void ADarwinController::StartEnvironmentTime()
 
 // Function Darwin.DarwinController.SpawnTestCharacter
 // (Final, Exec, Native, Public)
+// Parameters:
+// int                            numberToSpawn                  (Parm, ZeroConstructor, IsPlainOldData)
 
-void ADarwinController::SpawnTestCharacter()
+void ADarwinController::SpawnTestCharacter(int numberToSpawn)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.SpawnTestCharacter");
 
 	ADarwinController_SpawnTestCharacter_Params params;
+	params.numberToSpawn = numberToSpawn;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -16854,6 +17694,27 @@ void ADarwinController::ServerXtroMode()
 }
 
 
+// Function Darwin.DarwinController.ServerXboxSessionCreated
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// struct FString                 SessionId                      (Parm, ZeroConstructor)
+
+void ADarwinController::ServerXboxSessionCreated(const struct FString& SessionId)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerXboxSessionCreated");
+
+	ADarwinController_ServerXboxSessionCreated_Params params;
+	params.SessionId = SessionId;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinController.ServerTurnAIOff
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 
@@ -16950,27 +17811,6 @@ void ADarwinController::ServerSetWeaponLevel(int Number)
 }
 
 
-// Function Darwin.DarwinController.ServerSetSpeakEnabled
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// bool                           Value                          (Parm, ZeroConstructor, IsPlainOldData)
-
-void ADarwinController::ServerSetSpeakEnabled(bool Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerSetSpeakEnabled");
-
-	ADarwinController_ServerSetSpeakEnabled_Params params;
-	params.Value = Value;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function Darwin.DarwinController.ServerSetShortFootPrintLifeSpan
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 
@@ -16979,29 +17819,6 @@ void ADarwinController::ServerSetShortFootPrintLifeSpan()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerSetShortFootPrintLifeSpan");
 
 	ADarwinController_ServerSetShortFootPrintLifeSpan_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Darwin.DarwinController.ServerSetPlayerMuteStatus
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// int                            talkerID                       (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Value                          (Parm, ZeroConstructor, IsPlainOldData)
-
-void ADarwinController::ServerSetPlayerMuteStatus(int talkerID, bool Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerSetPlayerMuteStatus");
-
-	ADarwinController_ServerSetPlayerMuteStatus_Params params;
-	params.talkerID = talkerID;
-	params.Value = Value;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -17023,27 +17840,6 @@ void ADarwinController::ServerSetNumberOfPylonsOnGameStart(int N)
 
 	ADarwinController_ServerSetNumberOfPylonsOnGameStart_Params params;
 	params.N = N;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Darwin.DarwinController.ServerSetMuteAllEnabled
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// bool                           Value                          (Parm, ZeroConstructor, IsPlainOldData)
-
-void ADarwinController::ServerSetMuteAllEnabled(bool Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerSetMuteAllEnabled");
-
-	ADarwinController_ServerSetMuteAllEnabled_Params params;
-	params.Value = Value;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -17135,6 +17931,49 @@ void ADarwinController::ServerRestartMap()
 }
 
 
+// Function Darwin.DarwinController.ServerReportPlayer
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// int                            reporterID                     (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinPlayerReportTypeEnum    Type                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void ADarwinController::ServerReportPlayer(int reporterID, int playerID, EDarwinPlayerReportTypeEnum Type)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerReportPlayer");
+
+	ADarwinController_ServerReportPlayer_Params params;
+	params.reporterID = reporterID;
+	params.playerID = playerID;
+	params.Type = Type;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinController.ServerPrivateMatchStartGame
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void ADarwinController::ServerPrivateMatchStartGame()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerPrivateMatchStartGame");
+
+	ADarwinController_ServerPrivateMatchStartGame_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinController.ServerKrute
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 
@@ -17177,14 +18016,14 @@ void ADarwinController::ServerKillPlayer(int N)
 // Function Darwin.DarwinController.ServerKickPlayer
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void ADarwinController::ServerKickPlayer(int PlayerId)
+void ADarwinController::ServerKickPlayer(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerKickPlayer");
 
 	ADarwinController_ServerKickPlayer_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -17294,14 +18133,14 @@ void ADarwinController::ServerHardRestart()
 // Function Darwin.DarwinController.ServerGotoShowDirector
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
-// struct FString                 showDirectorName               (Parm, ZeroConstructor)
+// struct FString                 ShowDirectorName               (Parm, ZeroConstructor)
 
-void ADarwinController::ServerGotoShowDirector(const struct FString& showDirectorName)
+void ADarwinController::ServerGotoShowDirector(const struct FString& ShowDirectorName)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerGotoShowDirector");
 
 	ADarwinController_ServerGotoShowDirector_Params params;
-	params.showDirectorName = showDirectorName;
+	params.ShowDirectorName = ShowDirectorName;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -17601,24 +18440,6 @@ void ADarwinController::ServerDarwinCluesOn(bool Value)
 }
 
 
-// Function Darwin.DarwinController.ServerConnectToWebSocket
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-
-void ADarwinController::ServerConnectToWebSocket()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerConnectToWebSocket");
-
-	ADarwinController_ServerConnectToWebSocket_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function Darwin.DarwinController.ServerCloseZone
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
@@ -17702,6 +18523,24 @@ void ADarwinController::ServerAIToggleForcefield()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerAIToggleForcefield");
 
 	ADarwinController_ServerAIToggleForcefield_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinController.ServerAIToggleCraftWheel
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void ADarwinController::ServerAIToggleCraftWheel()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ServerAIToggleCraftWheel");
+
+	ADarwinController_ServerAIToggleCraftWheel_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -17823,32 +18662,14 @@ void ADarwinController::RestartMap()
 }
 
 
-// Function Darwin.DarwinController.ResetPlayerProgression
+// Function Darwin.DarwinController.QuickShowDirectorTest
 // (Final, Exec, Native, Public)
 
-void ADarwinController::ResetPlayerProgression()
+void ADarwinController::QuickShowDirectorTest()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ResetPlayerProgression");
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.QuickShowDirectorTest");
 
-	ADarwinController_ResetPlayerProgression_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Darwin.DarwinController.ResetAllPlayersELO
-// (Final, Exec, Native, Public)
-
-void ADarwinController::ResetAllPlayersELO()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ResetAllPlayersELO");
-
-	ADarwinController_ResetAllPlayersELO_Params params;
+	ADarwinController_QuickShowDirectorTest_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -17862,14 +18683,14 @@ void ADarwinController::ResetAllPlayersELO()
 // Function Darwin.DarwinController.OverrideMyCareerIdentity
 // (Final, Exec, Native, Public)
 // Parameters:
-// struct FString                 PlayerId                       (Parm, ZeroConstructor)
+// int                            playerOnlineId                 (Parm, ZeroConstructor, IsPlainOldData)
 
-void ADarwinController::OverrideMyCareerIdentity(const struct FString& PlayerId)
+void ADarwinController::OverrideMyCareerIdentity(int playerOnlineId)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.OverrideMyCareerIdentity");
 
 	ADarwinController_OverrideMyCareerIdentity_Params params;
-	params.PlayerId = PlayerId;
+	params.playerOnlineId = playerOnlineId;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -18026,6 +18847,28 @@ bool ADarwinController::IsOfficialShowDirector()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.IsOfficialShowDirector");
 
 	ADarwinController_IsOfficialShowDirector_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinController.IsEnforcer
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool ADarwinController::IsEnforcer()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.IsEnforcer");
+
+	ADarwinController_IsEnforcer_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -18207,14 +19050,14 @@ void ADarwinController::HardRestart()
 // Function Darwin.DarwinController.GotoShowDirector
 // (Final, Exec, Native, Public)
 // Parameters:
-// struct FString                 showDirectorName               (Parm, ZeroConstructor)
+// struct FString                 ShowDirectorName               (Parm, ZeroConstructor)
 
-void ADarwinController::GotoShowDirector(const struct FString& showDirectorName)
+void ADarwinController::GotoShowDirector(const struct FString& ShowDirectorName)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.GotoShowDirector");
 
 	ADarwinController_GotoShowDirector_Params params;
-	params.showDirectorName = showDirectorName;
+	params.ShowDirectorName = ShowDirectorName;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -18479,6 +19322,49 @@ void ADarwinController::ForceSuddenDeath(int Index)
 }
 
 
+// Function Darwin.DarwinController.EventVideoAnnouncement
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString                 URL                            (Parm, ZeroConstructor)
+// struct FString                 tilte                          (Parm, ZeroConstructor)
+// struct FString                 Body                           (Parm, ZeroConstructor)
+// float                          LengthSeconds                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void ADarwinController::EventVideoAnnouncement(const struct FString& URL, const struct FString& tilte, const struct FString& Body, float LengthSeconds)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.EventVideoAnnouncement");
+
+	ADarwinController_EventVideoAnnouncement_Params params;
+	params.URL = URL;
+	params.tilte = tilte;
+	params.Body = Body;
+	params.LengthSeconds = LengthSeconds;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinController.EventStopVideoAnnouncement
+// (Event, Public, BlueprintEvent)
+
+void ADarwinController::EventStopVideoAnnouncement()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.EventStopVideoAnnouncement");
+
+	ADarwinController_EventStopVideoAnnouncement_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinController.DrawActivePlayers
 // (Final, Exec, Native, Public)
 
@@ -18722,6 +19608,31 @@ void ADarwinController::DarwinServerCommand(const struct FString& Command)
 }
 
 
+// Function Darwin.DarwinController.DarwinForceFeedback
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            Level                          (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Duration                       (Parm, ZeroConstructor, IsPlainOldData)
+// EForceFeedbackSide             side                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void ADarwinController::DarwinForceFeedback(int Level, float Duration, EForceFeedbackSide side)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.DarwinForceFeedback");
+
+	ADarwinController_DarwinForceFeedback_Params params;
+	params.Level = Level;
+	params.Duration = Duration;
+	params.side = side;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinController.DarwinFootstepsOn
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -18754,24 +19665,6 @@ void ADarwinController::DarwinCluesOn(bool Value)
 
 	ADarwinController_DarwinCluesOn_Params params;
 	params.Value = Value;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Darwin.DarwinController.ConnectToWebsocket
-// (Final, Exec, Native, Public)
-
-void ADarwinController::ConnectToWebsocket()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ConnectToWebsocket");
-
-	ADarwinController_ConnectToWebsocket_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -18821,17 +19714,17 @@ void ADarwinController::CloseRandomZone()
 }
 
 
-// Function Darwin.DarwinController.ClientUnmutePlayer
+// Function Darwin.DarwinController.ClientWasKicked
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
-// struct FUniqueNetIdRepl        PlayerId                       (Parm)
+// struct FText                   KickReason                     (ConstParm, Parm, ReferenceParm)
 
-void ADarwinController::ClientUnmutePlayer(const struct FUniqueNetIdRepl& PlayerId)
+void ADarwinController::ClientWasKicked(const struct FText& KickReason)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ClientUnmutePlayer");
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ClientWasKicked");
 
-	ADarwinController_ClientUnmutePlayer_Params params;
-	params.PlayerId = PlayerId;
+	ADarwinController_ClientWasKicked_Params params;
+	params.KickReason = KickReason;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -18977,17 +19870,17 @@ void ADarwinController::ClientSetCameraManager(class UClass* NewCameraManagerCla
 }
 
 
-// Function Darwin.DarwinController.ClientMutePlayer
+// Function Darwin.DarwinController.ClientReturnToMainMenu
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
-// struct FUniqueNetIdRepl        PlayerId                       (Parm)
+// struct FString                 ReturnReason                   (Parm, ZeroConstructor)
 
-void ADarwinController::ClientMutePlayer(const struct FUniqueNetIdRepl& PlayerId)
+void ADarwinController::ClientReturnToMainMenu(const struct FString& ReturnReason)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ClientMutePlayer");
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ClientReturnToMainMenu");
 
-	ADarwinController_ClientMutePlayer_Params params;
-	params.PlayerId = PlayerId;
+	ADarwinController_ClientReturnToMainMenu_Params params;
+	params.ReturnReason = ReturnReason;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -19021,6 +19914,27 @@ void ADarwinController::ClientMessageFromSpectator(const struct FString& Message
 }
 
 
+// Function Darwin.DarwinController.ClientJoinXboxSession
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// struct FString                 SessionId                      (Parm, ZeroConstructor)
+
+void ADarwinController::ClientJoinXboxSession(const struct FString& SessionId)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ClientJoinXboxSession");
+
+	ADarwinController_ClientJoinXboxSession_Params params;
+	params.SessionId = SessionId;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinController.ClientEndOnlineGame
 // (Net, NetReliable, Native, Event, Public, NetClient)
 
@@ -19029,6 +19943,27 @@ void ADarwinController::ClientEndOnlineGame()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ClientEndOnlineGame");
 
 	ADarwinController_ClientEndOnlineGame_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinController.ClientCreateArbiterSession
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// TArray<struct FString>         playerIds                      (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+
+void ADarwinController::ClientCreateArbiterSession(TArray<struct FString> playerIds)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.ClientCreateArbiterSession");
+
+	ADarwinController_ClientCreateArbiterSession_Params params;
+	params.playerIds = playerIds;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -19155,6 +20090,24 @@ void ADarwinController::AIToggleForcefield()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.AIToggleForcefield");
 
 	ADarwinController_AIToggleForcefield_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinController.AIToggleCraftWheel
+// (Final, Exec, Native, Public)
+
+void ADarwinController::AIToggleCraftWheel()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinController.AIToggleCraftWheel");
+
+	ADarwinController_AIToggleCraftWheel_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -19334,6 +20287,28 @@ bool ADarwinControllerSubActor::OwnerIsBeholder()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinControllerSubActor.OwnerIsBeholder");
 
 	ADarwinControllerSubActor_OwnerIsBeholder_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinCraftingComponent.ShouldQueueCraft
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinCraftingComponent::ShouldQueueCraft()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCraftingComponent.ShouldQueueCraft");
+
+	UDarwinCraftingComponent_ShouldQueueCraft_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -19536,6 +20511,24 @@ void UDarwinCraftingComponent::NetMulticastOpenCraftWheel()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCraftingComponent.NetMulticastOpenCraftWheel");
 
 	UDarwinCraftingComponent_NetMulticastOpenCraftWheel_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinCraftingComponent.NetMulticastCraftingObjectToFalse
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+
+void UDarwinCraftingComponent::NetMulticastCraftingObjectToFalse()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCraftingComponent.NetMulticastCraftingObjectToFalse");
+
+	UDarwinCraftingComponent_NetMulticastCraftingObjectToFalse_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -19838,11 +20831,13 @@ void UDarwinCraftingComponent::EventLocalCraftingEnd(EDarwinItemTypeEnum Type, c
 
 
 // Function Darwin.DarwinCraftingComponent.CraftObject
-// (Final, Native, Public, BlueprintCallable)
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // EDarwinItemTypeEnum            enum_type                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           outCraftQueued                 (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-void UDarwinCraftingComponent::CraftObject(EDarwinItemTypeEnum enum_type)
+bool UDarwinCraftingComponent::CraftObject(EDarwinItemTypeEnum enum_type, bool* outCraftQueued)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinCraftingComponent.CraftObject");
 
@@ -19855,6 +20850,11 @@ void UDarwinCraftingComponent::CraftObject(EDarwinItemTypeEnum enum_type)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+
+	if (outCraftQueued != nullptr)
+		*outCraftQueued = params.outCraftQueued;
+
+	return params.ReturnValue;
 }
 
 
@@ -20143,9 +21143,9 @@ int UDarwinDataSingletonLibrary::STATIC_GetDarwinItemLeatherCost(EDarwinItemType
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // EDarwinItemTypeEnum            DarwinItemType                 (Parm, ZeroConstructor, IsPlainOldData)
-// TMap<struct FString, struct FString> ReturnValue                    (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm)
+// TArray<struct FDarwinInfoMapping> ReturnValue                    (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm)
 
-TMap<struct FString, struct FString> UDarwinDataSingletonLibrary::STATIC_GetDarwinItemInfoMap(EDarwinItemTypeEnum DarwinItemType)
+TArray<struct FDarwinInfoMapping> UDarwinDataSingletonLibrary::STATIC_GetDarwinItemInfoMap(EDarwinItemTypeEnum DarwinItemType)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDataSingletonLibrary.GetDarwinItemInfoMap");
 
@@ -20993,6 +21993,98 @@ bool UDarwinDevCommunicationManager::HasMessage(int MessageId)
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDevCommunicationManager.HasMessage");
 
 	UDarwinDevCommunicationManager_HasMessage_Params params;
+	params.MessageId = MessageId;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinDevCommunicationManager.GetTitle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            MessageId                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+
+struct FString UDarwinDevCommunicationManager::GetTitle(int MessageId)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDevCommunicationManager.GetTitle");
+
+	UDarwinDevCommunicationManager_GetTitle_Params params;
+	params.MessageId = MessageId;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinDevCommunicationManager.GetServersAreClosedMessageTitle
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+
+struct FString UDarwinDevCommunicationManager::STATIC_GetServersAreClosedMessageTitle()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDevCommunicationManager.GetServersAreClosedMessageTitle");
+
+	UDarwinDevCommunicationManager_GetServersAreClosedMessageTitle_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinDevCommunicationManager.GetServersAreClosedMessageBody
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+
+struct FString UDarwinDevCommunicationManager::STATIC_GetServersAreClosedMessageBody()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDevCommunicationManager.GetServersAreClosedMessageBody");
+
+	UDarwinDevCommunicationManager_GetServersAreClosedMessageBody_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinDevCommunicationManager.GetBody
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            MessageId                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+
+struct FString UDarwinDevCommunicationManager::GetBody(int MessageId)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinDevCommunicationManager.GetBody");
+
+	UDarwinDevCommunicationManager_GetBody_Params params;
 	params.MessageId = MessageId;
 
 	auto flags = fn->FunctionFlags;
@@ -22455,6 +23547,31 @@ void UDarwinFootprintComponent::ServerDeactivateHighlights()
 }
 
 
+// Function Darwin.DarwinFootprintComponent.ServerAddDeepSnowFootprint
+// (Net, NetReliable, Native, Event, Protected, NetServer, HasDefaults, NetValidate)
+// Parameters:
+// struct FVector                 Location                       (Parm, IsPlainOldData)
+// bool                           bAllowLocal                    (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  HitActor                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinFootprintComponent::ServerAddDeepSnowFootprint(const struct FVector& Location, bool bAllowLocal, class AActor* HitActor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinFootprintComponent.ServerAddDeepSnowFootprint");
+
+	UDarwinFootprintComponent_ServerAddDeepSnowFootprint_Params params;
+	params.Location = Location;
+	params.bAllowLocal = bAllowLocal;
+	params.HitActor = HitActor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinFootprintComponent.NetMulticastSnowHit
 // (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults)
 // Parameters:
@@ -22509,6 +23626,31 @@ void UDarwinFootprintComponent::NetMulticastDeactivateHighlights()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinFootprintComponent.NetMulticastDeactivateHighlights");
 
 	UDarwinFootprintComponent_NetMulticastDeactivateHighlights_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinFootprintComponent.NetMulticastAddDeepSnowFootprint
+// (Net, NetReliable, Native, Event, NetMulticast, Protected, HasDefaults)
+// Parameters:
+// struct FVector                 Location                       (Parm, IsPlainOldData)
+// bool                           bAllowLocal                    (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  HitActor                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinFootprintComponent::NetMulticastAddDeepSnowFootprint(const struct FVector& Location, bool bAllowLocal, class AActor* HitActor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinFootprintComponent.NetMulticastAddDeepSnowFootprint");
+
+	UDarwinFootprintComponent_NetMulticastAddDeepSnowFootprint_Params params;
+	params.Location = Location;
+	params.bAllowLocal = bAllowLocal;
+	params.HitActor = HitActor;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -22685,6 +23827,42 @@ void UDarwinGameInstance::TravelToURL(const struct FString& URL, EDarwinRoleEnum
 }
 
 
+// Function Darwin.DarwinGameInstance.StopNotificationPolling
+// (Final, Exec, Native, Public)
+
+void UDarwinGameInstance::StopNotificationPolling()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameInstance.StopNotificationPolling");
+
+	UDarwinGameInstance_StopNotificationPolling_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinGameInstance.StartNotificationPolling
+// (Final, Exec, Native, Public)
+
+void UDarwinGameInstance::StartNotificationPolling()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameInstance.StartNotificationPolling");
+
+	UDarwinGameInstance_StartNotificationPolling_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinGameInstance.ShowLoadingScreen
 // (Final, Native, Public, BlueprintCallable)
 
@@ -22700,6 +23878,28 @@ void UDarwinGameInstance::ShowLoadingScreen()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinGameInstance.ShouldOpenStartScreen
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinGameInstance::ShouldOpenStartScreen()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameInstance.ShouldOpenStartScreen");
+
+	UDarwinGameInstance_ShouldOpenStartScreen_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 
@@ -22760,6 +23960,24 @@ void UDarwinGameInstance::ResetSaveGame()
 }
 
 
+// Function Darwin.DarwinGameInstance.OnEnterMainMenu
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinGameInstance::OnEnterMainMenu()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameInstance.OnEnterMainMenu");
+
+	UDarwinGameInstance_OnEnterMainMenu_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinGameInstance.LoadGame
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -22771,24 +23989,6 @@ void UDarwinGameInstance::LoadGame(bool apply)
 
 	UDarwinGameInstance_LoadGame_Params params;
 	params.apply = apply;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Darwin.DarwinGameInstance.LeaveVivoxGameChannel
-// (Final, Native, Public, BlueprintCallable)
-
-void UDarwinGameInstance::LeaveVivoxGameChannel()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameInstance.LeaveVivoxGameChannel");
-
-	UDarwinGameInstance_LeaveVivoxGameChannel_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -22831,6 +24031,31 @@ void UDarwinGameInstance::GotoMainMenu()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameInstance.GotoMainMenu");
 
 	UDarwinGameInstance_GotoMainMenu_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinGameInstance.DisplayMessageBoxDebug
+// (Final, Exec, Native, Public)
+// Parameters:
+// struct FString                 Title                          (Parm, ZeroConstructor)
+// struct FString                 Body                           (Parm, ZeroConstructor)
+// struct FString                 debug                          (Parm, ZeroConstructor)
+
+void UDarwinGameInstance::DisplayMessageBoxDebug(const struct FString& Title, const struct FString& Body, const struct FString& debug)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameInstance.DisplayMessageBoxDebug");
+
+	UDarwinGameInstance_DisplayMessageBoxDebug_Params params;
+	params.Title = Title;
+	params.Body = Body;
+	params.debug = debug;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -22999,6 +24224,28 @@ bool UDarwinGameplayStatics::STATIC_LoadFileToString(const struct FString& Filen
 }
 
 
+// Function Darwin.DarwinGameplayStatics.IsXbox
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinGameplayStatics::STATIC_IsXbox()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameplayStatics.IsXbox");
+
+	UDarwinGameplayStatics_IsXbox_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function Darwin.DarwinGameplayStatics.IsShipping
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -23075,6 +24322,50 @@ bool UDarwinGameplayStatics::STATIC_IsConsole()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameplayStatics.IsConsole");
 
 	UDarwinGameplayStatics_IsConsole_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinGameplayStatics.IgnoreAllSettings
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinGameplayStatics::STATIC_IgnoreAllSettings()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameplayStatics.IgnoreAllSettings");
+
+	UDarwinGameplayStatics_IgnoreAllSettings_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinGameplayStatics.GetPlayerTargetedPowersMinRating
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UDarwinGameplayStatics::STATIC_GetPlayerTargetedPowersMinRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameplayStatics.GetPlayerTargetedPowersMinRating");
+
+	UDarwinGameplayStatics_GetPlayerTargetedPowersMinRating_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -23406,19 +24697,19 @@ void ADarwinGameState::NetMulticastInitiateBloodPactMode()
 // Function Darwin.DarwinGameState.NetMulticastEndGameStatsReady
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
-// struct FString                 PlayerId                       (Parm, ZeroConstructor)
+// int                            OnlineId                       (Parm, ZeroConstructor, IsPlainOldData)
 // struct FDarwinProfile          playerPofile                   (ConstParm, Parm, ReferenceParm)
-// struct FDarwinCareerStats      NewCareerStats                 (ConstParm, Parm, ReferenceParm)
+// struct FDarwinPlayerStats      NewPlayerStats                 (ConstParm, Parm, ReferenceParm)
 // struct FDarwinLastMatchProgression ProgressionUpdated             (ConstParm, Parm, ReferenceParm)
 
-void ADarwinGameState::NetMulticastEndGameStatsReady(const struct FString& PlayerId, const struct FDarwinProfile& playerPofile, const struct FDarwinCareerStats& NewCareerStats, const struct FDarwinLastMatchProgression& ProgressionUpdated)
+void ADarwinGameState::NetMulticastEndGameStatsReady(int OnlineId, const struct FDarwinProfile& playerPofile, const struct FDarwinPlayerStats& NewPlayerStats, const struct FDarwinLastMatchProgression& ProgressionUpdated)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameState.NetMulticastEndGameStatsReady");
 
 	ADarwinGameState_NetMulticastEndGameStatsReady_Params params;
-	params.PlayerId = PlayerId;
+	params.OnlineId = OnlineId;
 	params.playerPofile = playerPofile;
-	params.NewCareerStats = NewCareerStats;
+	params.NewPlayerStats = NewPlayerStats;
 	params.ProgressionUpdated = ProgressionUpdated;
 
 	auto flags = fn->FunctionFlags;
@@ -23493,24 +24784,6 @@ void ADarwinGameState::NetMulticastComputeBloodPactRankOnDeath(class ADarwinChar
 }
 
 
-// Function Darwin.DarwinGameState.NetMulticastCheer
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-
-void ADarwinGameState::NetMulticastCheer()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameState.NetMulticastCheer");
-
-	ADarwinGameState_NetMulticastCheer_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function Darwin.DarwinGameState.NetMulticastBroacastGameCountdownStartedEvent
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 
@@ -23519,24 +24792,6 @@ void ADarwinGameState::NetMulticastBroacastGameCountdownStartedEvent()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameState.NetMulticastBroacastGameCountdownStartedEvent");
 
 	ADarwinGameState_NetMulticastBroacastGameCountdownStartedEvent_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Darwin.DarwinGameState.NetMulticastBoo
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-
-void ADarwinGameState::NetMulticastBoo()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameState.NetMulticastBoo");
-
-	ADarwinGameState_NetMulticastBoo_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -24027,40 +25282,6 @@ void ADarwinGameState::EventGameCountdownStarted()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameState.EventGameCountdownStarted");
 
 	ADarwinGameState_EventGameCountdownStarted_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Darwin.DarwinGameState.EventCheer
-// (Event, Public, BlueprintEvent)
-
-void ADarwinGameState::EventCheer()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameState.EventCheer");
-
-	ADarwinGameState_EventCheer_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Darwin.DarwinGameState.EventBoo
-// (Event, Public, BlueprintEvent)
-
-void ADarwinGameState::EventBoo()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinGameState.EventBoo");
-
-	ADarwinGameState_EventBoo_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -27340,6 +28561,23 @@ void ADarwinLoot::EventUpdateOpenRays(float Intensity)
 }
 
 
+// Function Darwin.DarwinLoot.EventSetLootableShape
+// (Event, Public, BlueprintEvent)
+
+void ADarwinLoot::EventSetLootableShape()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinLoot.EventSetLootableShape");
+
+	ADarwinLoot_EventSetLootableShape_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinLoot.EventLootReset
 // (Event, Public, BlueprintEvent)
 
@@ -27415,6 +28653,24 @@ void ADarwinMagWall::NetMulticastSetDarwinCharacterOwner(class ADarwinCharacter*
 }
 
 
+// Function Darwin.DarwinMainMenuWidget.TwitchLoginCancelled
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinMainMenuWidget::TwitchLoginCancelled()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.TwitchLoginCancelled");
+
+	UDarwinMainMenuWidget_TwitchLoginCancelled_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinMainMenuWidget.StopMatchmaking
 // (Final, Native, Public, BlueprintCallable)
 
@@ -27438,14 +28694,60 @@ void UDarwinMainMenuWidget::StopMatchmaking()
 // Parameters:
 // EDarwinGameMode                GameMode                       (Parm, ZeroConstructor, IsPlainOldData)
 // EDarwinRoleEnum                PlayerRole                     (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           RequestPrivateServer           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 PrivateServerPassword          (Parm, ZeroConstructor)
 
-void UDarwinMainMenuWidget::StartMatchmaking(EDarwinGameMode GameMode, EDarwinRoleEnum PlayerRole)
+void UDarwinMainMenuWidget::StartMatchmaking(EDarwinGameMode GameMode, EDarwinRoleEnum PlayerRole, bool RequestPrivateServer, const struct FString& PrivateServerPassword)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.StartMatchmaking");
 
 	UDarwinMainMenuWidget_StartMatchmaking_Params params;
 	params.GameMode = GameMode;
 	params.PlayerRole = PlayerRole;
+	params.RequestPrivateServer = RequestPrivateServer;
+	params.PrivateServerPassword = PrivateServerPassword;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.SetVivoxAudioOutputDevice
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FString                 audioDevName                   (Parm, ZeroConstructor)
+
+void UDarwinMainMenuWidget::SetVivoxAudioOutputDevice(const struct FString& audioDevName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.SetVivoxAudioOutputDevice");
+
+	UDarwinMainMenuWidget_SetVivoxAudioOutputDevice_Params params;
+	params.audioDevName = audioDevName;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.SetVivoxAudioInputDevice
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FString                 audioDevName                   (Parm, ZeroConstructor)
+
+void UDarwinMainMenuWidget::SetVivoxAudioInputDevice(const struct FString& audioDevName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.SetVivoxAudioInputDevice");
+
+	UDarwinMainMenuWidget_SetVivoxAudioInputDevice_Params params;
+	params.audioDevName = audioDevName;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -27477,6 +28779,24 @@ void UDarwinMainMenuWidget::SetChosenRegion(const struct FString& RegionName)
 }
 
 
+// Function Darwin.DarwinMainMenuWidget.RetryAuthentication
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinMainMenuWidget::RetryAuthentication()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.RetryAuthentication");
+
+	UDarwinMainMenuWidget_RetryAuthentication_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinMainMenuWidget.MixerConnectionCancelled
 // (Final, Native, Public, BlueprintCallable)
 
@@ -27492,6 +28812,84 @@ void UDarwinMainMenuWidget::MixerConnectionCancelled()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.LogoutFromTwitch
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinMainMenuWidget::LogoutFromTwitch()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.LogoutFromTwitch");
+
+	UDarwinMainMenuWidget_LogoutFromTwitch_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.LogoutFromMixer
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinMainMenuWidget::LogoutFromMixer()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.LogoutFromMixer");
+
+	UDarwinMainMenuWidget_LogoutFromMixer_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.LoginToTwitch
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinMainMenuWidget::LoginToTwitch()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.LoginToTwitch");
+
+	UDarwinMainMenuWidget_LoginToTwitch_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.GetRegionPing
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FString                 RegionName                     (Parm, ZeroConstructor)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UDarwinMainMenuWidget::GetRegionPing(const struct FString& RegionName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.GetRegionPing");
+
+	UDarwinMainMenuWidget_GetRegionPing_Params params;
+	params.RegionName = RegionName;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 
@@ -27539,6 +28937,23 @@ void UDarwinMainMenuWidget::EventUpdateRegionPing(const struct FString& RegionNa
 }
 
 
+// Function Darwin.DarwinMainMenuWidget.EventUpdatePlayerName
+// (Event, Public, BlueprintEvent)
+
+void UDarwinMainMenuWidget::EventUpdatePlayerName()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.EventUpdatePlayerName");
+
+	UDarwinMainMenuWidget_EventUpdatePlayerName_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinMainMenuWidget.EventUpdateChosenRegion
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -27550,6 +28965,85 @@ void UDarwinMainMenuWidget::EventUpdateChosenRegion(const struct FString& Region
 
 	UDarwinMainMenuWidget_EventUpdateChosenRegion_Params params;
 	params.RegionName = RegionName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.EventUpdateActiveVivoxAudioOuputDevice
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString                 audioDevName                   (Parm, ZeroConstructor)
+
+void UDarwinMainMenuWidget::EventUpdateActiveVivoxAudioOuputDevice(const struct FString& audioDevName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.EventUpdateActiveVivoxAudioOuputDevice");
+
+	UDarwinMainMenuWidget_EventUpdateActiveVivoxAudioOuputDevice_Params params;
+	params.audioDevName = audioDevName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.EventUpdateActiveVivoxAudioInputDevice
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString                 audioDevName                   (Parm, ZeroConstructor)
+
+void UDarwinMainMenuWidget::EventUpdateActiveVivoxAudioInputDevice(const struct FString& audioDevName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.EventUpdateActiveVivoxAudioInputDevice");
+
+	UDarwinMainMenuWidget_EventUpdateActiveVivoxAudioInputDevice_Params params;
+	params.audioDevName = audioDevName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.EventTwitchLoginStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// EDarwinTwitchLoginState        State                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 DisplayName                    (Parm, ZeroConstructor)
+
+void UDarwinMainMenuWidget::EventTwitchLoginStateChanged(EDarwinTwitchLoginState State, const struct FString& DisplayName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.EventTwitchLoginStateChanged");
+
+	UDarwinMainMenuWidget_EventTwitchLoginStateChanged_Params params;
+	params.State = State;
+	params.DisplayName = DisplayName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.EventShowStartScreen
+// (Event, Public, BlueprintEvent)
+
+void UDarwinMainMenuWidget::EventShowStartScreen()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.EventShowStartScreen");
+
+	UDarwinMainMenuWidget_EventShowStartScreen_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -27650,6 +29144,23 @@ void UDarwinMainMenuWidget::EventRemoveRegion(const struct FString& RegionName)
 }
 
 
+// Function Darwin.DarwinMainMenuWidget.EventOpenTwitchLoginBrowser
+// (Event, Public, BlueprintEvent)
+
+void UDarwinMainMenuWidget::EventOpenTwitchLoginBrowser()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.EventOpenTwitchLoginBrowser");
+
+	UDarwinMainMenuWidget_EventOpenTwitchLoginBrowser_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinMainMenuWidget.EventOpenMixerConnectionBrowser
 // (Event, Public, BlueprintEvent)
 
@@ -27658,6 +29169,46 @@ void UDarwinMainMenuWidget::EventOpenMixerConnectionBrowser()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.EventOpenMixerConnectionBrowser");
 
 	UDarwinMainMenuWidget_EventOpenMixerConnectionBrowser_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.EventNewVivoxAudioOutputDevices
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString                 audioDevName                   (Parm, ZeroConstructor)
+
+void UDarwinMainMenuWidget::EventNewVivoxAudioOutputDevices(const struct FString& audioDevName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.EventNewVivoxAudioOutputDevices");
+
+	UDarwinMainMenuWidget_EventNewVivoxAudioOutputDevices_Params params;
+	params.audioDevName = audioDevName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.EventNewVivoxAudioInputDevices
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FString                 audioDevName                   (Parm, ZeroConstructor)
+
+void UDarwinMainMenuWidget::EventNewVivoxAudioInputDevices(const struct FString& audioDevName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.EventNewVivoxAudioInputDevices");
+
+	UDarwinMainMenuWidget_EventNewVivoxAudioInputDevices_Params params;
+	params.audioDevName = audioDevName;
 
 	auto flags = fn->FunctionFlags;
 
@@ -27759,23 +29310,6 @@ void UDarwinMainMenuWidget::EventMatchmakingCompleted(const struct FDarwinMatchm
 
 	UDarwinMainMenuWidget_EventMatchmakingCompleted_Params params;
 	params.matchmakingInfo = matchmakingInfo;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Darwin.DarwinMainMenuWidget.EventMatchmakingCanceled
-// (Event, Public, BlueprintEvent)
-
-void UDarwinMainMenuWidget::EventMatchmakingCanceled()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.EventMatchmakingCanceled");
-
-	UDarwinMainMenuWidget_EventMatchmakingCanceled_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -27894,6 +29428,23 @@ void UDarwinMainMenuWidget::EventInputBindingCleared(TArray<struct FName> Action
 
 	UDarwinMainMenuWidget_EventInputBindingCleared_Params params;
 	params.ActionName = ActionName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMainMenuWidget.EventAuthenticationFailed
+// (Event, Public, BlueprintEvent)
+
+void UDarwinMainMenuWidget::EventAuthenticationFailed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMainMenuWidget.EventAuthenticationFailed");
+
+	UDarwinMainMenuWidget_EventAuthenticationFailed_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -28516,6 +30067,49 @@ EDarwinGameMode UDarwinMatchmakingManager::GetGameMode()
 }
 
 
+// Function Darwin.DarwinMessageBoxWidget.OnMessageBoxAnswered
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            MessageBoxId                   (Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinMessageBoxResponse      Response                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinMessageBoxWidget::OnMessageBoxAnswered(int MessageBoxId, EDarwinMessageBoxResponse Response)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMessageBoxWidget.OnMessageBoxAnswered");
+
+	UDarwinMessageBoxWidget_OnMessageBoxAnswered_Params params;
+	params.MessageBoxId = MessageBoxId;
+	params.Response = Response;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMessageBoxWidget.DisplayMessageBox
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FDarwinMessageBox       Message                        (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UDarwinMessageBoxWidget::DisplayMessageBox(const struct FDarwinMessageBox& Message)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMessageBoxWidget.DisplayMessageBox");
+
+	UDarwinMessageBoxWidget_DisplayMessageBox_Params params;
+	params.Message = Message;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinMiniDrone.ServerSetWantedDroneTransform
 // (Net, Native, Event, Protected, NetServer, HasDefaults, NetValidate)
 // Parameters:
@@ -28571,6 +30165,24 @@ void ADarwinMiniDrone::EventInitializeMiniDroneMaterials()
 	ADarwinMiniDrone_EventInitializeMiniDroneMaterials_Params params;
 
 	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinMixerConnectionBrowserWidget.StartLoginFlow
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinMixerConnectionBrowserWidget::StartLoginFlow()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinMixerConnectionBrowserWidget.StartLoginFlow");
+
+	UDarwinMixerConnectionBrowserWidget_StartLoginFlow_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -29367,6 +30979,28 @@ void UDarwinPowerPog::EventActivatePog()
 }
 
 
+// Function Darwin.DarwinPowerPog.CanUsePowersFromRating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UDarwinPowerPog::CanUsePowersFromRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinPowerPog.CanUsePowersFromRating");
+
+	UDarwinPowerPog_CanUsePowersFromRating_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function Darwin.DarwinPredatorPower.EventPredatorPulse
 // (Event, Public, BlueprintEvent)
 
@@ -29381,6 +31015,28 @@ void UDarwinPredatorPower::EventPredatorPulse()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinProfileManager.GetTwitchExtensionUrl
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+
+struct FString UDarwinProfileManager::STATIC_GetTwitchExtensionUrl()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinProfileManager.GetTwitchExtensionUrl");
+
+	UDarwinProfileManager_GetTwitchExtensionUrl_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 
@@ -30021,6 +31677,28 @@ void ADarwinPurgatoryPawn::SetDressRoomMode(bool enable)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinPurgatoryPawn.IsUsingGamepadCraftWheel
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool ADarwinPurgatoryPawn::IsUsingGamepadCraftWheel()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinPurgatoryPawn.IsUsingGamepadCraftWheel");
+
+	ADarwinPurgatoryPawn_IsUsingGamepadCraftWheel_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 
@@ -31024,6 +32702,24 @@ void UDarwinSaveGame::UpdateBGCustomization(EPlayerBodyType body_type, int shirt
 }
 
 
+// Function Darwin.DarwinSaveGame.ResetKeyboardInputBinding
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinSaveGame::ResetKeyboardInputBinding()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinSaveGame.ResetKeyboardInputBinding");
+
+	UDarwinSaveGame_ResetKeyboardInputBinding_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinSaveGame.ResetGraphicSettingsToDefault
 // (Final, Native, Public, BlueprintCallable)
 
@@ -31032,6 +32728,24 @@ void UDarwinSaveGame::ResetGraphicSettingsToDefault()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinSaveGame.ResetGraphicSettingsToDefault");
 
 	UDarwinSaveGame_ResetGraphicSettingsToDefault_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinSaveGame.ResetGameplaySettingsToDefault
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinSaveGame::ResetGameplaySettingsToDefault()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinSaveGame.ResetGameplaySettingsToDefault");
+
+	UDarwinSaveGame_ResetGameplaySettingsToDefault_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -31068,24 +32782,6 @@ void UDarwinSaveGame::ResetGamepadInputBinding()
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinSaveGame.ResetGamepadInputBinding");
 
 	UDarwinSaveGame_ResetGamepadInputBinding_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Darwin.DarwinSaveGame.ResetControllerSettingsToDefault
-// (Final, Native, Public, BlueprintCallable)
-
-void UDarwinSaveGame::ResetControllerSettingsToDefault()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinSaveGame.ResetControllerSettingsToDefault");
-
-	UDarwinSaveGame_ResetControllerSettingsToDefault_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -31138,15 +32834,15 @@ void UDarwinSaveGame::Copy(class UDarwinSaveGame* Other)
 // Function Darwin.DarwinScreendicatorWidget.IsOwnerBloodPactedTo
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UDarwinScreendicatorWidget::IsOwnerBloodPactedTo(int PlayerId)
+bool UDarwinScreendicatorWidget::IsOwnerBloodPactedTo(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinScreendicatorWidget.IsOwnerBloodPactedTo");
 
 	UDarwinScreendicatorWidget_IsOwnerBloodPactedTo_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -31298,15 +32994,15 @@ bool UDarwinScreendicatorWidget::HarvestedFirstTree()
 // Function Darwin.DarwinScreendicatorWidget.GetPlayerColorGradientFromID
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 // struct FDarwinColorGradient    ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FDarwinColorGradient UDarwinScreendicatorWidget::GetPlayerColorGradientFromID(int PlayerId)
+struct FDarwinColorGradient UDarwinScreendicatorWidget::GetPlayerColorGradientFromID(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinScreendicatorWidget.GetPlayerColorGradientFromID");
 
 	UDarwinScreendicatorWidget_GetPlayerColorGradientFromID_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -31344,15 +33040,15 @@ int UDarwinScreendicatorWidget::GetNumberOfGamesPlayed()
 // Function Darwin.DarwinScreendicatorWidget.GetNetAvatarFromID
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
-// class UTexture2D*              ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture*                ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UTexture2D* UDarwinScreendicatorWidget::GetNetAvatarFromID(int PlayerId)
+class UTexture* UDarwinScreendicatorWidget::GetNetAvatarFromID(int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinScreendicatorWidget.GetNetAvatarFromID");
 
 	UDarwinScreendicatorWidget_GetNetAvatarFromID_Params params;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -31366,11 +33062,12 @@ class UTexture2D* UDarwinScreendicatorWidget::GetNetAvatarFromID(int PlayerId)
 
 
 // Function Darwin.DarwinScreendicatorWidget.GetManHuntTimeLeft
-// (Final, Native, Public, BlueprintCallable)
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
+// float                          outNormalized                  (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UDarwinScreendicatorWidget::GetManHuntTimeLeft()
+int UDarwinScreendicatorWidget::GetManHuntTimeLeft(float* outNormalized)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinScreendicatorWidget.GetManHuntTimeLeft");
 
@@ -31382,6 +33079,9 @@ int UDarwinScreendicatorWidget::GetManHuntTimeLeft()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+
+	if (outNormalized != nullptr)
+		*outNormalized = params.outNormalized;
 
 	return params.ReturnValue;
 }
@@ -31549,16 +33249,16 @@ void UDarwinScreendicatorWidget::EventUpdatePoopTime(int timeLeft)
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float                          Stamina                        (Parm, ZeroConstructor, IsPlainOldData)
-// float                          health                         (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Health                         (Parm, ZeroConstructor, IsPlainOldData)
 // float                          Cold                           (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinScreendicatorWidget::EventUpdatePlayerStatus(float Stamina, float health, float Cold)
+void UDarwinScreendicatorWidget::EventUpdatePlayerStatus(float Stamina, float Health, float Cold)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinScreendicatorWidget.EventUpdatePlayerStatus");
 
 	UDarwinScreendicatorWidget_EventUpdatePlayerStatus_Params params;
 	params.Stamina = Stamina;
-	params.health = health;
+	params.Health = Health;
 	params.Cold = Cold;
 
 	auto flags = fn->FunctionFlags;
@@ -31573,13 +33273,15 @@ void UDarwinScreendicatorWidget::EventUpdatePlayerStatus(float Stamina, float he
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // int                            timeLeft                       (Parm, ZeroConstructor, IsPlainOldData)
+// float                          outNormalized                  (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinScreendicatorWidget::EventUpdateClueTime(int timeLeft)
+void UDarwinScreendicatorWidget::EventUpdateClueTime(int timeLeft, float outNormalized)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinScreendicatorWidget.EventUpdateClueTime");
 
 	UDarwinScreendicatorWidget_EventUpdateClueTime_Params params;
 	params.timeLeft = timeLeft;
+	params.outNormalized = outNormalized;
 
 	auto flags = fn->FunctionFlags;
 
@@ -31653,15 +33355,15 @@ void UDarwinScreendicatorWidget::EventSetCharacterUniqueID(int UniqueId)
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // struct FString                 harvesterName                  (Parm, ZeroConstructor)
-// int                            PlayerId                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            playerID                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinScreendicatorWidget::EventPylonHarvestStart(const struct FString& harvesterName, int PlayerId)
+void UDarwinScreendicatorWidget::EventPylonHarvestStart(const struct FString& harvesterName, int playerID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinScreendicatorWidget.EventPylonHarvestStart");
 
 	UDarwinScreendicatorWidget_EventPylonHarvestStart_Params params;
 	params.harvesterName = harvesterName;
-	params.PlayerId = PlayerId;
+	params.playerID = playerID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -32361,17 +34063,14 @@ void UDarwinShootingComponent::AddProjectile(int N)
 }
 
 
-// Function Darwin.DarwinShowDirector.TriggerVote
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           bOn                            (Parm, ZeroConstructor, IsPlainOldData)
+// Function Darwin.DarwinShowDirector.SpectatorRatingTest
+// (Final, Exec, Native, Public)
 
-void ADarwinShowDirector::TriggerVote(bool bOn)
+void ADarwinShowDirector::SpectatorRatingTest()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirector.TriggerVote");
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirector.SpectatorRatingTest");
 
-	ADarwinShowDirector_TriggerVote_Params params;
-	params.bOn = bOn;
+	ADarwinShowDirector_SpectatorRatingTest_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -32382,17 +34081,17 @@ void ADarwinShowDirector::TriggerVote(bool bOn)
 }
 
 
-// Function Darwin.DarwinShowDirector.ServerTriggerVote
+// Function Darwin.DarwinShowDirector.ServerSetNumberOfTwitchSpectators
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
-// bool                           bOn                            (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Value                          (Parm, ZeroConstructor, IsPlainOldData)
 
-void ADarwinShowDirector::ServerTriggerVote(bool bOn)
+void ADarwinShowDirector::ServerSetNumberOfTwitchSpectators(int Value)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirector.ServerTriggerVote");
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirector.ServerSetNumberOfTwitchSpectators");
 
-	ADarwinShowDirector_ServerTriggerVote_Params params;
-	params.bOn = bOn;
+	ADarwinShowDirector_ServerSetNumberOfTwitchSpectators_Params params;
+	params.Value = Value;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -32674,6 +34373,72 @@ bool UDarwinShowDirectorWidget::IsSpectatorExperienceActive()
 }
 
 
+// Function Darwin.DarwinShowDirectorWidget.GetThisGameSDTotalSpectatorRating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UDarwinShowDirectorWidget::GetThisGameSDTotalSpectatorRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.GetThisGameSDTotalSpectatorRating");
+
+	UDarwinShowDirectorWidget_GetThisGameSDTotalSpectatorRating_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.GetThisGameSDPlayerRating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UDarwinShowDirectorWidget::GetThisGameSDPlayerRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.GetThisGameSDPlayerRating");
+
+	UDarwinShowDirectorWidget_GetThisGameSDPlayerRating_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.GetThisGameSDAvgSpectatorRating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UDarwinShowDirectorWidget::GetThisGameSDAvgSpectatorRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.GetThisGameSDAvgSpectatorRating");
+
+	UDarwinShowDirectorWidget_GetThisGameSDAvgSpectatorRating_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function Darwin.DarwinShowDirectorWidget.GetPylonClosestToLoc
 // (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -32686,6 +34451,178 @@ class ADarwinPylon* UDarwinShowDirectorWidget::GetPylonClosestToLoc(const struct
 
 	UDarwinShowDirectorWidget_GetPylonClosestToLoc_Params params;
 	params.Loc = Loc;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.GetPlayerTargetedPowersMinRating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UDarwinShowDirectorWidget::GetPlayerTargetedPowersMinRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.GetPlayerTargetedPowersMinRating");
+
+	UDarwinShowDirectorWidget_GetPlayerTargetedPowersMinRating_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.GetNewSDTotalSpectatorRating
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// int                            outOldRating                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UDarwinShowDirectorWidget::GetNewSDTotalSpectatorRating(int* outOldRating)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.GetNewSDTotalSpectatorRating");
+
+	UDarwinShowDirectorWidget_GetNewSDTotalSpectatorRating_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (outOldRating != nullptr)
+		*outOldRating = params.outOldRating;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.GetNewSDPlayerRating
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                          outDelta                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          outOldRating                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UDarwinShowDirectorWidget::GetNewSDPlayerRating(float* outDelta, float* outOldRating)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.GetNewSDPlayerRating");
+
+	UDarwinShowDirectorWidget_GetNewSDPlayerRating_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (outDelta != nullptr)
+		*outDelta = params.outDelta;
+	if (outOldRating != nullptr)
+		*outOldRating = params.outOldRating;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.GetNewSDAvgSpectatorRating
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                          outDelta                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          outOldRating                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UDarwinShowDirectorWidget::GetNewSDAvgSpectatorRating(float* outDelta, float* outOldRating)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.GetNewSDAvgSpectatorRating");
+
+	UDarwinShowDirectorWidget_GetNewSDAvgSpectatorRating_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (outDelta != nullptr)
+		*outDelta = params.outDelta;
+	if (outOldRating != nullptr)
+		*outOldRating = params.outOldRating;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.GetCurrentSDTotalSpectatorRating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UDarwinShowDirectorWidget::GetCurrentSDTotalSpectatorRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.GetCurrentSDTotalSpectatorRating");
+
+	UDarwinShowDirectorWidget_GetCurrentSDTotalSpectatorRating_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.GetCurrentSDPlayerRating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UDarwinShowDirectorWidget::GetCurrentSDPlayerRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.GetCurrentSDPlayerRating");
+
+	UDarwinShowDirectorWidget_GetCurrentSDPlayerRating_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.GetCurrentSDAvgSpectatorRating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UDarwinShowDirectorWidget::GetCurrentSDAvgSpectatorRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.GetCurrentSDAvgSpectatorRating");
+
+	UDarwinShowDirectorWidget_GetCurrentSDAvgSpectatorRating_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -32767,16 +34704,36 @@ void UDarwinShowDirectorWidget::EventVoteStarted(int VoteDuration, EDarwinItemTy
 // Parameters:
 // bool                           bVoteForPlayers                (Parm, ZeroConstructor, IsPlainOldData)
 // int                            TotalVoteCount                 (Parm, ZeroConstructor, IsPlainOldData)
-// TArray<class UDarwinVoteResultForUMG*> VoteResults                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UDarwinVoteResultForUMG*> voteResults                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UDarwinShowDirectorWidget::EventVoteResultsReceived(bool bVoteForPlayers, int TotalVoteCount, TArray<class UDarwinVoteResultForUMG*> VoteResults)
+void UDarwinShowDirectorWidget::EventVoteResultsReceived(bool bVoteForPlayers, int TotalVoteCount, TArray<class UDarwinVoteResultForUMG*> voteResults)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.EventVoteResultsReceived");
 
 	UDarwinShowDirectorWidget_EventVoteResultsReceived_Params params;
 	params.bVoteForPlayers = bVoteForPlayers;
 	params.TotalVoteCount = TotalVoteCount;
-	params.VoteResults = VoteResults;
+	params.voteResults = voteResults;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.EventUpdateThisGameAvgPlayerRating
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                          avgRating                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinShowDirectorWidget::EventUpdateThisGameAvgPlayerRating(float avgRating)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.EventUpdateThisGameAvgPlayerRating");
+
+	UDarwinShowDirectorWidget_EventUpdateThisGameAvgPlayerRating_Params params;
+	params.avgRating = avgRating;
 
 	auto flags = fn->FunctionFlags;
 
@@ -32846,6 +34803,26 @@ void UDarwinShowDirectorWidget::EventUpdateSDMana(int Mana)
 }
 
 
+// Function Darwin.DarwinShowDirectorWidget.EventUpdateCumSpectatorRating
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int                            rating                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinShowDirectorWidget::EventUpdateCumSpectatorRating(int rating)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.EventUpdateCumSpectatorRating");
+
+	UDarwinShowDirectorWidget_EventUpdateCumSpectatorRating_Params params;
+	params.rating = rating;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Darwin.DarwinShowDirectorWidget.EventStartSDPowerCooldown
 // (Event, Public, BlueprintEvent)
 
@@ -32866,14 +34843,40 @@ void UDarwinShowDirectorWidget::EventStartSDPowerCooldown()
 // Function Darwin.DarwinShowDirectorWidget.EventSetShowDirectorName
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FString                 showDirectorName               (Parm, ZeroConstructor)
+// struct FString                 ShowDirectorName               (Parm, ZeroConstructor)
 
-void UDarwinShowDirectorWidget::EventSetShowDirectorName(const struct FString& showDirectorName)
+void UDarwinShowDirectorWidget::EventSetShowDirectorName(const struct FString& ShowDirectorName)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.EventSetShowDirectorName");
 
 	UDarwinShowDirectorWidget_EventSetShowDirectorName_Params params;
-	params.showDirectorName = showDirectorName;
+	params.ShowDirectorName = ShowDirectorName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.EventRatingVoteResultsReceived
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// int                            TotalVoteCount                 (Parm, ZeroConstructor, IsPlainOldData)
+// float                          avgRating                      (Parm, ZeroConstructor, IsPlainOldData)
+// int                            totalStars                     (Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UDarwinVoteResultForUMG*> voteResults                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void UDarwinShowDirectorWidget::EventRatingVoteResultsReceived(int TotalVoteCount, float avgRating, int totalStars, TArray<class UDarwinVoteResultForUMG*> voteResults)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.EventRatingVoteResultsReceived");
+
+	UDarwinShowDirectorWidget_EventRatingVoteResultsReceived_Params params;
+	params.TotalVoteCount = TotalVoteCount;
+	params.avgRating = avgRating;
+	params.totalStars = totalStars;
+	params.voteResults = voteResults;
 
 	auto flags = fn->FunctionFlags;
 
@@ -32934,6 +34937,26 @@ void UDarwinShowDirectorWidget::EventPogClicked(class UDarwinPowerPog* senderPog
 
 	UDarwinShowDirectorWidget_EventPogClicked_Params params;
 	params.senderPog = senderPog;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinShowDirectorWidget.EventNewPlayerRating
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int                            rating                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UDarwinShowDirectorWidget::EventNewPlayerRating(int rating)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinShowDirectorWidget.EventNewPlayerRating");
+
+	UDarwinShowDirectorWidget_EventNewPlayerRating_Params params;
+	params.rating = rating;
 
 	auto flags = fn->FunctionFlags;
 
@@ -33041,13 +35064,15 @@ void UDarwinSonarPower::EventSonarPulse()
 // Function Darwin.DarwinSpectatorExperienceManager.ServerSendAccessToken
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
+// EDarwinStreamingPlatform       StreamingPlatform              (Parm, ZeroConstructor, IsPlainOldData)
 // struct FString                 AccessToken                    (Parm, ZeroConstructor)
 
-void UDarwinSpectatorExperienceManager::ServerSendAccessToken(const struct FString& AccessToken)
+void UDarwinSpectatorExperienceManager::ServerSendAccessToken(EDarwinStreamingPlatform StreamingPlatform, const struct FString& AccessToken)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinSpectatorExperienceManager.ServerSendAccessToken");
 
 	UDarwinSpectatorExperienceManager_ServerSendAccessToken_Params params;
+	params.StreamingPlatform = StreamingPlatform;
 	params.AccessToken = AccessToken;
 
 	auto flags = fn->FunctionFlags;
@@ -33063,17 +35088,19 @@ void UDarwinSpectatorExperienceManager::ServerSendAccessToken(const struct FStri
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
 // bool                           bVoteForPlayers                (Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinItemTypeEnum            powerType                      (Parm, ZeroConstructor, IsPlainOldData)
 // int                            TotalVoteCount                 (Parm, ZeroConstructor, IsPlainOldData)
-// TArray<struct FDarwinVoteResult> VoteResults                    (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+// TArray<struct FDarwinVoteResult> voteResults                    (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 
-void UDarwinSpectatorPowerVoteManager::NetMulticastVoteResultsReceived(bool bVoteForPlayers, int TotalVoteCount, TArray<struct FDarwinVoteResult> VoteResults)
+void UDarwinSpectatorPowerVoteManager::NetMulticastVoteResultsReceived(bool bVoteForPlayers, EDarwinItemTypeEnum powerType, int TotalVoteCount, TArray<struct FDarwinVoteResult> voteResults)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinSpectatorPowerVoteManager.NetMulticastVoteResultsReceived");
 
 	UDarwinSpectatorPowerVoteManager_NetMulticastVoteResultsReceived_Params params;
 	params.bVoteForPlayers = bVoteForPlayers;
+	params.powerType = powerType;
 	params.TotalVoteCount = TotalVoteCount;
-	params.VoteResults = VoteResults;
+	params.voteResults = voteResults;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -33147,17 +35174,83 @@ void UDarwinStaminaComponent::ServerSetOutOfBreath(bool Value)
 }
 
 
-// Function Darwin.DarwinStaminaComponent.NetMulticastSetOutOfBreath
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
-// Parameters:
-// bool                           Value                          (Parm, ZeroConstructor, IsPlainOldData)
+// Function Darwin.DarwinStartScreenWidget.EventShowButtonPrompt
+// (Event, Public, BlueprintEvent)
 
-void UDarwinStaminaComponent::NetMulticastSetOutOfBreath(bool Value)
+void UDarwinStartScreenWidget::EventShowButtonPrompt()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinStaminaComponent.NetMulticastSetOutOfBreath");
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinStartScreenWidget.EventShowButtonPrompt");
 
-	UDarwinStaminaComponent_NetMulticastSetOutOfBreath_Params params;
-	params.Value = Value;
+	UDarwinStartScreenWidget_EventShowButtonPrompt_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinStartScreenWidget.EventProceedToMainMenu
+// (Event, Public, BlueprintEvent)
+
+void UDarwinStartScreenWidget::EventProceedToMainMenu()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinStartScreenWidget.EventProceedToMainMenu");
+
+	UDarwinStartScreenWidget_EventProceedToMainMenu_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinStartScreenWidget.EventHideButtonPrompt
+// (Event, Public, BlueprintEvent)
+
+void UDarwinStartScreenWidget::EventHideButtonPrompt()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinStartScreenWidget.EventHideButtonPrompt");
+
+	UDarwinStartScreenWidget_EventHideButtonPrompt_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinStartScreenWidget.EnterStartScreenAndOpenXboxAccountPicker
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinStartScreenWidget::EnterStartScreenAndOpenXboxAccountPicker()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinStartScreenWidget.EnterStartScreenAndOpenXboxAccountPicker");
+
+	UDarwinStartScreenWidget_EnterStartScreenAndOpenXboxAccountPicker_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinStartScreenWidget.EnterStartScreen
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinStartScreenWidget::EnterStartScreen()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinStartScreenWidget.EnterStartScreen");
+
+	UDarwinStartScreenWidget_EnterStartScreen_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -33814,8 +35907,9 @@ void UDarwinStatComponent::AddHavingPowerDuration(EDarwinItemTypeEnum powerType,
 // float                          Value                          (Parm, ZeroConstructor, IsPlainOldData)
 // class ADarwinCharacter*        Origin                         (Parm, ZeroConstructor, IsPlainOldData)
 // EDarwinDamageTypeEnum          DamageType                     (Parm, ZeroConstructor, IsPlainOldData)
+// EDarwinItemTypeEnum            ItemType                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UDarwinStatComponent::AddDamageTaken(float Value, class ADarwinCharacter* Origin, EDarwinDamageTypeEnum DamageType)
+void UDarwinStatComponent::AddDamageTaken(float Value, class ADarwinCharacter* Origin, EDarwinDamageTypeEnum DamageType, EDarwinItemTypeEnum ItemType)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinStatComponent.AddDamageTaken");
 
@@ -33823,6 +35917,7 @@ void UDarwinStatComponent::AddDamageTaken(float Value, class ADarwinCharacter* O
 	params.Value = Value;
 	params.Origin = Origin;
 	params.DamageType = DamageType;
+	params.ItemType = ItemType;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -34392,6 +36487,24 @@ void ADarwinTurret::EventDeployTurret()
 	ADarwinTurret_EventDeployTurret_Params params;
 
 	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Darwin.DarwinTwitchLoginBrowserWidget.StartLoginFlow
+// (Final, Native, Public, BlueprintCallable)
+
+void UDarwinTwitchLoginBrowserWidget::StartLoginFlow()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Darwin.DarwinTwitchLoginBrowserWidget.StartLoginFlow");
+
+	UDarwinTwitchLoginBrowserWidget_StartLoginFlow_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(fn, &params);
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -458,12 +458,13 @@ struct ULootBoxWidget_C_MenuBackPressed_Params
 // Function LootBoxWidget.LootBoxWidget_C.EventMenuBack
 struct ULootBoxWidget_C_EventMenuBack_Params
 {
+	bool*                                              bIsEscape;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function LootBoxWidget.LootBoxWidget_C.EventPlayerProfileStatsReceived
-struct ULootBoxWidget_C_EventPlayerProfileStatsReceived_Params
+// Function LootBoxWidget.LootBoxWidget_C.EventPlayerProfileReceived
+struct ULootBoxWidget_C_EventPlayerProfileReceived_Params
 {
-	struct FDarwinCareerStats*                         stats;                                                    // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FDarwinPlayerStats*                         stats;                                                    // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	struct FDarwinProfile*                             Profile;                                                  // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 

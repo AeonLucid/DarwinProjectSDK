@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -24,8 +24,13 @@ struct UMixerConnectionBrowserWidget_C_BndEvt__MixerConnectionBrowser_K2Node_Com
 {
 };
 
-// Function MixerConnectionBrowserWidget.MixerConnectionBrowserWidget_C.EventMenuBack
-struct UMixerConnectionBrowserWidget_C_EventMenuBack_Params
+// Function MixerConnectionBrowserWidget.MixerConnectionBrowserWidget_C.OnCloseMixerBrowserAction
+struct UMixerConnectionBrowserWidget_C_OnCloseMixerBrowserAction_Params
+{
+};
+
+// Function MixerConnectionBrowserWidget.MixerConnectionBrowserWidget_C.BndEvt__ButtonClose_K2Node_ComponentBoundEvent_55_OnButtonClickedEvent__DelegateSignature
+struct UMixerConnectionBrowserWidget_C_BndEvt__ButtonClose_K2Node_ComponentBoundEvent_55_OnButtonClickedEvent__DelegateSignature_Params
 {
 };
 

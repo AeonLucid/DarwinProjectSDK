@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,14 +15,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass DarwinInventoryComponentBP.DarwinInventoryComponentBP_C
-// 0x0018 (0x02D0 - 0x02B8)
+// 0x0018 (0x02E8 - 0x02D0)
 class UDarwinInventoryComponentBP_C : public UDarwinInventoryComponent
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x02B8(0x0008) (Transient, DuplicateTransient)
-	bool                                               NewVar_1;                                                 // 0x02C0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x02C1(0x0003) MISSED OFFSET
-	struct FVector                                     LocationOfPackUse;                                        // 0x02C4(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x02D0(0x0008) (Transient, DuplicateTransient)
+	bool                                               NewVar_1;                                                 // 0x02D8(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x02D9(0x0003) MISSED OFFSET
+	struct FVector                                     LocationOfPackUse;                                        // 0x02DC(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

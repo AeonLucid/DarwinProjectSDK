@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function CenterGages.CenterGages_C.Key Binding
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UCenterGages_C::Key_Binding()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CenterGages.CenterGages_C.Key Binding");
+
+	UCenterGages_C_Key_Binding_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function CenterGages.CenterGages_C.EventUpdateStamina
 // (Event, Public, BlueprintEvent)
@@ -133,6 +150,45 @@ void UCenterGages_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function CenterGages.CenterGages_C.Construct");
 
 	UCenterGages_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CenterGages.CenterGages_C.EventInputRebindSucceeded
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FName*                  ActionToRebind                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FText*                  NewKeyName                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UCenterGages_C::EventInputRebindSucceeded(struct FName* ActionToRebind, struct FText* NewKeyName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CenterGages.CenterGages_C.EventInputRebindSucceeded");
+
+	UCenterGages_C_EventInputRebindSucceeded_Params params;
+	params.ActionToRebind = ActionToRebind;
+	params.NewKeyName = NewKeyName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CenterGages.CenterGages_C.EventInputResetToDefault
+// (Event, Public, BlueprintEvent)
+
+void UCenterGages_C::EventInputResetToDefault()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CenterGages.CenterGages_C.EventInputResetToDefault");
+
+	UCenterGages_C_EventInputResetToDefault_Params params;
 
 	auto flags = fn->FunctionFlags;
 

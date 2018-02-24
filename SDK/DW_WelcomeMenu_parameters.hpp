@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -24,10 +24,25 @@ struct UWelcomeMenu_C_EventMenuClick_Params
 {
 };
 
+// Function WelcomeMenu.WelcomeMenu_C.Construct
+struct UWelcomeMenu_C_Construct_Params
+{
+};
+
+// Function WelcomeMenu.WelcomeMenu_C.EventInputSourceChanged
+struct UWelcomeMenu_C_EventInputSourceChanged_Params
+{
+};
+
 // Function WelcomeMenu.WelcomeMenu_C.ExecuteUbergraph_WelcomeMenu
 struct UWelcomeMenu_C_ExecuteUbergraph_WelcomeMenu_Params
 {
 	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function WelcomeMenu.WelcomeMenu_C.OnClosed__DelegateSignature
+struct UWelcomeMenu_C_OnClosed__DelegateSignature_Params
+{
 };
 
 }

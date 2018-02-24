@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,31 +12,17 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function CraftWheelIcon.CraftWheelIcon_C.EventHover
-// (BlueprintCallable, BlueprintEvent)
+// Function CraftWheelIcon.CraftWheelIcon_C.SetIsInCrafting
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bIsInCrafting                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UCraftWheelIcon_C::EventHover()
+void UCraftWheelIcon_C::SetIsInCrafting(bool bIsInCrafting)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CraftWheelIcon.CraftWheelIcon_C.EventHover");
+	static auto fn = UObject::FindObject<UFunction>("Function CraftWheelIcon.CraftWheelIcon_C.SetIsInCrafting");
 
-	UCraftWheelIcon_C_EventHover_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CraftWheelIcon.CraftWheelIcon_C.EventUnHover
-// (BlueprintCallable, BlueprintEvent)
-
-void UCraftWheelIcon_C::EventUnHover()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CraftWheelIcon.CraftWheelIcon_C.EventUnHover");
-
-	UCraftWheelIcon_C_EventUnHover_Params params;
+	UCraftWheelIcon_C_SetIsInCrafting_Params params;
+	params.bIsInCrafting = bIsInCrafting;
 
 	auto flags = fn->FunctionFlags;
 
@@ -151,40 +137,6 @@ void UCraftWheelIcon_C::EventGameHasStarted()
 }
 
 
-// Function CraftWheelIcon.CraftWheelIcon_C.SetWillBeReplaced
-// (BlueprintCallable, BlueprintEvent)
-
-void UCraftWheelIcon_C::SetWillBeReplaced()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CraftWheelIcon.CraftWheelIcon_C.SetWillBeReplaced");
-
-	UCraftWheelIcon_C_SetWillBeReplaced_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CraftWheelIcon.CraftWheelIcon_C.SetOriginalIcon
-// (BlueprintCallable, BlueprintEvent)
-
-void UCraftWheelIcon_C::SetOriginalIcon()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CraftWheelIcon.CraftWheelIcon_C.SetOriginalIcon");
-
-	UCraftWheelIcon_C_SetOriginalIcon_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function CraftWheelIcon.CraftWheelIcon_C.WasSwaped
 // (BlueprintCallable, BlueprintEvent)
 
@@ -244,6 +196,74 @@ void UCraftWheelIcon_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function CraftWheelIcon.CraftWheelIcon_C.Construct");
 
 	UCraftWheelIcon_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CraftWheelIcon.CraftWheelIcon_C.SetOriginalIcon
+// (BlueprintCallable, BlueprintEvent)
+
+void UCraftWheelIcon_C::SetOriginalIcon()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CraftWheelIcon.CraftWheelIcon_C.SetOriginalIcon");
+
+	UCraftWheelIcon_C_SetOriginalIcon_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CraftWheelIcon.CraftWheelIcon_C.SetWillBeReplaced
+// (BlueprintCallable, BlueprintEvent)
+
+void UCraftWheelIcon_C::SetWillBeReplaced()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CraftWheelIcon.CraftWheelIcon_C.SetWillBeReplaced");
+
+	UCraftWheelIcon_C_SetWillBeReplaced_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CraftWheelIcon.CraftWheelIcon_C.EventHover
+// (BlueprintCallable, BlueprintEvent)
+
+void UCraftWheelIcon_C::EventHover()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CraftWheelIcon.CraftWheelIcon_C.EventHover");
+
+	UCraftWheelIcon_C_EventHover_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CraftWheelIcon.CraftWheelIcon_C.EventUnHover
+// (BlueprintCallable, BlueprintEvent)
+
+void UCraftWheelIcon_C::EventUnHover()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CraftWheelIcon.CraftWheelIcon_C.EventUnHover");
+
+	UCraftWheelIcon_C_EventUnHover_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -46,6 +46,11 @@ struct ADecoyLootBP_C_EventActivateOpenParticles_Params
 struct ADecoyLootBP_C_EventUpdateOpenRays_Params
 {
 	float*                                             Intensity;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function DecoyLootBP.DecoyLootBP_C.EventSetLootableShape
+struct ADecoyLootBP_C_EventSetLootableShape_Params
+{
 };
 
 // Function DecoyLootBP.DecoyLootBP_C.ExecuteUbergraph_DecoyLootBP

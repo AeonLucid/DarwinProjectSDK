@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -71,7 +71,7 @@ void UNotiFirstBlood_C::Construct()
 
 
 // Function NotiFirstBlood.NotiFirstBlood_C.ExecuteUbergraph_NotiFirstBlood
-// (HasDefaults)
+// ()
 // Parameters:
 // int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 

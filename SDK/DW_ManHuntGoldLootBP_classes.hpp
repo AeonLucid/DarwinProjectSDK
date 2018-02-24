@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -45,6 +45,7 @@ public:
 	void EventLootPickedUp(class ADarwinCharacter** Character);
 	void EventActivateOpenParticles();
 	void EventUpdateOpenRays(float* Intensity);
+	void EventSetLootableShape();
 	void ExecuteUbergraph_ManHuntGoldLootBP(int EntryPoint);
 };
 

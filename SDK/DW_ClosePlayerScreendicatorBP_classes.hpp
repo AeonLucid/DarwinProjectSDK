@@ -1,6 +1,6 @@
 #pragma once
 
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -43,10 +43,10 @@ public:
 	}
 
 
-	void EventSetDarwinPlayerName(struct FString* playerName);
-	void EventUpdatePlayerStatus(float* Stamina, float* health, float* Cold);
-	void EventSetCharacterUniqueID(int* UniqueId);
 	void EventUpdateScreendication(float* Angle, float* arrowScale, float* Distance, float* Opacity, bool* onScreen, bool* behindCam);
+	void EventSetDarwinPlayerName(struct FString* playerName);
+	void EventUpdatePlayerStatus(float* Stamina, float* Health, float* Cold);
+	void EventSetCharacterUniqueID(int* UniqueId);
 	void ExecuteUbergraph_ClosePlayerScreendicatorBP(int EntryPoint);
 };
 

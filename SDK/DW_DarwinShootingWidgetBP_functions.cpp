@@ -1,4 +1,4 @@
-// Darwin Project (0.11974) SDK
+// Darwin Project (open_beta_2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.Key Binding
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UDarwinShootingWidgetBP_C::Key_Binding()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.Key Binding");
+
+	UDarwinShootingWidgetBP_C_Key_Binding_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.EventAimCharge
 // (Event, Public, BlueprintEvent)
@@ -366,6 +383,62 @@ void UDarwinShootingWidgetBP_C::RemoveTutoNoArrows()
 	static auto fn = UObject::FindObject<UFunction>("Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.RemoveTutoNoArrows");
 
 	UDarwinShootingWidgetBP_C_RemoveTutoNoArrows_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UDarwinShootingWidgetBP_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.Construct");
+
+	UDarwinShootingWidgetBP_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.EventInputRebindSucceeded
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FName*                  ActionToRebind                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FText*                  NewKeyName                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UDarwinShootingWidgetBP_C::EventInputRebindSucceeded(struct FName* ActionToRebind, struct FText* NewKeyName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.EventInputRebindSucceeded");
+
+	UDarwinShootingWidgetBP_C_EventInputRebindSucceeded_Params params;
+	params.ActionToRebind = ActionToRebind;
+	params.NewKeyName = NewKeyName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.EventInputResetToDefault
+// (Event, Public, BlueprintEvent)
+
+void UDarwinShootingWidgetBP_C::EventInputResetToDefault()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DarwinShootingWidgetBP.DarwinShootingWidgetBP_C.EventInputResetToDefault");
+
+	UDarwinShootingWidgetBP_C_EventInputResetToDefault_Params params;
 
 	auto flags = fn->FunctionFlags;
 
