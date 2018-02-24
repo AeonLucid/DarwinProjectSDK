@@ -7,9 +7,9 @@
 #endif
 
 #include "DW_Basic.hpp"
+#include "DW_AudioMixer_classes.hpp"
 #include "DW_CoreUObject_classes.hpp"
 #include "DW_Engine_classes.hpp"
-#include "DW_AudioMixer_classes.hpp"
 
 namespace SDK
 {

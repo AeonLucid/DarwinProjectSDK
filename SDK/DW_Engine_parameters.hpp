@@ -14842,7 +14842,6 @@ struct UKismetSystemLibrary_SetSoftObjectPropertyByName_Params
 {
 	class UObject*                                     Object;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FName                                       PropertyName;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	TSoftObjectPtr<class UObject>                      Value;                                                    // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function Engine.KismetSystemLibrary.SetSoftClassPropertyByName
@@ -14850,7 +14849,6 @@ struct UKismetSystemLibrary_SetSoftClassPropertyByName_Params
 {
 	class UObject*                                     Object;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FName                                       PropertyName;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	TSoftObjectPtr<class UClass>                       Value;                                                    // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function Engine.KismetSystemLibrary.SetRotatorPropertyByName
@@ -15016,16 +15014,12 @@ struct UKismetSystemLibrary_OnAssetClassLoaded__DelegateSignature_Params
 // Function Engine.KismetSystemLibrary.NotEqual_SoftObjectReference
 struct UKismetSystemLibrary_NotEqual_SoftObjectReference_Params
 {
-	TSoftObjectPtr<class UObject>                      A;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
-	TSoftObjectPtr<class UObject>                      B;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Engine.KismetSystemLibrary.NotEqual_SoftClassReference
 struct UKismetSystemLibrary_NotEqual_SoftClassReference_Params
 {
-	TSoftObjectPtr<class UClass>                       A;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
-	TSoftObjectPtr<class UClass>                       B;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -15125,7 +15119,6 @@ struct UKismetSystemLibrary_LoadInterstitialAd_Params
 struct UKismetSystemLibrary_LoadAssetClass_Params
 {
 	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	TSoftObjectPtr<class UClass>                       AssetClass;                                               // (Parm)
 	struct FScriptDelegate                             OnLoaded;                                                 // (Parm, ZeroConstructor)
 	struct FLatentActionInfo                           LatentInfo;                                               // (Parm)
 };
@@ -15134,7 +15127,6 @@ struct UKismetSystemLibrary_LoadAssetClass_Params
 struct UKismetSystemLibrary_LoadAsset_Params
 {
 	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	TSoftObjectPtr<class UObject>                      Asset;                                                    // (Parm)
 	struct FScriptDelegate                             OnLoaded;                                                 // (Parm, ZeroConstructor)
 	struct FLatentActionInfo                           LatentInfo;                                               // (Parm)
 };
@@ -15471,14 +15463,12 @@ struct UKismetSystemLibrary_K2_ClearAndInvalidateTimerHandle_Params
 // Function Engine.KismetSystemLibrary.IsValidSoftObjectReference
 struct UKismetSystemLibrary_IsValidSoftObjectReference_Params
 {
-	TSoftObjectPtr<class UObject>                      SoftObjectReference;                                      // (ConstParm, Parm, OutParm, ReferenceParm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Engine.KismetSystemLibrary.IsValidSoftClassReference
 struct UKismetSystemLibrary_IsValidSoftClassReference_Params
 {
-	TSoftObjectPtr<class UClass>                       SoftClassReference;                                       // (ConstParm, Parm, OutParm, ReferenceParm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -15591,14 +15581,12 @@ struct UKismetSystemLibrary_GetSupportedFullscreenResolutions_Params
 struct UKismetSystemLibrary_GetSoftObjectReferenceFromPrimaryAssetId_Params
 {
 	struct FPrimaryAssetId                             PrimaryAssetId;                                           // (Parm)
-	TSoftObjectPtr<class UObject>                      ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Engine.KismetSystemLibrary.GetSoftClassReferenceFromPrimaryAssetId
 struct UKismetSystemLibrary_GetSoftClassReferenceFromPrimaryAssetId_Params
 {
 	struct FPrimaryAssetId                             PrimaryAssetId;                                           // (Parm)
-	TSoftObjectPtr<class UClass>                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Engine.KismetSystemLibrary.GetRenderingMaterialQualityLevel
@@ -15633,14 +15621,12 @@ struct UKismetSystemLibrary_GetPrimaryAssetIdList_Params
 // Function Engine.KismetSystemLibrary.GetPrimaryAssetIdFromSoftObjectReference
 struct UKismetSystemLibrary_GetPrimaryAssetIdFromSoftObjectReference_Params
 {
-	TSoftObjectPtr<class UObject>                      SoftObjectReference;                                      // (Parm)
 	struct FPrimaryAssetId                             ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Engine.KismetSystemLibrary.GetPrimaryAssetIdFromSoftClassReference
 struct UKismetSystemLibrary_GetPrimaryAssetIdFromSoftClassReference_Params
 {
-	TSoftObjectPtr<class UClass>                       SoftClassReference;                                       // (Parm)
 	struct FPrimaryAssetId                             ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -15860,16 +15846,12 @@ struct UKismetSystemLibrary_ExecuteConsoleCommand_Params
 // Function Engine.KismetSystemLibrary.EqualEqual_SoftObjectReference
 struct UKismetSystemLibrary_EqualEqual_SoftObjectReference_Params
 {
-	TSoftObjectPtr<class UObject>                      A;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
-	TSoftObjectPtr<class UObject>                      B;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Engine.KismetSystemLibrary.EqualEqual_SoftClassReference
 struct UKismetSystemLibrary_EqualEqual_SoftClassReference_Params
 {
-	TSoftObjectPtr<class UClass>                       A;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
-	TSoftObjectPtr<class UClass>                       B;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -16115,28 +16097,24 @@ struct UKismetSystemLibrary_CreateCopyForUndoBuffer_Params
 // Function Engine.KismetSystemLibrary.Conv_SoftObjectReferenceToString
 struct UKismetSystemLibrary_Conv_SoftObjectReferenceToString_Params
 {
-	TSoftObjectPtr<class UObject>                      SoftObjectReference;                                      // (ConstParm, Parm, OutParm, ReferenceParm)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
 // Function Engine.KismetSystemLibrary.Conv_SoftObjectReferenceToObject
 struct UKismetSystemLibrary_Conv_SoftObjectReferenceToObject_Params
 {
-	TSoftObjectPtr<class UObject>                      SoftObject;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
 	class UObject*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Engine.KismetSystemLibrary.Conv_SoftClassReferenceToString
 struct UKismetSystemLibrary_Conv_SoftClassReferenceToString_Params
 {
-	TSoftObjectPtr<class UClass>                       SoftClassReference;                                       // (ConstParm, Parm, OutParm, ReferenceParm)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
 // Function Engine.KismetSystemLibrary.Conv_SoftClassReferenceToClass
 struct UKismetSystemLibrary_Conv_SoftClassReferenceToClass_Params
 {
-	TSoftObjectPtr<class UClass>                       SoftClass;                                                // (ConstParm, Parm, OutParm, ReferenceParm)
 	class UClass*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -16158,7 +16136,6 @@ struct UKismetSystemLibrary_Conv_PrimaryAssetIdToString_Params
 struct UKismetSystemLibrary_Conv_ObjectToSoftObjectReference_Params
 {
 	class UObject*                                     Object;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	TSoftObjectPtr<class UObject>                      ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Engine.KismetSystemLibrary.Conv_InterfaceToObject
@@ -16172,7 +16149,6 @@ struct UKismetSystemLibrary_Conv_InterfaceToObject_Params
 struct UKismetSystemLibrary_Conv_ClassToSoftClassReference_Params
 {
 	class UClass*                                      Class;                                                    // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-	TSoftObjectPtr<class UClass>                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Engine.KismetSystemLibrary.ControlScreensaver

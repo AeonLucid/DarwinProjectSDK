@@ -218,13 +218,13 @@ struct FPaperTileSetTerrain
 // 0x0040
 struct FPaperSpriteAtlasSlot
 {
-	TSoftObjectPtr<class UPaperSprite>                 SpriteRef;                                                // 0x0000(0x0028)
+	unsigned char                                      UnknownData00[0x28];                                      // 0x0000(0x0028) UNKNOWN PROPERTY: SoftObjectProperty Paper2D.PaperSpriteAtlasSlot.SpriteRef
 	int                                                AtlasIndex;                                               // 0x0028(0x0004) (ZeroConstructor, IsPlainOldData)
 	int                                                X;                                                        // 0x002C(0x0004) (ZeroConstructor, IsPlainOldData)
 	int                                                Y;                                                        // 0x0030(0x0004) (ZeroConstructor, IsPlainOldData)
 	int                                                Width;                                                    // 0x0034(0x0004) (ZeroConstructor, IsPlainOldData)
 	int                                                Height;                                                   // 0x0038(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct Paper2D.SpriteDrawCallRecord

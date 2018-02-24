@@ -49225,16 +49225,14 @@ void UKismetSystemLibrary::STATIC_SetStringPropertyByName(class UObject* Object,
 // Parameters:
 // class UObject*                 Object                         (Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   PropertyName                   (Parm, ZeroConstructor, IsPlainOldData)
-// TSoftObjectPtr<class UObject>  Value                          (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UKismetSystemLibrary::STATIC_SetSoftObjectPropertyByName(class UObject* Object, const struct FName& PropertyName, TSoftObjectPtr<class UObject> Value)
+void UKismetSystemLibrary::STATIC_SetSoftObjectPropertyByName(class UObject* Object, const struct FName& PropertyName)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.SetSoftObjectPropertyByName");
 
 	UKismetSystemLibrary_SetSoftObjectPropertyByName_Params params;
 	params.Object = Object;
 	params.PropertyName = PropertyName;
-	params.Value = Value;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -49250,16 +49248,14 @@ void UKismetSystemLibrary::STATIC_SetSoftObjectPropertyByName(class UObject* Obj
 // Parameters:
 // class UObject*                 Object                         (Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   PropertyName                   (Parm, ZeroConstructor, IsPlainOldData)
-// TSoftObjectPtr<class UClass>   Value                          (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UKismetSystemLibrary::STATIC_SetSoftClassPropertyByName(class UObject* Object, const struct FName& PropertyName, TSoftObjectPtr<class UClass> Value)
+void UKismetSystemLibrary::STATIC_SetSoftClassPropertyByName(class UObject* Object, const struct FName& PropertyName)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.SetSoftClassPropertyByName");
 
 	UKismetSystemLibrary_SetSoftClassPropertyByName_Params params;
 	params.Object = Object;
 	params.PropertyName = PropertyName;
-	params.Value = Value;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -49778,17 +49774,13 @@ void UKismetSystemLibrary::OnAssetClassLoaded__DelegateSignature(class UClass* L
 // Function Engine.KismetSystemLibrary.NotEqual_SoftObjectReference
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UObject>  A                              (ConstParm, Parm, OutParm, ReferenceParm)
-// TSoftObjectPtr<class UObject>  B                              (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UKismetSystemLibrary::STATIC_NotEqual_SoftObjectReference(TSoftObjectPtr<class UObject> A, TSoftObjectPtr<class UObject> B)
+bool UKismetSystemLibrary::STATIC_NotEqual_SoftObjectReference()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.NotEqual_SoftObjectReference");
 
 	UKismetSystemLibrary_NotEqual_SoftObjectReference_Params params;
-	params.A = A;
-	params.B = B;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -49804,17 +49796,13 @@ bool UKismetSystemLibrary::STATIC_NotEqual_SoftObjectReference(TSoftObjectPtr<cl
 // Function Engine.KismetSystemLibrary.NotEqual_SoftClassReference
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UClass>   A                              (ConstParm, Parm, OutParm, ReferenceParm)
-// TSoftObjectPtr<class UClass>   B                              (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UKismetSystemLibrary::STATIC_NotEqual_SoftClassReference(TSoftObjectPtr<class UClass> A, TSoftObjectPtr<class UClass> B)
+bool UKismetSystemLibrary::STATIC_NotEqual_SoftClassReference()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.NotEqual_SoftClassReference");
 
 	UKismetSystemLibrary_NotEqual_SoftClassReference_Params params;
-	params.A = A;
-	params.B = B;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -50133,17 +50121,15 @@ void UKismetSystemLibrary::STATIC_LoadInterstitialAd(int AdIdIndex)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData)
-// TSoftObjectPtr<class UClass>   AssetClass                     (Parm)
 // struct FScriptDelegate         OnLoaded                       (Parm, ZeroConstructor)
 // struct FLatentActionInfo       LatentInfo                     (Parm)
 
-void UKismetSystemLibrary::STATIC_LoadAssetClass(class UObject* WorldContextObject, TSoftObjectPtr<class UClass> AssetClass, const struct FScriptDelegate& OnLoaded, const struct FLatentActionInfo& LatentInfo)
+void UKismetSystemLibrary::STATIC_LoadAssetClass(class UObject* WorldContextObject, const struct FScriptDelegate& OnLoaded, const struct FLatentActionInfo& LatentInfo)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.LoadAssetClass");
 
 	UKismetSystemLibrary_LoadAssetClass_Params params;
 	params.WorldContextObject = WorldContextObject;
-	params.AssetClass = AssetClass;
 	params.OnLoaded = OnLoaded;
 	params.LatentInfo = LatentInfo;
 
@@ -50160,17 +50146,15 @@ void UKismetSystemLibrary::STATIC_LoadAssetClass(class UObject* WorldContextObje
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData)
-// TSoftObjectPtr<class UObject>  Asset                          (Parm)
 // struct FScriptDelegate         OnLoaded                       (Parm, ZeroConstructor)
 // struct FLatentActionInfo       LatentInfo                     (Parm)
 
-void UKismetSystemLibrary::STATIC_LoadAsset(class UObject* WorldContextObject, TSoftObjectPtr<class UObject> Asset, const struct FScriptDelegate& OnLoaded, const struct FLatentActionInfo& LatentInfo)
+void UKismetSystemLibrary::STATIC_LoadAsset(class UObject* WorldContextObject, const struct FScriptDelegate& OnLoaded, const struct FLatentActionInfo& LatentInfo)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.LoadAsset");
 
 	UKismetSystemLibrary_LoadAsset_Params params;
 	params.WorldContextObject = WorldContextObject;
-	params.Asset = Asset;
 	params.OnLoaded = OnLoaded;
 	params.LatentInfo = LatentInfo;
 
@@ -51209,15 +51193,13 @@ void UKismetSystemLibrary::STATIC_K2_ClearAndInvalidateTimerHandle(class UObject
 // Function Engine.KismetSystemLibrary.IsValidSoftObjectReference
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UObject>  SoftObjectReference            (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UKismetSystemLibrary::STATIC_IsValidSoftObjectReference(TSoftObjectPtr<class UObject> SoftObjectReference)
+bool UKismetSystemLibrary::STATIC_IsValidSoftObjectReference()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.IsValidSoftObjectReference");
 
 	UKismetSystemLibrary_IsValidSoftObjectReference_Params params;
-	params.SoftObjectReference = SoftObjectReference;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -51233,15 +51215,13 @@ bool UKismetSystemLibrary::STATIC_IsValidSoftObjectReference(TSoftObjectPtr<clas
 // Function Engine.KismetSystemLibrary.IsValidSoftClassReference
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UClass>   SoftClassReference             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UKismetSystemLibrary::STATIC_IsValidSoftClassReference(TSoftObjectPtr<class UClass> SoftClassReference)
+bool UKismetSystemLibrary::STATIC_IsValidSoftClassReference()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.IsValidSoftClassReference");
 
 	UKismetSystemLibrary_IsValidSoftClassReference_Params params;
-	params.SoftClassReference = SoftClassReference;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -51628,9 +51608,8 @@ bool UKismetSystemLibrary::STATIC_GetSupportedFullscreenResolutions(TArray<struc
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // struct FPrimaryAssetId         PrimaryAssetId                 (Parm)
-// TSoftObjectPtr<class UObject>  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-TSoftObjectPtr<class UObject> UKismetSystemLibrary::STATIC_GetSoftObjectReferenceFromPrimaryAssetId(const struct FPrimaryAssetId& PrimaryAssetId)
+void UKismetSystemLibrary::STATIC_GetSoftObjectReferenceFromPrimaryAssetId(const struct FPrimaryAssetId& PrimaryAssetId)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.GetSoftObjectReferenceFromPrimaryAssetId");
 
@@ -51643,8 +51622,6 @@ TSoftObjectPtr<class UObject> UKismetSystemLibrary::STATIC_GetSoftObjectReferenc
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
@@ -51652,9 +51629,8 @@ TSoftObjectPtr<class UObject> UKismetSystemLibrary::STATIC_GetSoftObjectReferenc
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // struct FPrimaryAssetId         PrimaryAssetId                 (Parm)
-// TSoftObjectPtr<class UClass>   ReturnValue                    (Parm, OutParm, ReturnParm)
 
-TSoftObjectPtr<class UClass> UKismetSystemLibrary::STATIC_GetSoftClassReferenceFromPrimaryAssetId(const struct FPrimaryAssetId& PrimaryAssetId)
+void UKismetSystemLibrary::STATIC_GetSoftClassReferenceFromPrimaryAssetId(const struct FPrimaryAssetId& PrimaryAssetId)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.GetSoftClassReferenceFromPrimaryAssetId");
 
@@ -51667,8 +51643,6 @@ TSoftObjectPtr<class UClass> UKismetSystemLibrary::STATIC_GetSoftClassReferenceF
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
@@ -51775,15 +51749,13 @@ void UKismetSystemLibrary::STATIC_GetPrimaryAssetIdList(const struct FPrimaryAss
 // Function Engine.KismetSystemLibrary.GetPrimaryAssetIdFromSoftObjectReference
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UObject>  SoftObjectReference            (Parm)
 // struct FPrimaryAssetId         ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FPrimaryAssetId UKismetSystemLibrary::STATIC_GetPrimaryAssetIdFromSoftObjectReference(TSoftObjectPtr<class UObject> SoftObjectReference)
+struct FPrimaryAssetId UKismetSystemLibrary::STATIC_GetPrimaryAssetIdFromSoftObjectReference()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.GetPrimaryAssetIdFromSoftObjectReference");
 
 	UKismetSystemLibrary_GetPrimaryAssetIdFromSoftObjectReference_Params params;
-	params.SoftObjectReference = SoftObjectReference;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -51799,15 +51771,13 @@ struct FPrimaryAssetId UKismetSystemLibrary::STATIC_GetPrimaryAssetIdFromSoftObj
 // Function Engine.KismetSystemLibrary.GetPrimaryAssetIdFromSoftClassReference
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UClass>   SoftClassReference             (Parm)
 // struct FPrimaryAssetId         ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FPrimaryAssetId UKismetSystemLibrary::STATIC_GetPrimaryAssetIdFromSoftClassReference(TSoftObjectPtr<class UClass> SoftClassReference)
+struct FPrimaryAssetId UKismetSystemLibrary::STATIC_GetPrimaryAssetIdFromSoftClassReference()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.GetPrimaryAssetIdFromSoftClassReference");
 
 	UKismetSystemLibrary_GetPrimaryAssetIdFromSoftClassReference_Params params;
-	params.SoftClassReference = SoftClassReference;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -52574,17 +52544,13 @@ void UKismetSystemLibrary::STATIC_ExecuteConsoleCommand(class UObject* WorldCont
 // Function Engine.KismetSystemLibrary.EqualEqual_SoftObjectReference
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UObject>  A                              (ConstParm, Parm, OutParm, ReferenceParm)
-// TSoftObjectPtr<class UObject>  B                              (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UKismetSystemLibrary::STATIC_EqualEqual_SoftObjectReference(TSoftObjectPtr<class UObject> A, TSoftObjectPtr<class UObject> B)
+bool UKismetSystemLibrary::STATIC_EqualEqual_SoftObjectReference()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.EqualEqual_SoftObjectReference");
 
 	UKismetSystemLibrary_EqualEqual_SoftObjectReference_Params params;
-	params.A = A;
-	params.B = B;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -52600,17 +52566,13 @@ bool UKismetSystemLibrary::STATIC_EqualEqual_SoftObjectReference(TSoftObjectPtr<
 // Function Engine.KismetSystemLibrary.EqualEqual_SoftClassReference
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UClass>   A                              (ConstParm, Parm, OutParm, ReferenceParm)
-// TSoftObjectPtr<class UClass>   B                              (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UKismetSystemLibrary::STATIC_EqualEqual_SoftClassReference(TSoftObjectPtr<class UClass> A, TSoftObjectPtr<class UClass> B)
+bool UKismetSystemLibrary::STATIC_EqualEqual_SoftClassReference()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.EqualEqual_SoftClassReference");
 
 	UKismetSystemLibrary_EqualEqual_SoftClassReference_Params params;
-	params.A = A;
-	params.B = B;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -53305,15 +53267,13 @@ void UKismetSystemLibrary::STATIC_CreateCopyForUndoBuffer(class UObject* ObjectT
 // Function Engine.KismetSystemLibrary.Conv_SoftObjectReferenceToString
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UObject>  SoftObjectReference            (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
 
-struct FString UKismetSystemLibrary::STATIC_Conv_SoftObjectReferenceToString(TSoftObjectPtr<class UObject> SoftObjectReference)
+struct FString UKismetSystemLibrary::STATIC_Conv_SoftObjectReferenceToString()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.Conv_SoftObjectReferenceToString");
 
 	UKismetSystemLibrary_Conv_SoftObjectReferenceToString_Params params;
-	params.SoftObjectReference = SoftObjectReference;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -53329,15 +53289,13 @@ struct FString UKismetSystemLibrary::STATIC_Conv_SoftObjectReferenceToString(TSo
 // Function Engine.KismetSystemLibrary.Conv_SoftObjectReferenceToObject
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UObject>  SoftObject                     (ConstParm, Parm, OutParm, ReferenceParm)
 // class UObject*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UObject* UKismetSystemLibrary::STATIC_Conv_SoftObjectReferenceToObject(TSoftObjectPtr<class UObject> SoftObject)
+class UObject* UKismetSystemLibrary::STATIC_Conv_SoftObjectReferenceToObject()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.Conv_SoftObjectReferenceToObject");
 
 	UKismetSystemLibrary_Conv_SoftObjectReferenceToObject_Params params;
-	params.SoftObject = SoftObject;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -53353,15 +53311,13 @@ class UObject* UKismetSystemLibrary::STATIC_Conv_SoftObjectReferenceToObject(TSo
 // Function Engine.KismetSystemLibrary.Conv_SoftClassReferenceToString
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UClass>   SoftClassReference             (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
 
-struct FString UKismetSystemLibrary::STATIC_Conv_SoftClassReferenceToString(TSoftObjectPtr<class UClass> SoftClassReference)
+struct FString UKismetSystemLibrary::STATIC_Conv_SoftClassReferenceToString()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.Conv_SoftClassReferenceToString");
 
 	UKismetSystemLibrary_Conv_SoftClassReferenceToString_Params params;
-	params.SoftClassReference = SoftClassReference;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -53377,15 +53333,13 @@ struct FString UKismetSystemLibrary::STATIC_Conv_SoftClassReferenceToString(TSof
 // Function Engine.KismetSystemLibrary.Conv_SoftClassReferenceToClass
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSoftObjectPtr<class UClass>   SoftClass                      (ConstParm, Parm, OutParm, ReferenceParm)
 // class UClass*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UClass* UKismetSystemLibrary::STATIC_Conv_SoftClassReferenceToClass(TSoftObjectPtr<class UClass> SoftClass)
+class UClass* UKismetSystemLibrary::STATIC_Conv_SoftClassReferenceToClass()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.Conv_SoftClassReferenceToClass");
 
 	UKismetSystemLibrary_Conv_SoftClassReferenceToClass_Params params;
-	params.SoftClass = SoftClass;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -53450,9 +53404,8 @@ struct FString UKismetSystemLibrary::STATIC_Conv_PrimaryAssetIdToString(const st
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UObject*                 Object                         (Parm, ZeroConstructor, IsPlainOldData)
-// TSoftObjectPtr<class UObject>  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-TSoftObjectPtr<class UObject> UKismetSystemLibrary::STATIC_Conv_ObjectToSoftObjectReference(class UObject* Object)
+void UKismetSystemLibrary::STATIC_Conv_ObjectToSoftObjectReference(class UObject* Object)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.Conv_ObjectToSoftObjectReference");
 
@@ -53465,8 +53418,6 @@ TSoftObjectPtr<class UObject> UKismetSystemLibrary::STATIC_Conv_ObjectToSoftObje
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
@@ -53498,9 +53449,8 @@ class UObject* UKismetSystemLibrary::STATIC_Conv_InterfaceToObject(const TScript
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UClass*                  Class                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-// TSoftObjectPtr<class UClass>   ReturnValue                    (Parm, OutParm, ReturnParm)
 
-TSoftObjectPtr<class UClass> UKismetSystemLibrary::STATIC_Conv_ClassToSoftClassReference(class UClass* Class)
+void UKismetSystemLibrary::STATIC_Conv_ClassToSoftClassReference(class UClass* Class)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetSystemLibrary.Conv_ClassToSoftClassReference");
 
@@ -53513,8 +53463,6 @@ TSoftObjectPtr<class UClass> UKismetSystemLibrary::STATIC_Conv_ClassToSoftClassR
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 

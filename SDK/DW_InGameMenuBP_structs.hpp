@@ -7,13 +7,13 @@
 #endif
 
 #include "DW_Basic.hpp"
-#include "DW_Darwin_classes.hpp"
-#include "DW_NavigationRequest_classes.hpp"
-#include "DW_Engine_classes.hpp"
-#include "DW_SlateCore_classes.hpp"
-#include "DW_InGameMenu_Tiles_classes.hpp"
-#include "DW_UMG_classes.hpp"
 #include "DW_CoreUObject_classes.hpp"
+#include "DW_Darwin_classes.hpp"
+#include "DW_Engine_classes.hpp"
+#include "DW_InGameMenu_Tiles_classes.hpp"
+#include "DW_NavigationRequest_classes.hpp"
+#include "DW_UMG_classes.hpp"
+#include "DW_SlateCore_classes.hpp"
 
 namespace SDK
 {

@@ -34,7 +34,7 @@ public:
 	}
 
 
-	void InitializeMsg(const struct FText& Message, const struct FText& l;ine2);
+	void InitializeMsg(const struct FText& Message, const struct FText& line2);
 	void ExecuteUbergraph_ErrorMessage(int EntryPoint);
 };
 

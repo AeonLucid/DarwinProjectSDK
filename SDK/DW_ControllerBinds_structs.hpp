@@ -8,8 +8,8 @@
 
 #include "DW_Basic.hpp"
 #include "DW_Darwin_classes.hpp"
-#include "DW_Engine_classes.hpp"
 #include "DW_ControllerBinding_Tiles_classes.hpp"
+#include "DW_Engine_classes.hpp"
 #include "DW_SlateCore_classes.hpp"
 
 namespace SDK

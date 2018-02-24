@@ -9,8 +9,8 @@
 #include "DW_Basic.hpp"
 #include "DW_Engine_classes.hpp"
 #include "DW_GameplayTasks_classes.hpp"
-#include "DW_CoreUObject_classes.hpp"
 #include "DW_GameplayTags_classes.hpp"
+#include "DW_CoreUObject_classes.hpp"
 
 namespace SDK
 {

@@ -2470,7 +2470,7 @@ public:
 	TArray<struct FDelegateRuntimeBinding>             Bindings;                                                 // 0x02E8(0x0010) (ZeroConstructor)
 	TArray<class UWidgetAnimation*>                    Animations;                                               // 0x02F8(0x0010) (ExportObject, ZeroConstructor)
 	TArray<struct FName>                               NamedSlots;                                               // 0x0308(0x0010) (ZeroConstructor)
-	TSoftObjectPtr<class UUserWidget>                  TemplateAsset;                                            // 0x0318(0x0028) (ExportObject, InstancedReference)
+	unsigned char                                      UnknownData01[0x28];                                      // 0x0318(0x0028) UNKNOWN PROPERTY: SoftObjectProperty UMG.WidgetBlueprintGeneratedClass.TemplateAsset
 	class UUserWidget*                                 Template;                                                 // 0x0340(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()

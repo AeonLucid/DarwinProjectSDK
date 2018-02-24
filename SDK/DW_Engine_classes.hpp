@@ -10244,8 +10244,8 @@ public:
 	void STATIC_SetSuppressViewportTransitionMessage(class UObject* WorldContextObject, bool bState);
 	void STATIC_SetStructurePropertyByName(class UObject* Object, const struct FName& PropertyName, const struct FGenericStruct& Value);
 	void STATIC_SetStringPropertyByName(class UObject* Object, const struct FName& PropertyName, const struct FString& Value);
-	void STATIC_SetSoftObjectPropertyByName(class UObject* Object, const struct FName& PropertyName, TSoftObjectPtr<class UObject> Value);
-	void STATIC_SetSoftClassPropertyByName(class UObject* Object, const struct FName& PropertyName, TSoftObjectPtr<class UClass> Value);
+	void STATIC_SetSoftObjectPropertyByName(class UObject* Object, const struct FName& PropertyName);
+	void STATIC_SetSoftClassPropertyByName(class UObject* Object, const struct FName& PropertyName);
 	void STATIC_SetRotatorPropertyByName(class UObject* Object, const struct FName& PropertyName, const struct FRotator& Value);
 	void STATIC_SetObjectPropertyByName(class UObject* Object, const struct FName& PropertyName, class UObject* Value);
 	void STATIC_SetNamePropertyByName(class UObject* Object, const struct FName& PropertyName, const struct FName& Value);
@@ -10267,8 +10267,8 @@ public:
 	void STATIC_PrintString(class UObject* WorldContextObject, const struct FString& inString, bool bPrintToScreen, bool bPrintToLog, const struct FLinearColor& TextColor, float Duration);
 	void OnAssetLoaded__DelegateSignature(class UObject* Loaded);
 	void OnAssetClassLoaded__DelegateSignature(class UClass* Loaded);
-	bool STATIC_NotEqual_SoftObjectReference(TSoftObjectPtr<class UObject> A, TSoftObjectPtr<class UObject> B);
-	bool STATIC_NotEqual_SoftClassReference(TSoftObjectPtr<class UClass> A, TSoftObjectPtr<class UClass> B);
+	bool STATIC_NotEqual_SoftObjectReference();
+	bool STATIC_NotEqual_SoftClassReference();
 	bool STATIC_NotEqual_PrimaryAssetType(const struct FPrimaryAssetType& A, const struct FPrimaryAssetType& B);
 	bool STATIC_NotEqual_PrimaryAssetId(const struct FPrimaryAssetId& A, const struct FPrimaryAssetId& B);
 	void STATIC_MoveComponentTo(class USceneComponent* Component, const struct FVector& TargetRelativeLocation, const struct FRotator& TargetRelativeRotation, bool bEaseOut, bool bEaseIn, float OverTime, bool bForceShortestRotationPath, TEnumAsByte<EMoveComponentAction> MoveAction, const struct FLatentActionInfo& LatentInfo);
@@ -10281,8 +10281,8 @@ public:
 	unsigned char STATIC_MakeLiteralByte(unsigned char Value);
 	bool STATIC_MakeLiteralBool(bool Value);
 	void STATIC_LoadInterstitialAd(int AdIdIndex);
-	void STATIC_LoadAssetClass(class UObject* WorldContextObject, TSoftObjectPtr<class UClass> AssetClass, const struct FScriptDelegate& OnLoaded, const struct FLatentActionInfo& LatentInfo);
-	void STATIC_LoadAsset(class UObject* WorldContextObject, TSoftObjectPtr<class UObject> Asset, const struct FScriptDelegate& OnLoaded, const struct FLatentActionInfo& LatentInfo);
+	void STATIC_LoadAssetClass(class UObject* WorldContextObject, const struct FScriptDelegate& OnLoaded, const struct FLatentActionInfo& LatentInfo);
+	void STATIC_LoadAsset(class UObject* WorldContextObject, const struct FScriptDelegate& OnLoaded, const struct FLatentActionInfo& LatentInfo);
 	bool STATIC_LineTraceSingleForObjects(class UObject* WorldContextObject, const struct FVector& Start, const struct FVector& End, TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypes, bool bTraceComplex, TArray<class AActor*> ActorsToIgnore, TEnumAsByte<EDrawDebugTrace> DrawDebugType, bool bIgnoreSelf, const struct FLinearColor& TraceColor, const struct FLinearColor& TraceHitColor, float DrawTime, struct FHitResult* OutHit);
 	bool STATIC_LineTraceSingleByProfile(class UObject* WorldContextObject, const struct FVector& Start, const struct FVector& End, const struct FName& ProfileName, bool bTraceComplex, TArray<class AActor*> ActorsToIgnore, TEnumAsByte<EDrawDebugTrace> DrawDebugType, bool bIgnoreSelf, const struct FLinearColor& TraceColor, const struct FLinearColor& TraceHitColor, float DrawTime, struct FHitResult* OutHit);
 	bool STATIC_LineTraceSingle(class UObject* WorldContextObject, const struct FVector& Start, const struct FVector& End, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, TArray<class AActor*> ActorsToIgnore, TEnumAsByte<EDrawDebugTrace> DrawDebugType, bool bIgnoreSelf, const struct FLinearColor& TraceColor, const struct FLinearColor& TraceHitColor, float DrawTime, struct FHitResult* OutHit);
@@ -10319,8 +10319,8 @@ public:
 	void STATIC_K2_ClearTimerDelegate(const struct FScriptDelegate& Delegate);
 	void STATIC_K2_ClearTimer(class UObject* Object, const struct FString& FunctionName);
 	void STATIC_K2_ClearAndInvalidateTimerHandle(class UObject* WorldContextObject, struct FTimerHandle* Handle);
-	bool STATIC_IsValidSoftObjectReference(TSoftObjectPtr<class UObject> SoftObjectReference);
-	bool STATIC_IsValidSoftClassReference(TSoftObjectPtr<class UClass> SoftClassReference);
+	bool STATIC_IsValidSoftObjectReference();
+	bool STATIC_IsValidSoftClassReference();
 	bool STATIC_IsValidPrimaryAssetType(const struct FPrimaryAssetType& PrimaryAssetType);
 	bool STATIC_IsValidPrimaryAssetId(const struct FPrimaryAssetId& PrimaryAssetId);
 	bool STATIC_IsValidClass(class UClass* Class);
@@ -10337,14 +10337,14 @@ public:
 	bool STATIC_GetVolumeButtonsHandledBySystem();
 	struct FString STATIC_GetUniqueDeviceId();
 	bool STATIC_GetSupportedFullscreenResolutions(TArray<struct FIntPoint>* Resolutions);
-	TSoftObjectPtr<class UObject> STATIC_GetSoftObjectReferenceFromPrimaryAssetId(const struct FPrimaryAssetId& PrimaryAssetId);
-	TSoftObjectPtr<class UClass> STATIC_GetSoftClassReferenceFromPrimaryAssetId(const struct FPrimaryAssetId& PrimaryAssetId);
+	void STATIC_GetSoftObjectReferenceFromPrimaryAssetId(const struct FPrimaryAssetId& PrimaryAssetId);
+	void STATIC_GetSoftClassReferenceFromPrimaryAssetId(const struct FPrimaryAssetId& PrimaryAssetId);
 	int STATIC_GetRenderingMaterialQualityLevel();
 	int STATIC_GetRenderingDetailMode();
 	void STATIC_GetPrimaryAssetsWithBundleState(TArray<struct FName> RequiredBundles, TArray<struct FName> ExcludedBundles, TArray<struct FPrimaryAssetType> ValidTypes, bool bForceCurrentState, TArray<struct FPrimaryAssetId>* OutPrimaryAssetIdList);
 	void STATIC_GetPrimaryAssetIdList(const struct FPrimaryAssetType& PrimaryAssetType, TArray<struct FPrimaryAssetId>* OutPrimaryAssetIdList);
-	struct FPrimaryAssetId STATIC_GetPrimaryAssetIdFromSoftObjectReference(TSoftObjectPtr<class UObject> SoftObjectReference);
-	struct FPrimaryAssetId STATIC_GetPrimaryAssetIdFromSoftClassReference(TSoftObjectPtr<class UClass> SoftClassReference);
+	struct FPrimaryAssetId STATIC_GetPrimaryAssetIdFromSoftObjectReference();
+	struct FPrimaryAssetId STATIC_GetPrimaryAssetIdFromSoftClassReference();
 	struct FPrimaryAssetId STATIC_GetPrimaryAssetIdFromObject(class UObject* Object);
 	struct FPrimaryAssetId STATIC_GetPrimaryAssetIdFromClass(class UClass* Class);
 	TArray<struct FString> STATIC_GetPreferredLanguages();
@@ -10377,8 +10377,8 @@ public:
 	void STATIC_FlushPersistentDebugLines(class UObject* WorldContextObject);
 	void STATIC_FlushDebugStrings(class UObject* WorldContextObject);
 	void STATIC_ExecuteConsoleCommand(class UObject* WorldContextObject, const struct FString& Command, class APlayerController* SpecificPlayer);
-	bool STATIC_EqualEqual_SoftObjectReference(TSoftObjectPtr<class UObject> A, TSoftObjectPtr<class UObject> B);
-	bool STATIC_EqualEqual_SoftClassReference(TSoftObjectPtr<class UClass> A, TSoftObjectPtr<class UClass> B);
+	bool STATIC_EqualEqual_SoftObjectReference();
+	bool STATIC_EqualEqual_SoftClassReference();
 	bool STATIC_EqualEqual_PrimaryAssetType(const struct FPrimaryAssetType& A, const struct FPrimaryAssetType& B);
 	bool STATIC_EqualEqual_PrimaryAssetId(const struct FPrimaryAssetId& A, const struct FPrimaryAssetId& B);
 	void STATIC_DrawDebugString(class UObject* WorldContextObject, const struct FVector& TextLocation, const struct FString& Text, class AActor* TestBaseActor, const struct FLinearColor& TextColor, float Duration);
@@ -10401,15 +10401,15 @@ public:
 	bool STATIC_DoesImplementInterface(class UObject* TestObject, class UClass* Interface);
 	void STATIC_Delay(class UObject* WorldContextObject, float Duration, const struct FLatentActionInfo& LatentInfo);
 	void STATIC_CreateCopyForUndoBuffer(class UObject* ObjectToModify);
-	struct FString STATIC_Conv_SoftObjectReferenceToString(TSoftObjectPtr<class UObject> SoftObjectReference);
-	class UObject* STATIC_Conv_SoftObjectReferenceToObject(TSoftObjectPtr<class UObject> SoftObject);
-	struct FString STATIC_Conv_SoftClassReferenceToString(TSoftObjectPtr<class UClass> SoftClassReference);
-	class UClass* STATIC_Conv_SoftClassReferenceToClass(TSoftObjectPtr<class UClass> SoftClass);
+	struct FString STATIC_Conv_SoftObjectReferenceToString();
+	class UObject* STATIC_Conv_SoftObjectReferenceToObject();
+	struct FString STATIC_Conv_SoftClassReferenceToString();
+	class UClass* STATIC_Conv_SoftClassReferenceToClass();
 	struct FString STATIC_Conv_PrimaryAssetTypeToString(const struct FPrimaryAssetType& PrimaryAssetType);
 	struct FString STATIC_Conv_PrimaryAssetIdToString(const struct FPrimaryAssetId& PrimaryAssetId);
-	TSoftObjectPtr<class UObject> STATIC_Conv_ObjectToSoftObjectReference(class UObject* Object);
+	void STATIC_Conv_ObjectToSoftObjectReference(class UObject* Object);
 	class UObject* STATIC_Conv_InterfaceToObject(const TScriptInterface<class UInterface>& Interface);
-	TSoftObjectPtr<class UClass> STATIC_Conv_ClassToSoftClassReference(class UClass* Class);
+	void STATIC_Conv_ClassToSoftClassReference(class UClass* Class);
 	void STATIC_ControlScreensaver(bool bAllowScreenSaver);
 	bool STATIC_ComponentOverlapComponents(class UPrimitiveComponent* Component, const struct FTransform& ComponentTransform, TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypes, class UClass* ComponentClassFilter, TArray<class AActor*> ActorsToIgnore, TArray<class UPrimitiveComponent*>* OutComponents);
 	bool STATIC_ComponentOverlapActors(class UPrimitiveComponent* Component, const struct FTransform& ComponentTransform, TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypes, class UClass* ActorClassFilter, TArray<class AActor*> ActorsToIgnore, TArray<class AActor*>* OutActors);
@@ -10686,29 +10686,29 @@ class ULevelStreaming : public UObject
 {
 public:
 	struct FName                                       PackageName;                                              // 0x0028(0x0008) (ZeroConstructor, Deprecated, IsPlainOldData)
-	TSoftObjectPtr<class UWorld>                       WorldAsset;                                               // 0x0030(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly, EditConst)
+	unsigned char                                      UnknownData00[0x28];                                      // 0x0030(0x0028) UNKNOWN PROPERTY: SoftObjectProperty Engine.LevelStreaming.WorldAsset
 	struct FName                                       PackageNameToLoad;                                        // 0x0058(0x0008) (ZeroConstructor, IsPlainOldData)
 	TArray<struct FName>                               LODPackageNames;                                          // 0x0060(0x0010) (ZeroConstructor)
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0070(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x10];                                      // 0x0070(0x0010) MISSED OFFSET
 	struct FTransform                                  LevelTransform;                                           // 0x0080(0x0030) (Edit, BlueprintVisible, IsPlainOldData)
-	unsigned char                                      UnknownData01 : 3;                                        // 0x00B0(0x0001)
+	unsigned char                                      UnknownData02 : 3;                                        // 0x00B0(0x0001)
 	unsigned char                                      bShouldBeVisibleInEditor : 1;                             // 0x00B0(0x0001)
 	unsigned char                                      bLocked : 1;                                              // 0x00B0(0x0001)
 	unsigned char                                      bShouldBeLoaded : 1;                                      // 0x00B0(0x0001) (BlueprintVisible)
 	unsigned char                                      bShouldBeVisible : 1;                                     // 0x00B0(0x0001) (BlueprintVisible)
 	unsigned char                                      bIsStatic : 1;                                            // 0x00B0(0x0001) (Edit, DisableEditOnInstance)
 	unsigned char                                      bShouldBlockOnLoad : 1;                                   // 0x00B1(0x0001) (BlueprintVisible)
-	unsigned char                                      UnknownData02[0x2];                                       // 0x00B2(0x0002) MISSED OFFSET
+	unsigned char                                      UnknownData03[0x2];                                       // 0x00B2(0x0002) MISSED OFFSET
 	int                                                LevelLODIndex;                                            // 0x00B4(0x0004) (BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData)
 	unsigned char                                      bDisableDistanceStreaming : 1;                            // 0x00B8(0x0001) (BlueprintVisible, Transient)
-	unsigned char                                      UnknownData03 : 1;                                        // 0x00B8(0x0001)
+	unsigned char                                      UnknownData04 : 1;                                        // 0x00B8(0x0001)
 	unsigned char                                      bDrawOnLevelStatusMap : 1;                                // 0x00B8(0x0001) (Edit)
-	unsigned char                                      UnknownData04[0x3];                                       // 0x00B9(0x0003) MISSED OFFSET
+	unsigned char                                      UnknownData05[0x3];                                       // 0x00B9(0x0003) MISSED OFFSET
 	struct FColor                                      DrawColor;                                                // 0x00BC(0x0004) (Deprecated, IsPlainOldData)
 	struct FLinearColor                                LevelColor;                                               // 0x00C0(0x0010) (Edit, IsPlainOldData)
 	TArray<class ALevelStreamingVolume*>               EditorStreamingVolumes;                                   // 0x00D0(0x0010) (Edit, ZeroConstructor)
 	float                                              MinTimeBetweenVolumeUnloadRequests;                       // 0x00E0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData05[0x4];                                       // 0x00E4(0x0004) MISSED OFFSET
+	unsigned char                                      UnknownData06[0x4];                                       // 0x00E4(0x0004) MISSED OFFSET
 	TArray<struct FString>                             Keywords;                                                 // 0x00E8(0x0010) (ZeroConstructor)
 	struct FScriptMulticastDelegate                    OnLevelLoaded;                                            // 0x00F8(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
 	struct FScriptMulticastDelegate                    OnLevelUnloaded;                                          // 0x0108(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
@@ -10716,7 +10716,7 @@ public:
 	struct FScriptMulticastDelegate                    OnLevelHidden;                                            // 0x0128(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
 	class ULevel*                                      LoadedLevel;                                              // 0x0138(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	class ULevel*                                      PendingUnloadLevel;                                       // 0x0140(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData06[0x18];                                      // 0x0148(0x0018) MISSED OFFSET
+	unsigned char                                      UnknownData07[0x18];                                      // 0x0148(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -15102,7 +15102,7 @@ class UNodeMappingContainer : public UObject
 {
 public:
 	TMap<struct FName, struct FNodeMap>                NodeMapping;                                              // 0x0028(0x0050) (Edit, ZeroConstructor)
-	TSoftObjectPtr<class UBlueprint>                   SourceAsset;                                              // 0x0078(0x0028) (Edit)
+	unsigned char                                      UnknownData00[0x28];                                      // 0x0078(0x0028) UNKNOWN PROPERTY: SoftObjectProperty Engine.NodeMappingContainer.SourceAsset
 
 	static UClass* StaticClass()
 	{
@@ -18837,8 +18837,8 @@ public:
 	unsigned char                                      bLabelAssetsInMyDirectory : 1;                            // 0x0040(0x0001) (Edit)
 	unsigned char                                      bIsRuntimeLabel : 1;                                      // 0x0040(0x0001) (Edit)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
-	TArray<TSoftObjectPtr<class UObject>>              ExplicitAssets;                                           // 0x0048(0x0010) (Edit, ZeroConstructor)
-	TArray<TSoftObjectPtr<class UClass>>               ExplicitBlueprints;                                       // 0x0058(0x0010) (Edit, ZeroConstructor)
+	unsigned char                                      UnknownData01[0x10];                                      // 0x0041(0x0010) UNKNOWN PROPERTY: ArrayProperty Engine.PrimaryAssetLabel.ExplicitAssets
+	unsigned char                                      UnknownData02[0x10];                                      // 0x0058(0x0010) UNKNOWN PROPERTY: ArrayProperty Engine.PrimaryAssetLabel.ExplicitBlueprints
 	struct FCollectionReference                        AssetCollection;                                          // 0x0068(0x0008) (Edit)
 
 	static UClass* StaticClass()
@@ -20238,11 +20238,11 @@ public:
 class USoundNodeWavePlayer : public USoundNodeAssetReferencer
 {
 public:
-	TSoftObjectPtr<class USoundWave>                   SoundWaveAssetPtr;                                        // 0x0038(0x0028) (Edit)
+	unsigned char                                      UnknownData00[0x28];                                      // 0x0038(0x0028) UNKNOWN PROPERTY: SoftObjectProperty Engine.SoundNodeWavePlayer.SoundWaveAssetPtr
 	class USoundWave*                                  SoundWave;                                                // 0x0060(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData00 : 1;                                        // 0x0068(0x0001)
+	unsigned char                                      UnknownData01 : 1;                                        // 0x0068(0x0001)
 	unsigned char                                      bLooping : 1;                                             // 0x0068(0x0001) (Edit)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x0069(0x0007) MISSED OFFSET
+	unsigned char                                      UnknownData02[0x7];                                       // 0x0069(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
